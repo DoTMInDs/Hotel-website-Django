@@ -1,0 +1,127 @@
+{% load static %}
+<nav>
+  <div class="__navbar">
+      <div class="logo">
+          <a href="{% url "home" %}" class="flex">
+            <img src="{% static 'image/assets/hotel_48dp_FILL0_wght400_GRAD0_opsz48.png' %}" class="hotel" alt="">
+            <h1 class="logoText">Es-Lead</h1>
+          </a>
+        </div>
+      <div class="list_t">
+        <ul class="nav_v no-search" id="nav-links">
+          <li class="color-active">
+            <a href="{% url "home" %}" class="navv-link">
+              <i class="fa-solid fa-house-chimney"></i>
+            Home
+            </a>
+          </li>
+          <li>
+            <a href="{% url "about" %}" class="navv-link">
+              <i class="fa-solid fa-hotel"></i>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="" class="navv-link">
+              <i class="fa-solid fa-images"></i>
+            Gallery
+          </a>
+          </li>
+          <li>
+            <a href="{% url "booking" %}" class="navv-link">
+              <i class="fa-regular fa-calendar-check"></i>
+              Booking
+            </a>
+          </li>
+          <li>
+            <a href="{% url "contact" %}" class="navv-link">
+              <i class="fa-regular fa-address-book"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>     
+      
+     <div class="flex items-center gap-[2rem]">
+      {% if user.is_authenticated %}
+      <div class="user_wrapper">        
+        <div class="flex items-center">
+          <a href="#!" type="button" class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+          </a>
+          <p class="text-[#fff]">{{ user.profilemodel.full_name }}</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="account">
+        <i id="signIn" class="fa-solid fa-right-to-bracket registerer"></i>
+      </div>
+      {% endif %}
+      
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+     </div>
+  </div>
+</nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-lg-down">
+    <div class="modal-content">
+      <div class="flex justify-end p-[1.5rem]">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="">
+              <div class="flex items-center gap-[1.5rem]">
+                <div class="">
+                  <img class="w-[50px] h-[50px] rounded-[50%] border border-amber object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+                </div>
+                <div class="">
+                    <h2 class="text-[1.4rem] font-bold">{{ user.profilemodel.full_name }}</h2>
+                    <small class='text-[0.8rem] text-[#555555]'>Genius Level 1</small>
+                </div>
+              </div>
+              <div class="mt-[2rem]">
+                  <div class="i_icons">
+                      <a href="{% url "profile" %}" class="flex items-center gap-[2rem] p-[1rem] hover:bg-[#ebebeb]">
+                        <i class="fa-regular fa-user p_user"></i>
+                        <p class="">Manage account</p>
+                      </a>
+                  </div>
+                  <div class="i_icons">
+                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p class="">Bookings & Tips</p>
+                      </a>
+                  </div>
+                  <div class="i_icons">
+                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                        <i class="fa-solid fa-user-pen"></i>
+                        <p class="">Reviews</p>
+                      </a>
+                  </div>
+                  <div class="i_icons">
+                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                        <i class="fa-regular fa-heart"></i>
+                        <p class="">Saved</p>
+                      </a>
+                  </div>
+                  <div class="i_icons">
+                      <a href="{% url "logout" %}" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <p class="">Sign out</p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>      
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Es-Lead{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="https://kit.fontawesome.com/1566b08547.js" crossorigin="anonymous"></script>
+    <!--Tailwind css-cdn-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  </head>
+  <body>
+        <div class="header-container">
+          <div class="slider">
+              <img src="{% static "image/assets/backgorund1.jpg" %}" 
+              alt="bg.jpg" id="slideImage">
+          </div>
+        </div>
+        <div class="__navbar">
+          <div class="logo">
+            <a href="{% url "home" %}" class="flex">
+              <img src="{% static 'image/assets/hotel_48dp_FILL0_wght400_GRAD0_opsz48.png' %}" class="hotel" alt="">
+              <h1 class="logoText">Es-Lead</h1>
+            </a>
+          </div>
+          <div class="list_t">
+            <ul class="nav_v no-search" id="nav-links">
+              <li class="color-active">
+                <a href="{% url "home" %}" class="navv-link">
+                  <i class="fa-solid fa-house-chimney"></i>
+                Home
+                </a>
+              </li>
+              <li>
+                <a href="{% url "about" %}" class="navv-link">
+                  <i class="fa-solid fa-hotel"></i>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="" class="navv-link">
+                  <i class="fa-solid fa-images"></i>
+                Gallery
+              </a>
+              </li>
+              <li>
+                <a href="{% url "booking" %}" class="navv-link">
+                  <i class="fa-regular fa-calendar-check"></i>
+                  Booking
+                </a>
+              </li>
+              <li>
+                <a href="{% url "contact" %}" class="navv-link">
+                  <i class="fa-regular fa-address-book"></i>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-[2rem] account_wrapper">
+              {% if user.is_authenticated %}
+              <div class="user_wrapper">        
+                <div class="flex items-center">
+                  <a href="#!">
+                    <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+                  </a>
+                  <p class="text-[#fff]">{{ user.profilemodel.full_name }}</p>
+                </div>
+              </div>
+              {% else %}
+              <div class="account">
+                <a href="{% url "sign-up" %}">
+                  <i id="signIn" class="fa-solid fa-right-to-bracket registerer"></i>
+                </a>
+              </div>
+              {% endif %}
+              
+              <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="text-content">
+            <p class="lux-living">Luxury living</p>
+            <h2 class="text-cont">Discover a Brand <br>
+                Luxurious Hotel</h2>
+            <div class="base-btn">
+              <button class="btn">
+                <a href="{% url "hotel" %}"> 
+                  <i class="fa-solid fa-person-walking-luggage"></i> 
+                  hotels
+                </a>
+              </button>
+              <button class="btn btnn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+                <i class="fa-regular fa-calendar-check"></i>
+                <a href="#!">book a lead </a> 
+              </button>
+            </div>
+          </div>
+        </div> 
+        <div class="text-animater-wrapper">
+            <div class="animate-wrapper">
+                <p class="text_animate ">Lorem, ipsum dolor sit amet consectetur adipisicing elit....optio?</p>
+            </div>
+        </div>   
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-lg-down">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post" class="account-form">
+                  {% csrf_token %}
+                  <div class="">
+                    <h1 class="login-h1-text">Book a Lead
+                      <i class="fa-regular fa-calendar-check"></i>
+                    </h1>
+                  </div>
+                  <div class="input-field">
+                      <label for="full_name" class="">Full name</label>
+                      {{ l_form.full_name }}
+                      <small class='errorMess'>{{ form.full_name.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="email" class="">Email</label>
+                      {{ l_form.email }}
+                      <small class='errorMess'>{{ form.email.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="phone" class="">Phone</label>
+                      {{ l_form.phone }}
+                      <small class='errorMess'>{{ form.phone.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="message" class="">Message</label>
+                      {{ l_form.message }}
+                      <small class='errorMess'>{{ form.message.errors }}</small>
+                  </div>
+
+                  {% if user.is_authenticated %}
+                    <div class="form-btn">
+                      <button type="submit" class="f_btn">submit</button>
+                    </div>
+                    {% else %}
+                   <p class="text-center"> Please register an account to book a Lead</p>
+                  {% endif %}
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

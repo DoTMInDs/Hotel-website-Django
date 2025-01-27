@@ -1,0 +1,114 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block title %}Hotels{% endblock title %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section class="search_wrapper">
+        <div class="img_container">
+            <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
+        </div>
+        <form action="" class="search_form " method="get">
+            
+            <h2 class="h2_form_search">Search for a suitable hotel
+                <i class="fa-solid fa-hotel"></i>
+            </h2>
+            <div class="form_search_container">
+                <div class="search_input">
+                    <i class="fa-regular fa-user p_user"></i>
+                    <input type="search" name="search" class="search" placeholder="Hotel title">
+                </div>
+                <div class="search_input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="search" name="loc-search" class="search" placeholder="Location">
+                </div>
+            </div>
+            <button type="submit" class="search_btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+        </form>
+    </section>
+    <section class="flex gap-[1rem] feature_secction">
+        <aside class="aside_section_search">
+            <div class="filter_wrapper">
+                <h2 class="filter_h2">
+                    <i class="fa-solid fa-filter"></i>
+                    Filter by</h2>
+                <div class="filter_list">
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox" >
+                        <a href="#!">Bath</a>                       
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">Resorts</a>
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">4 stars</a>
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">Breakfast included</a>
+                    </li>
+                </div>
+            </div>
+        </aside>
+        <main class="main_card_wrapper">
+            <div class="">
+                <h2 class="featured_h2">Featured Hotels
+                    <i class="fa-solid fa-hotel"></i>
+                </h2>
+                <div class="hotel_card_container">
+                    <div class="hotel_card_grid">
+                        {% for post in posts %}
+                            <div class="card_wrapper">
+                                <div class="img_card">
+                                    <img src="{{post.image.url}}" alt="" class="card_img1">
+                                    <p class="view_price" data-pk="{{post.pk}}">View price</p>
+                                </div>
+                                <div class="p-[1rem]">
+                                    <h2 class="hotel_name">{{post.name}}</h2>
+                                    <div class="hotel_card_content">
+                                        <div class="hotel_icons">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p class="hotel_location">{{post.location}}</p>
+                                        </div>
+                                        <div class="hotel_icons">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <p class="hotel_location">{{post.dated_on}}</p>
+                                        </div>
+                                    </div>
+                                    <p id="priceTag-{{post.pk}}" class="price_tag">{{post.price}}</p>
+                                    <div class="hotel_btn gap-[0.5rem]">
+                                        <button class="hotel_btnn"><a href="{% url "contact" %}">BOOK A LEAD</a></button>
+                                        <button class="hotel_btnn">
+                                            <a href="{% url "detail" post.id %}">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}   
+                    </div>
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if posts.has_previous %}
+                                <a href="?page={{posts.previous_page_number}}">previous</a>
+                            {% endif %}
+                    
+                            <span class="current current_page">
+                                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                            </span>
+                    
+                            {% if posts.has_next %}
+                                <a href="?page={{posts.next_page_number}}">next</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+{% endblock %}

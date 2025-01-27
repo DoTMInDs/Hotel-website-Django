@@ -1,0 +1,99 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block main-content %}
+{% include "partials/nav.html" %}
+    <section>
+        <div class="about-bg-container">
+              <div class="about-us">
+                <h3 class="about-texts">About Us</h3>
+                <h1 class="h1-about">Welcome to  <span class="color-change">Leads Website</span> </h1>
+                <p class="regular-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                  Pariatur debitis earum aliquid? Voluptas distinctio officia, cumque velit placeat 
+                  maiores, itaque illo consequatur quidem id nobis aliquid. Sequi inventore eos eum?</p>
+                  <a href="{% url "booking" %}">
+                    <button class="btnn about-btn">Explore more
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button> 
+                  </a>
+              </div>
+          </div>
+    </section>
+    <section>
+        <div class="room-section">
+            <div class="room-container">
+              <h2 class="h2-room">our rooms</h2>
+              <h1 class="big-text-h1">Explore our Rooms</h1>
+                <div class="__slider-content slider_wrapper mySwiper">
+                  <div class="cards-grid swiper-wrapper">
+                    {% for post in posts %}
+                    <div class="room-card swiper-slide">
+                        <div class="img-room">
+                          <img src="{{ post.image.url }}" class="beds" alt="">
+                        </div>
+                        <div class="small-text-bg"><p class="view">view</p></div>
+                        <div class="main-text-room">
+                          <div class="main-text">
+                            <h3 class="suite">{{ post.room_type }}</h3>
+                          </div>
+                          <div class="main-text">
+                            {% for rating in ratings %}
+                                <i class="fa-solid fa-star star"></i>
+                            {% endfor %}
+                          </div>
+                        </div>
+                        <div class="ion-icon-room">
+                          <div class="icon-bed">
+                              <i class="fa-solid fa-bed star1"></i>
+                            <p class="bed-text">3 Bed</p>
+                          </div>
+                          <div class="icon-bed">
+                              <i class="fa-solid fa-shower star1"></i>
+                            <p class="bed-text">3 Bath</p>
+                          </div>
+                          <div class="icon-bed">
+                              <i class="fa-solid fa-wifi star1"></i>
+                            <p class="bed-text">wifi</p>
+                          </div>
+                        </div>
+                        <div class="lorem-text">
+                          <p class="text-lorem ">{{ post.content }}</p>
+                        </div>
+                        <div class="btn-room">
+                          <button class="btnn btn-room">view Details <i class="fa-solid fa-arrow-up-right-from-square details-icon"></i></button>
+                          <button class="btnn btn-room btn-bg"><a href="{% url "contact" %}">Book Lead</a></button>
+                        </div>
+                      </div>      
+                      {% endfor %}
+                    
+                  </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop:true,
+        //spaceBetween: 30,
+        centeredSlides: false,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          0: {
+              slidesPerView: 1
+          },
+          620: {
+              slidesPerView: 2
+          },
+          1024: {
+              slidesPerView: 3
+          }
+      }
+  
+       
+      });
+    </script>
+{% endblock  %}

@@ -1,0 +1,29 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block main-content %}
+    <section>
+        <div class="__form_container">
+            <form action="" method="post" class="account-form">
+                <div class="">
+                    <h1 class="login-h1-text">Login</h1>
+                </div>
+                {% csrf_token %}  
+                <div class="">
+                    <div class="input-field">
+                        <label for="id_username" class="">Username</label>
+                        <input type="text" id="id_username" name="username" class="" placeholder="" required> 
+                    </div>                
+                    <div class="input-field">
+                        <label for="id_password" class="">Password</label>
+                        <input type="password" id="id_password" name="password" class="" placeholder="" required> 
+                    </div>
+                </div>           
+                <p class="text-right"><a href="">Forgot password?</a></p>
+                <div class="form-btn">
+                    <button type="submit" class="f_btn">Login</button>
+                </div>
+                    <p class="create_account">Don't have an account? <a href="{% url "sign-up" %}" class="">Create account</a></p>
+            </form>
+        </div>
+    </section>
+{% endblock  %}

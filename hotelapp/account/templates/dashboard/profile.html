@@ -1,0 +1,120 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section>
+       <div class="flex justify-between items-center">
+            <div class="">
+                <h1 class="acc-setting-h1">Personal details</h1>
+                <p class="acc-setting-p">Update your information and find out how it's used.</p>
+            </div>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" class="edit__profile_wrapper my-[30px] text-teal-500 transition-all duration-200 hover:text-teal-600 py-[4px] px-[8px] text-[15px] ">
+                <div class="edit__profile">
+                    <i class="fa-regular fa-pen-to-square fa-xl ml-[10px]" style="#ffffff"></i>
+                    Profile
+                </div> 
+                <div class="edit__profile_img_wrapper">
+                    <img src="{{ user.profilemodel.profile.url }}" alt="profile.img" class="edit__profile_img ">
+                </div>
+            </button>
+       </div>
+       <div class="">
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+               <h3 class="edit_detail_name text-[18px] basis-2/6">Fullname</h3>
+               <p class="mt-[10px] basis-3/5">{{user.profilemodel.full_name}} </p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Username</h3>
+             <p class="mt-[10px] basis-3/5">{{user}} </p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Email address</h3>
+             <p class="mt-[10px] basis-3/5">{{user.email}} </p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Phone number</h3>
+             <p class="mt-[10px] basis-3/5">{{user.profilemodel.phone}} </p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Nationality</h3>
+             <p class="mt-[10px] basis-3/5">{{user.profilemodel.nationality}}</p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Gender</h3>
+             <p class="mt-[10px] basis-3/5">{{user.profilemodel.gender}}</p>
+           </div>
+           <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
+             <h3 class="text-[18px] basis-2/6">Address</h3>
+             <p class="mt-[10px] basis-3/5">{{user.profilemodel.address}}</p>
+           </div>
+       </div>
+    </section>
+
+      <!-- Modal -->    
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-fullscreen-lg-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile <i class="fa-regular fa-pen-to-square"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="flex justify-center flex-col items-center w-full p-[10px] gap-[25px]">
+              <div class="w-[250px]">
+                  <img src="{{ user.profilemodel.profile.url }}" alt="profile.png" class="rounded-[50%] w-[250px] h-[250px] object-cover object-center">
+                </div>
+              <div class="w-[100%]">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <label for="id_username" class="">Fullname</label>
+                        {{ p_form.full_name }}
+                        <small class='errorMess'>{{ form.full_name.errors }}</small>
+                    </div>
+                    <div class="input-field">
+                        <label for="id_username" class="">Email</label>
+                        {{ p_form.email }}
+                        <small class='errorMess'>{{ form.email.errors }}</small>
+                    </div>
+                    <div class="input-field">
+                        <label for="id_username" class="">Phone number</label>
+                        {{ p_form.phone }}
+                        <small class='errorMess'>{{ form.phone.errors }}</small>
+                    </div>
+                    <div class="input-field ">
+                        <label for="gender" class="">Gender</label> <br>
+                        <div class="form-select py-[0.8rem]" name="gender" id="">
+                            {{ p_form.gender }}
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="profile" class="">Profile</label><br>
+                        {{ p_form.profile }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_username" class="">Nationality</label>
+                        {{ p_form.nationality }}
+                        <small class='errorMess'>{{ form.nationality.errors }}</small>
+                    </div>
+                    <div class="input-field">
+                        <label for="id_username" class="">Address</label>
+                        {{ p_form.address }}
+                        <small class='errorMess'>{{ form.address.errors }}</small>
+                    </div>
+
+                    <div class="modal-footer ">
+                      <div class="flex justify-center items-center w-full gap-[20px]">
+                        <button type="button" class="px-[50px] py-[12px] rounded bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
+                          <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded text-[#fff] text-[14px] font-medium">Save</button>
+                      </div>
+                    </div>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+{% endblock %}

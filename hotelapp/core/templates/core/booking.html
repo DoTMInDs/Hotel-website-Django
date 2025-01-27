@@ -1,0 +1,24 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+          </nav>
+    </section>
+    <section class='max-w-[1200px] flex gap-[1rem]'>
+        <aside class='max-w-[300px] w-[350px] bg-[#fefefe] h-[700px] shadow'>
+            aside here
+        </aside>
+        <main class=" w-[100%]">
+            <div>
+                <h2 class="font-bold text-[1.5rem]">Lead: 150 properties found</h2>
+            </div>
+        </main>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section>
+        <div class="icon-wrapper">
+            <div class="ion-icons">
+                    <i class="fa-solid fa-building ion-icon"></i>
+                <div class="office-des">
+                    <p class="office">Office</p>
+                    <p class="office-name">Lorem ipsum dolor sit, amet 
+                        consectetur adipisicing elit.</p>
+                </div>    
+            </div>
+            <div class="ion-icons bg">
+                <i class="fa-solid fa-globe ion-icon"></i>
+                <div class="office-des">
+                    <p class="office">Website</p>
+                    <p class="office-name">www.hotelgh.net</p>
+                </div>    
+            </div>
+        </div>
+        <div class="icon-wrapper">
+            <div class="ion-icons">
+                <i class="fa-solid fa-headset ion-icon"></i>
+                <div class="office-des">
+                    <p class="office">Phone</p>
+                    <p class="office-name">+(233 000 000 000)</p>
+                </div>    
+            </div>
+            <div class="ion-icons bg">
+                <i class="fa-solid fa-envelope-open-text ion-icon"></i>
+                <div class="office-des">
+                    <p class="office">Email</p>
+                    <p class="office-name">info@email.com</p>
+                </div>    
+            </div>
+        </div>        
+    </section>
+    <section>
+        <div class="form">
+            <h3 class="request">Make a request! Lets'talk <i class="fa-solid fa-chalkboard-user"></i></h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-desc">
+                    <label for="name">Full name</label> <br>
+                    <input type="text" name='full_name' placeholder='Enter your name here...' required>
+                </div>
+                <div class="form-desc">
+                    <label for="email">Email Address</label><br>
+                    <input type="email" name='email' placeholder='Enter your email here...' required>
+                </div>
+                <div class="form-desc">
+                    <label for="phone">Phone Number</label><br>
+                    <input type="number" name='phone' placeholder='Enter your Phone here...' required>
+                </div>
+                <div class="form-desc">
+                    <label for="message">Message</label><br>
+                    <textarea name="message" placeholder='Enter your message here...' id="message"></textarea>
+                </div>
+                <div class="bbtn">
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
