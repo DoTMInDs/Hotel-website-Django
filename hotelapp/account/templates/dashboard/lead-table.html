@@ -1,0 +1,141 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block main-content %}
+    {% include "dashboard/partials/nav.html" %}
+    <section class="w-[100%] h-screen bg-slate-300  fixed z-[1] top-0 right-0 left-0 overflow-y-auto mt-[0px] pt-[100px]">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-slate-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
+            <div>
+                <h1 class="text-slate-600">Leads Acquired ( {{leads.count}} )</h1>
+            </div>
+            <div class="rounded-[15px] bg-gray-200 p-4 mt-[1rem] shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead class="">
+                            <tr class="text-left text-slate-500 border-b border-slate-300 ">
+                                <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Email</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Room</th>
+                                <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-300">
+                            {% for lead in leads %}
+                            <tr class="hover:bg-gray-300 rounded-[15px] transition-colors">
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.full_name }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.email }} </td>                                
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.hotel }} </td>
+                                <td class="px-4 py-3 text-right">
+                                    <div class="flex gap-2 justify-end">    
+                                        <p onclick="leadBtn(this)" 
+                                            data-fullname="{{ lead.full_name }}"
+                                            data-email="{{ lead.email }}"
+                                            data-phone="{{ lead.phone }}"
+                                            data-mobile="{{ lead.mobile }}"
+                                            data-message="{{ lead.message }}"
+                                            class="cursor-pointer px-3 py-1.5 text-xs bg-slate-500 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1 hover:bg-slate-700 transition">
+                                                <i class="fa-solid fa-eye text-[10px]"></i>
+                                            View
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="px-4 py-6 text-center text-slate-400">
+                                    No campuses found. Start by adding your first campus.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div onclick="closeBtn()" id="leadWrapper" class="fixed bg-gray-500 bg-opacity-30 top-0 right-0 w-full h-screen transition-all duration-300 ease-out opacity-0 invisible z-[9999]">
+                    <div id="leadModalContent" class="absolute top-[50%] left-[50%] md:w-[80%] w-[95%]  translate-x-[-50%] translate-y-[-50%] transform transition-all duration-300 ease-out scale-95 opacity-0">
+                        <div class="w-full max-w-2xl m-auto">
+                            <div class="  bg-white shadow border border-slate-100 rounded-[10px] p-[1rem] ">
+                                <p onclick="closeBtn()" class="close-btn flex justify-end cursor-pointer">
+                                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                                    </svg>
+                                </p>
+                                <div class="flex  gap-[1rem] items-start md:items-center py-[1rem] border-b border-slate-200 w-full">
+                                    <img src="{% static 'images/default.png' %}" class="w-[100px] h-[100px] rounded-full object-cover object-center ">
+                                    <div>
+                                        <h1 class="text-2xl md:text-4xl text-[#3b5362]" id="modalFullName">{{ lead.full_name }} </h1>
+                                        <p class="text-[18px] text-[#3b5362] font-medium flex gap-[1rem] items-center">
+                                            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.6666 3.99996C14.6666 3.26663 14.0666 2.66663 13.3333 2.66663H2.66659C1.93325 2.66663 1.33325 3.26663 1.33325 3.99996V12C1.33325 12.7333 1.93325 13.3333 2.66659 13.3333H13.3333C14.0666 13.3333 14.6666 12.7333 14.6666 12V3.99996ZM13.3333 3.99996L7.99992 7.33329L2.66659 3.99996H13.3333ZM13.3333 12H2.66659V5.33329L7.99992 8.66663L13.3333 5.33329V12Z" fill="#3B5362"/>
+                                            </svg>
+                                            <span class="font-normal text-slate-500" id="modalEmail">{{ lead.email }}</span> 
+                                        </p>
+                                        <p class="text-[18px] text-[#3b5362] font-medium flex gap-[1rem] items-center">
+                                            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8221 1.36199C4.63343 0.555328 5.96943 0.698661 6.64877 1.60666L7.4901 2.72933C8.04343 3.46799 7.9941 4.49999 7.33743 5.15266L7.17877 5.31133C7.16077 5.37793 7.15895 5.44787 7.17343 5.51533C7.21543 5.78733 7.44277 6.36333 8.39477 7.30999C9.34677 8.25666 9.92677 8.48333 10.2028 8.52599C10.2723 8.53998 10.3441 8.53793 10.4128 8.51999L10.6848 8.24933C11.2688 7.66933 12.1648 7.56066 12.8874 7.95333L14.1608 8.64666C15.2521 9.23866 15.5274 10.7213 14.6341 11.61L13.6868 12.5513C13.3881 12.848 12.9868 13.0953 12.4974 13.1413C11.2908 13.254 8.47943 13.11 5.5241 10.172C2.7661 7.42933 2.23677 5.03733 2.16943 3.85866C2.1361 3.26266 2.41743 2.75866 2.7761 2.40266L3.8221 1.36199ZM5.84877 2.20599C5.51077 1.75466 4.88143 1.71866 4.52677 2.07133L3.4801 3.11133C3.2601 3.32999 3.15477 3.57133 3.1681 3.80199C3.22143 4.73866 3.6481 6.89666 6.22943 9.46333C8.93743 12.1553 11.4381 12.236 12.4048 12.1453C12.6021 12.1273 12.7981 12.0247 12.9814 11.8427L13.9281 10.9007C14.3134 10.518 14.2288 9.82066 13.6834 9.52466L12.4101 8.83199C12.0581 8.64133 11.6461 8.70399 11.3901 8.95866L11.0868 9.26066L10.7334 8.90599C11.0868 9.26066 11.0861 9.26133 11.0854 9.26133L11.0848 9.26266L11.0828 9.26466L11.0781 9.26866L11.0681 9.27799C11.04 9.30412 11.0096 9.32776 10.9774 9.34866C10.9241 9.38399 10.8534 9.42333 10.7648 9.45599C10.5848 9.52333 10.3461 9.55933 10.0514 9.51399C9.47343 9.42533 8.70743 9.03133 7.68943 8.01933C6.6721 7.00733 6.27477 6.24599 6.18543 5.66866C6.13943 5.37399 6.1761 5.13533 6.2441 4.95533C6.28152 4.85404 6.33511 4.75948 6.40277 4.67533L6.4241 4.65199L6.43343 4.64199L6.43743 4.63799L6.43943 4.63599L6.44077 4.63466L6.63277 4.44399C6.9181 4.15933 6.9581 3.68799 6.68943 3.32866L5.84877 2.20599Z" fill="#3B5362"/>
+                                            </svg>
+                                            <span class="text-slate-500 font-normal text-[18px]" id="modalPhone">{{ lead.phone }}  </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-[1rem] mt-[1rem]">
+                                    <h1 class="text-2xl text-[#3b5362]" id="modalCourse">{{ lead.hotel }}</h1>
+                                    <p class="text-[#3b5362]" id="modalComment">
+                                        {{ lead.message }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center gap-8 mt-[1rem]">
+                <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+               
+                <p class="text-slate-400">
+                  Page <strong class="text-slate-400">1</strong> of&nbsp;<strong class="text-slate-400">10</strong>
+                </p>
+                
+                <button class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+   
+    <script>
+        const leadWrapper = document.getElementById('leadWrapper');
+        const leadModalContent = document.getElementById('leadModalContent');
+        function leadBtn(element){
+            // Get data attributes from clicked element
+            const full_name = element.dataset.full_name;
+            const email = element.dataset.email;
+            const phone = element.dataset.phone;
+            const mobile = element.dataset.mobile;
+            const message = element.dataset.message;
+             // Update modal content
+            document.getElementById('modalFullName').textContent = `${full_name} `;
+            document.getElementById('modalEmail').textContent = email;
+            document.getElementById('modalPhone').textContent = phone;
+            document.getElementById('modalMobile').textContent = mobile;
+            document.getElementById('modalmessage').textContent = message;
+            // Show modal
+            leadWrapper.classList.remove('opacity-0', 'invisible');
+            leadModalContent.classList.remove('opacity-0', 'scale-95');
+            //document.getElementById('delete-notification').value = notificationId;
+        }
+        function closeBtn(){
+            leadWrapper.classList.add('opacity-0', 'invisible');
+            leadModalContent.classList.add('opacity-0', 'scale-95');
+        }
+        // Prevent clicks on content from closing modal
+        leadModalContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+{% endblock %}

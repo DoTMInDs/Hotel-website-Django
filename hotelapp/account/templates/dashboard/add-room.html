@@ -1,0 +1,121 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% load tailwind_filters %}
+{% block title %}Rooms{% endblock title %}
+{% block main-content %}
+    {% include "dashboard/partials/nav.html" %}
+    <div class="w-[100%] h-screen bg-slate-300 fixed z-[1] top-0 right-0 left-0 overflow-y-auto">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-gray-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[120px]">
+            <div class="flex justify-between items-center p-[1rem] rounded-t-[10px] bg-gray-200 pb-[1rem]">
+                <h2 class="text-[18px] text-slate-600">All Rooms</h2>
+                <button onclick="profBtn()" id="profBtn" class=" px-3 py-[0.6rem] text-xs bg-slate-500 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1 hover:bg-slate-600 transition">
+                    <i class="fa-solid fa-circle-plus text-[10px]"></i>
+                    Add Rooms
+                </button>
+            </div>
+            <div class="rounded-[15px] bg-gray-200 p-4 mt-[1rem] shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead class="">
+                            <tr class="text-left text-slate-600 border-b border-slate-200">
+                                <th class="px-4 py-3 font-semibold text-sm">Room Type</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Location</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Phone</th>
+                                <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            {% for room in rooms %}
+                            <tr class="transition-colors">
+                                <td class="px-4 py-3 text-slate-600 text-sm">
+                                    <div class="flex items-center gap-2">
+                                        {% if room.institution.logo %}
+                                            <img src="{{room.image.url}}" alt="" class="w-8 h-8 rounded-full object-cover">
+                                        {% endif %}
+                                        {{ room.room_type }} 
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ room.hotel.location }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ room.hotel.mobile }} </td>
+                                <td class="px-4 py-3 text-right text-slate-50">
+                                    <div class="flex gap-2 justify-end">    
+                                        <a href="" class="px-3 py-1.5 text-xs bg-slate-50 text-white border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1 hover:bg-slate-50 transition">
+                                            <i class="fa-solid fa-eye text-[10px]"></i>
+                                            View
+                                        </a>
+                                        <a href="" class="px-3 py-1.5 text-xs bg-slate-50 text-slate-800 border border-slate-400 rounded-full flex items-center gap-1 hover:bg-slate-200 transition">
+                                            <i class="fa-solid fa-pencil text-[10px]"></i>
+                                            Edit
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="px-4 py-6 text-center text-slate-600">
+                                    No campuses found. Start by adding your first campus.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div onclick="closeBtn()" id="profileFormContainer" class="fixed bg-gray-500 bg-opacity-30 top-0 right-0 w-full h-screen transition-all duration-300 ease-out  opacity-0 invisible z-[9999] overflow-y-auto">
+        <div id="editModalContent" class="min-h-screen flex items-center justify-center p-2 absolute top-[50%] left-[50%] md:w-[80%] w-[100%] rounded-[10px] m-auto translate-x-[-50%] translate-y-[-50%]  transform transition-all duration-300 ease-out scale-95 opacity-0">
+            <div class="relative w-full max-w-2xl">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="flex justify-between items-center border border-slate-200 bg-slate-50 p-6">
+                        <h2 class="text-xl font-semibold text-[#3b5362]">Add Campus</h2>
+                        <p onclick="closeBtn()" class="close-btn flex justify-end cursor-pointer">
+                            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                            </svg>
+                        </p>
+                    </div>
+                    
+                    <form action="" method="post" enctype="multipart/form-data" 
+                          class="bg-slate-300 p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        
+                        <div class="flex gap-4 pt-6">
+                            <button type="button" onclick="profileFormContainer.style.display='none'" 
+                                    class="w-full px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-full transition-colors">
+                                Cancel
+                            </button>
+                            <button type="submit" 
+                                    class="w-full px-4 py-2 bg-slate-600 hover:bg-slate-500 text-white rounded-full transition-colors">
+                                Save 
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('profileFormContainer');
+        const content = document.getElementById('editModalContent');
+        // Open modal
+        function profBtn(){
+            wrapper.classList.remove('opacity-0', 'invisible');
+            content.classList.remove('opacity-0', 'scale-95');
+        }
+        // Close modal when clicking anywhere on wrapper
+        function closeBtn(){
+            wrapper.classList.add('opacity-0', 'invisible');
+            content.classList.add('opacity-0', 'scale-95');
+        }
+         // Prevent clicks on content from closing modal
+         content.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+
+{% endblock  %}
+

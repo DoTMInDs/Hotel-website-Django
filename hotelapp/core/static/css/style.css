@@ -8,6 +8,7 @@ html{
 }
 body{
     overflow-x: hidden;
+    font-family: 'Montserrat','Montserrat Alternates', 'Roboto', 'Quicksand','Outfit', sans-serif;
 }
 .slider{
     width: 100%;
@@ -53,7 +54,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 35px auto;
+    margin: 15px auto;
     
 }
 .logoText{
@@ -94,7 +95,7 @@ body{
     color: #fefefe;
     text-decoration: none;
     padding: 14px 20px;
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 500;
     letter-spacing: 0.1em;
     transition: color 0.5s;
@@ -104,7 +105,7 @@ body{
     content: "";
     position: absolute;
     left: 0;
-    bottom: -10px;
+    bottom: -5px;
     width: 0;
     height: 3px;
     background-color: #fcfbfb;
@@ -132,7 +133,7 @@ body{
     transition: background 0.5s;
     cursor: pointer;
     margin-right: 10px;
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 600;
 }
 .login a{
@@ -156,7 +157,7 @@ body{
     border-radius: 8px;
     transition: background 0.5s;
     cursor: pointer;
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 600;
     /* display: none; */
 }
@@ -188,7 +189,7 @@ body{
     color: #ffae17;
     letter-spacing: 0.9px;
     font-size: 1.5rem;
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     position: relative;
@@ -427,7 +428,7 @@ section{
 }
 .__navbar{
     background-color: #444;
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
 }
 .about-bg-container{
     width: 100%;

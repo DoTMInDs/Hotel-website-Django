@@ -3,26 +3,27 @@
 {% block main-content %}
     <section>
         <div class="__form_container">
-            <form action="" method="post" class="account-form">
-                <div class="">
-                    <h1 class="login-h1-text">Login</h1>
+            <form action="" method="post" class="account-form bg-slate-50 shadow border border-slate-200">
+                <div class="py-[1rem]">
+                    <h1 class="text-[#3b5362] text-center text-[22px] font-medium">Login</h1>
                 </div>
                 {% csrf_token %}  
                 <div class="">
-                    <div class="input-field">
-                        <label for="id_username" class="">Username</label>
-                        <input type="text" id="id_username" name="username" class="" placeholder="" required> 
+                    <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                        <i class="fa-solid fa-user absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                        <input type="text" id="id_username" name="username" class="bg-transparent pl-[2rem]" placeholder="Enter username..." required> 
                     </div>                
-                    <div class="input-field">
-                        <label for="id_password" class="">Password</label>
-                        <input type="password" id="id_password" name="password" class="" placeholder="" required> 
+                    <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                        <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                        <input type="password" id="id_password" name="password" class="bg-transparent pl-[2rem]" placeholder="Enter password..." required> 
+                        <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
                     </div>
                 </div>           
                 <p class="text-right"><a href="">Forgot password?</a></p>
                 <div class="form-btn">
-                    <button type="submit" class="f_btn">Login</button>
+                    <button type="submit" class="bg-slate-600 py-[0.6rem] text-slate-50 w-full block rounded-full">Login</button>
                 </div>
-                    <p class="create_account">Don't have an account? <a href="{% url "sign-up" %}" class="">Create account</a></p>
+                    <p class="text-center pt-[1rem]">Don't have an account? <a href="{% url "sign-up" %}" class="text-rose-500 hover:underline">Create account</a></p>
             </form>
         </div>
     </section>

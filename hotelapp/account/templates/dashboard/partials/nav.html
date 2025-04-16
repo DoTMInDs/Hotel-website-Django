@@ -1,0 +1,71 @@
+{% load static %}
+<nav class="flex w-full">
+    <aside  id="sideNav" class="sideNav group hover:w-[300px] w-[100px] md:w-[300px] fixed flex flex-col h-[100%] shadow-md rounded-r-[25px] bg-slate-100 left-0 p-[1rem] top-0 transition-all duration-300 z-50 transform translate-x-[-200px] md:translate-x-0">
+        <section class="nav-items space-y-4">
+            <a href="{% url "home" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+                <i class="fa fa-solid fa-home"></i>                    
+                <span class="md:block hidden group-hover:inline-block">Home</span>
+            </a>    
+            <a href="{% url "dashboard" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+                <i class="fa fa-solid fa-user-pen"></i>                    
+                <span class="md:block hidden group-hover:inline-block">Dashboard</span>
+            </a>    
+            <a href="{% url "add-room" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 19V13C2 12.55 2.09167 12.1417 2.275 11.775C2.45833 11.4083 2.7 11.0833 3 10.8V8C3 7.16667 3.29167 6.45833 3.875 5.875C4.45833 5.29167 5.16667 5 6 5H10C10.3833 5 10.7417 5.071 11.075 5.213C11.4083 5.355 11.7167 5.55067 12 5.8C12.2833 5.55 12.5917 5.35433 12.925 5.213C13.2583 5.07167 13.6167 5.00067 14 5H18C18.8333 5 19.5417 5.29167 20.125 5.875C20.7083 6.45833 21 7.16667 21 8V10.8C21.3 11.0833 21.5417 11.4083 21.725 11.775C21.9083 12.1417 22 12.55 22 13V19H20V17H4V19H2ZM13 10H19V8C19 7.71667 18.904 7.47933 18.712 7.288C18.52 7.09667 18.2827 7.00067 18 7H14C13.7167 7 13.4793 7.096 13.288 7.288C13.0967 7.48 13.0007 7.71733 13 8V10ZM5 10H11V8C11 7.71667 10.904 7.47933 10.712 7.288C10.52 7.09667 10.2827 7.00067 10 7H6C5.71667 7 5.47933 7.096 5.288 7.288C5.09667 7.48 5.00067 7.71733 5 8V10ZM4 15H20V13C20 12.7167 19.904 12.4793 19.712 12.288C19.52 12.0967 19.2827 12.0007 19 12H5C4.71667 12 4.47933 12.096 4.288 12.288C4.09667 12.48 4.00067 12.7173 4 13V15Z" fill="currentColor"/>
+              </svg>
+                <span class="md:block hidden group-hover:inline-block">Rooms</span>
+            </a>    
+            <a href="" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 13L20.704 11.704C20.252 11.2522 19.6391 10.9983 19 10.9983C18.3609 10.9983 17.748 11.2522 17.296 11.704L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 2H8C6.89543 2 6 2.89543 6 4V16C6 17.1046 6.89543 18 8 18H20C21.1046 18 22 17.1046 22 16V4C22 2.89543 21.1046 2 20 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+                <span class="md:block hidden group-hover:inline-block">Room Images</span>
+            </a>    
+            <a href="{% url "leads" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+                <i class="fa fa-solid fa-list-check"></i>                    
+                <span class="md:block hidden group-hover:inline-block">Leads Table</span>
+            </a>    
+            <a href="" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+                <i class="fa fa-solid fa-gears"></i>                    
+                <span class="md:block hidden group-hover:inline-block">Manage Hotel</span>
+            </a>    
+            <div class="absolute left-0 right-0 bottom-0 w-[80%] m-auto p-[1rem] space-y-4">
+                <a href="{% url "logout" %}" class="text-nowrap p-[1rem] w-full text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>                   
+                    <span class="md:block hidden group-hover:inline-block">Logout</span>
+                </a> 
+            </div>   
+        </section>
+    </aside>
+    <section class="w-[100%] fixed z-[30] top-0 right-0 left-0">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 h-auto ">
+            <div class="w-full flex justify-between items-center py-[1rem] px-[1rem] bg-slate-100 rounded-[15px] shadow-sm ">
+                <div class="flex gap-[0.5rem] items-center ">
+                      <img src="{% static 'image/assets/default.png' %}" class="w-[40px] h-[40px] rounded-full">
+                    <h4 class="text-slate-700 text-nowrap font-semibold">{{ hotels.name }} Afrigardens Hotel</h4>
+                </div>
+                <button onclick="menuToggle()" tabindex="0" class="cursor-pointer md:hidden block focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+</nav>
+
+  <script>
+      const sideNav = document.getElementById('sideNav');
+      function menuToggle() {
+          sideNav.classList.toggle('-translate-x-full');
+          sideNav.classList.toggle('translate-x-0');
+      }
+
+  </script>
+      
+
+
+
+

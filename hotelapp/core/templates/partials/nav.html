@@ -22,9 +22,9 @@
             </a>
           </li>
           <li>
-            <a href="" class="navv-link">
+            <a href="{% url "hotel" %}" class="navv-link">
               <i class="fa-solid fa-images"></i>
-            Gallery
+            Hotel
           </a>
           </li>
           <li>
@@ -45,16 +45,17 @@
      <div class="flex items-center gap-[2rem]">
       {% if user.is_authenticated %}
       <div class="user_wrapper">        
-        <div class="flex items-center">
-          <a href="#!" type="button" class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
-          </a>
-          <p class="text-[#fff]">{{ user.profilemodel.full_name }}</p>
+        <div onclick="profBtn()" class="flex items-center cursor-pointer">
+          <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+          <p class="text-[#fff]">Hello! @{{ user.profilemodel.user }}</p>
         </div>
       </div>
       {% else %}
       <div class="account">
-        <i id="signIn" class="fa-solid fa-right-to-bracket registerer"></i>
+        <a href="{% url "sign-up" %}" class="flex items-center gap-1 text-[#fff] hover:bg-orange-500 transition duration-200 px-[1rem] py-[0.5rem] rounded-full">
+          <i id="signIn" class="fa-regular fa-user "></i>
+          Sign Up
+        </a>
       </div>
       {% endif %}
       
@@ -70,58 +71,76 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen-lg-down">
-    <div class="modal-content">
-      <div class="flex justify-end p-[1.5rem]">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <div class="">
-              <div class="flex items-center gap-[1.5rem]">
-                <div class="">
-                  <img class="w-[50px] h-[50px] rounded-[50%] border border-amber object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
-                </div>
-                <div class="">
-                    <h2 class="text-[1.4rem] font-bold">{{ user.profilemodel.full_name }}</h2>
-                    <small class='text-[0.8rem] text-[#555555]'>Genius Level 1</small>
-                </div>
+<div onclick="closeBtn()" id="leadWrapper" class="fixed bg-gray-500 bg-opacity-70 top-0 right-0 w-full h-screen transition-all duration-300 ease-out opacity-0 invisible z-[9999]">
+  <div id="leadModalContent" class="absolute top-[50%] left-[50%] md:w-[80%] w-[95%]  translate-x-[-50%] translate-y-[-50%] transform transition-all duration-300 ease-out scale-95 opacity-0">
+    <div class="bg-white rounded-lg shadow-xl overflow-hidden p-4">
+      <p onclick="closeBtn()" class="close-btn flex justify-end cursor-pointer">
+        <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+        </svg>
+      </p>
+      <div class="">
+          <div class="flex items-center gap-[1.5rem]">
+            <div class="">
+              <img class="w-[50px] h-[50px] rounded-[50%] border border-amber object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+            </div>
+            <div class="">
+                <h2 class="text-[1.4rem] font-bold">{{ user.profilemodel.full_name }}</h2>
+                <small class='text-[0.8rem] text-[#555555]'>Genius Level 1</small>
+            </div>
+          </div>
+          <div class="mt-[2rem]">
+              <div class="i_icons">
+                  <a href="{% url "profile" %}" class="flex items-center gap-[2rem] p-[1rem] hover:bg-[#ebebeb]">
+                    <i class="fa-regular fa-user p_user"></i>
+                    <p class="">Manage account</p>
+                  </a>
               </div>
-              <div class="mt-[2rem]">
-                  <div class="i_icons">
-                      <a href="{% url "profile" %}" class="flex items-center gap-[2rem] p-[1rem] hover:bg-[#ebebeb]">
-                        <i class="fa-regular fa-user p_user"></i>
-                        <p class="">Manage account</p>
-                      </a>
-                  </div>
-                  <div class="i_icons">
-                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
-                        <i class="fa-solid fa-briefcase"></i>
-                        <p class="">Bookings & Tips</p>
-                      </a>
-                  </div>
-                  <div class="i_icons">
-                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
-                        <i class="fa-solid fa-user-pen"></i>
-                        <p class="">Reviews</p>
-                      </a>
-                  </div>
-                  <div class="i_icons">
-                      <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
-                        <i class="fa-regular fa-heart"></i>
-                        <p class="">Saved</p>
-                      </a>
-                  </div>
-                  <div class="i_icons">
-                      <a href="{% url "logout" %}" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        <p class="">Sign out</p>
-                      </a>
-                  </div>
+              <div class="i_icons">
+                  <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                    <i class="fa-solid fa-briefcase"></i>
+                    <p class="">Bookings & Tips</p>
+                  </a>
+              </div>
+              <div class="i_icons">
+                  <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                    <i class="fa-solid fa-user-pen"></i>
+                    <p class="">Reviews</p>
+                  </a>
+              </div>
+              <div class="i_icons">
+                  <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                    <i class="fa-regular fa-heart"></i>
+                    <p class="">Saved</p>
+                  </a>
+              </div>
+              <div class="i_icons">
+                  <a href="{% url "logout" %}" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <p class="">Sign out</p>
+                  </a>
               </div>
           </div>
-      </div>      
+      </div>
     </div>
   </div>
 </div>
 
+<script>
+    const wrapper = document.getElementById('leadWrapper');
+    const content = document.getElementById('leadModalContent');
+    // Open modal
+    function profBtn(){
+        wrapper.classList.remove('opacity-0', 'invisible');
+        content.classList.remove('opacity-0', 'scale-95');
+    }
+    // Close modal when clicking anywhere on wrapper
+    function closeBtn(){
+        wrapper.classList.add('opacity-0', 'invisible');
+        content.classList.add('opacity-0', 'scale-95');
+    }
+      // Prevent clicks on content from closing modal
+      content.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+</script>

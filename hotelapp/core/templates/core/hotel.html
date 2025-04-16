@@ -3,112 +3,179 @@
 {% block title %}Hotels{% endblock title %}
 {% block main-content %}
     {% include "partials/nav.html" %}
-    <section class="search_wrapper">
-        <div class="img_container">
-            <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
-        </div>
-        <form action="" class="search_form " method="get">
-            
-            <h2 class="h2_form_search">Search for a suitable hotel
-                <i class="fa-solid fa-hotel"></i>
-            </h2>
-            <div class="form_search_container">
-                <div class="search_input">
-                    <i class="fa-regular fa-user p_user"></i>
-                    <input type="search" name="search" class="search" placeholder="Hotel title">
-                </div>
-                <div class="search_input">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="search" name="loc-search" class="search" placeholder="Location">
-                </div>
+    <section class="w-[100%] md:w-[80%] m-auto ">
+        <div class="search_wrapper">
+            <div class="img_container after:rounded-[15px]">
+                <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image rounded-[15px]">
             </div>
-            <button type="submit" class="search_btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-            </button>
-        </form>
-    </section>
-    <section class="flex gap-[1rem] feature_secction">
-        <aside class="aside_section_search">
-            <div class="filter_wrapper">
-                <h2 class="filter_h2">
-                    <i class="fa-solid fa-filter"></i>
-                    Filter by</h2>
-                <div class="filter_list">
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox" >
-                        <a href="#!">Bath</a>                       
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">Resorts</a>
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">4 stars</a>
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">Breakfast included</a>
-                    </li>
-                </div>
-            </div>
-        </aside>
-        <main class="main_card_wrapper">
-            <div class="">
-                <h2 class="featured_h2">Featured Hotels
+            <form action="" class="search_form " method="get">
+                
+                <h2 class="h2_form_search">Search for a suitable hotel
                     <i class="fa-solid fa-hotel"></i>
                 </h2>
-                <div class="hotel_card_container">
-                    <div class="hotel_card_grid">
-                        {% for post in posts %}
-                            <div class="card_wrapper">
-                                <div class="img_card">
-                                    <img src="{{post.image.url}}" alt="" class="card_img1">
-                                    <p class="view_price" data-pk="{{post.pk}}">View price</p>
-                                </div>
-                                <div class="p-[1rem]">
-                                    <h2 class="hotel_name">{{post.name}}</h2>
-                                    <div class="hotel_card_content">
-                                        <div class="hotel_icons">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            <p class="hotel_location">{{post.location}}</p>
-                                        </div>
-                                        <div class="hotel_icons">
-                                            <i class="fa-regular fa-clock"></i>
-                                            <p class="hotel_location">{{post.dated_on}}</p>
-                                        </div>
-                                    </div>
-                                    <p id="priceTag-{{post.pk}}" class="price_tag">{{post.price}}</p>
-                                    <div class="hotel_btn gap-[0.5rem]">
-                                        <button class="hotel_btnn"><a href="{% url "contact" %}">BOOK A LEAD</a></button>
-                                        <button class="hotel_btnn">
-                                            <a href="{% url "detail" post.id %}">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </a>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}   
+                <div class="form_search_container">
+                    <div class="search_input">
+                        <i class="fa-regular fa-user p_user"></i>
+                        <input type="search" name="search" class="search" placeholder="Hotel hotel name">
                     </div>
-                    <div class="pagination">
-                        <span class="step-links">
-                            {% if posts.has_previous %}
-                                <a href="?page={{posts.previous_page_number}}">previous</a>
-                            {% endif %}
-                    
-                            <span class="current current_page">
-                                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
-                            </span>
-                    
-                            {% if posts.has_next %}
-                                <a href="?page={{posts.next_page_number}}">next</a>
-                            {% endif %}
-                        </span>
+                    <div class="search_input">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="search" name="loc-search" class="search" placeholder="Location">
                     </div>
                 </div>
+                <button type="submit" class="search_btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class="rounded-[15px] p-4 mt-[1rem] shadow">
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[600px]">
+                    <thead class="">
+                        <tr class="text-left text-slate-500 border-b border-slate-200 ">
+                            <th class="px-4 py-3 font-semibold text-sm">Hotel Name</th>
+                            <th class="px-4 py-3 font-semibold text-sm">Location</th>
+                            <th class="px-4 py-3 font-semibold text-sm">Contact</th>
+                            {% comment %} <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th> {% endcomment %}
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        {% for hotel in hotels %}
+                        <tr class="hover:bg-slate-100 rounded-[15px] transition-colors">
+                            <td class="px-4 py-3 text-slate-500 text-sm">
+                                <div class="flex items-center gap-2">
+                                    {% if hotel.logo %}
+                                        <img src="{{hotel.logo.url}}" alt="" class="w-8 h-8 rounded-full object-cover">
+                                        {% else %}
+                                        <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
+                                    {% endif %}
+                                    {{hotel.name}}
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-slate-500 text-sm"> {{hotel.location}}</td>
+                            <td class="px-4 py-3 text-slate-500 text-sm">{{hotel.mobile}} </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" class="px-4 py-6 text-center text-slate-400">
+                                No campuses found. Start by adding your first campus.
+                            </td>
+                        </tr> 
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-        </main>
+        </div>
+        <div class="flex justify-center items-center gap-8 my-[1rem]">
+            <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+           
+            <p class="text-slate-400">
+              Page <strong class="text-slate-400">1</strong> of&nbsp;<strong class="text-slate-400">10</strong>
+            </p>
+            
+            <button class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+        </div>
     </section>
-{% endblock %}
+    
+    {% endblock %}
+    {% comment %} <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+      <table class="w-full text-left table-auto min-w-max overflow-x-scroll">
+        <thead>
+          <tr>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                Logo
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                Hotel Name
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                Location
+              </p>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-slate-50 border-b border-slate-200">
+            <td class="p-4 py-5">
+                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">John Doe</p>
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">$1,200.00</p>
+            </td>
+          </tr>
+          <tr class="hover:bg-slate-50 border-b border-slate-200">
+            <td class="p-4 py-5">
+                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">Jane Smith</p>
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">$850.00</p>
+            </td>
+          </tr>
+          <tr class="hover:bg-slate-50 border-b border-slate-200">
+            <td class="p-4 py-5">
+                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">Acme Corp</p>
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">$2,500.00</p>
+            </td>
+          </tr>
+          <tr class="hover:bg-slate-50 border-b border-slate-200">
+            <td class="p-4 py-5">
+                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">Global Inc</p>
+            </td>
+            <td class="p-4 py-5">
+              <p class="text-sm text-slate-500">$4,750.00</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     
+      <div class="md:flex-row flex-col flex justify-between items-center gap-[1rem] px-4 py-3">
+        <div class="text-sm text-slate-500">
+          Showing <b>1-5</b> of 45
+        </div>
+        <div class="flex space-x-1">
+          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+            Prev
+          </button>
+          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-white bg-slate-800 border border-slate-800 rounded hover:bg-slate-600 hover:border-slate-600 transition duration-200 ease">
+            1
+          </button>
+          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+            2
+          </button>
+          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+            3
+          </button>
+          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+            Next
+          </button>
+        </div>
+      </div>
+    </div> {% endcomment %}

@@ -3,36 +3,33 @@
 {% block main-content %}
     <section>
         <div class="__form_container">
-            <form action="" method='post' class='account-form'>
-                <div class="">
-                    <h1 class="login-h1-text">Sign-Up</h1>
+            <form action="" method='post' class='account-form bg-slate-50 shadow border border-slate-200'>
+                <div class="py-[1rem]">
+                    <h1 class="text-[#3b5362] text-center text-[22px] font-medium">Sign-Up</h1>
                 </div>
                 {% csrf_token %}
-                
-                <div class="input-field">
-                    <label for="id_username" class="">Username</label>
-                    {{ form.username }}
-                    <small class='errorMess'>{{ form.username.errors }}</small>
-                </div>  
-                <div class="input-field">
-                    <label for="id_email" class="">Email</label>
-                    {{ form.email }}
-                    <small class='errorMess'>{{ form.email.errors }}</small>
-                </div>  
-                <div class="input-field">
-                    <label for="id_password1" class="">Passowrd</label>
-                    {{ form.password1 }} 
-                    <small class='errorMess'>{{ form.password1.errors }}</small>
-                </div>  
-                <div class="input-field">
-                    <label for="id_password2" class="">Confirm Passowrd</label>
-                    {{ form.password2 }}
-                    <small class='errorMess'>{{ form.password2.errors }}</small>
+                <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                    <i class="fa-solid fa-user absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                    <input type="text" id="id_username" name="username" class="bg-transparent pl-[2rem]" placeholder="Enter username..." required> 
+                </div>                
+                <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                    <i class="fa-solid fa-envelope absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                    <input type="email" id="id_email" name="email" class="bg-transparent pl-[2rem]" placeholder="Enter email..." required> 
                 </div> 
-                <div class="form-btn">
-                    <button type="submit" class="f_btn">Sign Up</button>
+                <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                    <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                    <input type="password" id="id_password" name="password1" class="bg-transparent pl-[2rem]" placeholder="Enter password..." required> 
+                    <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
+                </div> 
+                <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                    <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
+                    <input type="password" id="id_password" name="password2" class="bg-transparent pl-[2rem]" placeholder="Confirm password..." required> 
+                    <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
                 </div>
-                <p class="create_account">Already have an account? <a href="{% url "login" %}" class="">Sign In</a></p>
+                <div class="form-btn">
+                    <button type="submit" class="bg-slate-600 py-[0.6rem] text-slate-50 w-full block rounded-full">Sign Up</button>
+                </div>
+                <p class="text-center pt-[1rem]">Already have an account? <a href="{% url "login" %}" class="text-rose-500 hover:underline">Sign In</a></p>
             </form>
         </div>
     </section>

@@ -2,8 +2,9 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required 
 from django.core.paginator import Paginator,EmptyPage
 from django.db.models import Q
+from django.contrib import messages
 
-from .models import OurRooms,Rating,HotelPost
+from .models import OurRoom,Rating,HotelPost
 from account.forms import LeadForm
 
 # Create your views here.
@@ -24,9 +25,8 @@ def index(request):
     }
     return render(request, 'core/base.html',context)
 
-@login_required
 def about(request):
-    posts = OurRooms.objects.all()
+    posts = OurRoom.objects.all()
     ratings = Rating.objects.all()
     
     context = {
@@ -35,18 +35,17 @@ def about(request):
     }
     return render(request, 'core/about.html', context)
 
-@login_required
 def contact(request):
     form = LeadForm()
-    
     if request.method == 'POST':
         form = LeadForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('about')
+            messages.success(request, 'You message has been sent successfully!')
+            return redirect('contact')
         else:
-           form = LeadForm()        
-    
+            messages.error(request, 'Please fill in all fields correctly.')
+   
     context = {
         'form': form
     }
@@ -56,30 +55,20 @@ def contact(request):
 def booking(request):
     return render(request, 'core/booking.html')
 
-@login_required
-def hotel(request):
-    posts = HotelPost.objects.all()
-    p = Paginator(posts, 3)
-    
-    filter_query = request.GET.get('search') if request.GET.get('search') != None else ''
-    posts = HotelPost.objects.filter(
-        Q(name__icontains=filter_query) |
-        Q(location__icontains=filter_query)        
-    )
-   
-    page_num = request.GET.get("page", 1)
-    try:
-        page = p.page(page_num)
-    except EmptyPage:
-        page = p.page(1)
-        
+def room(request):
+    rooms = OurRoom.objects.all()
     context = {
-        'posts': page,
+        'rooms': rooms,
+    }
+    return render(request, 'core/room.html',context)
+
+def hotel(request):
+    hotels = HotelPost.objects.all()
+    context = {
+        'hotels': hotels,
     }
     return render(request, 'core/hotel.html',context)
 
-
-@login_required
 def detail(request, pk):
     posts = HotelPost.objects.get(id=pk)
     context = {

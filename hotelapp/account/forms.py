@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from .models import ProfileModel
 
-from core.models import Lead
+from core.models import Lead,OurRoom
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -29,8 +29,10 @@ class LeadForm(forms.ModelForm):
             'full_name',
             'email',
             'phone',
+            'hotel',
             'message'
         ]
+        exclude = ['hotel']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -45,3 +47,26 @@ class UserUpdateForm(forms.ModelForm):
             'nationality',
             'address',
         ]
+
+class OurRoomForm(forms.ModelForm):
+    class Meta:
+        model = OurRoom
+        fields = [
+            'room_type',
+            'price',
+            'available',
+            'amenities',
+            'check_in_time',
+            'check_out_time',
+            'max_guests',
+            'bed_type',
+            'bed_count',
+            'image',
+            'star_rating'
+        ]
+        exclude = ['hotel']
+        widgets = {
+            'amenities': forms.Textarea(attrs={'rows': 3}),
+            'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
+            'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
+        }

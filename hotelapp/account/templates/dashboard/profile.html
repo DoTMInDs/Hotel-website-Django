@@ -8,7 +8,7 @@
                 <h1 class="acc-setting-h1">Personal details</h1>
                 <p class="acc-setting-p">Update your information and find out how it's used.</p>
             </div>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" class="edit__profile_wrapper my-[30px] text-teal-500 transition-all duration-200 hover:text-teal-600 py-[4px] px-[8px] text-[15px] ">
+            <button onclick="profileBtn()" class="edit__profile_wrapper my-[30px] text-teal-500 transition-all duration-200 hover:text-teal-600 py-[4px] px-[8px] text-[15px] ">
                 <div class="edit__profile">
                     <i class="fa-regular fa-pen-to-square fa-xl ml-[10px]" style="#ffffff"></i>
                     Profile
@@ -51,70 +51,82 @@
     </section>
 
       <!-- Modal -->    
-  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen modal-fullscreen-lg-down">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile <i class="fa-regular fa-pen-to-square"></i></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="flex justify-center flex-col items-center w-full p-[10px] gap-[25px]">
-              <div class="w-[250px]">
-                  <img src="{{ user.profilemodel.profile.url }}" alt="profile.png" class="rounded-[50%] w-[250px] h-[250px] object-cover object-center">
-                </div>
-              <div class="w-[100%]">
-                <form action="" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="input-field">
-                        <label for="id_username" class="">Fullname</label>
-                        {{ p_form.full_name }}
-                        <small class='errorMess'>{{ form.full_name.errors }}</small>
-                    </div>
-                    <div class="input-field">
-                        <label for="id_username" class="">Email</label>
-                        {{ p_form.email }}
-                        <small class='errorMess'>{{ form.email.errors }}</small>
-                    </div>
-                    <div class="input-field">
-                        <label for="id_username" class="">Phone number</label>
-                        {{ p_form.phone }}
-                        <small class='errorMess'>{{ form.phone.errors }}</small>
-                    </div>
-                    <div class="input-field ">
-                        <label for="gender" class="">Gender</label> <br>
-                        <div class="form-select py-[0.8rem]" name="gender" id="">
-                            {{ p_form.gender }}
-                        </div>
-                    </div>
-                    <div class="input-field">
-                        <label for="profile" class="">Profile</label><br>
-                        {{ p_form.profile }}
-                    </div>
-                    <div class="input-field">
-                        <label for="id_username" class="">Nationality</label>
-                        {{ p_form.nationality }}
-                        <small class='errorMess'>{{ form.nationality.errors }}</small>
-                    </div>
-                    <div class="input-field">
-                        <label for="id_username" class="">Address</label>
-                        {{ p_form.address }}
-                        <small class='errorMess'>{{ form.address.errors }}</small>
-                    </div>
-
-                    <div class="modal-footer ">
-                      <div class="flex justify-center items-center w-full gap-[20px]">
-                        <button type="button" class="px-[50px] py-[12px] rounded bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
-                          <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded text-[#fff] text-[14px] font-medium">Save</button>
-                      </div>
-                    </div>
-                </form>
+  <div onclick="closeProfBtn()" id="ProfileWrapper" class="fixed bg-gray-500 bg-opacity-70 top-0 right-0 w-full h-screen transition-all duration-300 ease-out opacity-0 invisible z-[9999]">
+      <div id="ProfileModalContent" class="absolute top-[50%] left-[50%] md:w-[50%] w-[95%] m-auto  translate-x-[-50%] translate-y-[-50%] transform transition-all duration-300 ease-out scale-95 opacity-0">
+          <div class="max-w-2xl m-auto bg-slate-100 rounded-[10px] w-full flex justify-center flex-col items-center p-[20px] overflow-y-scroll">
+              <div class="flex justify-between w-full px-[20px] border-b border-slate-200 py-[0.5rem]">
+                  <h1 class="flex items-center gap-[0.5rem]">Edit Profile <i class="fa-regular fa-pen-to-square"></i></h1>
+                  <p onclick="closeProfBtn()" class="close-btn cursor-pointer">
+                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                    </svg>
+                  </p>
               </div>
-          </div>
-        </div>
+              <form action="" method="POST" enctype="multipart/form-data" class="bg-transparent w-full">
+                  {% csrf_token %}
+                  <div class="input-field">
+                      <label for="id_username" class="">Fullname</label>
+                      {{ p_form.full_name }}
+                      <small class='errorMess'>{{ form.full_name.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="id_username" class="">Email</label>
+                      {{ p_form.email }}
+                      <small class='errorMess'>{{ form.email.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="id_username" class="">Phone number</label>
+                      {{ p_form.phone }}
+                      <small class='errorMess'>{{ form.phone.errors }}</small>
+                  </div>
+                  <div class="input-field ">
+                      <label for="gender" class="">Gender</label> <br>
+                      <div class="form-select py-[0.8rem]" name="gender" id="">
+                          {{ p_form.gender }}
+                      </div>
+                  </div>
+                  <div class="input-field">
+                      <label for="profile" class="">Profile</label><br>
+                      {{ p_form.profile }}
+                  </div>
+                  <div class="input-field">
+                      <label for="id_username" class="">Nationality</label>
+                      {{ p_form.nationality }}
+                      <small class='errorMess'>{{ form.nationality.errors }}</small>
+                  </div>
+                  <div class="input-field">
+                      <label for="id_username" class="">Address</label>
+                      {{ p_form.address }}
+                      <small class='errorMess'>{{ form.address.errors }}</small>
+                  </div>
+
+                  <div class="modal-footer ">
+                    <div class="flex justify-center items-center w-full gap-[20px]">
+                      <button type="button" class="px-[50px] py-[12px] rounded bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
+                        <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded text-[#fff] text-[14px] font-medium">Save</button>
+                    </div>
+                  </div>
+              </form>
+            </div>
       </div>
-    </div>
   </div>
 
-   
+  <script>
+    const ProfileWrapper = document.getElementById('ProfileWrapper');
+    const ProfileContent = document.getElementById('ProfileModalContent');
+    // Open modal
+    function profileBtn(){
+        ProfileWrapper.classList.remove('opacity-0', 'invisible');
+        ProfileContent.classList.remove('opacity-0', 'scale-95');
+    }
+    // Close modal when clicking anywhere on ProfileWrapper
+    function closeProfBtn(){
+        ProfileWrapper.classList.add('opacity-0', 'invisible');
+        ProfileContent.classList.add('opacity-0', 'scale-95');
+    }
+      // Prevent clicks on ProfileContent from closing modal
+      ProfileContent.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+</script>
 {% endblock %}

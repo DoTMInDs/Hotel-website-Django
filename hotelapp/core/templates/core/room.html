@@ -1,0 +1,148 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block title %}Hotels{% endblock title %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section class="search_wrapper">
+        <div class="img_container">
+            <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
+        </div>
+        <form action="" class="search_form " method="get">
+            
+            <h2 class="h2_form_search">Search for a suitable rooms
+                <i class="fa-solid fa-hotel"></i>
+            </h2>
+            <div class="form_search_container">
+                <div class="search_input">
+                    <i class="fa-regular fa-user p_user"></i>
+                    <input type="search" name="search" class="search" placeholder="Hotel hotel name">
+                </div>
+                <div class="search_input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="search" name="loc-search" class="search" placeholder="Location">
+                </div>
+            </div>
+            <button type="submit" class="search_btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+        </form>
+    </section>
+    <section class="flex gap-[1rem] feature_secction">
+        <aside class="aside_section_search hidden md:block">
+            <div class="filter_wrapper">
+                <h2 class="filter_h2">
+                    <i class="fa-solid fa-filter"></i>
+                    Filter by</h2>
+                <div class="filter_list">
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox" >
+                        <a href="#!">Bath</a>                       
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">Resorts</a>
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">4 stars</a>
+                    </li>
+                    <li class="flex gap-[10px] items-center filter_link_input">
+                        <input type="checkbox" name="" id="" class="input_checkbox">
+                        <a href="#!">Breakfast included</a>
+                    </li>
+                </div>
+            </div>
+        </aside>
+        <main class="main_card_wrapper">
+            <div class="">
+                <h2 class="featured_h2">Featured Rooms
+                    <i class="fa-solid fa-hotel"></i>
+                </h2>
+                <div class="hotel_card_container">
+                    <div class="hotel_card_grid">
+                        {% for room in rooms %}
+                            <div class="card_wrapper">
+                                <div class="img_card">
+                                    <img src="{{room.image.url}}" alt="" class="card_img1">
+                                    <p class="view_price" data-pk="{{room.pk}}">View price</p>
+                                </div>
+                                <div class="p-[1rem]">
+                                    <div class="py-[0.5rem]">
+                                        <p class="text-slate-600 text-[14px] truncate flex justify-between items-center">{{room.hotel.name}}
+                                            <small class="text-orange-500">
+                                                {% for i in "12345" %}
+                                                    {% with i_num=i|add:"0" %}
+                                                    {% if i_num <= room.star_rating.star %}
+                                                        <i class="fas fa-star"></i>  <!-- Filled star -->
+                                                    {% else %}
+                                                        <i class="far fa-star"></i>  <!-- Empty star -->
+                                                    {% endif %}
+                                                    {% endwith %}
+                                                {% endfor %}
+                                            </small>
+                                        </p>
+                                        <h2 class="font-semibold text-[18px]">{{room.room_type}}</h2>
+                                    </div>
+                                    <div class="hotel_card_content">
+                                        <div class="text-[14px] text-[#3b5362] w-full overflow-hidden flex gap-[0.5rem] items-center">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p class="font-medium truncate">{{room.hotel.location}} ( <small class="text-slate-500">{{room.hotel.get_region_display}}</small> ) </p>
+                                        </div>
+                                        <div class="text-[14px] text-[#3b5362] flex gap-[0.5rem] items-center">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <p class="font-medium">{{ room.created_at|date:"H:i" }}</p>
+                                        </div>
+                                    </div>
+                                    <p id="priceTag-{{room.pk}}" class="price_tag">{{room.price}}</p>
+                                    <div class="hotel_btn gap-[0.5rem]">
+                                        <button class="hotel_btnn"><a href="#">BOOK ROOM</a></button>
+                                        <button class="hotel_btnn">
+                                            <a href="{% url "detail" room.id %}">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}   
+                    </div>
+                    
+                    <div class="flex justify-center items-center gap-8 mt-[1rem] mb-[2rem]">
+                        {% if posts.has_previous %}
+                            <a  href="?page={{posts.previous_page_number}}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            {% else %}
+                            <p disabled  class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                                </svg>
+                            </p>
+                        {% endif %}
+                       
+                        <p class="text-slate-700">
+                          Page <strong class="text-slate-600">{{ posts.number }}</strong> of&nbsp;<strong class="text-slate-600">{{ posts.paginator.num_pages }}</strong>
+                        </p>
+                        
+                        {% if posts.has_next %}
+                            <a href="?page={{posts.next_page_number}}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            {% else %}
+                            <p disabled  class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg>
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+{% endblock %}
