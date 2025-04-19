@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from .models import ProfileModel
 
-from core.models import Lead,OurRoom
+from core.models import Lead,OurRoom,Booking
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -70,3 +70,25 @@ class OurRoomForm(forms.ModelForm):
             'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
             'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
         }
+
+class BookRoomForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = [
+            'full_name',
+            'email',
+            'phone',
+            'message',
+            'check_in',
+            'check_out',
+        ]
+        widgets = {
+            'check_in': forms.DateInput(attrs={'type': 'date'}),
+            'check_out': forms.DateInput(attrs={'type': 'date'}),
+        }
+        def __init__(self, *args, **kwargs):
+            self.user = kwargs.pop('user', None)  
+            super(BookRoomForm, self).__init__(*args, **kwargs)
+            
+        
+    

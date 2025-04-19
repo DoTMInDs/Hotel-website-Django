@@ -2,9 +2,15 @@ from django.shortcuts import render,redirect
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from core.models import Lead,Manager,OurRoom
+from core.models import Booking,Manager,OurRoom
 from .forms import CreateUserForm,UserUpdateForm,OurRoomForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+def get_manager_hotel(user):
+    try:
+        return user.manager.hotel_post
+    except Manager.DoesNotExist:
+        return None
 # Create your views here.
 def login_user(request):
     if request.method == "POST":
@@ -56,51 +62,75 @@ def profile(request):
     }
     return render(request, 'dashboard/profile.html',context)
 
+@login_required
 def dashboard(request):
+    try:
+        manager = request.user.manager
+    except AttributeError:
+        messages.error(request, "You are not authorized to access the dashboard.")
+        return redirect('home')
     return render(request, 'dashboard/dashboard.html')
 
+@login_required
 def leads(request):
-    # try:   
-    #     manager = request.user.manager
-    # except Manager.DoesNotExist:
-    #     messages.error(request, "You do not have manager permissions.")
-    #     return redirect('dashboard')
-    # if not manager.hotel_post:
-    #     messages.error(request, "Your account is not linked to a hotel.")
-    #     return redirect('dashboard')
-    # leads = Lead.objects.filter(hotel=manager.hotel_post)
-
+    try:
+        manager = request.user.manager
+        hotel = manager.hotel_post
+    except (Manager.DoesNotExist, AttributeError):
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    leads = Booking.objects.filter(hotel=hotel.id).order_by('-created_at')
+    
+    paginator = Paginator(leads, 10)  # Show 10 leads per page
+    page_number = request.GET.get('page')
+    paginator = Paginator(leads, 10)
+    page_number = request.GET.get('page')
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+        
     context = {
-        # "leads":leads
+        "leads": page_obj,
+        "hotel": hotel,
+        "page_obj": page_obj, 
     }
     return render(request, 'dashboard/lead-table.html',context)
 
+@login_required
 def add_room(request):
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    rooms = OurRoom.objects.filter(hotel=hotel).order_by('-created_at')
+    
+    paginator = Paginator(rooms, 10)
+    page_number = request.GET.get('page')
     try:
-        manager = request.user.manager
-    except Manager.DoesNotExist:
-        messages.error(request, "You are not linked to a hotel.")
-        return redirect('dashboard')
-    
-    if not manager.hotel_post:
-        messages.error(request, "Your account is not linked to a hotel.")
-        return redirect('dashboard')
-    
-    hotel = manager.hotel_post
-    rooms = OurRoom.objects.filter(hotel=hotel)
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
     
     if request.method == "POST":
         form = OurRoomForm(request.POST, request.FILES)
         if form.is_valid():
            room = form.save(commit=False)
-           room.hotel = hotel  # Assign the hotel automatically
+           room.hotel = hotel  
            room.save()
+           messages.success(request, "Room added successfully!")
            return redirect('dashboard')
     else:
         form = OurRoomForm()  
     context = {
         "form":form,
-        "rooms":rooms
+        "rooms": page_obj,
+        "hotel": hotel,
+        "page_obj": page_obj, 
     }
     return render(request, "dashboard/add-room.html",context)
 

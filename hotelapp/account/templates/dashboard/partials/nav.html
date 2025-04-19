@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="flex w-full">
-    <aside  id="sideNav" class="sideNav group hover:w-[300px] w-[100px] md:w-[300px] fixed flex flex-col h-[100%] shadow-md rounded-r-[25px] bg-slate-100 left-0 p-[1rem] top-0 transition-all duration-300 z-50 transform translate-x-[-200px] md:translate-x-0">
-        <section class="nav-items space-y-4">
+    <section  id="dashboard_SideBar" class="dashboard_SideBar group hover:w-[300px] w-[100px] md:w-[300px] fixed flex flex-col h-[100%] shadow-md rounded-r-[25px] bg-slate-100 left-0 p-[1rem] top-0 mt-[0px] transition-all duration-300 z-50 transform translate-x-[0px] md:translate-x-0">
+        <div class="nav-items space-y-4">
             <a href="{% url "home" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-300 transition duration-300 bg-gray-200 rounded-[15px]">
                 <i class="fa fa-solid fa-home"></i>                    
                 <span class="md:block hidden group-hover:inline-block">Home</span>
@@ -39,29 +39,52 @@
                     <span class="md:block hidden group-hover:inline-block">Logout</span>
                 </a> 
             </div>   
-        </section>
-    </aside>
+        </div>
+    </section>
     <section class="w-[100%] fixed z-[30] top-0 right-0 left-0">
         <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 h-auto ">
             <div class="w-full flex justify-between items-center py-[1rem] px-[1rem] bg-slate-100 rounded-[15px] shadow-sm ">
                 <div class="flex gap-[0.5rem] items-center ">
-                      <img src="{% static 'image/assets/default.png' %}" class="w-[40px] h-[40px] rounded-full">
-                    <h4 class="text-slate-700 text-nowrap font-semibold">{{ hotels.name }} Afrigardens Hotel</h4>
+                    {% if request.user.manager.hotel_post.logo %}
+                        <img src="{{request.user.manager.hotel_post.logo.url}}" alt="" class="w-8 h-8 rounded-full object-cover">
+                        {% else %}
+                        <img src="{% static 'image/assets/default.png' %}" class="w-[40px] h-[40px] rounded-full">
+                    {% endif %}
+                    <h4 class="text-slate-700 text-nowrap font-semibold">{{ request.user.manager.hotel_post.name }} </h4>
                 </div>
-                <button onclick="menuToggle()" tabindex="0" class="cursor-pointer md:hidden block focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
+                <di onclick="menuToggle()" tabindex="0" class="cursor-pointer md:hidden focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
                     <i class="fa-solid fa-bars-staggered"></i>
-                </button>
+                </di>
             </div>
         </div>
     </section>
 </nav>
 
   <script>
-      const sideNav = document.getElementById('sideNav');
-      function menuToggle() {
-          sideNav.classList.toggle('-translate-x-full');
-          sideNav.classList.toggle('translate-x-0');
-      }
+    function menuToggle() {
+        const dashboard_SideBar = document.querySelector('.dashboard_SideBar');
+        if (dashboard_SideBar) {
+            dashboard_SideBar.classList.toggle('-translate-x-full');
+            dashboard_SideBar.classList.toggle('translate-x-0');
+            console.log('sidebar')
+            // Optional: Prevent body scrolling when dashboard_SideBar is open
+            document.body.classList.toggle('overflow-hidden');
+        }
+    }
+    
+    // Close dashboard_SideBar when clicking outside (optional)
+    document.addEventListener('click', function(event) {
+        const dashboard_SideBar = document.querySelector('.dashboard_SideBar');
+        const menuButton = document.querySelector('[onclick="menuToggle()"]');
+        
+        if (dashboard_SideBar && !dashboard_SideBar.contains(event.target) && event.target !== menuButton && !menuButton.contains(event.target)) {
+            if (!dashboard_SideBar.classList.contains('-translate-x-full')) {
+                dashboard_SideBar.classList.add('-translate-x-full');
+                dashboard_SideBar.classList.remove('translate-x-0');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+    });
 
   </script>
       

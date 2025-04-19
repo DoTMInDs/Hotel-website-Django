@@ -3,7 +3,8 @@ from django.core.validators import FileExtensionValidator, MinValueValidator, Ma
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 # Create your models here.
 
 class RegionChoices(models.TextChoices):
@@ -55,7 +56,7 @@ class OurRoom(models.Model):
         ('king', 'King'),
     ]
     hotel = models.ForeignKey(HotelPost, on_delete=models.CASCADE, related_name='rooms', null=True,blank=True)
-    room_type = models.CharField(max_length=200, unique=True)
+    room_type = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=10,decimal_places=2,validators=[MinValueValidator(0.01)])  # Prevent zero/negative prices
     description = models.TextField(null=True, blank=True)
     available = models.BooleanField(default=True, null=True)
@@ -110,7 +111,7 @@ class Lead(models.Model):
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
-    hotel = models.CharField(max_length=100, null=True)
+    hotel_name = models.CharField(max_length=100, null=True)
     message = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     
@@ -119,3 +120,24 @@ class Lead(models.Model):
     
     def __str__(self):
         return self.full_name
+    
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
+    hotel = models.ForeignKey(HotelPost, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
+    room = models.ForeignKey(OurRoom, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    check_in = models.DateField(null=True, blank=True)
+    check_out = models.DateField(null=True, blank=True)
+    message = models.TextField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    class Meta:
+        ordering = ('-created_at',)
+    
+    def __str__(self):
+        if self.room and self.hotel:
+            return f"Booking #{self.id} - {self.room.room_type} at {self.hotel.name}"
+        return f"Booking #{self.id}"
+        

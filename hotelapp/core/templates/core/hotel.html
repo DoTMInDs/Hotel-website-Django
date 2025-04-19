@@ -9,27 +9,42 @@
                 <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image rounded-[15px]">
             </div>
             <form action="" class="search_form " method="get">
-                
-                <h2 class="h2_form_search">Search for a suitable hotel
-                    <i class="fa-solid fa-hotel"></i>
+                <h2 class="h2_form_search">
+                  <i class="fa-solid fa-hotel"></i>
+                  Search for a suitable hotel
                 </h2>
                 <div class="form_search_container">
                     <div class="search_input">
-                        <i class="fa-regular fa-user p_user"></i>
-                        <input type="search" name="search" class="search" placeholder="Hotel hotel name">
+                        <i class="fa-regular fa-user "></i>
+                        <input type="search" name="search" class="bg-transparent" placeholder="Hotel name" value="{{ name_query }}">
                     </div>
                     <div class="search_input">
                         <i class="fa-solid fa-location-dot"></i>
-                        <input type="search" name="loc-search" class="search" placeholder="Location">
+                        <input type="search" name="loc-search" class="bg-transparent" placeholder="Location" value="{{ location_query }}">
                     </div>
                 </div>
                 <button type="submit" class="search_btn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Search
                 </button>
+                {% if name_query or location_query %}
+                <a href="{% url 'room' %}" class="text-sm text-slate-50  hover:text-red-500 mt-2 flex gap-[0.5rem] justify-center items-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.57001 3H21.43L14.5 12.817V21H9.50001V12.817L2.57001 3ZM6.43001 5L11.5 12.183V19H12.5V12.183L17.57 5H6.43001ZM17.88 13.465L20 15.586L22.122 13.465L23.536 14.879L21.415 17L23.536 19.122L22.122 20.536L20 18.414L17.88 20.536L16.465 19.121L18.586 17.001L16.465 14.879L17.88 13.465Z" fill="currentColor"/>
+                    </svg>
+                    Clear filters
+                </a>
+                {% endif %}
             </form>
         </div>
         <div class="rounded-[15px] p-4 mt-[1rem] shadow">
+            {% if name_query or location_query %}
+              <p class="mb-4 text-sm text-gray-600">
+                  Showing results for:
+                  {% if name_query %}<span class="font-medium">"{{ name_query }}"</span>{% endif %}
+                  {% if location_query %}<span class="font-medium"> in "{{ location_query }}"</span>{% endif %}
+              </p>
+            {% endif %}
             <div class="overflow-x-auto">
                 <table class="w-full min-w-[600px]">
                     <thead class="">
@@ -59,7 +74,7 @@
                         {% empty %}
                         <tr>
                             <td colspan="4" class="px-4 py-6 text-center text-slate-400">
-                                No campuses found. Start by adding your first campus.
+                                No hotels found.
                             </td>
                         </tr> 
                         {% endfor %}
@@ -67,115 +82,42 @@
                 </table>
             </div>
         </div>
+
+        {% if hotels.paginator.num_pages > 1 %}
         <div class="flex justify-center items-center gap-8 my-[1rem]">
-            <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-              </svg>
-            </button>
+            {% if hotels.has_previous %}
+                <a href="?page={{ hotels.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+            {% else %}
+                <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+            {% endif %}
            
             <p class="text-slate-400">
-              Page <strong class="text-slate-400">1</strong> of&nbsp;<strong class="text-slate-400">10</strong>
+              Page <strong class="text-slate-400">{{ hotels.number }}</strong> of <strong class="text-slate-400">{{ hotels.paginator.num_pages }}</strong>
             </p>
             
-            <button class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-              </svg>
-            </button>
+            {% if hotels.has_next %}
+                <a href="?page={{ hotels.next_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+            {% else %}
+                <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+            {% endif %}
         </div>
+        {% endif %}
     </section>
+  {% endblock %}
     
-    {% endblock %}
-    {% comment %} <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
-      <table class="w-full text-left table-auto min-w-max overflow-x-scroll">
-        <thead>
-          <tr>
-            <th class="p-4 border-b border-slate-200 bg-slate-50">
-              <p class="text-sm font-normal leading-none text-slate-500">
-                Logo
-              </p>
-            </th>
-            <th class="p-4 border-b border-slate-200 bg-slate-50">
-              <p class="text-sm font-normal leading-none text-slate-500">
-                Hotel Name
-              </p>
-            </th>
-            <th class="p-4 border-b border-slate-200 bg-slate-50">
-              <p class="text-sm font-normal leading-none text-slate-500">
-                Location
-              </p>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="hover:bg-slate-50 border-b border-slate-200">
-            <td class="p-4 py-5">
-                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">John Doe</p>
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">$1,200.00</p>
-            </td>
-          </tr>
-          <tr class="hover:bg-slate-50 border-b border-slate-200">
-            <td class="p-4 py-5">
-                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">Jane Smith</p>
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">$850.00</p>
-            </td>
-          </tr>
-          <tr class="hover:bg-slate-50 border-b border-slate-200">
-            <td class="p-4 py-5">
-                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">Acme Corp</p>
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">$2,500.00</p>
-            </td>
-          </tr>
-          <tr class="hover:bg-slate-50 border-b border-slate-200">
-            <td class="p-4 py-5">
-                <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">Global Inc</p>
-            </td>
-            <td class="p-4 py-5">
-              <p class="text-sm text-slate-500">$4,750.00</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-     
-      <div class="md:flex-row flex-col flex justify-between items-center gap-[1rem] px-4 py-3">
-        <div class="text-sm text-slate-500">
-          Showing <b>1-5</b> of 45
-        </div>
-        <div class="flex space-x-1">
-          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-            Prev
-          </button>
-          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-white bg-slate-800 border border-slate-800 rounded hover:bg-slate-600 hover:border-slate-600 transition duration-200 ease">
-            1
-          </button>
-          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-            2
-          </button>
-          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-            3
-          </button>
-          <button class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
-            Next
-          </button>
-        </div>
-      </div>
-    </div> {% endcomment %}

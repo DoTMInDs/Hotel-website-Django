@@ -318,7 +318,7 @@ body{
     width: 80%;
     margin: auto;
     text-align: center;
-    background: #444;
+    /* background: #444; */
     position: absolute;
     top: 120px;
     left: 0;
@@ -337,7 +337,7 @@ body{
     display: block;
    }
    .nav_v.showing{
-    height: 500px;
+    height: 600px;
     opacity: 1;
     transition: height 300ms ease, 
                 opacity 300ms ease;
@@ -427,7 +427,6 @@ section{
     /* margin-bottom: 2rem; */
 }
 .__navbar{
-    background-color: #444;
     padding: 1rem 1rem;
 }
 .about-bg-container{
@@ -981,6 +980,7 @@ textarea{
     margin-top: 10px;
 }
 .card_wrapper{
+    width: 100%;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 .hotel_name{

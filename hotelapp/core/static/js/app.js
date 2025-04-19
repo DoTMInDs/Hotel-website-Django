@@ -1,14 +1,11 @@
-
-
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
 mobileMenu.addEventListener('click', () => {
+    console.log('clicked');
     mobileMenu.classList.toggle('change');
     navLinks.classList.toggle('showing');
 });
-
-
 
 const viewPrices = document.querySelectorAll('.view_price');
 const priceTag = document.getElementById('priceTag');
@@ -19,6 +16,4 @@ for (const viewPrice of viewPrices) {
         priceTag.classList.toggle('active-price-tag')
     })
 }
-
-
 //------------- LOGIN-&-SIGN-UP-section----------------------//

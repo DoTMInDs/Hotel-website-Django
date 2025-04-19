@@ -8,28 +8,35 @@
             <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
         </div>
         <form action="" class="search_form " method="get">
-            
             <h2 class="h2_form_search">Search for a suitable rooms
                 <i class="fa-solid fa-hotel"></i>
             </h2>
             <div class="form_search_container">
                 <div class="search_input">
                     <i class="fa-regular fa-user p_user"></i>
-                    <input type="search" name="search" class="search" placeholder="Hotel hotel name">
+                    <input type="search" name="search" class="search bg-transparent" placeholder="Hotel hotel name" value="{{ name_query }}">
                 </div>
                 <div class="search_input">
                     <i class="fa-solid fa-location-dot"></i>
-                    <input type="search" name="loc-search" class="search" placeholder="Location">
+                    <input type="search" name="loc-search" class="search bg-transparent" placeholder="Location" value="{{ location_query }}">
                 </div>
             </div>
             <button type="submit" class="search_btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Search
             </button>
+            {% if name_query or location_query %}
+            <a href="{% url 'room' %}" class="text-sm text-slate-50  hover:text-red-500 mt-2 flex gap-[0.5rem] justify-center items-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.57001 3H21.43L14.5 12.817V21H9.50001V12.817L2.57001 3ZM6.43001 5L11.5 12.183V19H12.5V12.183L17.57 5H6.43001ZM17.88 13.465L20 15.586L22.122 13.465L23.536 14.879L21.415 17L23.536 19.122L22.122 20.536L20 18.414L17.88 20.536L16.465 19.121L18.586 17.001L16.465 14.879L17.88 13.465Z" fill="currentColor"/>
+                </svg>
+                Clear filters
+            </a>
+            {% endif %}
         </form>
     </section>
     <section class="flex gap-[1rem] feature_secction">
-        <aside class="aside_section_search hidden md:block">
+        {% comment %} <aside class="aside_section_search hidden md:block">
             <div class="filter_wrapper">
                 <h2 class="filter_h2">
                     <i class="fa-solid fa-filter"></i>
@@ -53,14 +60,23 @@
                     </li>
                 </div>
             </div>
-        </aside>
+        </aside> {% endcomment %}
+
         <main class="main_card_wrapper">
+            {% if name_query or location_query %}
+            <p class="mb-4 text-sm text-gray-600">
+                Showing results for:
+                {% if name_query %}<span class="font-medium capitalize">"{{ name_query }}"</span>{% endif %}
+                {% if location_query %}<span class="font-medium capitalize"> in "{{ location_query }}"</span>{% endif %}
+            </p>
+          {% endif %}
             <div class="">
                 <h2 class="featured_h2">Featured Rooms
                     <i class="fa-solid fa-hotel"></i>
                 </h2>
+
                 <div class="hotel_card_container">
-                    <div class="hotel_card_grid">
+                    <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-[1rem]">
                         {% for room in rooms %}
                             <div class="card_wrapper">
                                 <div class="img_card">
@@ -96,9 +112,9 @@
                                     </div>
                                     <p id="priceTag-{{room.pk}}" class="price_tag">{{room.price}}</p>
                                     <div class="hotel_btn gap-[0.5rem]">
-                                        <button class="hotel_btnn"><a href="#">BOOK ROOM</a></button>
+                                        <button onclick="BookRoomBtn('{{ room.id }}')" class="hotel_btnn">BOOK ROOM</button>
                                         <button class="hotel_btnn">
-                                            <a href="{% url "detail" room.id %}">
+                                            <a href="{% url "room-detail" room.hotel.id %}">
                                                 <i class="fa-solid fa-eye"></i>
                                             </a>
                                         </button>
@@ -109,40 +125,120 @@
                     </div>
                     
                     <div class="flex justify-center items-center gap-8 mt-[1rem] mb-[2rem]">
-                        {% if posts.has_previous %}
-                            <a  href="?page={{posts.previous_page_number}}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        {% if rooms.has_previous %}
+                            <a href="?page={{ rooms.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                     <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                            {% else %}
-                            <p disabled  class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        {% else %}
+                            <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                     <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                                 </svg>
-                            </p>
+                            </button>
                         {% endif %}
-                       
+                    
                         <p class="text-slate-700">
-                          Page <strong class="text-slate-600">{{ posts.number }}</strong> of&nbsp;<strong class="text-slate-600">{{ posts.paginator.num_pages }}</strong>
+                            Page <strong class="text-slate-600">{{ rooms.number }}</strong> of <strong class="text-slate-600">{{ rooms.paginator.num_pages }}</strong>
                         </p>
                         
-                        {% if posts.has_next %}
-                            <a href="?page={{posts.next_page_number}}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        {% if rooms.has_next %}
+                            <a href="?page={{ rooms.next_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                     <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                            {% else %}
-                            <p disabled  class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                        {% else %}
+                            <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                     <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                                 </svg>
-                            </p>
+                            </button>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </main>
     </section>
+
+    <div onclick="closeBtn()" id="bookRoomWrapper" class="fixed bg-gray-500 bg-opacity-70 top-0 right-0 w-full h-screen transition-all duration-300 ease-out opacity-0 invisible z-[9999]">
+        <div id="bookRoomModalContent" class="absolute top-[50%] left-[50%] md:w-[80%] w-[95%]  translate-x-[-50%] translate-y-[-50%] transform transition-all duration-300 ease-out scale-95 opacity-0">
+          <div class="w-full max-w-2xl m-auto">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden p-4">
+              <p onclick="closeBtn()" class="close-btn flex justify-end cursor-pointer">
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                </svg>
+              </p>
+              <form action="" method="post" class="bg-transparent">
+                  {% if messages %}
+                    <div class="my-2 text-center">
+                        {% for message in messages %}
+                            <p class="text-red-500 text-center">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                  {% endif %}
+                  {% csrf_token %}
+                  <input type="hidden" name="room" id="roomIdInput" value="">
+                  <div class="flex text-[#3b5362] text-[22px] gap-[0.5rem] justify-center items-center mb-[1rem]">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <h1 class="text-center ">Book a Room</h1>
+                  </div>
+                  <div class="relative border border-slate-200 mb-[1rem] rounded-md">
+                      <i class="fa-solid fa-user text-[#3b5362] absolute left-[10px] top-[35%]"></i>
+                      <input type="text" name="full_name" id="full_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Full name" >
+                  </div>
+                  <div class="relative border border-slate-200 mb-[1rem]">
+                      <i class="fa-solid fa-envelope text-[#3b5362] absolute left-[10px] top-[35%]"></i>
+                      <input type="email" name="email" id="email" placeholder="Email" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
+                  </div>
+                  <div class="relative border border-slate-200 mb-[1rem]">
+                    <i class="fa-solid fa-phone text-[#3b5362] absolute left-[10px] top-[35%]"></i>
+                      <input type="tel" name="phone" id="phone" placeholder="Phone" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
+                  </div>
+                  <div class="grid grid-cols-2 gap-4 mb-[1rem]">
+                    <div class="relative border border-slate-200 rounded-md">
+                        <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in</label>
+                        <input type="date" name="check_in" required class="w-full p-2">
+                    </div>
+                    <div class="relative border border-slate-200 rounded-md">
+                        <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-out</label>
+                        <input type="date" name="check_out" required class="w-full p-2">
+                    </div>
+                  </div>
+                  <div class="border border-slate-200 mb-[1rem]">
+                      <textarea name="message" id="message" cols="30" rows="5" class="w-full border border-slate-400 rounded-md p-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Message"></textarea>
+                  </div>
+                  {% if user.is_authenticated %}
+                      <button type="submit" class="block w-full rounded-full bg-slate-600 text-slate-50 py-[0.8rem]">Confirm Booking</button>
+                    {% else %}
+                    <p class="text-center mt-[1rem]">Please <a href="{% url 'login' %}" class="text-red-500 hover:underline">Sign in</a> to Book a room!!</p>
+                    {% endif %}
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const Bwrapper = document.getElementById('bookRoomWrapper');
+        const Bcontent = document.getElementById('bookRoomModalContent');
+        // Open modal
+        function BookRoomBtn(roomId){
+            document.getElementById('roomIdInput').value = roomId;
+            Bwrapper.classList.remove('opacity-0', 'invisible');
+            Bcontent.classList.remove('opacity-0', 'scale-95');
+        }
+        // Close modal when clicking anywhere on Bwrapper
+        function closeBtn(){
+            Bwrapper.classList.add('opacity-0', 'invisible');
+            Bcontent.classList.add('opacity-0', 'scale-95');
+        }
+         // Prevent clicks on Bcontent from closing modal
+         Bcontent.addEventListener('click', (e) => {
+            e.stopPropagation();
+          });
+      </script>
+
 {% endblock %}

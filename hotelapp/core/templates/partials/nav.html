@@ -1,6 +1,6 @@
 {% load static %}
 <nav>
-  <div class="__navbar">
+  <div class="__navbar bg-gray-700">
       <div class="logo">
           <a href="{% url "home" %}" class="flex items-center">
             <img src="{% static 'image/assets/hotel_48dp_FILL0_wght400_GRAD0_opsz48.png' %}" class="hotel" alt="">
@@ -8,7 +8,7 @@
           </a>
         </div>
       <div class="list_t">
-        <ul class="nav_v no-search" id="nav-links">
+        <ul class="nav_v no-search bg-gray-700" id="nav-links">
           <li class="color-active">
             <a href="{% url "home" %}" class="navv-link">
               <i class="fa-solid fa-house-chimney"></i>
@@ -28,9 +28,9 @@
           </a>
           </li>
           <li>
-            <a href="{% url "booking" %}" class="navv-link">
+            <a href="{% url "my_booking" %}" class="navv-link">
               <i class="fa-regular fa-calendar-check"></i>
-              Booking
+              Bookings
             </a>
           </li>
           <li>
@@ -39,6 +39,14 @@
               Contact
             </a>
           </li>
+          {% if user.manager.user.is_authenticated%}
+              <li>
+                <a href="{% url "dashboard" %}" class="navv-link">
+                  <i class="fa-solid fa-chart-pie"></i>
+                  Dashboard
+                </a>
+              </li>
+          {% endif %}
         </ul>
       </div>     
       
@@ -82,7 +90,7 @@
       <div class="">
           <div class="flex items-center gap-[1.5rem]">
             <div class="">
-              <img class="w-[50px] h-[50px] rounded-[50%] border border-amber object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+              <img class="w-[50px] h-[50px] rounded-[50%] border border-amber object-cover object-center mr-[10px]" src=" {{ profile.profilemodel.url }} " alt="profile.img">
             </div>
             <div class="">
                 <h2 class="text-[1.4rem] font-bold">{{ user.profilemodel.full_name }}</h2>
@@ -106,12 +114,6 @@
                   <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
                     <i class="fa-solid fa-user-pen"></i>
                     <p class="">Reviews</p>
-                  </a>
-              </div>
-              <div class="i_icons">
-                  <a href="" class='flex gap-[2rem] items-center p-[1rem] hover:bg-[#ebebeb]'>
-                    <i class="fa-regular fa-heart"></i>
-                    <p class="">Saved</p>
                   </a>
               </div>
               <div class="i_icons">
