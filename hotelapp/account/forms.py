@@ -52,15 +52,11 @@ class OurRoomForm(forms.ModelForm):
     class Meta:
         model = OurRoom
         fields = [
+            'room_number',
             'room_type',
             'price',
-            'available',
-            'amenities',
-            'check_in_time',
-            'check_out_time',
+            'status',
             'max_guests',
-            'bed_type',
-            'bed_count',
             'image',
             'star_rating'
         ]
@@ -81,6 +77,8 @@ class BookRoomForm(forms.ModelForm):
             'message',
             'check_in',
             'check_out',
+            'check_in_time',
+            'check_out_time',
         ]
         widgets = {
             'check_in': forms.DateInput(attrs={'type': 'date'}),

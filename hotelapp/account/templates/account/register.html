@@ -4,6 +4,15 @@
     <section>
         <div class="__form_container">
             <form action="" method='post' class='account-form bg-slate-50 shadow border border-slate-200'>
+                {% if messages %}
+                    <div class="mb-4">
+                        {% for message in messages %}
+                            <div class="p-3 rounded text-center {% if message.tags == 'error' %} text-red-500{% else %} text-green-500{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div class="py-[1rem]">
                     <h1 class="text-[#3b5362] text-center text-[22px] font-medium">Sign-Up</h1>
                 </div>
@@ -18,13 +27,13 @@
                 </div> 
                 <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
                     <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
-                    <input type="password" id="id_password" name="password1" class="bg-transparent pl-[2rem]" placeholder="Enter password..." required> 
-                    <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
+                    <input type="password" id="id_password1" name="password1" class="bg-transparent pl-[2rem]" placeholder="Enter password..." required> 
+                    <i onclick="eyeToggle1(this)" class="fa-solid fa-eye-slash absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
                 </div> 
                 <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
                     <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
-                    <input type="password" id="id_password" name="password2" class="bg-transparent pl-[2rem]" placeholder="Confirm password..." required> 
-                    <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
+                    <input type="password" id="id_password2" name="password2" class="bg-transparent pl-[2rem]" placeholder="Confirm password..." required> 
+                    <i onclick="eyeToggle2(this)" class="fa-solid fa-eye-slash absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
                 </div>
                 <div class="form-btn">
                     <button type="submit" class="bg-slate-600 py-[0.6rem] text-slate-50 w-full block rounded-full">Sign Up</button>
@@ -33,4 +42,31 @@
             </form>
         </div>
     </section>
+
+    <script>
+        const password1 = document.getElementById('id_password1');
+        const password2 = document.getElementById('id_password2');
+        function eyeToggle1(icon) {
+            if(password1.type === 'password') {
+                password1.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                password1.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+        function eyeToggle2(icon) {
+            if(password2.type === 'password') {
+                password2.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                password2.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 {% endblock  %}

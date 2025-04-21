@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 User = get_user_model()
 # Create your models here.
 
@@ -33,6 +34,13 @@ class Rating(models.Model):
     def __str__(self):
         return f"{self.star}★"
 
+class Amenity(models.Model):
+    name = models.CharField(max_length=50, null=True)
+    description = models.TextField(null=True,blank=True)
+    
+    def __str__(self):
+        return self.name
+    
 class HotelPost(models.Model):
     name = models.CharField(max_length=200)
     mobile = models.CharField(max_length=13, unique=True, null=True)
@@ -55,19 +63,22 @@ class OurRoom(models.Model):
         ('queen', 'Queen'),
         ('king', 'King'),
     ]
+    STATUS_CHOICES = (
+        ('A', 'Available'),
+        ('M', 'Maintenance'),
+        ('O', 'Occupied'),
+    )
     hotel = models.ForeignKey(HotelPost, on_delete=models.CASCADE, related_name='rooms', null=True,blank=True)
-    room_type = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=10,decimal_places=2,validators=[MinValueValidator(0.01)])  # Prevent zero/negative prices
-    description = models.TextField(null=True, blank=True)
-    available = models.BooleanField(default=True, null=True)
-    amenities = models.TextField(blank=True, null=True, help_text="Comma-separated list of amenities")
+    amenities = models.ManyToManyField(Amenity, blank=True)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='A',null=True)
+    check_in_date = models.DateField(auto_now_add=True,null=True)
+    check_out_date = models.DateField(auto_now_add=True,null=True)
     check_in_time = models.TimeField(default=timezone.datetime.strptime('15:00', '%H:%M').time())  # 3 PM
     check_out_time = models.TimeField(default=timezone.datetime.strptime('11:00', '%H:%M').time())  # 11 AM
     max_guests = models.PositiveIntegerField(default=2,validators=[MinValueValidator(1), MaxValueValidator(10)])
-    bed_type = models.CharField(max_length=100,choices=BED_TYPE_CHOICES,default='double')
-    bed_count = models.PositiveIntegerField(default=1,validators=[MinValueValidator(1)])
-    room_size = models.CharField(max_length=50, blank=True, null=True, help_text="e.g., 25 m²")
-    room_view = models.CharField(max_length=100, blank=True, null=True, help_text="e.g., Ocean View")
+    room_type = models.CharField(max_length=100,choices=BED_TYPE_CHOICES,default='double')
+    room_number = models.CharField(max_length=10, null=True)
     image = models.ImageField(upload_to='rooms/',validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'webp'])])
     star_rating = models.ForeignKey(Rating, on_delete=models.PROTECT)  # Prevent accidental rating deletion
     created_at = models.DateTimeField(auto_now_add=True, null=True)
@@ -78,12 +89,41 @@ class OurRoom(models.Model):
         verbose_name = 'Room'
         verbose_name_plural = 'Rooms'
         indexes = [
-            models.Index(fields=['available', 'price']),
-            models.Index(fields=['bed_type', 'max_guests']),
+            models.Index(fields=['status', 'price']),
+            models.Index(fields=['room_number', 'max_guests']),
         ]
 
     def __str__(self):
-        return f"{self.room_type} - {self.bed_type} Bed"
+        return f"{self.room_number} - ({self.get_room_type_display()})"
+
+
+    
+# class Reservation(models.Model):
+#     STATUS_CHOICES = (
+#         ('C', 'Confirmed'),
+#         ('I', 'Checked-in'),
+#         ('O', 'Checked-out'),
+#         ('X', 'Cancelled'),
+#     )
+#     guest = models.ForeignKey('Guest', on_delete=models.CASCADE)
+#     room = models.ForeignKey(OurRoom, on_delete=models.CASCADE)
+#     check_in = models.DateField()
+#     check_out = models.DateField()
+#     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='C')
+#     created_at = models.DateTimeField(auto_now_add=True)
+    
+#     def clean(self):
+#         # Validate that check_out is after check_in
+#         if self.check_out <= self.check_in:
+#             raise ValidationError("Check-out date must be after check-in date")
+        
+#         # Check room availability if this is a new reservation
+#         if not self.pk and not is_room_available(self.room.id, self.check_in, self.check_out):
+#             raise ValidationError("Room is not available for the selected dates")
+    
+#     def __str__(self):
+#         return f"Reservation {self.id} for {self.guest}"
+
 
 class OurRoomsImage(models.Model):
     room = models.ForeignKey(OurRoom, on_delete=models.CASCADE)
@@ -128,6 +168,8 @@ class Booking(models.Model):
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+    check_in_time = models.TimeField(default=timezone.datetime.strptime('15:00', '%H:%M').time())  # 3 PM
+    check_out_time = models.TimeField(default=timezone.datetime.strptime('11:00', '%H:%M').time())  # 11 AM
     check_in = models.DateField(null=True, blank=True)
     check_out = models.DateField(null=True, blank=True)
     message = models.TextField(null=True)
@@ -138,6 +180,6 @@ class Booking(models.Model):
     
     def __str__(self):
         if self.room and self.hotel:
-            return f"Booking #{self.id} - {self.room.room_type} at {self.hotel.name}"
+            return f"Booking #{self.id} - {self.room.room_number} at {self.hotel.name}"
         return f"Booking #{self.id}"
         

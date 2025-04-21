@@ -17,6 +17,7 @@
                                 <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Email</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Room</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Check In Time</th>
                                 <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
                             </tr>
                         </thead>
@@ -25,7 +26,8 @@
                             <tr class="hover:bg-gray-300 rounded-[15px] transition-colors">
                                 <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.full_name }} </td>
                                 <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.email }} </td>                                
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.hotel }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.room.room_type }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.room.check_in_time }} </td>
                                 <td class="px-4 py-3 text-right">
                                     <div class="flex gap-2 justify-end">    
                                         <p onclick="leadBtn()" 

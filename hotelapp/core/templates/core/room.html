@@ -36,8 +36,8 @@
         </form>
     </section>
     <section class="flex gap-[1rem] feature_secction">
-        {% comment %} <aside class="aside_section_search hidden md:block">
-            <div class="filter_wrapper">
+        <aside class="aside_section_search hidden ">
+            <div class="filter_wrapper ">
                 <h2 class="filter_h2">
                     <i class="fa-solid fa-filter"></i>
                     Filter by</h2>
@@ -60,7 +60,7 @@
                     </li>
                 </div>
             </div>
-        </aside> {% endcomment %}
+        </aside>
 
         <main class="main_card_wrapper">
             {% if name_query or location_query %}
@@ -76,10 +76,11 @@
                 </h2>
 
                 <div class="hotel_card_container">
-                    <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-[1rem]">
+                    <div class="hotel_card_grid">
                         {% for room in rooms %}
                             <div class="card_wrapper">
                                 <div class="img_card">
+                                    <small class="absolute text-slate-50 top-0 right-0 {% if room.status == 'A' %}bg-green-500 {% elif room.status == 'M' %}bg-yellow-500 {% else %}bg-red-500{% endif %} p-[0.5rem]">{{room.get_status_display}}</small>
                                     <img src="{{room.image.url}}" alt="" class="card_img1">
                                     <p class="view_price" data-pk="{{room.pk}}">View price</p>
                                 </div>
@@ -114,7 +115,7 @@
                                     <div class="hotel_btn gap-[0.5rem]">
                                         <button onclick="BookRoomBtn('{{ room.id }}')" class="hotel_btnn">BOOK ROOM</button>
                                         <button class="hotel_btnn">
-                                            <a href="{% url "room-detail" room.hotel.id %}">
+                                            <a href="{% url "room-detail" room.id %}">
                                                 <i class="fa-solid fa-eye"></i>
                                             </a>
                                         </button>
@@ -189,15 +190,15 @@
                       <i class="fa-solid fa-user text-[#3b5362] absolute left-[10px] top-[35%]"></i>
                       <input type="text" name="full_name" id="full_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Full name" >
                   </div>
-                  <div class="relative border border-slate-200 mb-[1rem]">
+                  <div class="relative border border-slate-200 mb-[1rem] rounded-md">
                       <i class="fa-solid fa-envelope text-[#3b5362] absolute left-[10px] top-[35%]"></i>
                       <input type="email" name="email" id="email" placeholder="Email" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
                   </div>
-                  <div class="relative border border-slate-200 mb-[1rem]">
+                  <div class="relative border border-slate-200 mb-[1rem] rounded-md">
                     <i class="fa-solid fa-phone text-[#3b5362] absolute left-[10px] top-[35%]"></i>
                       <input type="tel" name="phone" id="phone" placeholder="Phone" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
                   </div>
-                  <div class="grid grid-cols-2 gap-4 mb-[1rem]">
+                  <div class="grid grid-cols-2 gap-4 mb-[1rem] rounded-md">
                     <div class="relative border border-slate-200 rounded-md">
                         <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in</label>
                         <input type="date" name="check_in" required class="w-full p-2">
@@ -207,7 +208,7 @@
                         <input type="date" name="check_out" required class="w-full p-2">
                     </div>
                   </div>
-                  <div class="border border-slate-200 mb-[1rem]">
+                  <div class="border border-slate-200 mb-[1rem] rounded-md">
                       <textarea name="message" id="message" cols="30" rows="5" class="w-full border border-slate-400 rounded-md p-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Message"></textarea>
                   </div>
                   {% if user.is_authenticated %}

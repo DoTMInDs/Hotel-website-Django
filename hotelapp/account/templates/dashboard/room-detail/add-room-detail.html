@@ -3,13 +3,13 @@
 {% load tailwind_filters %}
 {% block title %}Room Detail - {{ room.room_number }}{% endblock title %}
 {% block main-content %}
-{% include "partials/nav.html" %}
+{% include "dashboard/partials/nav.html" %}
     
-    <div class="w-[100%] md:w-[80%] m-auto">
-        <div class="transition-all duration-300 bg-gray-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 ">
+    <div class="w-[100%] h-screen bg-slate-300 fixed z-[1] top-0 right-0 left-0 overflow-y-auto">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-gray-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[120px]">
             <!-- Back button -->
             <div class="mb-4">
-                <a href="{% url 'room' %}" class="flex items-center text-slate-600 hover:text-slate-800">
+                <a href="{% url 'add-room' %}" class="flex items-center text-slate-600 hover:text-slate-800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1">
                         <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
                     </svg>
@@ -76,27 +76,70 @@
                     </div>
                 </div>
                 
-                <!-- Amenities Section -->
+                <!-- Right Column - Actions and Additional Info -->
                 <div class="md:col-span-1">
                     <div class="bg-white rounded-lg shadow-md p-6">
-                        <h2 class="text-xl font-semibold mb-4 text-slate-800">Amenities</h2>
-                        {% if room.amenities.all %}
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {% for amenity in room.amenities.all %}
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-check text-green-500"></i>
-                                <span>{{ amenity.name }}</span>
-                            </div>
-                            {% endfor %}
+                        <h2 class="text-xl font-semibold mb-4 text-slate-800">Actions</h2>
+                        
+                        <div class="space-y-3">
+                            <a href="{% url "edit-room" room.id %}" class="block w-full text-center px-4 py-2 mb-[1rem] cursor-pointer bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                                <i class="fas fa-edit mr-2"></i> Edit Room
+                            </a>
+                            
+                            <p class="block w-full text-center px-4 py-2 mb-[1rem] bg-red-600 cursor-pointer text-white rounded-md hover:bg-red-700 transition">
+                                <i class="fas fa-trash mr-2"></i> Delete Room
+                            </p>
+                            
+                            {% if room.status == 'A' %}
+                            <p class="block w-full text-center px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition">
+                                <i class="fas fa-tools mr-2"></i> Mark as Maintenance
+                            </p>
+                            {% elif room.status == 'M' %}
+                            <p class="block w-full text-center px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+                                <i class="fas fa-check mr-2"></i> Mark as Available
+                            </p>
+                            {% endif %}
                         </div>
-                        {% else %}
-                        <p class="text-slate-500">No amenities added yet</p>
-                        {% endif %}
+                        
+                        <!-- Booking History -->
+                        <div class="mt-[1rem]">
+                            <h3 class="font-medium text-slate-800 mb-2">Recent Bookings</h3>
+                            {% if room.bookings.all %}
+                                <ul class="space-y-2">
+                                    {% for booking in room.bookings.all|slice:":3" %}
+                                    <li class="text-sm p-2 bg-slate-50 rounded">
+                                        {{ booking.full_name }} - 
+                                        {{ booking.check_in|date:"M d, Y" }} to {{ booking.check_out|date:"M d, Y" }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% if room.bookings.count > 3 %}
+                                <p class="text-sm text-slate-500 mt-2">+ {{ room.bookings.count|add:"-3" }} more bookings</p>
+                                {% endif %}
+                            {% else %}
+                                <p class="text-sm text-slate-500">No bookings yet</p>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
             
-            
+            <!-- Amenities Section -->
+            <div class="mt-[1rem] bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-800">Amenities</h2>
+                {% if room.amenities.all %}
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {% for amenity in room.amenities.all %}
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>{{ amenity.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-slate-500">No amenities added yet</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 

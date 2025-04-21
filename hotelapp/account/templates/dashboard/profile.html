@@ -13,9 +13,13 @@
                     <i class="fa-regular fa-pen-to-square fa-xl ml-[10px]" style="#ffffff"></i>
                     Profile
                 </div> 
+                {% if user.profilemodel %}
                 <div class="edit__profile_img_wrapper">
+                    {% if user.profilemodel.profile %}
                     <img src="{{ user.profilemodel.profile.url }}" alt="profile.img" class="edit__profile_img ">
+                    {% endif %}
                 </div>
+                {% endif %}
             </button>
        </div>
        <div class="">

@@ -9,4 +9,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('leads/', views.leads, name='leads'),
     path('add-room/', views.add_room, name='add-room'),
+    path('add_room_detail/<int:pk>/', views.add_room_detail, name='add-room-detail'),
+    path('edit_room/<int:pk>/edit/', views.edit_room, name='edit-room'),
 ]

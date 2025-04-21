@@ -1,0 +1,93 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% load tailwind_filters %}
+{% block title %}Edit Room - {{ room.room_number }}{% endblock title %}
+{% block main-content %}
+    {% include "dashboard/partials/nav.html" %}
+    
+    <div class="w-[100%] h-screen bg-slate-300 fixed z-[1] top-0 right-0 left-0 overflow-y-auto">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-gray-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[120px]">
+            <!-- Back button -->
+            <div class="mb-4">
+                <a href="{% url 'add-room-detail' room.id %}" class="flex items-center text-slate-600 hover:text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1">
+                        <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                    </svg>
+                    Back to Room
+                </a>
+            </div>
+            
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-[1rem]">
+                <h1 class="text-2xl font-bold text-slate-800">Edit Room {{ room.room_number }}</h1>
+            </div>
+            
+            <!-- Edit Form -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <form method="post" enctype="multipart/form-data" class="bg-transparent shadow">
+                    {% csrf_token %}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Left Column -->
+                        <div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Room Image</label>
+                                {% if room.image %}
+                                <img src="{{ room.image.url }}" alt="Current Room Image" class="w-full h-48 object-cover mb-2 rounded">
+                                {% endif %}
+                                {{ form.image }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Room Number</label>
+                                {{ form.room_number }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Room Type</label>
+                                {{ form.room_type }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Status</label>
+                                {{ form.status }}
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column -->
+                        <div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Price</label>
+                                {{ form.price }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Max Guests</label>
+                                {{ form.max_guests }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Star Rating</label>
+                                {{ form.star_rating }}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Amenities</label>
+                                {{ form.amenities }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Buttons -->
+                    <div class="flex justify-end gap-2 mt-6">
+                        <a href="{% url 'add-room-detail' room.id %}" class="px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300 transition">
+                            Cancel
+                        </a>
+                        <button type="submit" class="px-4 py-2 bg-slate-600 text-white rounded-md hover:bg-slate-700 transition">
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

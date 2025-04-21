@@ -724,10 +724,10 @@ label{
 }
 input{
     background: #fcfbfb;
-    border: none;
+    border: 1px solid #eee8e8;
     outline: none;
     padding: 0 20px;
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     color: #222;
     font-weight: 400;
     letter-spacing: 0.7px;

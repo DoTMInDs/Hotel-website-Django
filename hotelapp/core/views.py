@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.db.models import Q
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .models import OurRoom,Rating,HotelPost,Booking
 from account.forms import LeadForm,BookRoomForm
@@ -97,6 +99,7 @@ def room(request):
             messages.error(request, 'Please fill in all fields correctly.')
     else:
         b_form = BookRoomForm()
+        print('error message')
     
     paginator = Paginator(rooms, 10)  # Show 10 rooms per page
     page_number = request.GET.get('page')
@@ -145,8 +148,17 @@ def hotel(request):
     return render(request, 'core/hotel.html',context)
 
 def room_detail(request, pk):
-    posts = get_object_or_404(OurRoom, pk=pk)
+    room = get_object_or_404(OurRoom, pk=pk)
     context = {
-        'posts': posts
+        'room': room
     }
     return render(request, 'detail/room_detail.html',context)
+
+@login_required
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == 'POST':
+        booking.delete()
+        messages.success(request, 'Booking deleted successfully!')
+        return HttpResponseRedirect(reverse('my_booking'))
+    return HttpResponseRedirect(reverse('my_booking'))

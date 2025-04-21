@@ -22,7 +22,7 @@ class BookingAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
     
 class OurRoomAdmin(admin.ModelAdmin):
-    list_display = ('room_type', 'star_rating')
+    list_display = ('hotel','room_number','room_type', 'star_rating','created_at')
     
 class HotelPostAdmin(admin.ModelAdmin):
     list_display = ('name', 'location', 'dated_on')

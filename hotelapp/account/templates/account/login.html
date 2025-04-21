@@ -4,19 +4,28 @@
     <section>
         <div class="__form_container">
             <form action="" method="post" class="account-form bg-slate-50 shadow border border-slate-200">
+                {% if messages %}
+                    <div class="mb-4">
+                        {% for message in messages %}
+                            <div class="p-3 rounded text-center {% if message.tags == 'error' %} text-red-500{% else %} text-green-500{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div class="py-[1rem]">
                     <h1 class="text-[#3b5362] text-center text-[22px] font-medium">Login</h1>
                 </div>
                 {% csrf_token %}  
                 <div class="">
-                    <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                    <div class=" relative border outline-none border-slate-200 rounded-full mb-[1rem]">
                         <i class="fa-solid fa-user absolute text-[#3b5362] left-[10px] top-[35%]"></i>
-                        <input type="text" id="id_username" name="username" class="bg-transparent pl-[2rem]" placeholder="Enter username..." required> 
-                    </div>                
-                    <div class="input-field relative border border-slate-200 rounded-full mb-[1rem]">
+                        <input type="text" id="id_username" name="username" class="bg-transparent pl-[2rem] w-full outline-none border-transparent" placeholder="Enter username..." required> 
+                    </div>    
+                    <div class=" relative border border-slate-200 rounded-full mb-[1rem]">
                         <i class="fa-solid fa-lock absolute text-[#3b5362] left-[10px] top-[35%]"></i>
                         <input type="password" id="id_password" name="password" class="bg-transparent pl-[2rem]" placeholder="Enter password..." required> 
-                        <i class="fa-solid fa-eye absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
+                        <i onclick="togglePassword(this)" class="fa-solid fa-eye-slash absolute right-[10px] text-[#3b5362] top-[35%] cursor-pointer"></i>
                     </div>
                 </div>           
                 <p class="text-right"><a href="">Forgot password?</a></p>
@@ -27,4 +36,19 @@
             </form>
         </div>
     </section>
+
+    <script>
+        function togglePassword(icon) {
+            const password = document.getElementById('id_password');
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                password.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 {% endblock  %}
