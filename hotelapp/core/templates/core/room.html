@@ -3,6 +3,29 @@
 {% block title %}Hotels{% endblock title %}
 {% block main-content %}
     {% include "partials/nav.html" %}
+    {% if messages %}
+    <div class="w-[100%] md:w-[80%] m-auto md:px-0 px-[1rem]">
+        <div id="alert-3" class="flex items-center p-4 mb-4 text-white rounded-lg {% if message.tags == 'error' %} bg-red-500{% else %} bg-green-500{% endif %}" role="alert">
+            <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div class="ms-3 text-sm font-medium">
+                <div class="my-2 text-center">
+                    {% for message in messages %}
+                        <p class="text-white text-center">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    {% endif %}
     <section class="search_wrapper">
         <div class="img_container">
             <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
@@ -35,30 +58,67 @@
             {% endif %}
         </form>
     </section>
-    <section class="flex gap-[1rem] feature_secction">
-        <aside class="aside_section_search hidden ">
-            <div class="filter_wrapper ">
-                <h2 class="filter_h2">
-                    <i class="fa-solid fa-filter"></i>
-                    Filter by</h2>
-                <div class="filter_list">
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox" >
-                        <a href="#!">Bath</a>                       
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">Resorts</a>
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">4 stars</a>
-                    </li>
-                    <li class="flex gap-[10px] items-center filter_link_input">
-                        <input type="checkbox" name="" id="" class="input_checkbox">
-                        <a href="#!">Breakfast included</a>
-                    </li>
-                </div>
+    <section class="flex gap-[1rem] feature_secction relative">
+        <aside id="dropdownLeftEnd" class="absolute right-0 top-[50px] z-[100] hidden">
+            <div class="bg-white w-[100%] md:w-[400px] rounded">
+                <form method="get" action="{% url 'room' %}" class="bg-transparent shadow ">
+                    <h2 class="text-slate-600 text-[18px] border-b border-slate-200 py-[0.5rem]">
+                        <i class="fa-solid fa-filter"></i>
+                        Filter by
+                    </h2>
+                    <!-- Status Filter -->
+                    <div class=" mt-[0.3rem] border-b border-slate-200 py-[0.5rem]">
+                        <h3 class="text-[18px] font-medium text-slate-600">Status</h3>
+                        {% for value, label in status_choices %}
+                        <div class="text-slate-500  flex gap-[0.6rem] items-center">
+                            <input type="radio" name="status" id="status_{{ value }}" value="{{ value }}" 
+                                   class="text-[12px] accent-slate-500 text-slate-500" {% if status_query == value %}checked{% endif %}>
+                            <label class="text-[16px]" for="status_{{ value }}">{{ label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+        
+                    <!-- Star Rating Filter -->
+                    <div class="mt-[0.3rem] border-b border-slate-200 py-[0.5rem]">
+                        <h3 class="text-[18px] font-medium text-slate-600">Star Rating</h3>
+                        {% for rating in rating_choices %}
+                        <div class="flex items-center gap-[0.5rem]">
+                            <input type="checkbox" name="rating" id="rating_{{ rating.star }}" value="{{ rating.star }}"
+                                   class="accent-slate-500 text-slate-500" {% if rating.star|stringformat:"s" in request.GET.getlist|default:'' %}checked{% endif %}>
+                            <label for="rating_{{ rating.star }}">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= rating.star %}
+                                        <i class="fas fa-star text-orange-500 text-[16px]"></i>
+                                    {% else %}
+                                        <i class="far fa-star text-orange-500 text-[16px]"></i>
+                                    {% endif %}
+                                {% endfor %}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+        
+                    <!-- Room Type Filter -->
+                    <div class="mt-[0.3rem] border-b border-slate-200 py-[0.5rem]">
+                        <h3 class="text-[18px] font-medium text-slate-600">Room Type</h3>
+                        {% for value, label in room_type_choices %}
+                        <div class="flex items-center gap-[0.5rem]">
+                            <input type="checkbox" name="room_type" id="room_type_{{ value }}" value="{{ value }}"
+                                   class="accent-slate-500 text-slate-500" {% if value in request.GET.getlist|default:'' %}checked{% endif %}>
+                            <label class="text-[16px] text-slate-600" for="room_type_{{ value }}">{{ label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+        
+                    <!-- Hidden fields to preserve existing search -->
+                    <input type="hidden" name="search" value="{{ name_query }}">
+                    <input type="hidden" name="loc-search" value="{{ location_query }}">
+        
+                    <div class="filter_buttons">
+                        <button type="submit" class="bg-slate-500 px-[1rem] rounded text-white hover:bg-slate-600">Apply Filters</button>
+                        <a href="{% url 'room' %}" class="bg-slate-100 px-[0.7rem] hover:bg-slate-200 py-[0.5rem] rounded text-slate-600">Clear All</a>
+                    </div>
+                </form>
             </div>
         </aside>
 
@@ -71,9 +131,17 @@
             </p>
           {% endif %}
             <div class="">
-                <h2 class="featured_h2">Featured Rooms
-                    <i class="fa-solid fa-hotel"></i>
-                </h2>
+                <div class="flex gap-[1rem] justify-between w-full items-center">
+                    <h2 class="featured_h2">Featured Rooms
+                        <i class="fa-solid fa-hotel"></i>
+                    </h2>
+                    <button onclick="openFilter()" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                        <i class="fa-solid fa-filter"></i> Filters
+                        {% if status_query or rating_query or room_type_query %}
+                            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                        {% endif %}
+                    </button>
+                </div>
 
                 <div class="hotel_card_container">
                     <div class="hotel_card_grid">
@@ -99,7 +167,7 @@
                                                 {% endfor %}
                                             </small>
                                         </p>
-                                        <h2 class="font-semibold text-[18px]">{{room.room_type}}</h2>
+                                        <h2 class="font-semibold text-[18px] capitalize">{{room.room_type}} size Bed</h2>
                                     </div>
                                     <div class="hotel_card_content">
                                         <div class="text-[14px] text-[#3b5362] w-full overflow-hidden flex gap-[0.5rem] items-center">
@@ -113,7 +181,7 @@
                                     </div>
                                     <p id="priceTag-{{room.pk}}" class="price_tag">{{room.price}}</p>
                                     <div class="hotel_btn gap-[0.5rem]">
-                                        <button onclick="BookRoomBtn('{{ room.id }}')" class="hotel_btnn">BOOK ROOM</button>
+                                        <button onclick="BookRoomBtn('{{ room.id }}', '{{ room.hotel.name }}')" class="hotel_btnn">BOOK ROOM</button>
                                         <button class="hotel_btnn">
                                             <a href="{% url "room-detail" room.id %}">
                                                 <i class="fa-solid fa-eye"></i>
@@ -127,7 +195,12 @@
                     
                     <div class="flex justify-center items-center gap-8 mt-[1rem] mb-[2rem]">
                         {% if rooms.has_previous %}
-                            <a href="?page={{ rooms.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
+                            <a href="?page={{ rooms.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}
+                                {% if location_query %}&loc-search={{ location_query }}{% endif %}
+                                {% if status_query %}&status={{ status_query }}{% endif %}
+                                {% if rating_query %}&rating={{ rating_query }}{% endif %}
+                                {% if room_type_query %}&room_type={{ room_type_query }}{% endif %}"
+                                class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                     <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                                 </svg>
@@ -176,7 +249,7 @@
                   {% if messages %}
                     <div class="my-2 text-center">
                         {% for message in messages %}
-                            <p class="text-red-500 text-center">{{ message }}</p>
+                            <p class="{% if message.tags == 'error' %} text-red-500{% else %} text-green-500{% endif %} text-center">{{ message }}</p>
                         {% endfor %}
                     </div>
                   {% endif %}
@@ -184,7 +257,7 @@
                   <input type="hidden" name="room" id="roomIdInput" value="">
                   <div class="flex text-[#3b5362] text-[22px] gap-[0.5rem] justify-center items-center mb-[1rem]">
                     <i class="fa-regular fa-calendar-check"></i>
-                    <h1 class="text-center ">Book a Room</h1>
+                    <h1 class="text-center ">Book a Room @<span id="hotelNameDisplay"></span></h1>
                   </div>
                   <div class="relative border border-slate-200 mb-[1rem] rounded-md">
                       <i class="fa-solid fa-user text-[#3b5362] absolute left-[10px] top-[35%]"></i>
@@ -198,6 +271,7 @@
                     <i class="fa-solid fa-phone text-[#3b5362] absolute left-[10px] top-[35%]"></i>
                       <input type="tel" name="phone" id="phone" placeholder="Phone" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
                   </div>
+                
                   <div class="grid grid-cols-2 gap-4 mb-[1rem] rounded-md">
                     <div class="relative border border-slate-200 rounded-md">
                         <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in</label>
@@ -206,6 +280,32 @@
                     <div class="relative border border-slate-200 rounded-md">
                         <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-out</label>
                         <input type="date" name="check_out" required class="w-full p-2">
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4 mb-[1rem] rounded-md">
+                    <div class="relative border border-slate-200 rounded-md">
+                        <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in-time</label>
+                        <div class="flex items-center">
+                            <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none text-[#3b5362]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <input type="time" name="check_in_time" required class="w-full p-2 pl-8">
+                        </div>
+                    </div>
+                    <div class="relative border border-slate-200 rounded-md">
+                        <label for="time" class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-out-time</label>
+                        <div class="flex items-center ">
+                            <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none text-[#3b5362]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <input type="time" name="check_out_time" required class="w-full p-2 pl-8">
+                        </div>
                     </div>
                   </div>
                   <div class="border border-slate-200 mb-[1rem] rounded-md">
@@ -220,14 +320,15 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
       <script>
         const Bwrapper = document.getElementById('bookRoomWrapper');
         const Bcontent = document.getElementById('bookRoomModalContent');
         // Open modal
-        function BookRoomBtn(roomId){
+        function BookRoomBtn(roomId, hotelName){
             document.getElementById('roomIdInput').value = roomId;
+            document.getElementById('hotelNameDisplay').textContent = hotelName;
             Bwrapper.classList.remove('opacity-0', 'invisible');
             Bcontent.classList.remove('opacity-0', 'scale-95');
         }
@@ -240,6 +341,24 @@
          Bcontent.addEventListener('click', (e) => {
             e.stopPropagation();
           });
+
+        // Filter dropdown toggle
+        function openFilter() {
+            const filterDropdown = document.getElementById('dropdownLeftEnd');
+            filterDropdown.classList.toggle('hidden');
+        }
+
+        // Close filter dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const filterDropdown = document.getElementById('dropdownLeftEnd');
+            const filterButton = document.querySelector('[onclick="openFilter()"]');
+            
+            if (!filterDropdown.contains(event.target) && 
+                event.target !== filterButton && 
+                !filterButton.contains(event.target)) {
+                filterDropdown.classList.add('hidden');
+            }
+        });
       </script>
 
 {% endblock %}

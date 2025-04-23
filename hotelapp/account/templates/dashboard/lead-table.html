@@ -4,18 +4,41 @@
 {% block main-content %}
     {% include "dashboard/partials/nav.html" %}
     <section class="w-[100%] h-screen bg-slate-300  fixed z-[1] top-0 right-0 left-0 overflow-y-auto mt-[0px] pt-[100px]">
-        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-slate-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
+        {% if messages %}
+            <div class="w-[100%] md:w-[80%] m-auto md:px-0 px-[1rem] z-[9999] absolute top-[11%] right-[3px] ml-[0.3rem] md:ml-[300px] transition-all duration-300">
+                <div id="alert-3" class="flex items-center p-4 mb-4 text-white rounded-lg {% if message.tags == 'error' %} bg-red-500{% else %} bg-green-500{% endif %}" role="alert">
+                    <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div class="ms-3 text-sm font-medium">
+                        <div class="my-2 text-center">
+                            {% for message in messages %}
+                                <p class="text-white text-center">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+                        <span class="sr-only">Close</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        {% endif %}
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
             <div>
                 <h1 class="text-2xl font-bold text-gray-800">Leads for {{ hotel.name }}</h1>
-                <h1 class="text-slate-600">Leads Acquired ( {{leads.count}} )</h1>
+                <h1 class="text-slate-600">Leads Acquired ( {{leads.paginator.count}} )</h1>
             </div>
-            <div class="rounded-[15px] bg-gray-200 p-4 mt-[1rem] shadow-sm">
+            <div class="rounded-[15px] bg-gray-100 p-4 mt-[1rem] shadow-sm">
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[600px]">
                         <thead class="">
                             <tr class="text-left text-slate-500 border-b border-slate-300 ">
                                 <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Email</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Phone</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Room</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Check In Time</th>
                                 <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
@@ -23,15 +46,15 @@
                         </thead>
                         <tbody class="divide-y divide-slate-300">
                             {% for lead in leads %}
-                            <tr class="hover:bg-gray-300 rounded-[15px] transition-colors">
+                            <tr class="hover:bg-gray-200 rounded-[15px] transition-colors">
                                 <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.full_name }} </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.email }} </td>                                
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.room.room_type }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.phone }} </td>                                
+                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ lead.room.room_type }} Size Bed </td>
                                 <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.room.check_in_time }} </td>
                                 <td class="px-4 py-3 text-right">
                                     <div class="flex gap-2 justify-end">    
                                         <p onclick="leadBtn()" 
-                                            class="cursor-pointer px-3 py-1.5 text-xs bg-slate-500 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1 hover:bg-slate-700 transition">
+                                            class="cursor-pointer px-3 py-1.5 text-xs bg-gray-400 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1  transition duration-200">
                                                 <i class="fa-solid fa-eye text-[10px]"></i>
                                             View
                                         </p>

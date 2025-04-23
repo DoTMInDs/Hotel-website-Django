@@ -35,11 +35,10 @@ class Rating(models.Model):
         return f"{self.star}★"
 
 class Amenity(models.Model):
-    name = models.CharField(max_length=50, null=True)
-    description = models.TextField(null=True,blank=True)
+    amenity_name = models.CharField(max_length=50, null=True)
     
     def __str__(self):
-        return self.name
+        return self.amenity_name
     
 class HotelPost(models.Model):
     name = models.CharField(max_length=200)
@@ -167,7 +166,7 @@ class Booking(models.Model):
     room = models.ForeignKey(OurRoom, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
+    phone = models.CharField(max_length=20, unique=True)
     check_in_time = models.TimeField(default=timezone.datetime.strptime('15:00', '%H:%M').time())  # 3 PM
     check_out_time = models.TimeField(default=timezone.datetime.strptime('11:00', '%H:%M').time())  # 11 AM
     check_in = models.DateField(null=True, blank=True)
@@ -182,4 +181,51 @@ class Booking(models.Model):
         if self.room and self.hotel:
             return f"Booking #{self.id} - {self.room.room_number} at {self.hotel.name}"
         return f"Booking #{self.id}"
-        
+
+
+class Staff(models.Model):
+    POSITION_CHOICES = [
+        ('manager', 'Manager'),
+        ('receptionist', 'Receptionist'),
+        ('housekeeping', 'Housekeeping'),
+        ('maintenance', 'Maintenance'),
+        ('chef', 'Chef'),
+        ('waiter', 'Waiter'),
+        ('security', 'Security'),
+        ('other', 'Other'),
+    ]
+
+    DEPARTMENT_CHOICES = [
+        ('management', 'Management'),
+        ('front_desk', 'Front Desk'),
+        ('housekeeping', 'Housekeeping'),
+        ('food_beverage', 'Food & Beverage'),
+        ('maintenance', 'Maintenance'),
+        ('security', 'Security'),
+        ('other', 'Other'),
+    ]
+    full_name = models.CharField(max_length=100,null=True)
+    email = models.EmailField(null=True)
+    hotel = models.ForeignKey(HotelPost, on_delete=models.CASCADE, related_name='staff_members')
+    profile_picture = models.ImageField(upload_to='staff_profile_pics/', blank=True, null=True)
+    position = models.CharField(max_length=50, choices=POSITION_CHOICES)
+    department = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
+    phone_number = models.CharField(max_length=20)
+    address = models.TextField(blank=True, null=True)
+    emergency_contact = models.CharField(max_length=100, blank=True, null=True)
+    emergency_phone = models.CharField(max_length=20, blank=True, null=True)
+    join_date = models.DateField(default=timezone.now)
+    is_active = models.BooleanField(default=True)
+    notes = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Staff"
+        ordering = ['-join_date']
+
+    def __str__(self):
+        return f"{self.full_name} - {self.get_position_display()}"
+
+ 
+

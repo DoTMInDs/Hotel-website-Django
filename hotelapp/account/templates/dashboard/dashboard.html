@@ -1,7 +1,258 @@
 {% extends "partials/layout.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% load tailwind_filters %}
+{% block title %}Dashboard{% endblock title %}
 {% block main-content %}
     {% include "dashboard/partials/nav.html" %}
+     <!-- Total Leads Card -->
 
-{% endblock %}
+    
+    
+    <div class="w-[100%]  h-screen bg-slate-200 fixed z-[1] top-0 right-0 left-0 overflow-y-auto">
+        {% if messages %}
+            <div class="w-[100%] md:w-[80%] m-auto md:px-0 px-[1rem] z-[9999] absolute top-[11%] ml-[0.3rem] md:ml-[300px] transition-all duration-300">
+                <div id="alert-3" class="flex items-center p-4 mb-4 text-white rounded-lg {% if message.tags == 'error' %} bg-red-500{% else %} bg-green-500{% endif %}" role="alert">
+                    <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div class="ms-3 text-sm font-medium">
+                        <div class="my-2 text-center">
+                            {% for message in messages %}
+                                <p class="text-white text-center">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+                        <span class="sr-only">Close</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        {% endif %}
+        <div class="sm:flex-row flex-col flex  gap-[1rem] w-full mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300  mt-[120px]">
+            <div class="w-[100%] md:w-[300px] bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4">
+                <div class="flex items-center justify-between ">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Leads</p>
+                        <h3 class="text-3xl font-medium text-gray-600">{{ leads.count }}</h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] md:w-[300px] bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4">
+                <div class="flex items-center justify-between ">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Staff Members</p>
+                        <h3 class="text-3xl font-medium text-gray-600">{{ staff_members.count }}</h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 19C16 15.686 12.866 13 9 13C5.134 13 2 15.686 2 19M15 13C15.6684 13 16.3261 12.8324 16.9131 12.5127C17.5 12.193 17.9975 11.7313 18.3601 11.1698C18.7227 10.6083 18.9388 9.96494 18.9886 9.29841C19.0385 8.63189 18.9205 7.9635 18.6456 7.3543C18.3706 6.7451 17.9473 6.21453 17.4144 5.81105C16.8816 5.40757 16.2561 5.14404 15.5952 5.04456C14.9342 4.94507 14.2589 5.01279 13.6309 5.24154C13.0028 5.47028 12.4421 5.85275 12 6.354" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 19C22 15.686 18.866 13 15 13C14.193 13 12.897 12.707 12 11.765" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] md:w-[300px] bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 md:mr-0 mr-[0.6rem]">
+                <div class="flex items-center justify-between ">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Total Rooms</p>
+                        <h3 class="text-3xl font-medium text-gray-600">{{ rooms.count }}</h3>
+                    </div>
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.4208 7.77597L18.9855 16.8232C19.3575 17.334 19.0043 18.0652 18.3855 18.0652H5.60775C4.9875 18.0652 4.635 17.334 5.007 16.8225L11.5793 7.77522C11.627 7.70809 11.6901 7.65336 11.7634 7.61562C11.8366 7.57788 11.9178 7.55823 12.0002 7.5583C12.0826 7.55838 12.1638 7.57818 12.2369 7.61604C12.3101 7.65391 12.3731 7.70875 12.4208 7.77597ZM12 16.5585C12.5967 16.5585 13.169 16.3214 13.591 15.8995C14.013 15.4775 14.25 14.9052 14.25 14.3085C14.25 13.7117 14.013 13.1394 13.591 12.7175C13.169 12.2955 12.5967 12.0585 12 12.0585C11.4033 12.0585 10.831 12.2955 10.409 12.7175C9.98706 13.1394 9.75 13.7117 9.75 14.3085C9.75 14.9052 9.98706 15.4775 10.409 15.8995C10.831 16.3214 11.4033 16.5585 12 16.5585ZM23.8455 18.3382C24.2205 18.8377 23.868 19.5585 23.2478 19.5585H23.2155C23.0989 19.5583 22.984 19.531 22.8799 19.4786C22.7757 19.4263 22.6852 19.3504 22.6155 19.257L21.6975 18.0225H21.7103L20.0003 15.7455L13.095 6.54822L12.345 5.55072C12.3046 5.49742 12.2524 5.4542 12.1924 5.42445C12.1325 5.39469 12.0665 5.37921 11.9996 5.37921C11.9327 5.37921 11.8667 5.39469 11.8068 5.42445C11.7469 5.4542 11.6947 5.49742 11.6543 5.55072L10.9043 6.54822L3.99975 15.7455L2.28975 18.0217H2.3025L1.38375 19.2555C1.31413 19.349 1.22364 19.4251 1.11949 19.4775C1.01533 19.53 0.900378 19.5575 0.783753 19.5577H0.752254C0.131254 19.5577 -0.221246 18.8377 0.154504 18.3375L1.09125 17.0887L2.80125 14.8117L9.70725 5.61747L10.8015 4.15947L11.475 3.26322C11.5362 3.18185 11.6155 3.11583 11.7066 3.07036C11.7977 3.02489 11.8982 3.00122 12 3.00122C12.1018 3.00122 12.2023 3.02489 12.2934 3.07036C12.3845 3.11583 12.4638 3.18185 12.525 3.26322L13.1985 4.16022L14.2928 5.61747L16.497 8.55297V6.83247C16.497 6.40497 16.833 6.05922 17.247 6.05922H18.75C19.1648 6.05922 19.5 6.40497 19.5 6.83172V12.5512L21.1995 14.8125L22.9095 17.0902L23.8455 18.3382Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="flex justify-between items-center p-[1rem] rounded-full pb-[1rem]">
+                        <h6>Staff Members</h6>
+                        <button onclick="staffBtn()" id="staffBtn" class=" px-3 py-[0.6rem] text-[18px]  text-slate-600 flex items-center gap-1  transition">
+                            <i class="fa-solid fa-circle-plus "></i>
+                            Add Staff
+                        </button>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="w-full min-w-[600px]">
+                                <thead>
+                                    <tr class="text-left text-slate-600 border-b border-slate-200">
+                                        <th class="px-4 py-3 font-semibold text-sm">Name</th>
+                                        <th class="px-4 py-3 font-semibold text-sm ps-2">Position</th>
+                                        <th class="px-4 py-3 font-semibold text-sm">Status</th>
+                                        <th class="px-4 py-3 font-semibold text-sm">Join Date</th>
+                                        <th class="text-secondary opacity-7"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    {% for staff in staff_members %}
+                                    <tr>
+                                        <td class="px-4 py-3 text-slate-600 text-sm">
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="{{ staff.profile_picture.url|default:'/static/images/default-profile.png' }}" class="w-[50px] h-[50px] object-cover object-center" alt="user1">
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{ staff.full_name }}</h6>
+                                                    <p class="text-xs text-secondary mb-0">{{ staff.email }}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 text-sm">
+                                            <p class="text-sm mb-0">{{ staff.position }}</p>
+                                            <p class="text-xs mb-0"> ( {{ staff.department }} )</p>
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 text-sm">
+                                            <span class="{{ staff.is_active|yesno:'text-green-500,text-red-500' }}">
+                                                {{ staff.is_active|yesno:"Active,Inactive" }}
+                                            </span>
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 text-sm">
+                                            <span class="text-secondary text-xs font-weight-bold">{{ staff.join_date|date:"M d, Y" }}</span>
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 text-sm ">
+                                            <div class="flex items-center">
+                                                <a href="{% url 'edit-staff' staff.id %}" class=" text-slate-700 cursor-pointer flex items-center gap-1 transition font-semibold duration-200 text-sm" aria-label="edit">
+                                                    <i class="fa-solid fa-pencil text-[10px]"></i>
+                                                    Edit
+                                                </a>
+                                                <span class="mx-2">|</span>
+                                                <p onclick="deleteStaffBtn({{staff.id}})" class="cursor-pointer font-semibold text-sm hover:text-red-600 text-red-500 flex items-center gap-1 transition duration-200">
+                                                    <i class="fa-solid fa-trash text-[10px]"></i>
+                                                    Delete
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="5" class="text-center py-4">No staff members found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div onclick="closeBtn()" id="staffFormContainer" class="fixed bg-gray-500 bg-opacity-30 top-0 right-0 w-full h-screen transition-all duration-300 ease-out  opacity-0 invisible z-[9999] overflow-y-auto">
+        <div id="staffModalContent" class="min-h-screen flex items-center justify-center p-2 absolute top-[50%] left-[50%] md:w-[80%] w-[100%] rounded-[10px]  m-auto translate-x-[-50%] translate-y-[-50%]  transform transition-all duration-300 ease-out scale-95 opacity-0">
+            <div class="bg-white relative w-full max-w-2xl rounded-[10px]">
+                <div class="flex justify-between items-center border border-slate-200 rounded-[10px] p-6">
+                    <h2 class="text-xl font-semibold text-[#3b5362]">Add New Staff Member</h2>
+                    <p onclick="closeBtn()" class="close-btn flex justify-end cursor-pointer">
+                        <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                        </svg>
+                    </p>
+                </div>
+                <div class="max-h-[80vh] overflow-y-auto">
+                    <form action="" method="post" enctype="multipart/form-data" 
+                          class="bg-transparent p-6 space-y-4 ">
+                        {% csrf_token %}
+                        {{staff_form|crispy}}
+                        <div class="flex gap-4 pt-6">
+                            <button type="button" onclick="profileFormContainer.style.display='none'" 
+                                    class="w-full px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-full transition-colors">
+                                Cancel
+                            </button>
+                            <button type="submit" 
+                                    class="w-full px-4 py-2 bg-slate-600 hover:bg-slate-500 text-white rounded-full transition-colors">
+                                Save 
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div onclick="closeStaffBtn()" id="deleteStaffContainer" class="fixed bg-gray-500 bg-opacity-30 top-0 right-0 w-full h-screen transition-all duration-300 ease-out opacity-0 invisible z-[9999]">
+        <div id="deleteStaffModalContent" class="absolute top-[50%] left-[50%] md:w-[600px] rounded-[10px] m-auto p-[1rem] translate-x-[-50%] translate-y-[-50%] bg-white shadow border border-slate-100 transform transition-all duration-300 ease-out scale-95 opacity-0">
+            <div class="">
+                <p onclick="closeStaffBtn()"  class="cursor-pointer flex justify-end">
+                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+                    </svg>
+                </p>
+                <div class="flex justify-center items-center flex-col w-full">
+                    <div class="mt-[1rem] flex justify-center items-center w-[80px] h-[80px] p-[0.5rem] rounded-full bg-amber-100">
+                        <svg width="50" height="50" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.38 15H2.62C2.06 15 1.55 14.72 1.26 14.24C0.969999 13.76 0.939999 13.18 1.19 12.68L6.57 1.89C6.84 1.34 7.39 1 8 1C8.61 1 9.16 1.34 9.43 1.89L14.81 12.69C15.06 13.19 15.03 13.77 14.74 14.25C14.45 14.73 13.94 15.01 13.38 15.01V15ZM8 2C7.77 2 7.57 2.12 7.46 2.33L2.08 13.13C1.98 13.32 1.99 13.53 2.11 13.72C2.22 13.9 2.41 14.01 2.62 14.01H13.38C13.59 14.01 13.78 13.91 13.89 13.72C14 13.54 14.01 13.33 13.92 13.13L8.54 2.33C8.49063 2.22939 8.41362 2.14491 8.31799 2.08647C8.22236 2.02803 8.11206 1.99804 8 2Z" fill="#FFCA39"/>
+                            <path d="M8 11.6199C8.34242 11.6199 8.62 11.3423 8.62 10.9999C8.62 10.6575 8.34242 10.3799 8 10.3799C7.65758 10.3799 7.38 10.6575 7.38 10.9999C7.38 11.3423 7.65758 11.6199 8 11.6199Z" fill="#FFCA39"/>
+                            <path d="M8 9.12012C7.72 9.12012 7.5 8.90012 7.5 8.62012V5.62012C7.5 5.34012 7.72 5.12012 8 5.12012C8.28 5.12012 8.5 5.34012 8.5 5.62012V8.62012C8.5 8.90012 8.28 9.12012 8 9.12012Z" fill="#FFCA39"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-center text-amber-400 font-semibold text-[22px] mt-[0.5rem]">Warning</h1>
+                </div>
+                <form id="deleteForm" method="POST" action="">
+                    {% csrf_token %}
+                    <div class="flex justify-center items-center flex-col w-full mt-[2rem]">
+                        <p class="text-[14px] text-slate-600 text-center">Are you sure you want to delete this {{staff_members.full_name}}?</p>
+                        <button class="py-[0.8rem] text-slate-50 text-[18px] mt-[1rem] font-medium  block w-full rounded-full bg-red-500 hover:bg-red-600">Yes, Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        const staffWrapper = document.getElementById('staffFormContainer');
+        const staffContent = document.getElementById('staffModalContent');
+        // Open modal
+        function staffBtn(){
+            staffWrapper.classList.remove('opacity-0', 'invisible');
+            staffContent.classList.remove('opacity-0', 'scale-95');
+        }
+        // Close modal when clicking anywhere on staffWrapper
+        function closeBtn(){
+            staffWrapper.classList.add('opacity-0', 'invisible');
+            staffContent.classList.add('opacity-0', 'scale-95');
+        }
+         // Prevent clicks on staffContent from closing modal
+        staffContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+
+        const deleteStaffContainer = document.getElementById('deleteStaffContainer');
+        const deleteStaffModalContent =  document.getElementById('deleteStaffModalContent');
+        const deleteForm = document.getElementById('deleteForm');
+        function deleteStaffBtn(staffId) {
+            console.log('delete')
+            deleteForm.action = `/staff/delete/${staffId}/`;
+            deleteStaffContainer.classList.toggle('opacity-0');
+            deleteStaffContainer.classList.toggle('invisible');
+            deleteStaffModalContent.classList.toggle('scale-95');
+            deleteStaffModalContent.classList.toggle('opacity-0');
+        }
+        // Close when clicking outside
+        function closeStaffBtn() {
+            const deleteStaffContainer = document.getElementById('deleteStaffContainer');
+            const deleteStaffModalContent =  document.getElementById('deleteStaffModalContent');
+            deleteStaffContainer.classList.add('opacity-0', 'invisible');
+            deleteStaffModalContent.classList.add('scale-95', 'opacity-0');
+        }
+        document.getElementById('deleteStaffModalContent').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+
+{% endblock main-content %}

@@ -18,9 +18,14 @@ def index(request):
         l_form = LeadForm(request.POST)
         if l_form.is_valid():
             l_form.save()
+            messages.success(request, 'Lead request successfull, We will Email you some details on how to login Thank you!!')
             return redirect('home')
         else:
-           l_form = LeadForm()        
+            for field, errors in l_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+    else:
+        l_form = LeadForm()        
     
     context = {
         'l_form': l_form
@@ -43,7 +48,7 @@ def contact(request):
         form = LeadForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'You message has been sent successfully!')
+            messages.success(request, 'Your message has been sent successfully! We will Email you details to login in your Dashboard... Thank You!!')
             return redirect('contact')
         else:
             messages.error(request, 'Please fill in all fields correctly.')
@@ -75,6 +80,9 @@ def room(request):
     rooms = OurRoom.objects.all()
     name_query = request.GET.get('search', '')  # Hotel name search
     location_query = request.GET.get('loc-search', '')
+    status_query = request.GET.get('status', '') 
+    rating_query = request.GET.get('rating', '') 
+    room_type_query = request.GET.get('room_type', '') 
     b_form = BookRoomForm()
     if name_query or location_query:
         filters = Q()
@@ -82,6 +90,12 @@ def room(request):
             filters &= Q(hotel__name__icontains=name_query)
         if location_query:
             filters &= Q(hotel__location__icontains=location_query)
+        if status_query:
+            filters &= Q(status=status_query)
+        if rating_query:
+            filters &= Q(star_rating__star=rating_query)
+        if room_type_query:
+            filters &= Q(room_type=room_type_query)
         rooms = rooms.filter(filters)
     if request.method == 'POST':
         room_id = request.POST.get('room')
@@ -96,7 +110,9 @@ def room(request):
             messages.success(request, f'Booking successful for {room.room_type} at {room.hotel.name}!')
             return redirect('room')
         else:
-            messages.error(request, 'Please fill in all fields correctly.')
+            for field, errors in b_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
         b_form = BookRoomForm()
         print('error message')
@@ -114,7 +130,13 @@ def room(request):
         'b_form': b_form,
         'name_query': name_query,
         'location_query': location_query,
+        'status_query': status_query,
+        'rating_query': rating_query,
+        'room_type_query': room_type_query,
         'page_obj': page_obj,
+        'status_choices': OurRoom.STATUS_CHOICES,
+        'rating_choices': Rating.objects.all(), 
+        'room_type_choices': OurRoom.BED_TYPE_CHOICES,
     }
     return render(request, 'core/room.html',context)
 

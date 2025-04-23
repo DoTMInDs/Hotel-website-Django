@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Rating,OurRoom,HotelPost,Lead,Manager,Booking
+from .models import Rating,OurRoom,HotelPost,Lead,Manager,Booking,Staff,Amenity,OurRoomsImage
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
@@ -33,5 +33,9 @@ admin.site.register(OurRoom,OurRoomAdmin)
 admin.site.register(HotelPost,HotelPostAdmin)
 admin.site.register(Lead,LeadAdmin)
 admin.site.unregister(User)
+admin.site.register(Manager)
+admin.site.register(Amenity)
+admin.site.register(OurRoomsImage)
 admin.site.register(User,UserAdmin)
 admin.site.register(Booking,BookingAdmin)
+admin.site.register(Staff)

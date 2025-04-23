@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from .models import ProfileModel
 
-from core.models import Lead,OurRoom,Booking
+from core.models import Lead,OurRoom,Booking,Staff
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -29,7 +29,7 @@ class LeadForm(forms.ModelForm):
             'full_name',
             'email',
             'phone',
-            'hotel',
+            'hotel_name',
             'message'
         ]
         exclude = ['hotel']
@@ -89,4 +89,28 @@ class BookRoomForm(forms.ModelForm):
             super(BookRoomForm, self).__init__(*args, **kwargs)
             
         
-    
+class StaffForm(forms.ModelForm):
+    class Meta:
+        model = Staff
+        fields = [
+            'full_name',
+            'email',
+            'profile_picture',
+            'position',
+            'department',
+            'phone_number',
+            'address',
+            'emergency_contact',
+            'emergency_phone',
+            'notes',
+            'is_active'
+        ]
+        widgets = {
+            'position': forms.Select(attrs={'class': 'form-control'}),
+            'department': forms.Select(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'emergency_contact': forms.TextInput(attrs={'class': 'form-control'}),
+            'emergency_phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'notes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        }
