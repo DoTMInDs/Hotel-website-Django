@@ -30,30 +30,32 @@
         <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
             <div>
                 <h1 class="text-2xl font-bold text-gray-800">Leads for {{ hotel.name }}</h1>
-                <h1 class="text-slate-600">Leads Acquired ( {{leads.paginator.count}} )</h1>
+                <h1 class="text-slate-600">Leads Acquired ( {{guests.paginator.count}} )</h1>
             </div>
             <div class="rounded-[15px] bg-gray-100 p-4 mt-[1rem] shadow-sm">
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[600px]">
                         <thead class="">
-                            <tr class="text-left text-slate-500 border-b border-slate-300 ">
+                            <tr class="text-left text-slate-500 border-b border-slate-300 whitespace-nowrap">
                                 <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Phone</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Room</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Check In Time</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Check In</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Check Out</th>
                                 <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-300">
-                            {% for lead in leads %}
-                            <tr class="hover:bg-gray-200 rounded-[15px] transition-colors">
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.full_name }} </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.phone }} </td>                                
-                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ lead.room.room_type }} Size Bed </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ lead.room.check_in_time }} </td>
+                            {% for guest in guests %}
+                            <tr class="hover:bg-gray-200 rounded-[15px] transition-colors whitespace-nowrap">
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.full_name }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.phone }} </td>                                
+                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ guest.room.room_type }} Size Bed </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_in }} - {{ guest.check_in_time }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_out }} - - {{ guest.check_out_time }} </td>
                                 <td class="px-4 py-3 text-right">
                                     <div class="flex gap-2 justify-end">    
-                                        <p onclick="leadBtn()" 
+                                        <p onclick="guestBtn({{guest.id}})" 
                                             class="cursor-pointer px-3 py-1.5 text-xs bg-gray-400 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1  transition duration-200">
                                                 <i class="fa-solid fa-eye text-[10px]"></i>
                                             View
@@ -109,10 +111,10 @@
                     </div>
                 </div>
             </div>
-            {% if leads.paginator.num_pages > 1 %}
+            {% if guests.paginator.num_pages > 1 %}
                 <div class="flex justify-center items-center gap-8 mt-[1rem]">
-                    {% if leads.has_previous %}
-                        <a href="?page={{ leads.previous_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
+                    {% if guest.has_previous %}
+                        <a href="?page={{ guest.previous_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                             <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                         </svg>
@@ -126,11 +128,11 @@
                     {% endif %}
                 
                     <p class="text-slate-400">
-                    Page <strong class="text-slate-400">{{ leads.number }}</strong> of <strong class="text-slate-400">{{ leads.paginator.num_pages }}</strong>
+                    Page <strong class="text-slate-400">{{ guest.number }}</strong> of <strong class="text-slate-400">{{ guest.paginator.num_pages }}</strong>
                     </p>
                     
-                    {% if leads.has_next %}
-                        <a href="?page={{ leads.next_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
+                    {% if guest.has_next %}
+                        <a href="?page={{ guest.next_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                             <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                         </svg>
@@ -150,7 +152,7 @@
     <script>
         const leadWrapper = document.getElementById('leadWrapper');
         const leadModalContent = document.getElementById('leadModalContent');
-        function leadBtn(element){
+        function guestBtn(element){
             // Get data attributes from clicked element
             const full_name = element.dataset.full_name;
             const email = element.dataset.email;
@@ -159,14 +161,14 @@
             const message = element.dataset.message;
              // Update modal content
             document.getElementById('modalFullName').textContent = `${full_name} `;
-            document.getElementById('modalEmail').textContent = email;
-            document.getElementById('modalPhone').textContent = phone;
-            document.getElementById('modalMobile').textContent = mobile;
-            document.getElementById('modalmessage').textContent = message;
+            document.getElementById('modalEmail').textContent = `${email}`;
+            document.getElementById('modalPhone').textContent = `${phone}`;
+            document.getElementById('modalMobile').textContent = `${mobile}`;
+            document.getElementById('modalmessage').textContent = `${message}`;
             // Show modal
             leadWrapper.classList.remove('opacity-0', 'invisible');
             leadModalContent.classList.remove('opacity-0', 'scale-95');
-            //document.getElementById('delete-notification').value = notificationId;
+            //document.getElementById('delete-notification').value = element;
         }
         function closeBtn(){
             leadWrapper.classList.add('opacity-0', 'invisible');

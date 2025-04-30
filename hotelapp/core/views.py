@@ -103,7 +103,7 @@ def room(request):
         b_form = BookRoomForm(request.POST)
         if b_form.is_valid():
             booking = b_form.save(commit=False)
-            booking.user = request.user
+            booking.guest = request.user.guest
             booking.room = room
             booking.hotel = room.hotel
             booking.save()

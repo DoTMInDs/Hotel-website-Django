@@ -62,7 +62,7 @@ class OurRoomForm(forms.ModelForm):
         ]
         exclude = ['hotel']
         widgets = {
-            'amenities': forms.Textarea(attrs={'rows': 3}),
+            'amenities': forms.Textarea(attrs={'rows': 2,'class': 'form-control'}),
             'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
             'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
         }
@@ -80,6 +80,7 @@ class BookRoomForm(forms.ModelForm):
             'check_in_time',
             'check_out_time',
         ]
+        exclude = ['guest']
         widgets = {
             'check_in': forms.DateInput(attrs={'type': 'date'}),
             'check_out': forms.DateInput(attrs={'type': 'date'}),

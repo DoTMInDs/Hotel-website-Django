@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Rating,OurRoom,HotelPost,Lead,Manager,Booking,Staff,Amenity,OurRoomsImage
+from .models import Rating,OurRoom,HotelPost,Lead,Manager,Booking,Staff,Amenity,OurRoomsImage,Reservation,Guest
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
@@ -16,7 +16,7 @@ class LeadAdmin(admin.ModelAdmin):
     search_fields = ('full_name', 'email')
     readonly_fields = ('created_at',)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'hotel', 'room', 'check_in', 'check_out', 'created_at')
+    list_display = ('id', 'guest', 'hotel', 'room', 'check_in', 'check_out', 'created_at')
     list_filter = ('hotel', 'check_in', 'created_at')
     search_fields = ('user__username', 'hotel__name', 'room__room_type')
     readonly_fields = ('created_at',)
@@ -34,6 +34,8 @@ admin.site.register(HotelPost,HotelPostAdmin)
 admin.site.register(Lead,LeadAdmin)
 admin.site.unregister(User)
 admin.site.register(Manager)
+admin.site.register(Reservation)
+admin.site.register(Guest)
 admin.site.register(Amenity)
 admin.site.register(OurRoomsImage)
 admin.site.register(User,UserAdmin)

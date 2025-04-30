@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from core.models import Booking,Manager,OurRoom,Staff
+from core.models import Booking,Manager,OurRoom,Staff,Guest
 from .forms import CreateUserForm,UserUpdateForm,OurRoomForm,StaffForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
@@ -22,6 +22,8 @@ def login_user(request):
         
         if user is not None:
             login(request, user)
+            if not hasattr(user, 'guest'):
+                Guest.objects.create(user=user)
             messages.success(request, "Logged In successfully!!")
             return redirect('home')
         else:
@@ -72,6 +74,9 @@ def profile(request):
     }
     return render(request, 'dashboard/profile.html',context)
 
+def manage_account(request):
+    return render(request, 'dashboard/manage-account.html')
+
 @login_required
 def dashboard(request):
     hotel = get_manager_hotel(request.user)
@@ -107,18 +112,18 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html',context)
 
 @login_required
-def leads(request):
+def guest(request):
     try:
         manager = request.user.manager
         hotel = manager.hotel_post
     except (Manager.DoesNotExist, AttributeError):
         messages.error(request, "You are not registered as a hotel manager")
         return redirect('home')
-    leads = Booking.objects.filter(hotel=hotel.id).order_by('-created_at')
+    guests = Booking.objects.filter(hotel=hotel.id).order_by('-created_at')
     
-    paginator = Paginator(leads, 10)  # Show 10 leads per page
+    paginator = Paginator(guests, 10)  # Show 10 guest per page
     page_number = request.GET.get('page')
-    paginator = Paginator(leads, 10)
+    paginator = Paginator(guests, 10)
     page_number = request.GET.get('page')
     try:
         page_obj = paginator.page(page_number)
@@ -128,11 +133,11 @@ def leads(request):
         page_obj = paginator.page(paginator.num_pages)
         
     context = {
-        "leads": page_obj,
+        "guests": page_obj,
         "hotel": hotel,
         "page_obj": page_obj, 
     }
-    return render(request, 'dashboard/lead-table.html',context)
+    return render(request, 'dashboard/guest.html',context)
 
 @login_required
 def add_room(request):
@@ -170,6 +175,9 @@ def add_room(request):
         "page_obj": page_obj, 
     }
     return render(request, "dashboard/add-room.html",context)
+
+def services(request):
+    return render(request, 'dashboard/services.html')
 
 def add_room_detail(request, pk):
     hotel = get_manager_hotel(request.user)

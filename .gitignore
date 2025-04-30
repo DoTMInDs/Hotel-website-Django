@@ -1,2 +1,9 @@
+venv/
+.env*
+
 .venv/
 .qodo
+media/
+theme/
+db.sqlite3
+staticfiles

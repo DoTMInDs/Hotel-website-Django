@@ -9,7 +9,6 @@ class Gender(models.TextChoices):
     MALE="M",_("Male")
     FEMALE="F",_("Female")
 
-
 class ProfileModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     full_name = models.CharField(max_length=200, null=True)
