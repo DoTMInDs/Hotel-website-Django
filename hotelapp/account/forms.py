@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import DateInput, TimeInput
 from .models import ProfileModel
-from core.models import Lead,Room,Reservation,Staff,Booking
+from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -57,7 +57,8 @@ class RoomForm(forms.ModelForm):
             'status',
             'max_guests',
             'image',
-            'star_rating'
+            'star_rating',
+            'amenities',
         ]
         exclude = ['hotel']
 
@@ -94,6 +95,7 @@ class ReservationForm(forms.ModelForm):
             'check_out_date': forms.DateInput(attrs={'type': 'date'}),
             'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
             'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
+            'notes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -139,3 +141,38 @@ class StaffForm(forms.ModelForm):
             'emergency_phone': forms.TextInput(attrs={'class': 'form-control'}),
             'notes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+
+class HotelForm(forms.ModelForm):
+    class Meta:
+        model = Hotel
+        fields = [
+            'name',
+            'email',
+            'phone_number',
+            'location',
+            'region',
+            'description',
+            'amenities',
+            'logo'
+        ]
+        widgets = {
+            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        }
+
+class AddAmenitiesForm(forms.ModelForm):
+    class Meta:
+        model = Amenity
+        fields = [
+            'amenity_name'
+        ]
+        widgets = {
+            'amenity_name': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class ServiceForm(forms.ModelForm):
+    class Meta:
+        model = Service
+        fields = ['name', 'description', 'price', 'category', 'is_available']    
+        widgets = {
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+        }   

@@ -72,7 +72,12 @@
                             
                             <div class="mb-4">
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Amenities</label>
-                                {{ form.amenities }}
+                                <div class="flex items-center gap-2 mb-2">
+                                    {{ form.amenities }}
+                                    <button type="button" onclick="openAmenityModal()" class="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-700 transition">
+                                        <i class="fa-solid fa-plus"></i> Add New
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

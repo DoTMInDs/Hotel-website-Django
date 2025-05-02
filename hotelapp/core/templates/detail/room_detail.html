@@ -62,15 +62,23 @@
                             </div>
                             
                             <div>
-                                <p class="text-sm text-slate-500">Max Guests</p>
-                                <p class="font-medium">{{ room.max_guests }}</p>
+                                <p class="text-sm text-slate-500">Room Type</p>
+                                <p class="font-medium capitalize">{{ room.room_type }}</p>
+                            </div>
+
+                            <div>
+                                <p class="text-sm text-slate-500">Room Number</p>
+                                <p class="font-medium capitalize">{{ room.room_number }} </p>
+                            </div>
+
+                            <div>
+                                <p class="text-sm text-slate-500">Bed Type</p>
+                                <p class="font-medium capitalize">{{ room.bed_type }} </p>
                             </div>
                             
                             <div>
-                                <p class="text-sm text-slate-500">Check-in/Check-out Times</p>
-                                <p class="font-medium">
-                                    {{ room.check_in_time|time:"H:i" }} / {{ room.check_out_time|time:"H:i" }}
-                                </p>
+                                <p class="text-sm text-slate-500">Max Guests</p>
+                                <p class="font-medium">{{ room.max_guests }}</p>
                             </div>
                         </div>
                     </div>
@@ -80,17 +88,18 @@
                 <div class="md:col-span-1">
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <h2 class="text-xl font-semibold mb-4 text-slate-800">Amenities</h2>
-                        {% if room.amenities.all %}
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {% for amenity in room.amenities.all %}
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-check text-green-500"></i>
-                                <span>{{ amenity.name }}</span>
+                        {% if hotel.amenities.all %}
+                            <div class="md:col-span-2">
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    {% for amenity in hotel.amenities.all %}
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center">
+                                            {{ amenity.amenity_name }}
+                                        </span>
+                                    {% endfor %}
+                                </div>
                             </div>
-                            {% endfor %}
-                        </div>
                         {% else %}
-                        <p class="text-slate-500">No amenities added yet</p>
+                            <p class="text-slate-500">No amenities added yet</p>
                         {% endif %}
                     </div>
                 </div>

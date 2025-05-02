@@ -10,6 +10,18 @@ from datetime import date, time, datetime
 User = get_user_model()
 # Create your models here.
 
+class ServiceCategory(models.TextChoices):
+    ROOM_SERVICE = 'RS', _('Room Service')
+    FOOD_BEVERAGE = "FB", _("Food & Beverage")
+    WELLNESS = "WL", _("Wellness")
+    TRANSPORTATION = "TR", _("Transportation")
+    BUSINESS = "BZ", _("Business")
+    LAUNDRY = 'LN', _('Laundry & Dry Cleaning')
+    ACTIVITIES = 'AC', _('Activities/Tours')
+    CONCIERGE = "CC", _("Concierge")
+    FACILITY_RENTAL = 'FR', _('Facility Rental (Meeting Rooms, etc.)')
+    OTHER = "OT", _("Other")
+
 class RegionChoices(models.TextChoices):
     GREATER_ACCRA="GA",_("Greater Accra")
     NORTHERN="NR",_("Northern")
@@ -49,6 +61,7 @@ class Hotel(models.Model):
     location = models.CharField(max_length=100, null=True)
     description = models.TextField(blank=True, null=True)
     amenities = models.ManyToManyField('Amenity', blank=True, related_name='hotels')
+    services = models.ManyToManyField('Service', related_name='hotels_services', blank=True) # New Service ManyToMany
     region=models.CharField(choices=RegionChoices, max_length=2, null=True)
     logo = models.ImageField(upload_to='logos/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])])
     created_at = models.DateTimeField(auto_now_add=True,null=True)
@@ -63,6 +76,24 @@ class Hotel(models.Model):
             models.Index(fields=['-created_at']),
             ]
     
+    def __str__(self):
+        return self.name
+    
+class Service(models.Model):
+    hotel = models.ManyToManyField('Hotel', related_name='services_hotels', help_text=_("Hotels that offer this service")) # Assuming Hotel model is in 'core' app
+    name = models.CharField(max_length=100, help_text=_("Name of the service, e.g., Room Service"),null=True)
+    description = models.TextField(blank=True, help_text=_("A brief description of the service"),null=True)
+    category = models.CharField(max_length=2,choices=ServiceCategory.choices,default=ServiceCategory.OTHER,help_text=_("Category of the service"))
+    is_available = models.BooleanField(default=True, help_text=_("Is this service currently offered?"))
+    price = models.DecimalField(max_digits=10,decimal_places=2,validators=[MinValueValidator(0)],blank=True,null=True,verbose_name=_("Price"))
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("Service")
+        verbose_name_plural = _("Services")
+        ordering = ['category', 'name'] # Order services by category and then name
+
     def __str__(self):
         return self.name
 

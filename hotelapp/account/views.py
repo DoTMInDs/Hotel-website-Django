@@ -2,9 +2,8 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from core.models import Manager,Room,Staff,Guest,Reservation
-from .models import ProfileModel
-from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm
+from core.models import Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service
+from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -77,6 +76,59 @@ def profile(request):
         'p_form': p_form,
     }
     return render(request, 'dashboard/profile.html',context)
+
+def manage_hotel_account(request):
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    hotel_form = HotelForm(instance=hotel)
+    amenities_form = AddAmenitiesForm()
+    if request.method == "POST":
+        if 'hotel_submit' in request.POST:
+            hotel_form = HotelForm(request.POST, request.FILES, instance=hotel)
+            if hotel_form.is_valid():
+                hotel_form.save()
+                messages.success(request, "Hotel information updated successfully!")
+                return redirect('manage-hotel-account')
+        
+        elif 'amenity_submit' in request.POST:
+            amenities_form = AddAmenitiesForm(request.POST)
+            if amenities_form.is_valid():
+                amenity = amenities_form.save(commit=False)
+                
+                # Check if amenity already exists for this hotel
+                existing_amenity = Amenity.objects.filter(
+                    amenity_name__iexact=amenity.amenity_name,
+                    hotels=hotel
+                ).first()
+                
+                if existing_amenity:
+                    messages.info(request, f"Amenity '{amenity.amenity_name}' already exists for your hotel.")
+                else:
+                    amenity.save()
+                    hotel.amenities.add(amenity)
+                    messages.success(request, "Amenity added successfully!")
+                
+                return redirect('manage-hotel-account')
+    
+    context = {
+        'hotel_form': hotel_form,
+        'amenities_form': amenities_form,
+        'hotel': hotel,
+    }
+    return render(request, 'dashboard/manage-hotel-account.html',context)
+
+def remove_amenity(request, amenity_id):
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    
+    amenity = get_object_or_404(Amenity, id=amenity_id)
+    hotel.amenities.remove(amenity)
+    messages.success(request, f"Amenity '{amenity.amenity_name}' removed successfully!")
+    return redirect('manage-hotel-account')
 
 def manage_account(request):
     hotel = get_manager_hotel(request.user)
@@ -365,7 +417,63 @@ def edit_reservation(request, pk):
     return render(request, 'dashboard/edit-reservation.html', context)
 
 def services(request):
-    return render(request, 'dashboard/services.html')
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager or your hotel is not found.")
+        return redirect('home')
+    services = hotel.services.all().order_by('category', 'name')
+    if request.method == 'POST':
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            service = form.save(commit=False)
+            # Service is created but not yet saved to the database
+            service.save() # Save the service first
+            # Now add the service to the hotel's many-to-many relationship
+            hotel.services.add(service)
+
+            messages.success(request, f"Service '{service.name}' added successfully to {hotel.name}!")
+            return redirect('services') # Redirect to the service list
+
+    else: # GET request
+        form = ServiceForm()
+    context = {
+        'hotel': hotel,
+        'form': form,
+        'services': services,
+        'title': f"{hotel.name} Services" # Dynamic title
+    }
+    return render(request, 'dashboard/services.html',context)
+
+@login_required
+def edit_service(request, pk):
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager or your hotel is not found.")
+        return redirect('home')
+
+    # Get the service instance, ensuring it's associated with the manager's hotel
+    service = get_object_or_404(Service, pk=pk)
+
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, instance=service)
+        if form.is_valid():
+            form.save() 
+
+            messages.success(request, f"Service '{service.name}' updated successfully for {hotel.name}!")
+            return redirect('services') # Redirect to the service list
+
+    else: # GET request
+        form = ServiceForm(instance=service) 
+
+    context = {
+        'hotel': hotel,
+        'form': form,
+        'service': service, 
+        'title': f"Edit Service: {service.name}"
+    }
+    return render(request, 'dashboard/edit-service.html', context)
+
+
 
 def add_room_detail(request, pk):
     hotel = get_manager_hotel(request.user)
@@ -466,3 +574,16 @@ def delete_reservation(request, reservation_id):
         messages.success(request, 'Reservation deleted successfully!')
         return redirect('reservation')
     return redirect('reservation')
+
+@login_required
+def delete_service(request, service_id):
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    service = get_object_or_404(Service.objects.filter(), pk=service_id)
+    if request.method == "POST":
+        service.delete()
+        messages.success(request, 'Reservation deleted successfully!')
+        return redirect('services')
+    return redirect('services')

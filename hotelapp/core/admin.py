@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Rating,Room,Hotel,Lead,Manager,Staff,Amenity,OurRoomsImage,Reservation,Guest,Booking
+from .models import Rating,Room,Hotel,Lead,Manager,Staff,Amenity,OurRoomsImage,Reservation,Guest,Booking,Service
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _ 
@@ -107,12 +107,18 @@ class ReservationAdmin(admin.ModelAdmin):
         'id','check_in_date', 'check_out_date',
         'status', 'num_adults', 'num_children', 'num_guests', 'total_price', 'booking_source'
     )
-   
+
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'is_available', 'created_at')
+    list_filter = ('category', 'is_available')
+    search_fields = ('name', 'description')
+    filter_horizontal = ('hotel',)
 
 # Register your models here.
 admin.site.register(Rating)
 admin.site.register(Room,RoomAdmin)
 admin.site.register(Hotel,HotelAdmin)
+admin.site.register(Service,ServiceAdmin)
 admin.site.register(Lead,LeadAdmin)
 admin.site.unregister(User)
 admin.site.register(Manager,ManagerAdmin)

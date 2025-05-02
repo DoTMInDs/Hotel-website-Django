@@ -16,11 +16,11 @@
                 <div class="form_search_container">
                     <div class="search_input">
                         <i class="fa-regular fa-user "></i>
-                        <input type="search" name="search" class="bg-transparent" placeholder="Hotel name" value="{{ name_query }}">
+                        <input type="search" name="search" class="bg-transparent border-none" placeholder="Hotel name" value="{{ name_query }}">
                     </div>
                     <div class="search_input">
                         <i class="fa-solid fa-location-dot"></i>
-                        <input type="search" name="loc-search" class="bg-transparent" placeholder="Location" value="{{ location_query }}">
+                        <input type="search" name="loc-search" class="bg-transparent border-none" placeholder="Location" value="{{ location_query }}">
                     </div>
                 </div>
                 <button type="submit" class="search_btn">
@@ -52,7 +52,7 @@
                             <th class="px-4 py-3 font-semibold text-sm">Hotel Name</th>
                             <th class="px-4 py-3 font-semibold text-sm">Location</th>
                             <th class="px-4 py-3 font-semibold text-sm">Contact</th>
-                            {% comment %} <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th> {% endcomment %}
+                            <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200">
@@ -69,7 +69,13 @@
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-slate-500 text-sm"> {{hotel.location}}</td>
-                            <td class="px-4 py-3 text-slate-500 text-sm">{{hotel.mobile}} </td>
+                            <td class="px-4 py-3 text-slate-500 text-sm">{{hotel.phone_number}} </td>
+                            <td class="px-4 py-3 text-slate-600 text-sm text-right">
+                                <p onclick="openHotelBtn()" class=" text-red-700 cursor-pointer  transition font-semibold duration-200 text-sm" aria-label="edit">
+                                    <i class="fa-solid fa-eye text-[10px]"></i>
+                                    View
+                                </p>
+                            </td>
                         </tr>
                         {% empty %}
                         <tr>
