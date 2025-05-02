@@ -30,7 +30,7 @@
             </div>
             <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
                 <h3 class="text-[18px] basis-2/6">Username</h3>
-                <p class="mt-[10px] basis-3/5">{{user}} </p>
+                <p class="mt-[10px] basis-3/5">@{{user.username}} </p>
             </div>
             <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
                 <h3 class="text-[18px] basis-2/6">Email address</h3>
@@ -46,7 +46,7 @@
             </div>
             <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
                 <h3 class="text-[18px] basis-2/6">Gender</h3>
-                <p class="mt-[10px] basis-3/5">{{user.profilemodel.gender}}</p>
+                <p class="mt-[10px] basis-3/5">{{user.profilemodel.get_gender_display}}</p>
             </div>
             <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
                 <h3 class="text-[18px] basis-2/6">Address</h3>
@@ -69,51 +69,36 @@
                   </p>
               </div>
               <form action="" method="POST" enctype="multipart/form-data" class="bg-transparent w-full">
-                  {% csrf_token %}
-                  <div class="input-field">
-                      <label for="id_username" class="">Fullname</label>
-                      {{ p_form.full_name }}
-                      <small class='errorMess'>{{ form.full_name.errors }}</small>
+                {% csrf_token %}
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    <input type="text" name="full_name" id="id_full_name" placeholder="Enter your full name..." class="border-none bg-transparent outline-none">
+                </div>
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    <input type="text" name="email" id="id_email" placeholder="Enter your email..." class="border-none bg-transparent outline-none">
+                </div>
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    <input type="text" name="username" id="id_username" placeholder="Enter your username..." class="border-none bg-transparent outline-none">
+                </div>
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    {{ p_form.gender }}
+                </div>
+                <div class="mb-[1rem]">
+                    {{ p_form.profile }}
+                </div>
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    <input type="text" name="nationality" id="id_nationality" placeholder="Enter your nationality..." class="border-none bg-transparent outline-none">
+                </div>
+                <div class="border border-slate-200 rounded-full mb-[1rem]">
+                    <input type="text" name="address" id="id_address" placeholder="Enter your address..." class="border-none bg-transparent outline-none">
+                </div>
+                <div class="modal-footer ">
+                  <div class="flex justify-center items-center w-full gap-[20px]">
+                    <button type="button" class="px-[50px] py-[12px] rounded-full bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
+                    <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded-full text-[#fff] text-[14px] font-medium">Save</button>
                   </div>
-                  <div class="input-field">
-                      <label for="id_username" class="">Email</label>
-                      {{ p_form.email }}
-                      <small class='errorMess'>{{ form.email.errors }}</small>
-                  </div>
-                  <div class="input-field">
-                      <label for="id_username" class="">Phone number</label>
-                      {{ p_form.phone }}
-                      <small class='errorMess'>{{ form.phone.errors }}</small>
-                  </div>
-                  <div class="input-field ">
-                      <label for="gender" class="">Gender</label> <br>
-                      <div class="form-select py-[0.8rem]" name="gender" id="">
-                          {{ p_form.gender }}
-                      </div>
-                  </div>
-                  <div class="input-field">
-                      <label for="profile" class="">Profile</label><br>
-                      {{ p_form.profile }}
-                  </div>
-                  <div class="input-field">
-                      <label for="id_username" class="">Nationality</label>
-                      {{ p_form.nationality }}
-                      <small class='errorMess'>{{ form.nationality.errors }}</small>
-                  </div>
-                  <div class="input-field">
-                      <label for="id_username" class="">Address</label>
-                      {{ p_form.address }}
-                      <small class='errorMess'>{{ form.address.errors }}</small>
-                  </div>
-
-                  <div class="modal-footer ">
-                    <div class="flex justify-center items-center w-full gap-[20px]">
-                      <button type="button" class="px-[50px] py-[12px] rounded bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
-                        <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded text-[#fff] text-[14px] font-medium">Save</button>
-                    </div>
-                  </div>
-              </form>
-            </div>
+                </div>
+            </form>
+        </div>
       </div>
   </div>
 

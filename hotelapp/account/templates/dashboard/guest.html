@@ -29,8 +29,8 @@
         {% endif %}
         <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[20px]">
             <div>
-                <h1 class="text-2xl font-bold text-gray-800">Leads for {{ hotel.name }}</h1>
-                <h1 class="text-slate-600">Leads Acquired ( {{guests.paginator.count}} )</h1>
+                <h1 class="text-2xl font-bold text-gray-800">Guests for {{ hotel.name }}</h1>
+                <h1 class="text-slate-600">Guests Acquired ( {{guests.paginator.count}} )</h1>
             </div>
             <div class="rounded-[15px] bg-gray-100 p-4 mt-[1rem] shadow-sm">
                 <div class="overflow-x-auto">
@@ -39,20 +39,22 @@
                             <tr class="text-left text-slate-500 border-b border-slate-300 whitespace-nowrap">
                                 <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Phone</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Room</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Check In</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Check Out</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Room #</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Room-Type</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Check-In</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Check-Out</th>
                                 <th class="px-4 py-3 font-semibold text-sm text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-300">
                             {% for guest in guests %}
                             <tr class="hover:bg-gray-200 rounded-[15px] transition-colors whitespace-nowrap">
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.full_name }} </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.phone }} </td>                                
-                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ guest.room.room_type }} Size Bed </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_in }} - {{ guest.check_in_time }} </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_out }} - - {{ guest.check_out_time }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.first_name }} {{ guest.last_name }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.phone_number }} </td>                                
+                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ guest.room.room_number }}</td>
+                                <td class="px-4 py-3 text-slate-600 text-sm capitalize">{{ guest.room.room_type }} {{ guest.room.bed_type }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_in_date }} - {{ guest.check_in_time }} </td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ guest.check_in_date }} - - {{ guest.check_out_time }} </td>
                                 <td class="px-4 py-3 text-right">
                                     <div class="flex gap-2 justify-end">    
                                         <p onclick="guestBtn({{guest.id}})" 

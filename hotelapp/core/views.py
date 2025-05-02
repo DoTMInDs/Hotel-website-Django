@@ -6,8 +6,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .models import OurRoom,Rating,HotelPost,Booking
-from account.forms import LeadForm,BookRoomForm
+from .models import Room,Rating,Hotel,Reservation,Booking,Guest
+from account.forms import LeadForm,ReservationForm,BookingForm
 
 # Create your views here.
 
@@ -33,7 +33,7 @@ def index(request):
     return render(request, 'core/base.html',context)
 
 def about(request):
-    posts = OurRoom.objects.all()
+    posts = Room.objects.all()
     ratings = Rating.objects.all()
     
     context = {
@@ -60,7 +60,8 @@ def contact(request):
 
 @login_required
 def my_booking(request):
-    bookings = Booking.objects.filter(user=request.user).order_by('-created_at')
+    bookings = Booking.objects.filter(guest__user=request.user).order_by('-created_at')
+    reservations = Reservation.objects.filter(guest__user=request.user).order_by('-created_at')
     paginator = Paginator(bookings, 10)
     page_number = request.GET.get('page')
     
@@ -72,18 +73,20 @@ def my_booking(request):
         page_obj = paginator.page(paginator.num_pages)
     context = {
         'bookings': page_obj,
+        'reservations': reservations,
         'page_obj': page_obj,
     }
     return render(request, 'core/my_booking.html',context)
 
 def room(request):
-    rooms = OurRoom.objects.all()
+    rooms = Room.objects.all()
     name_query = request.GET.get('search', '')  # Hotel name search
     location_query = request.GET.get('loc-search', '')
     status_query = request.GET.get('status', '') 
     rating_query = request.GET.get('rating', '') 
     room_type_query = request.GET.get('room_type', '') 
-    b_form = BookRoomForm()
+    b_form = BookingForm()
+    
     if name_query or location_query:
         filters = Q()
         if name_query:
@@ -97,26 +100,23 @@ def room(request):
         if room_type_query:
             filters &= Q(room_type=room_type_query)
         rooms = rooms.filter(filters)
+    
     if request.method == 'POST':
-        room_id = request.POST.get('room')
-        room = get_object_or_404(OurRoom, id=room_id)
-        b_form = BookRoomForm(request.POST)
+        b_form = BookingForm(request.POST)
         if b_form.is_valid():
             booking = b_form.save(commit=False)
-            booking.guest = request.user.guest
-            booking.room = room
-            booking.hotel = room.hotel
+            guest, created = Guest.objects.get_or_create(user=request.user)
+            booking.guest = guest
             booking.save()
-            messages.success(request, f'Booking successful for {room.room_type} at {room.hotel.name}!')
+            messages.success(request, 'Booking request submitted successfully!')
             return redirect('room')
         else:
             for field, errors in b_form.errors.items():
                 for error in errors:
                     messages.error(request, f"{field}: {error}")
     else:
-        b_form = BookRoomForm()
-        print('error message')
-    
+        b_form = BookingForm() 
+        
     paginator = Paginator(rooms, 10)  # Show 10 rooms per page
     page_number = request.GET.get('page')
     try:
@@ -125,6 +125,7 @@ def room(request):
         page_obj = paginator.page(1)
     except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
+        
     context = {
         'rooms': rooms,
         'b_form': b_form,
@@ -134,14 +135,14 @@ def room(request):
         'rating_query': rating_query,
         'room_type_query': room_type_query,
         'page_obj': page_obj,
-        'status_choices': OurRoom.STATUS_CHOICES,
+        'status_choices': Room.ROOM_STATUS_CHOICES,
         'rating_choices': Rating.objects.all(), 
-        'room_type_choices': OurRoom.BED_TYPE_CHOICES,
+        'room_type_choices': Room.BED_TYPE_CHOICES,
     }
-    return render(request, 'core/room.html',context)
+    return render(request, 'core/room.html', context)
 
 def hotel(request):
-    hotels = HotelPost.objects.all()
+    hotels = Hotel.objects.all()
     name_query = request.GET.get('search', '')  # Hotel name search
     location_query = request.GET.get('loc-search', '')  # Location search
     if name_query or location_query:
@@ -170,7 +171,7 @@ def hotel(request):
     return render(request, 'core/hotel.html',context)
 
 def room_detail(request, pk):
-    room = get_object_or_404(OurRoom, pk=pk)
+    room = get_object_or_404(Room, pk=pk)
     context = {
         'room': room
     }
@@ -178,7 +179,7 @@ def room_detail(request, pk):
 
 @login_required
 def delete_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    booking = get_object_or_404(Booking, id=booking_id, guest__user=request.user)
     if request.method == 'POST':
         booking.delete()
         messages.success(request, 'Booking deleted successfully!')

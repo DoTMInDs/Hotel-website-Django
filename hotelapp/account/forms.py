@@ -2,10 +2,9 @@ from django import forms
 from typing import Any
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from django.forms import DateInput, TimeInput
 from .models import ProfileModel
-
-from core.models import Lead,OurRoom,Booking,Staff
+from core.models import Lead,Room,Reservation,Staff,Booking
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -48,9 +47,9 @@ class UserUpdateForm(forms.ModelForm):
             'address',
         ]
 
-class OurRoomForm(forms.ModelForm):
+class RoomForm(forms.ModelForm):
     class Meta:
-        model = OurRoom
+        model = Room
         fields = [
             'room_number',
             'room_type',
@@ -61,33 +60,58 @@ class OurRoomForm(forms.ModelForm):
             'star_rating'
         ]
         exclude = ['hotel']
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'phone_number',
+            'check_in_date',
+            'check_out_date',
+            'message',
+            'room',
+        ]
+        exclude = ['guest']
         widgets = {
-            'amenities': forms.Textarea(attrs={'rows': 2,'class': 'form-control'}),
+            'check_in_date': forms.DateInput(attrs={'type': 'date'}),
+            'check_out_date': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = Reservation
+        fields = [
+            'first_name', 'last_name', 'email', 'phone_number',
+            'room', 'check_in_date', 'check_out_date', 
+            'check_in_time', 'check_out_time', 'num_adults',
+            'num_children', 'num_guests', 'notes'
+        ]
+        widgets = {
+            'check_in_date': forms.DateInput(attrs={'type': 'date'}),
+            'check_out_date': forms.DateInput(attrs={'type': 'date'}),
             'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
             'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
         }
 
-class BookRoomForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = [
-            'full_name',
-            'email',
-            'phone',
-            'message',
-            'check_in',
-            'check_out',
-            'check_in_time',
-            'check_out_time',
-        ]
-        exclude = ['guest']
-        widgets = {
-            'check_in': forms.DateInput(attrs={'type': 'date'}),
-            'check_out': forms.DateInput(attrs={'type': 'date'}),
-        }
-        def __init__(self, *args, **kwargs):
-            self.user = kwargs.pop('user', None)  
-            super(BookRoomForm, self).__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        hotel = kwargs.pop('hotel', None)
+        super().__init__(*args, **kwargs)
+        if hotel:
+            self.fields['room'].queryset = Room.objects.filter(hotel=hotel, status='Available')
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in_date = cleaned_data.get('check_in_date')
+        check_out_date = cleaned_data.get('check_out_date')
+        
+        if check_in_date and check_out_date:
+            if check_out_date <= check_in_date:
+                raise forms.ValidationError("Check-out date must be strictly after the check-in date.")
+        
+        return cleaned_data
             
         
 class StaffForm(forms.ModelForm):

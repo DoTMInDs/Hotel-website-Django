@@ -62,18 +62,18 @@
                   Contact
                 </a>
               </li>
-              {% if user.manager.user.is_authenticated%}
+              {% if user.manager.user.is_authenticated %}
               <li>
                 <a href="{% url "dashboard" %}" class="navv-link">
                   <i class="fa-solid fa-chart-pie"></i>
                   Dashboard
                 </a>
               </li>
-              {% elif manager.user.is_authenticated %}
+              {% elif user.manager.user.is_authenticated %}
               <li>
                 <a href="{% url "login" %}" class="navv-link">
                   <i class="fa-regular fa-user"></i>
-                  Sign In
+                  Dashboard
                 </a>
               </li>
               {% endif %}
