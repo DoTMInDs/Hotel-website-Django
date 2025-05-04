@@ -114,6 +114,11 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT", ""),
     }
 }
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=600,  # Optional: Persistent connections
+        conn_health_checks=True, # Optional: Check connection health
+    )
 
 
 # Password validation
