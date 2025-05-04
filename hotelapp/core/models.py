@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from datetime import date, time, datetime
+from cloudinary.models import CloudinaryField # type: ignore
 
 User = get_user_model()
 # Create your models here.
@@ -63,8 +64,8 @@ class Hotel(models.Model):
     amenities = models.ManyToManyField('Amenity', blank=True, related_name='hotels')
     services = models.ManyToManyField('Service', related_name='hotels_services', blank=True) # New Service ManyToMany
     region=models.CharField(choices=RegionChoices, max_length=2, null=True)
-    logo = models.ImageField(upload_to='logos/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])])
-    hotel_image = models.ImageField(upload_to='hotel_images/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])],verbose_name=_("Hotel Image"))
+    logo = CloudinaryField(folder='logos/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])])
+    hotel_image = CloudinaryField(folder='hotel_images/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])],verbose_name=_("Hotel Image"))
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     
     class Meta:
@@ -125,7 +126,7 @@ class Room(models.Model):
     max_guests = models.PositiveIntegerField(default=2,validators=[MinValueValidator(1), MaxValueValidator(10)])
     bed_type = models.CharField(max_length=100,choices=BED_TYPE_CHOICES,default='double')
     room_number = models.CharField(max_length=10, null=True,verbose_name=_("Room Number"))
-    image = models.ImageField(upload_to='rooms/',validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'webp'])])
+    image = CloudinaryField(folder='rooms/',validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'webp'])])
     star_rating = models.ForeignKey(Rating, on_delete=models.PROTECT)  # Prevent accidental rating deletion
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -208,7 +209,7 @@ class Guest(models.Model):
 
 class OurRoomsImage(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='room_images', validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif'])])
+    image = CloudinaryField(folder='room_images/', validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif'])])
     class Meta:
         verbose_name_plural = 'Our Rooms Images'
         ordering = ('room',)
@@ -348,7 +349,7 @@ class Staff(models.Model):
     full_name = models.CharField(max_length=100,null=True)
     email = models.EmailField(null=True)
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='staff_members')
-    profile_picture = models.ImageField(upload_to='staff_profile_pics/', blank=True, null=True)
+    profile_picture = CloudinaryField(folder='staff_profile_pics/', blank=True, null=True)
     position = models.CharField(max_length=50, choices=POSITION_CHOICES)
     department = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
     phone_number = models.CharField(max_length=20)
