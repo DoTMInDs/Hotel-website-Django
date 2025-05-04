@@ -9,7 +9,7 @@
         <div class="transition-all duration-300 bg-gray-100 border border-slate-600 border-opacity-20 rounded-[15px] p-4 ">
             <!-- Back button -->
             <div class="mb-4">
-                <a href="{% url 'room' %}" class="flex items-center text-slate-600 hover:text-slate-800">
+                <a href="{% url 'room-list' room.hotel.id %}" class="flex items-center text-slate-600 hover:text-slate-800">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1">
                         <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
                     </svg>

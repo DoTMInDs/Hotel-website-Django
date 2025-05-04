@@ -75,13 +75,22 @@
          <div class="bg-white rounded-lg shadow-md p-6 mt-6">
             <form method="post" enctype="multipart/form-data" class="bg-transparent shadow">
                 {% csrf_token %}
+                <input type="hidden" name="hotel_submit" value="1">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Left Column -->
                     <div>
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-slate-700 mb-1">Hotel Image</label>
+                            {% if hotel.hotel_image %}
+                            <img src="{{ hotel.hotel_image.url }}" alt="Current Room Image" class="w-full h-48 object-cover mb-2 rounded">
+                            {% endif %}
+                            {{ hotel_form.hotel_image }}
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Hotel Logo</label>
                             {% if hotel.logo %}
-                            <img src="{{ hotel.logo.url }}" alt="Current Room Image" class="w-full h-48 object-cover mb-2 rounded">
+                            <img src="{{ hotel.logo.url }}" alt="Current Room Image" class="w-[50px] h-[50px] object-center object-cover mb-2 rounded">
                             {% endif %}
                             {{ hotel_form.logo }}
                         </div>

@@ -1,0 +1,76 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% block title %}Hotels{% endblock title %}
+{% block main-content %}
+    {% include "partials/nav.html" %}
+    <section class="flex gap-[1rem] feature_secction relative">
+        <main class="main_card_wrapper">
+            <!-- Back button -->
+            <div class="mb-4">
+                <a href="{% url 'hotel' %}" class="flex items-center text-slate-600 hover:text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1">
+                        <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                    </svg>
+                    Back to hotel list
+                </a>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-3">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 13h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V7H3v2zm18-6H3V4h18v2z"/>
+                            </svg>
+                            {{ hotel.name }} Services
+                        </h2>
+                        <p class="text-sm text-slate-500 mt-1">Manage the services offered by your hotel.</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    {% if services %}
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for service in services %}
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2 text-slate-700 font-semibold text-lg mb-2">
+                                            {# Consider adding a service-specific icon here if available #}
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-1V9h1v8zm3 0h-1V9h1v8zm2-10H8V5h8v2z"/></svg>
+                                            {{ service.name }}
+                                        </div>
+                                        {% if service.description %}
+                                            <p class="text-sm text-slate-600 mb-3">{{ service.description|linebreaksbr }}</p>
+                                        {% endif %}
+                                         <div class="text-xs text-slate-500 mb-2">
+                                            <strong>Category:</strong> {{ service.get_category_display }}
+                                        </div>
+                                         <div class="text-xs text-slate-500">
+                                            <strong>Available:</strong>
+                                            {% if service.is_available %}
+                                                 <span class="text-green-600 font-semibold">Yes</span>
+                                            {% else %}
+                                                 <span class="text-red-600 font-semibold">No</span>
+                                            {% endif %}
+                                        </div>
+                                        <div class="text-xs text-slate-500 mb-2">
+                                            <strong>Price:</strong> GHS {{ service.price }}
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center py-8">
+                            <p class="text-slate-600 text-lg mb-4">No services have been added for this hotel yet.</p>
+                             <a href="" class="px-6 py-3 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 transition duration-150 ease-in-out text-base font-semibold inline-flex items-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Add Your First Service
+                             </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+    </section>
+
+ 
+{% endblock %}

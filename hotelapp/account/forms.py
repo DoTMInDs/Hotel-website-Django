@@ -153,7 +153,8 @@ class HotelForm(forms.ModelForm):
             'region',
             'description',
             'amenities',
-            'logo'
+            'hotel_image',
+            'logo',
         ]
         widgets = {
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),

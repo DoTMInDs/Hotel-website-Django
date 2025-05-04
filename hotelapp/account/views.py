@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from core.models import Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service
+from core.models import Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking
 from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
@@ -88,16 +88,20 @@ def manage_hotel_account(request):
         if 'hotel_submit' in request.POST:
             hotel_form = HotelForm(request.POST, request.FILES, instance=hotel)
             if hotel_form.is_valid():
-                hotel_form.save()
-                messages.success(request, "Hotel information updated successfully!")
-                return redirect('manage-hotel-account')
+                try:
+                    hotel_form.save()
+                    messages.success(request, "Hotel information updated successfully!")
+                    return redirect('manage-hotel-account')
+                except Exception as e:
+                    messages.error(request, f"Error saving hotel information: {str(e)}")
+            else:
+                for field, errors in hotel_form.errors.items():
+                    for error in errors:
+                        messages.error(request, f"{field}: {error}")
         
         elif 'amenity_submit' in request.POST:
-            amenities_form = AddAmenitiesForm(request.POST)
-            if amenities_form.is_valid():
+            try:
                 amenity = amenities_form.save(commit=False)
-                
-                # Check if amenity already exists for this hotel
                 existing_amenity = Amenity.objects.filter(
                     amenity_name__iexact=amenity.amenity_name,
                     hotels=hotel
@@ -111,6 +115,8 @@ def manage_hotel_account(request):
                     messages.success(request, "Amenity added successfully!")
                 
                 return redirect('manage-hotel-account')
+            except Exception as e:
+                messages.error(request, f"Error adding amenity: {str(e)}")
     
     context = {
         'hotel_form': hotel_form,
@@ -161,6 +167,7 @@ def dashboard(request):
     staff_members = Staff.objects.filter(hotel=hotel).order_by('-join_date')
     reservations = Reservation.objects.filter(room__hotel=hotel.id).order_by('-created_at')
     rooms = Room.objects.filter(hotel=hotel).order_by('-created_at')
+    guests = Booking.objects.filter(room__hotel=hotel.id).order_by('-created_at')
     form = StaffForm()
     
     if request.method == "POST":
@@ -181,6 +188,7 @@ def dashboard(request):
         'staff_form': form,
         'hotel': hotel,
         "reservations": reservations,
+        "guests": guests,
         "rooms": rooms,
     }
     return render(request, 'dashboard/dashboard.html',context)
@@ -196,7 +204,7 @@ def guest(request):
     except (Manager.DoesNotExist, AttributeError):
         messages.error(request, "You are not registered as a hotel manager")
         return redirect('home')
-    guests = Reservation.objects.filter(room__hotel=hotel.id).order_by('-created_at')
+    guests = Booking.objects.filter(room__hotel=hotel.id).order_by('-created_at')
     
     paginator = Paginator(guests, 10)  # Show 10 guest per page
     page_number = request.GET.get('page')

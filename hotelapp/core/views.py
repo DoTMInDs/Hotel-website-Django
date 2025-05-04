@@ -33,7 +33,7 @@ def index(request):
     return render(request, 'core/base.html',context)
 
 def about(request):
-    posts = Room.objects.all()
+    posts = Room.objects.all()[:5]
     ratings = Rating.objects.all()
     
     context = {
@@ -78,8 +78,38 @@ def my_booking(request):
     }
     return render(request, 'core/my_booking.html',context)
 
-def room(request):
-    rooms = Room.objects.all()
+def hotel_rooms(request):
+    hotels = Hotel.objects.all()
+    name_query = request.GET.get('search', '')  # Hotel name search
+    location_query = request.GET.get('loc-search', '')  # Location search
+    if name_query or location_query:
+        filters = Q()
+        if name_query:
+            filters &= Q(name__icontains=name_query)
+        if location_query:
+            filters &= Q(location__icontains=location_query)
+        hotels = hotels.filter(filters)
+    paginator = Paginator(hotels, 5)  # Show 10 hotels per page
+    page_number = request.GET.get('page')
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range, deliver last page
+        page_obj = paginator.page(paginator.num_pages)
+    context = {
+        'hotels': hotels,
+        'name_query': name_query,
+        'location_query': location_query,
+        'page_obj': page_obj,
+    }
+    return render(request, 'core/hotel_rooms.html',context)
+
+def room_list(request, pk):
+    hotel = get_object_or_404(Hotel, pk=pk)
+    rooms = Room.objects.filter(hotel=hotel)
     name_query = request.GET.get('search', '')  # Hotel name search
     location_query = request.GET.get('loc-search', '')
     status_query = request.GET.get('status', '') 
@@ -109,11 +139,11 @@ def room(request):
             booking.guest = guest
             booking.save()
             messages.success(request, 'Booking request submitted successfully!')
-            return redirect('room')
+            return redirect('room-list', pk=hotel.pk)
         else:
             for field, errors in b_form.errors.items():
                 for error in errors:
-                    messages.error(request, f"{field}: {error}")
+                    messages.error(request, f"{field}: {error} Please try again.")
     else:
         b_form = BookingForm() 
         
@@ -127,7 +157,9 @@ def room(request):
         page_obj = paginator.page(paginator.num_pages)
         
     context = {
+        'hotel': hotel,
         'rooms': rooms,
+        'hotel_id': pk,
         'b_form': b_form,
         'name_query': name_query,
         'location_query': location_query,
@@ -139,7 +171,7 @@ def room(request):
         'rating_choices': Rating.objects.all(), 
         'room_type_choices': Room.BED_TYPE_CHOICES,
     }
-    return render(request, 'core/room.html', context)
+    return render(request, 'core/room_list.html', context)
 
 def hotel(request):
     hotels = Hotel.objects.all()
@@ -169,6 +201,15 @@ def hotel(request):
         'page_obj': page_obj,
     }
     return render(request, 'core/hotel.html',context)
+
+def hotel_services(request, pk):
+    hotel = get_object_or_404(Hotel, pk=pk)
+    services = hotel.services.all()
+    context = {
+        'hotel': hotel,
+        'services': services
+    }
+    return render(request, 'core/hotel_services.html',context)
 
 def room_detail(request, pk):
     room = get_object_or_404(Room, pk=pk)

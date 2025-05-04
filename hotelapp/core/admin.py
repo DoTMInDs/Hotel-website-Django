@@ -93,7 +93,7 @@ class HotelAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',) # Assuming dated_on was renamed to created_at
     fieldsets = (
         (None, {
-            'fields': ('name', 'phone_number', 'email', 'location', 'region', 'logo', 'description', 'amenities')
+            'fields': ('name', 'phone_number', 'email', 'location', 'region', 'logo', 'hotel_image', 'description', 'amenities')
         }),
         (_('Timestamps'), {
             'fields': ('created_at',),

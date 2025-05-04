@@ -64,6 +64,7 @@ class Hotel(models.Model):
     services = models.ManyToManyField('Service', related_name='hotels_services', blank=True) # New Service ManyToMany
     region=models.CharField(choices=RegionChoices, max_length=2, null=True)
     logo = models.ImageField(upload_to='logos/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])])
+    hotel_image = models.ImageField(upload_to='hotel_images/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])],verbose_name=_("Hotel Image"))
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     
     class Meta:

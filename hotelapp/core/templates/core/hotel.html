@@ -71,10 +71,10 @@
                             <td class="px-4 py-3 text-slate-500 text-sm"> {{hotel.location}}</td>
                             <td class="px-4 py-3 text-slate-500 text-sm">{{hotel.phone_number}} </td>
                             <td class="px-4 py-3 text-slate-600 text-sm text-right">
-                                <p onclick="openHotelBtn()" class=" text-red-700 cursor-pointer  transition font-semibold duration-200 text-sm" aria-label="edit">
+                                <a href="{% url "hotel-services" hotel.id %}" class=" text-red-700 cursor-pointer  transition font-semibold duration-200 text-sm" aria-label="edit">
                                     <i class="fa-solid fa-eye text-[10px]"></i>
                                     View
-                                </p>
+                                </a>
                             </td>
                         </tr>
                         {% empty %}
