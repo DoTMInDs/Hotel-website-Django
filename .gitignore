@@ -1,5 +1,12 @@
 venv/
 .env*
+.env
+
+# Ignore virtual environment directories
+*.pyc
+*.pyo
+*.pyd
+*.db
 
 .venv/
 .qodo
@@ -7,3 +14,6 @@ media/
 theme/
 db.sqlite3
 staticfiles
+# Ignore Python cache files
+__pycache__/
+# Ignore Django migrations
