@@ -1,77 +1,96 @@
 {% load static %}
 <nav class="flex w-full">
-    <section  id="dashboard_SideBar" class="dashboard_SideBar group hover:w-[300px] w-[100px] md:w-[300px] fixed flex flex-col h-[100%] shadow-md rounded-r-[25px] bg-white left-0 p-[1rem] top-0 mt-[0px] transition-all duration-300 z-50 transform translate-x-[-200px] md:translate-x-0">
-        <div class="nav-items space-y-4">
-            <a href="{% url "home" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <i class="fa fa-solid fa-home"></i>                    
-                <span class="md:block hidden group-hover:inline-block">Home</span>
-            </a>    
-            <a href="{% url "dashboard" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 3.19998C8.43573 3.56262 6.99694 4.33718 5.8329 5.44332C4.66886 6.54946 3.82197 7.94689 3.38005 9.49066C2.93814 11.0344 2.91731 12.6683 3.31971 14.2229C3.72212 15.7774 4.53311 17.196 5.66857 18.3314C6.80403 19.4669 8.2226 20.2779 9.77714 20.6803C11.3317 21.0827 12.9656 21.0619 14.5093 20.62C16.0531 20.178 17.4506 19.3311 18.5567 18.1671C19.6628 17.0031 20.4374 15.5643 20.8 14C20.8 13.7348 20.6947 13.4804 20.5071 13.2929C20.3196 13.1053 20.0652 13 19.8 13H13C12.4696 13 11.9609 12.7893 11.5858 12.4142C11.2107 12.0391 11 11.5304 11 11V3.99998C10.9876 3.88151 10.9518 3.76668 10.8946 3.66215C10.8375 3.55763 10.7602 3.46548 10.6672 3.39107C10.5741 3.31665 10.4673 3.26144 10.3527 3.22864C10.2382 3.19584 10.1183 3.1861 10 3.19998Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15 3.5C16.2697 3.94708 17.423 4.6733 18.3748 5.62516C19.3267 6.57702 20.0529 7.73028 20.5 9H16C15.7348 9 15.4804 8.89464 15.2929 8.70711C15.1054 8.51957 15 8.26522 15 8V3.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Dashboard</span>
-            </a>    
-            <a href="{% url "add-room" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 19V13C2 12.55 2.09167 12.1417 2.275 11.775C2.45833 11.4083 2.7 11.0833 3 10.8V8C3 7.16667 3.29167 6.45833 3.875 5.875C4.45833 5.29167 5.16667 5 6 5H10C10.3833 5 10.7417 5.071 11.075 5.213C11.4083 5.355 11.7167 5.55067 12 5.8C12.2833 5.55 12.5917 5.35433 12.925 5.213C13.2583 5.07167 13.6167 5.00067 14 5H18C18.8333 5 19.5417 5.29167 20.125 5.875C20.7083 6.45833 21 7.16667 21 8V10.8C21.3 11.0833 21.5417 11.4083 21.725 11.775C21.9083 12.1417 22 12.55 22 13V19H20V17H4V19H2ZM13 10H19V8C19 7.71667 18.904 7.47933 18.712 7.288C18.52 7.09667 18.2827 7.00067 18 7H14C13.7167 7 13.4793 7.096 13.288 7.288C13.0967 7.48 13.0007 7.71733 13 8V10ZM5 10H11V8C11 7.71667 10.904 7.47933 10.712 7.288C10.52 7.09667 10.2827 7.00067 10 7H6C5.71667 7 5.47933 7.096 5.288 7.288C5.09667 7.48 5.00067 7.71733 5 8V10ZM4 15H20V13C20 12.7167 19.904 12.4793 19.712 12.288C19.52 12.0967 19.2827 12.0007 19 12H5C4.71667 12 4.47933 12.096 4.288 12.288C4.09667 12.48 4.00067 12.7173 4 13V15Z" fill="currentColor"/>
-              </svg>
-                <span class="md:block hidden group-hover:inline-block">Rooms</span>
-            </a>    
-            <a href="{% url "services" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.108 11.758L11.392 9.468L9.339 7.408L8.18 8.566L7.472 7.858L8.625 6.7L6.673 4.748L4.383 7.038L9.108 11.758ZM16.942 19.598L19.232 17.308L17.281 15.356L16.123 16.508L15.416 15.8L16.567 14.642L14.527 12.608L12.242 14.892L16.942 19.598ZM15.532 6.752L17.26 8.479L19.006 6.733L17.273 5L15.532 6.752ZM7.155 20H4V16.846L8.394 12.452L3 7.039L6.673 3.366L12.112 8.785L16.579 4.312C16.689 4.20133 16.805 4.12166 16.927 4.073C17.049 4.02433 17.179 4 17.317 4C17.455 4 17.585 4.02433 17.707 4.073C17.829 4.12166 17.9453 4.20133 18.056 4.312L19.688 6.008C19.7987 6.118 19.8753 6.234 19.918 6.356C19.9607 6.478 19.9817 6.608 19.981 6.746C19.9803 6.884 19.959 7.01 19.917 7.124C19.875 7.238 19.799 7.35 19.689 7.46L15.259 11.914L20.635 17.327L16.96 21L11.547 15.606L7.155 20Z" fill="currentColor"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Services</span>
-            </a>    
-            <a href="" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22 13L20.704 11.704C20.252 11.2522 19.6391 10.9983 19 10.9983C18.3609 10.9983 17.748 11.2522 17.296 11.704L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20 2H8C6.89543 2 6 2.89543 6 4V16C6 17.1046 6.89543 18 8 18H20C21.1046 18 22 17.1046 22 16V4C22 2.89543 21.1046 2 20 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-                <span class="md:block hidden group-hover:inline-block">Room Images</span>
-            </a>    
-            <a href="{% url "guest" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.5 5L4 6.5L7 3.5M2.5 12L4 13.5L7 10.5M2.5 19L4 20.5L7 17.5M10.5 12H21.5M10.5 19H21.5M10.5 5H21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Guests</span>
-            </a>    
-            <a href="{% url "reservation" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 12.5L21.167 15M21.167 15L20 18.5H15.5L14.5 15H21.167ZM16.5 20.51L16.51 20.499M19.5 20.51L19.51 20.499M9 11C10.0609 11 11.0783 10.5786 11.8284 9.82843C12.5786 9.07828 13 8.06087 13 7C13 5.93913 12.5786 4.92172 11.8284 4.17157C11.0783 3.42143 10.0609 3 9 3C7.93913 3 6.92172 3.42143 6.17157 4.17157C5.42143 4.92172 5 5.93913 5 7C5 8.06087 5.42143 9.07828 6.17157 9.82843C6.92172 10.5786 7.93913 11 9 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 18C2.00002 16.6861 2.36983 15.3987 3.06714 14.2851C3.76444 13.1715 4.76109 12.2766 5.94309 11.7029C7.12508 11.1291 8.44471 10.8995 9.75103 11.0405C11.0574 11.1815 12.2976 11.6873 13.33 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Reservations</span>
-            </a>    
-            <a href="{% url "manage-hotel-account" %}" class="text-nowrap py-[1rem] pl-[0.6rem] text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 21H2V19H3V4C3 3.73478 3.10536 3.48043 3.29289 3.29289C3.48043 3.10536 3.73478 3 4 3H18C18.2652 3 18.5196 3.10536 18.7071 3.29289C18.8946 3.48043 19 3.73478 19 4V9H21V19H22V21ZM17 19H19V11H13V19H15V13H17V19ZM17 9V5H5V19H11V9H17ZM7 11H9V13H7V11ZM7 15H9V17H7V15ZM7 7H9V9H7V7Z" fill="currentColor"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Manage Hotel</span>
-            </a>    
-            <a href="{% url "manage-account" %}" class="text-nowrap py-[1rem] pl-[0.6rem] md:hidden text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 2C6.49445 2 6.9778 2.14662 7.38893 2.42133C7.80005 2.69603 8.12048 3.08648 8.3097 3.54329C8.49892 4.00011 8.54843 4.50277 8.45196 4.98773C8.3555 5.47268 8.1174 5.91814 7.76777 6.26777C7.41814 6.6174 6.97268 6.8555 6.48773 6.95196C6.00277 7.04843 5.50011 6.99892 5.04329 6.8097C4.58648 6.62048 4.19603 6.30005 3.92133 5.88893C3.64662 5.4778 3.5 4.99445 3.5 4.5C3.5 3.83696 3.76339 3.20107 4.23223 2.73223C4.70107 2.26339 5.33696 2 6 2ZM6 1C5.30777 1 4.63108 1.20527 4.0555 1.58986C3.47993 1.97444 3.03133 2.52107 2.76642 3.16061C2.50151 3.80015 2.4322 4.50388 2.56725 5.18282C2.7023 5.86175 3.03564 6.48539 3.52513 6.97487C4.01461 7.46436 4.63825 7.7977 5.31718 7.93275C5.99612 8.0678 6.69985 7.99848 7.33939 7.73358C7.97893 7.46867 8.52556 7.02007 8.91014 6.4445C9.29473 5.86892 9.5 5.19223 9.5 4.5C9.5 3.57174 9.13125 2.6815 8.47487 2.02513C7.8185 1.36875 6.92826 1 6 1ZM11 15H10V12.5C10 11.837 9.73661 11.2011 9.26777 10.7322C8.79893 10.2634 8.16304 10 7.5 10H4.5C3.83696 10 3.20107 10.2634 2.73223 10.7322C2.26339 11.2011 2 11.837 2 12.5V15H1V12.5C1 11.5717 1.36875 10.6815 2.02513 10.0251C2.6815 9.36875 3.57174 9 4.5 9H7.5C8.42826 9 9.3185 9.36875 9.97487 10.0251C10.6313 10.6815 11 11.5717 11 12.5V15ZM11 2H16V3H11V2ZM11 4.5H16V5.5H11V4.5ZM11 7H14.5V8H11V7Z" fill="currentColor"/>
-                </svg>
-                <span class="md:block hidden group-hover:inline-block">Profile</span>
-            </a>    
-            <div class="absolute left-0 right-0 bottom-0 w-[80%] m-auto p-[1rem] space-y-4">
-                <a href="{% url "logout" %}" class="text-nowrap p-[1rem] w-full text-slate-600 text-[15px] font-semibold flex gap-[0.5rem] items-center hover:bg-gray-200 transition duration-300 bg-gray-100 rounded-[15px]">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 12C4 12.1326 4.05268 12.2598 4.14645 12.3536C4.24021 12.4473 4.36739 12.5 4.5 12.5H13.293L10.646 15.146C10.5995 15.1924 10.5626 15.2475 10.5374 15.3082C10.5123 15.3689 10.4993 15.4339 10.4992 15.4996C10.4991 15.6323 10.5517 15.7596 10.6455 15.8535C10.7393 15.9474 10.8665 16.0002 10.9991 16.0003C11.1318 16.0004 11.2591 15.9478 11.353 15.854L14.853 12.354C14.9467 12.2602 14.9994 12.1331 14.9994 12.0005C14.9994 11.8679 14.9467 11.7408 14.853 11.647L11.353 8.147C11.2587 8.05592 11.1324 8.00552 11.0013 8.00666C10.8702 8.0078 10.7448 8.06039 10.6521 8.15309C10.5594 8.24579 10.5068 8.3712 10.5057 8.5023C10.5045 8.6334 10.5549 8.7597 10.646 8.854L13.293 11.5H4.5C4.36739 11.5 4.24021 11.5527 4.14645 11.6464C4.05268 11.7402 4 11.8674 4 12ZM17.5 2H6.5C5.83696 2 5.20107 2.26339 4.73223 2.73223C4.26339 3.20107 4 3.83696 4 4.5V8.5C4 8.63261 4.05268 8.75979 4.14645 8.85355C4.24021 8.94732 4.36739 9 4.5 9C4.63261 9 4.75979 8.94732 4.85355 8.85355C4.94732 8.75979 5 8.63261 5 8.5V4.5C5 4.10218 5.15804 3.72064 5.43934 3.43934C5.72064 3.15804 6.10218 3 6.5 3H17.5C17.8978 3 18.2794 3.15804 18.5607 3.43934C18.842 3.72064 19 4.10218 19 4.5V19.5C19 19.8978 18.842 20.2794 18.5607 20.5607C18.2794 20.842 17.8978 21 17.5 21H6.5C6.10218 21 5.72064 20.842 5.43934 20.5607C5.15804 20.2794 5 19.8978 5 19.5V15.5C5 15.3674 4.94732 15.2402 4.85355 15.1464C4.75979 15.0527 4.63261 15 4.5 15C4.36739 15 4.24021 15.0527 4.14645 15.1464C4.05268 15.2402 4 15.3674 4 15.5V19.5C4 20.163 4.26339 20.7989 4.73223 21.2678C5.20107 21.7366 5.83696 22 6.5 22H17.5C18.163 22 18.7989 21.7366 19.2678 21.2678C19.7366 20.7989 20 20.163 20 19.5V4.5C20 3.83696 19.7366 3.20107 19.2678 2.73223C18.7989 2.26339 18.163 2 17.5 2Z" fill="currentColor"/>
+    <section id="dashboard_SideBar" class="dashboard_SideBar group fixed flex flex-col h-[100%] bg-[#3b5362] left-0 p-[1rem] top-0 mt-0 transition-all duration-300 z-50 w-[250px]">
+        <div class="nav-items space-y-4 h-full flex flex-col">
+            <div class="flex-1 overflow-y-auto">
+                <section class="flex justify-between items-center mb-[2rem] mt-0 py-[1rem] px-[0.6rem] cursor-pointer border-b border-gray-500">
+                    <a href="{% url "home" %}" class="no-underline flex gap-[1rem] items-center text-white">
+                        <i class="fa fa-solid fa-home"></i>                    
+                        <span class="">Home</span>
+                    </a>    
+                </section>
+
+                <!-- Main Menu Heading -->
+                <h5 class="text-gray-400 uppercase text-xs font-bold px-4 mb-2">MAIN MENU</h5>
+
+                <a href="{% url "dashboard" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1" data-url="dashboard">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3.19998C8.43573 3.56262 6.99694 4.33718 5.8329 5.44332C4.66886 6.54946 3.82197 7.94689 3.38005 9.49066C2.93814 11.0344 2.91731 12.6683 3.31971 14.2229C3.72212 15.7774 4.53311 17.196 5.66857 18.3314C6.80403 19.4669 8.2226 20.2779 9.77714 20.6803C11.3317 21.0827 12.9656 21.0619 14.5093 20.62C16.0531 20.178 17.4506 19.3311 18.5567 18.1671C19.6628 17.0031 20.4374 15.5643 20.8 14C20.8 13.7348 20.6947 13.4804 20.5071 13.2929C20.3196 13.1053 20.0652 13 19.8 13H13C12.4696 13 11.9609 12.7893 11.5858 12.4142C11.2107 12.0391 11 11.5304 11 11V3.99998C10.9876 3.88151 10.9518 3.76668 10.8946 3.66215C10.8375 3.55763 10.7602 3.46548 10.6672 3.39107C10.5741 3.31665 10.4673 3.26144 10.3527 3.22864C10.2382 3.19584 10.1183 3.1861 10 3.19998Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 3.5C16.2697 3.94708 17.423 4.6733 18.3748 5.62516C19.3267 6.57702 20.0529 7.73028 20.5 9H16C15.7348 9 15.4804 8.89464 15.2929 8.70711C15.1054 8.51957 15 8.26522 15 8V3.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="md:block hidden group-hover:inline-block">Sign Out</span>
-                </a> 
-            </div>   
+                    <span class="">Dashboard</span>
+                </a>    
+                <a href="{% url "add-room" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 19V13C2 12.55 2.09167 12.1417 2.275 11.775C2.45833 11.4083 2.7 11.0833 3 10.8V8C3 7.16667 3.29167 6.45833 3.875 5.875C4.45833 5.29167 5.16667 5 6 5H10C10.3833 5 10.7417 5.071 11.075 5.213C11.4083 5.355 11.7167 5.55067 12 5.8C12.2833 5.55 12.5917 5.35433 12.925 5.213C13.2583 5.07167 13.6167 5.00067 14 5H18C18.8333 5 19.5417 5.29167 20.125 5.875C20.7083 6.45833 21 7.16667 21 8V10.8C21.3 11.0833 21.5417 11.4083 21.725 11.775C21.9083 12.1417 22 12.55 22 13V19H20V17H4V19H2ZM13 10H19V8C19 7.71667 18.904 7.47933 18.712 7.288C18.52 7.09667 18.2827 7.00067 18 7H14C13.7167 7 13.4793 7.096 13.288 7.288C13.0967 7.48 13.0007 7.71733 13 8V10ZM5 10H11V8C11 7.71667 10.904 7.47933 10.712 7.288C10.52 7.09667 10.2827 7.00067 10 7H6C5.71667 7 5.47933 7.096 5.288 7.288C5.09667 7.48 5.00067 7.71733 5 8V10ZM4 15H20V13C20 12.7167 19.904 12.4793 19.712 12.288C19.52 12.0967 19.2827 12.0007 19 12H5C4.71667 12 4.47933 12.096 4.288 12.288C4.09667 12.48 4.00067 12.7173 4 13V15Z" fill="currentColor"/>
+                </svg>
+                    <span class="">Rooms</span>
+                </a>    
+                <a href="{% url "services" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.108 11.758L11.392 9.468L9.339 7.408L8.18 8.566L7.472 7.858L8.625 6.7L6.673 4.748L4.383 7.038L9.108 11.758ZM16.942 19.598L19.232 17.308L17.281 15.356L16.123 16.508L15.416 15.8L16.567 14.642L14.527 12.608L12.242 14.892L16.942 19.598ZM15.532 6.752L17.26 8.479L19.006 6.733L17.273 5L15.532 6.752ZM7.155 20H4V16.846L8.394 12.452L3 7.039L6.673 3.366L12.112 8.785L16.579 4.312C16.689 4.20133 16.805 4.12166 16.927 4.073C17.049 4.02433 17.179 4 17.317 4C17.455 4 17.585 4.02433 17.707 4.073C17.829 4.12166 17.9453 4.20133 18.056 4.312L19.688 6.008C19.7987 6.118 19.8753 6.234 19.918 6.356C19.9607 6.478 19.9817 6.608 19.981 6.746C19.9803 6.884 19.959 7.01 19.917 7.124C19.875 7.238 19.799 7.35 19.689 7.46L15.259 11.914L20.635 17.327L16.96 21L11.547 15.606L7.155 20Z" fill="currentColor"/>
+                    </svg>
+                    <span class="">Services</span>
+                </a>    
+                <a href="" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 22H4C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 13L20.704 11.704C20.252 11.2522 19.6391 10.9983 19 10.9983C18.3609 10.9983 17.748 11.2522 17.296 11.704L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 2H8C6.89543 2 6 2.89543 6 4V16C6 17.1046 6.89543 18 8 18H20C21.1046 18 22 17.1046 22 16V4C22 2.89543 21.1046 2 20 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="">Room Images</span>
+                </a>    
+                <a href="{% url "guest" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1" onclick="markAsSeen('guest')">
+                    <div class="flex gap-[0.5rem] items-center">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 5L4 6.5L7 3.5M2.5 12L4 13.5L7 10.5M2.5 19L4 20.5L7 17.5M10.5 12H21.5M10.5 19H21.5M10.5 5H21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="">Guests</span>
+                    </div>
+                    {% if unseen_guests > 0 %}
+                    <span id="guest-count" class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{{ unseen_guests }}</span>
+                    {% endif %}
+                </a>   
+                <a href="{% url "reservation" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1" onclick="markAsSeen('reservation')">
+                    <div class="flex gap-[0.5rem] items-center">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12.5L21.167 15M21.167 15L20 18.5H15.5L14.5 15H21.167ZM16.5 20.51L16.51 20.499M19.5 20.51L19.51 20.499M9 11C10.0609 11 11.0783 10.5786 11.8284 9.82843C12.5786 9.07828 13 8.06087 13 7C13 5.93913 12.5786 4.92172 11.8284 4.17157C11.0783 3.42143 10.0609 3 9 3C7.93913 3 6.92172 3.42143 6.17157 4.17157C5.42143 4.92172 5 5.93913 5 7C5 8.06087 5.42143 9.07828 6.17157 9.82843C6.92172 10.5786 7.93913 11 9 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 18C2.00002 16.6861 2.36983 15.3987 3.06714 14.2851C3.76444 13.1715 4.76109 12.2766 5.94309 11.7029C7.12508 11.1291 8.44471 10.8995 9.75103 11.0405C11.0574 11.1815 12.2976 11.6873 13.33 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="">Reservations</span>
+                    </div>
+                    {% if unseen_reservations > 0 %}
+                    <span id="reservation-count" class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{{ unseen_reservations }}</span>
+                    {% endif %}
+                </a>    
+                <a href="{% url "manage-hotel-account" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 21H2V19H3V4C3 3.73478 3.10536 3.48043 3.29289 3.29289C3.48043 3.10536 3.73478 3 4 3H18C18.2652 3 18.5196 3.10536 18.7071 3.29289C18.8946 3.48043 19 3.73478 19 4V9H21V19H22V21ZM17 19H19V11H13V19H15V13H17V19ZM17 9V5H5V19H11V9H17ZM7 11H9V13H7V11ZM7 15H9V17H7V15ZM7 7H9V9H7V7Z" fill="currentColor"/>
+                    </svg>
+                    <span class="">Manage Hotel</span>
+                </a>    
+                <a href="{% url "manage-account" %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px] mb-1">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 2C6.49445 2 6.9778 2.14662 7.38893 2.42133C7.80005 2.69603 8.12048 3.08648 8.3097 3.54329C8.49892 4.00011 8.54843 4.50277 8.45196 4.98773C8.3555 5.47268 8.1174 5.91814 7.76777 6.26777C7.41814 6.6174 6.97268 6.8555 6.48773 6.95196C6.00277 7.04843 5.50011 6.99892 5.04329 6.8097C4.58648 6.62048 4.19603 6.30005 3.92133 5.88893C3.64662 5.4778 3.5 4.99445 3.5 4.5C3.5 3.83696 3.76339 3.20107 4.23223 2.73223C4.70107 2.26339 5.33696 2 6 2ZM6 1C5.30777 1 4.63108 1.20527 4.0555 1.58986C3.47993 1.97444 3.03133 2.52107 2.76642 3.16061C2.50151 3.80015 2.4322 4.50388 2.56725 5.18282C2.7023 5.86175 3.03564 6.48539 3.52513 6.97487C4.01461 7.46436 4.63825 7.7977 5.31718 7.93275C5.99612 8.0678 6.69985 7.99848 7.33939 7.73358C7.97893 7.46867 8.52556 7.02007 8.91014 6.4445C9.29473 5.86892 9.5 5.19223 9.5 4.5C9.5 3.57174 9.13125 2.6815 8.47487 2.02513C7.8185 1.36875 6.92826 1 6 1ZM11 15H10V12.5C10 11.837 9.73661 11.2011 9.26777 10.7322C8.79893 10.2634 8.16304 10 7.5 10H4.5C3.83696 10 3.20107 10.2634 2.73223 10.7322C2.26339 11.2011 2 11.837 2 12.5V15H1V12.5C1 11.5717 1.36875 10.6815 2.02513 10.0251C2.6815 9.36875 3.57174 9 4.5 9H7.5C8.42826 9 9.3185 9.36875 9.97487 10.0251C10.6313 10.6815 11 11.5717 11 12.5V15ZM11 2H16V3H11V2ZM11 4.5H16V5.5H11V4.5ZM11 7H14.5V8H11V7Z" fill="currentColor"/>
+                    </svg>
+                    <span class="">Profile</span>
+                </a>    
+            </div>
+            <!-- Bottom Section -->
+            <div class="mt-auto pt-4 border-t border-gray-500">
+                <a href="{% url 'logout' %}" class="nav-link text-nowrap py-[0.8rem] px-[1rem] text-slate-200 text-[15px] font-medium flex gap-[1rem] items-center hover:bg-[#2c3e4e] transition duration-300 rounded-[8px]" data-url="logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 12C4 12.1326 4.05268 12.2598 4.14645 12.3536C4.24021 12.4473 4.36739 12.5 4.5 12.5H13.293L10.646 15.146C10.5995 15.1924 10.5626 15.2475 10.5374 15.3082C10.5123 15.3689 10.4993 15.4339 10.4992 15.4996C10.4991 15.6323 10.5517 15.7596 10.6455 15.8535C10.7393 15.9474 10.8665 16.0002 10.9991 16.0003C11.1318 16.0004 11.2591 15.9478 11.353 15.854L14.853 12.354C14.9467 12.2602 14.9994 12.1331 14.9994 12.0005C14.9994 11.8679 14.9467 11.7408 14.853 11.647L11.353 8.147C11.2587 8.05592 11.1324 8.00552 11.0013 8.00666C10.8702 8.0078 10.7448 8.06039 10.6521 8.15309C10.5594 8.24579 10.5068 8.3712 10.5057 8.5023C10.5045 8.6334 10.5549 8.7597 10.646 8.854L13.293 11.5H4.5C4.36739 11.5 4.24021 11.5527 4.14645 11.6464C4.05268 11.7402 4 11.8674 4 12ZM17.5 2H6.5C5.83696 2 5.20107 2.26339 4.73223 2.73223C4.26339 3.20107 4 3.83696 4 4.5V8.5C4 8.63261 4.05268 8.75979 4.14645 8.85355C4.24021 8.94732 4.36739 9 4.5 9C4.63261 9 4.75979 8.94732 4.85355 8.85355C4.94732 8.75979 5 8.63261 5 8.5V4.5C5 4.10218 5.15804 3.72064 5.43934 3.43934C5.72064 3.15804 6.10218 3 6.5 3H17.5C17.8978 3 18.2794 3.15804 18.5607 3.43934C18.842 3.72064 19 4.10218 19 4.5V19.5C19 19.8978 18.842 20.2794 18.5607 20.5607C18.2794 20.842 17.8978 21 17.5 21H6.5C6.10218 21 5.72064 20.842 5.43934 20.5607C5.15804 20.2794 5 19.8978 5 19.5V15.5C5 15.3674 4.94732 15.2402 4.85355 15.1464C4.24021 15.0527 4.36739 15 4.5 15C4.36739 15 4.24021 15.0527 4.14645 15.1464C4.05268 15.2402 4 15.3674 4 15.5V19.5C4 20.163 4.26339 20.7989 4.73223 21.2678C5.20107 21.7366 5.83696 22 6.5 22H17.5C18.163 22 18.7989 21.7366 19.2678 21.2678C19.7366 20.7989 20 20.163 20 19.5V4.5C20 3.83696 19.7366 3.20107 19.2678 2.73223C18.7989 2.26339 18.163 2 17.5 2Z" fill="currentColor"/>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
         </div>
     </section>
-    <section class="w-[100%] fixed z-[30] top-0 right-0 left-0">
-        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[300px] transition-all duration-300 h-auto ">
-            <div class="w-full flex justify-between items-center py-[1rem] px-[1rem] bg-white rounded-[15px] shadow-sm ">
+    <section class="w-[100%] fixed z-[30] mt-0 top-0 right-0 left-0">
+        <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[250px] transition-all duration-300 h-auto">
+            <div class="w-full flex justify-between items-center py-[1.5rem] px-[1rem] bg-white shadow-sm">
                 <div class="flex gap-[0.5rem] items-center ">
                     {% if request.user.manager.hotel_post.logo %}
                         <img src="{{request.user.manager.hotel_post.logo.url}}" alt="" class="w-8 h-8 rounded-full object-cover">
@@ -80,39 +99,39 @@
                     {% endif %}
                     <h4 class="text-slate-700 text-nowrap font-semibold">{{ request.user.manager.hotel_post.name }} </h4>
                 </div>
-               <div class="flex gap-[0.5rem] items-center">
-                    <div class="user_wrapper hidden md:block">        
-                        <button type="button" class="flex items-center gap-[0.3rem] text-[#3b5362]" id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName">
+                <div class="flex gap-[0.5rem] items-center">
+                        <div class="user_wrapper hidden md:block">        
+                            <button type="button" class="flex items-center gap-[0.3rem] text-[#3b5362]" id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C10.7402 1.25 9.53204 1.75044 8.64124 2.64124C7.75044 3.53204 7.24999 4.74022 7.24999 6C7.24999 7.25978 7.75044 8.46796 8.64124 9.35876C9.53204 10.2496 10.7402 10.75 12 10.75C13.2598 10.75 14.468 10.2496 15.3588 9.35876C16.2496 8.46796 16.75 7.25978 16.75 6C16.75 4.74022 16.2496 3.53204 15.3588 2.64124C14.468 1.75044 13.2598 1.25 12 1.25ZM8.74999 6C8.74999 5.13805 9.0924 4.3114 9.7019 3.7019C10.3114 3.09241 11.138 2.75 12 2.75C12.8619 2.75 13.6886 3.09241 14.2981 3.7019C14.9076 4.3114 15.25 5.13805 15.25 6C15.25 6.86195 14.9076 7.6886 14.2981 8.2981C13.6886 8.90759 12.8619 9.25 12 9.25C11.138 9.25 10.3114 8.90759 9.7019 8.2981C9.0924 7.6886 8.74999 6.86195 8.74999 6ZM12 12.25C9.687 12.25 7.55499 12.776 5.97599 13.664C4.41999 14.54 3.24999 15.866 3.24999 17.5V17.602C3.24899 18.764 3.24799 20.222 4.52699 21.264C5.15599 21.776 6.03699 22.141 7.22699 22.381C8.419 22.623 9.974 22.75 12 22.75C14.026 22.75 15.58 22.623 16.774 22.381C17.964 22.141 18.844 21.776 19.474 21.264C20.753 20.222 20.751 18.764 20.75 17.602V17.5C20.75 15.866 19.58 14.54 18.025 13.664C16.445 12.776 14.314 12.25 12 12.25ZM4.74999 17.5C4.74999 16.649 5.37199 15.725 6.71099 14.972C8.02699 14.232 9.895 13.75 12.001 13.75C14.105 13.75 15.973 14.232 17.289 14.972C18.629 15.725 19.25 16.649 19.25 17.5C19.25 18.808 19.21 19.544 18.526 20.1C18.156 20.402 17.536 20.697 16.476 20.911C15.419 21.125 13.974 21.25 12 21.25C10.026 21.25 8.57999 21.125 7.52399 20.911C6.46399 20.697 5.84399 20.402 5.47399 20.101C4.78999 19.544 4.74999 18.808 4.74999 17.5Z" fill="currentColor"/>
+                                </svg>
+                                <p class="text-[#3b5362] capitalize">Hello! @{{ user.profilemodel.user }}</p>
+                                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                <div class="flex items-center gap-1 px-2 py-2 w-full overflow-auto">
+                                    <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
+                                    <h2 class="text-[#FFFFFF]">{{ user.manager.user }} </h2>
+                                </div>
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                                    <li>
+                                        <a href="{% url "manage-account" %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Manage profile</a>
+                                    </li>
+                                </ul>
+                                <div class="py-2">
+                                    <a href="{% url "logout" %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div onclick="menuToggle()" role="button" aria-controls="dashboard_SideBar" aria-label="Toggle sidebar" aria-expanded="false"  tabindex="0" class="cursor-pointer md:hidden focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C10.7402 1.25 9.53204 1.75044 8.64124 2.64124C7.75044 3.53204 7.24999 4.74022 7.24999 6C7.24999 7.25978 7.75044 8.46796 8.64124 9.35876C9.53204 10.2496 10.7402 10.75 12 10.75C13.2598 10.75 14.468 10.2496 15.3588 9.35876C16.2496 8.46796 16.75 7.25978 16.75 6C16.75 4.74022 16.2496 3.53204 15.3588 2.64124C14.468 1.75044 13.2598 1.25 12 1.25ZM8.74999 6C8.74999 5.13805 9.0924 4.3114 9.7019 3.7019C10.3114 3.09241 11.138 2.75 12 2.75C12.8619 2.75 13.6886 3.09241 14.2981 3.7019C14.9076 4.3114 15.25 5.13805 15.25 6C15.25 6.86195 14.9076 7.6886 14.2981 8.2981C13.6886 8.90759 12.8619 9.25 12 9.25C11.138 9.25 10.3114 8.90759 9.7019 8.2981C9.0924 7.6886 8.74999 6.86195 8.74999 6ZM12 12.25C9.687 12.25 7.55499 12.776 5.97599 13.664C4.41999 14.54 3.24999 15.866 3.24999 17.5V17.602C3.24899 18.764 3.24799 20.222 4.52699 21.264C5.15599 21.776 6.03699 22.141 7.22699 22.381C8.419 22.623 9.974 22.75 12 22.75C14.026 22.75 15.58 22.623 16.774 22.381C17.964 22.141 18.844 21.776 19.474 21.264C20.753 20.222 20.751 18.764 20.75 17.602V17.5C20.75 15.866 19.58 14.54 18.025 13.664C16.445 12.776 14.314 12.25 12 12.25ZM4.74999 17.5C4.74999 16.649 5.37199 15.725 6.71099 14.972C8.02699 14.232 9.895 13.75 12.001 13.75C14.105 13.75 15.973 14.232 17.289 14.972C18.629 15.725 19.25 16.649 19.25 17.5C19.25 18.808 19.21 19.544 18.526 20.1C18.156 20.402 17.536 20.697 16.476 20.911C15.419 21.125 13.974 21.25 12 21.25C10.026 21.25 8.57999 21.125 7.52399 20.911C6.46399 20.697 5.84399 20.402 5.47399 20.101C4.78999 19.544 4.74999 18.808 4.74999 17.5Z" fill="currentColor"/>
+                                <path d="M21 18V20H3V18H21ZM6.596 3.90302L8.01 5.31801L4.828 8.50002L8.01 11.682L6.596 13.096L2 8.50002L6.596 3.90302ZM21 11V13H12V11H21ZM21 4.00002V6.00002H12V4.00002H21Z" fill="currentColor"/>
                             </svg>
-                            <p class="text-[#3b5362] capitalize">Hello! @{{ user.profilemodel.user }}</p>
-                            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <div class="flex items-center gap-1 px-2 py-2 w-full overflow-auto">
-                            <img class="w-[30px] h-[30px] rounded-[50%] object-cover object-center mr-[10px]" src=" {{ user.profilemodel.profile.url }} " alt="profile.img">
-                            <h2 class="text-[#FFFFFF]">{{ user.manager.user }} </h2>
                         </div>
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-                            <li>
-                                <a href="{% url "manage-account" %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Manage profile</a>
-                            </li>
-                        </ul>
-                        <div class="py-2">
-                            <a href="{% url "logout" %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                        </div>
-                        </div>
-                    </div>
-                    <div onclick="menuToggle()" role="button" aria-controls="dashboard_SideBar" aria-label="Toggle sidebar" aria-expanded="false"  tabindex="0" class="cursor-pointer md:hidden focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 18V20H3V18H21ZM6.596 3.90302L8.01 5.31801L4.828 8.50002L8.01 11.682L6.596 13.096L2 8.50002L6.596 3.90302ZM21 11V13H12V11H21ZM21 4.00002V6.00002H12V4.00002H21Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-               </div>
+                </div>
             </div>
         </div>
     </section>
@@ -121,13 +140,69 @@
   <script>
     function menuToggle() {
         const sidebar = document.getElementById('dashboard_SideBar');
-        sidebar.classList.toggle('translate-x-[-200px]');
+        sidebar.classList.toggle('translate-x-[-250px]');
         sidebar.classList.toggle('md:translate-x-0');
         
         // Store the state in localStorage
-        const isHidden = sidebar.classList.contains('translate-x-[-200px]');
+        const isHidden = sidebar.classList.contains('translate-x-[-250px]');
         localStorage.setItem('sidebarHidden', isHidden);
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll(".nav-link");
+        const merchantDropdown = document.getElementById("merchant-dropdown");
+        const toggleIcon = document.querySelector("#merchant-toggle svg.w-3");
+        
+        // Define what paths should trigger the dropdown to stay open
+        const merchantPaths = ["/merchant", "/merchant_account", "/merchant_provider"];
+    
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute("href");
+            if (currentPath === linkPath) {
+                link.classList.add("bg-[#2c3e4e]", "font-semibold", "text-white");
+            }
+        });
+
+        const isMerchantActive = merchantPaths.some(path => currentPath.startsWith(path));
+        if (isMerchantActive) {
+            merchantDropdown.classList.remove("hidden");
+            merchantDropdown.classList.add("block");
+
+            // Rotate the dropdown arrow icon
+            if (toggleIcon) {
+                toggleIcon.classList.add("rotate-180");
+            }
+        }
+
+        // OPTIONAL: click toggle behavior
+        document.getElementById("merchant-toggle").addEventListener("click", function () {
+            merchantDropdown.classList.toggle("hidden");
+            merchantDropdown.classList.toggle("block");
+            toggleIcon.classList.toggle("rotate-180");
+        });
+    });'
+    
+    function markAsSeen(type) {
+    // Hide the count indicator immediately
+    const countElement = document.getElementById(`${type}-count`);
+    if (countElement) {
+        countElement.style.display = 'none';
+    }
+    
+    // Send AJAX request to mark as seen
+    fetch(`/api/mark-${type}s-seen/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        credentials: 'same-origin'
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
   </script>
 
 

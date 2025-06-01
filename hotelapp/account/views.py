@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 def get_manager_hotel(user):
     try:
@@ -17,6 +18,7 @@ def get_manager_hotel(user):
         return None
     except AttributeError:
         return None
+    
 # Create your views here.
 def login_user(request):
     if request.method == "POST":
@@ -38,7 +40,8 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return render(request, 'core/base.html')
+    messages.success(request, "Logged Out successfully!!")
+    return redirect('home')
     
 
 def sign_up(request):
@@ -48,7 +51,15 @@ def sign_up(request):
         if form.is_valid():
             form.save()
             messages.success(request, "You have successfully registered an account!!")
-            return redirect('login')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.error(request, "Failed to authenticate after registration")
+                return redirect('login')
         else:
             for field, errors in form.errors.items():
                 for error in errors:
@@ -204,6 +215,7 @@ def guest(request):
     except (Manager.DoesNotExist, AttributeError):
         messages.error(request, "You are not registered as a hotel manager")
         return redirect('home')
+    
     guests = Booking.objects.filter(room__hotel=hotel.id).order_by('-created_at')
     
     paginator = Paginator(guests, 10)  # Show 10 guest per page
@@ -230,9 +242,10 @@ def reservation(request):
     if not hotel:
         messages.error(request, "You are not registered as a hotel manager")
         return redirect('home')
-
+    
     # Initialize form with hotel context
     r_form = ReservationForm(hotel=hotel)
+    
     
     if request.method == 'POST':
         if 'update_status' in request.POST:

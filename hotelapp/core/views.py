@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.core.exceptions import ValidationError
 
 from .models import Room,Rating,Hotel,Reservation,Booking,Guest
 from account.forms import LeadForm,ReservationForm,BookingForm
@@ -132,18 +133,37 @@ def room_list(request, pk):
         rooms = rooms.filter(filters)
     
     if request.method == 'POST':
+        room_id = request.POST.get('room_id')
         b_form = BookingForm(request.POST)
-        if b_form.is_valid():
-            booking = b_form.save(commit=False)
-            guest, created = Guest.objects.get_or_create(user=request.user)
-            booking.guest = guest
-            booking.save()
-            messages.success(request, 'Booking request submitted successfully!')
-            return redirect('room-list', pk=hotel.pk)
+
+        if room_id:
+            room = get_object_or_404(Room, id=room_id)
+            if b_form.is_valid():  # First validate the form
+                booking = b_form.save(commit=False)
+                booking.room = room
+                # booking.guest, _ = Guest.objects.get_or_create(user=request.user)
+                guest, created = Guest.objects.get_or_create(
+                    user=request.user,
+                    defaults={
+                        'first_name': request.user.first_name or 'Guest',
+                        'last_name': request.user.last_name or 'User',
+                        'email': request.user.email
+                    }
+                )
+                booking.guest = guest
+                try:
+                    booking.save()  # This will trigger the clean() method
+                    messages.success(request, 'Booking request submitted successfully!')
+                    return redirect('room-list', pk=hotel.pk)
+                except ValidationError as e:
+                    for error in e.messages:
+                        messages.error(request, error)
+            else:
+                for field, errors in b_form.errors.items():
+                    for error in errors:
+                        messages.error(request, f"{field}: {error}")
         else:
-            for field, errors in b_form.errors.items():
-                for error in errors:
-                    messages.error(request, f"{field}: {error} Please try again.")
+            messages.error(request, "Room ID missing in request.")
     else:
         b_form = BookingForm() 
         

@@ -64,8 +64,8 @@ class Hotel(models.Model):
     amenities = models.ManyToManyField('Amenity', blank=True, related_name='hotels')
     services = models.ManyToManyField('Service', related_name='hotels_services', blank=True) # New Service ManyToMany
     region=models.CharField(choices=RegionChoices, max_length=2, null=True)
-    logo = CloudinaryField(folder='logos/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])])
-    hotel_image = CloudinaryField(folder='hotel_images/', null=True, blank=True, validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif', 'webp'])],verbose_name=_("Hotel Image"))
+    logo = CloudinaryField(folder='logos/', null=True, blank=True)
+    hotel_image = CloudinaryField(folder='hotel_images/', null=True, blank=True,verbose_name=_("Hotel Image"))
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     
     class Meta:
@@ -126,7 +126,7 @@ class Room(models.Model):
     max_guests = models.PositiveIntegerField(default=2,validators=[MinValueValidator(1), MaxValueValidator(10)])
     bed_type = models.CharField(max_length=100,choices=BED_TYPE_CHOICES,default='double')
     room_number = models.CharField(max_length=10, null=True,verbose_name=_("Room Number"))
-    image = CloudinaryField(folder='rooms/',validators=[FileExtensionValidator(['png', 'jpg', 'jpeg', 'webp'])])
+    image = CloudinaryField(folder='rooms/')
     star_rating = models.ForeignKey(Rating, on_delete=models.PROTECT)  # Prevent accidental rating deletion
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -146,10 +146,6 @@ class Room(models.Model):
 class Booking(models.Model):
     guest = models.ForeignKey('Guest', on_delete=models.CASCADE, related_name='bookings',null=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='bookings',null=True)
-    first_name = models.CharField(max_length=100, verbose_name=_("First Name"),null=True)
-    last_name = models.CharField(max_length=100, verbose_name=_("Last Name"),null=True)
-    email = models.EmailField(blank=True, null=True, verbose_name=_("Email Address"))
-    phone_number = models.CharField(max_length=20, blank=True, null=True, verbose_name=_("Phone Number"))
     check_in_date = models.DateField()
     check_out_date = models.DateField()
     message = models.TextField(blank=True, null=True, verbose_name=_("Message"))
@@ -166,8 +162,8 @@ class Booking(models.Model):
         super().clean()
         if self.check_in_date >= self.check_out_date:
             raise ValidationError(_("Check-out date must be after check-in date."))
-        if self.room.status != 'Available':
-            raise ValidationError(_("Room is not available for booking."))
+        # if self.room.status != 'Available':
+        #     raise ValidationError(_("Room is not available for booking."))
         overlapping_bookings = Booking.objects.filter(
             room=self.room,
             check_in_date__lt=self.check_out_date,
@@ -205,11 +201,15 @@ class Guest(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     def get_full_name(self):
-        return f"{self.first_name} {self.last_name}".strip()
+        if self.first_name or self.last_name:
+            return f"{self.first_name} {self.last_name}".strip()
+        elif self.user:
+            return self.user.get_full_name() or self.user.username
+        return "Guest"
 
 class OurRoomsImage(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    image = CloudinaryField(folder='room_images/', validators=[FileExtensionValidator(['png', 'jpg','jpeg', 'jfif'])])
+    image = CloudinaryField(folder='room_images/')
     class Meta:
         verbose_name_plural = 'Our Rooms Images'
         ordering = ('room',)
@@ -368,8 +368,6 @@ class Staff(models.Model):
 
     def __str__(self):
         return f"{self.full_name} - {self.get_position_display()}"
-
- 
 
 class Review(models.Model):
     reservation = models.OneToOneField(Reservation, on_delete=models.CASCADE, related_name='review')

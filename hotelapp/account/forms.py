@@ -66,20 +66,25 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = [
-            'first_name',
-            'last_name',
-            'email',
-            'phone_number',
             'check_in_date',
             'check_out_date',
             'message',
-            'room',
         ]
-        exclude = ['guest']
+        exclude = ['guest', 'room']
         widgets = {
             'check_in_date': forms.DateInput(attrs={'type': 'date'}),
             'check_out_date': forms.DateInput(attrs={'type': 'date'}),
         }
+    def clean(self):
+        cleaned_data = super().clean()
+        check_in_date = cleaned_data.get('check_in_date')
+        check_out_date = cleaned_data.get('check_out_date')
+        
+        if check_in_date and check_out_date:
+            if check_out_date <= check_in_date:
+                raise forms.ValidationError("Check-out date must be after check-in date.")
+        
+        return cleaned_data
 
 class ReservationForm(forms.ModelForm):
     class Meta:
