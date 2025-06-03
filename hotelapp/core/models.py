@@ -174,8 +174,8 @@ class Booking(models.Model):
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
-        self.room.status = 'Occupied'
-        self.room.save()
+        # self.room.status = 'Occupied'
+        # self.room.save()
 
 class Guest(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='guest_profile')
@@ -292,36 +292,59 @@ class Reservation(models.Model): # Consolidated and enhanced Reservation model
     def clean(self):
         super().clean() # Call default clean first
         # --- Date Validation ---
-        if self.check_in_date and self.check_out_date:
-            if self.check_out_date <= self.check_in_date:
-                raise ValidationError(_("Check-out date must be strictly after the check-in date."))
+        if self.check_out_date <= self.check_in_date:
+            raise ValidationError(_("Check-out date must be strictly after the check-in date."))
+        
+        # Only check availability if room status is 'Available'
+        if self.room.status != 'Available':
+            raise ValidationError(_("Room is currently not available for booking."))
 
+        # Check for date conflicts with other reservations
         blocking_statuses = ['Pending', 'Confirmed', 'Checked In']
+        overlapping_reservations = Reservation.objects.filter(
+            room=self.room,
+            check_in_date__lt=self.check_out_date,
+            check_out_date__gt=self.check_in_date,
+            status__in=blocking_statuses
+        ).exclude(pk=self.pk)
 
-        if self.room and self.check_in_date and self.check_out_date and self.status in blocking_statuses:
-            overlapping_reservations = Reservation.objects.filter(
-                room=self.room,
-                check_in_date__lt=self.check_out_date,  # Overlap starts before self ends
-                check_out_date__gt=self.check_in_date,    # Overlap ends after self starts
-                status__in=blocking_statuses
-            ).exclude(pk=self.pk) # Exclude self if it's an existing object
+        if overlapping_reservations.exists():
+            overlap = overlapping_reservations.first()
+            raise ValidationError(
+                _("Room {room_number} is already booked from {overlap_start} to {overlap_end}.").format(
+                    room_number=self.room.room_number,
+                    overlap_start=overlap.check_in_date,
+                    overlap_end=overlap.check_out_date
+                )
+            )
 
-            if overlapping_reservations.exists():
-                 # Provide details about the first overlapping reservation for context
-                 overlap = overlapping_reservations.first()
-                 raise ValidationError(
-                    _("Room {room_number} is not available "
-                      "from {check_in} to {check_out} "
-                      "due to existing reservation #{res_id} "
-                      "({overlap_start} to {overlap_end}).").format(
-                        room_number=self.room.room_number,
-                        check_in=self.check_in_date,
-                        check_out=self.check_out_date,
-                        res_id=overlap.id,
-                        overlap_start=overlap.check_in_date,
-                        overlap_end=overlap.check_out_date
-                    )
-                 )
+        # blocking_statuses = ['Pending', 'Confirmed', 'Checked In']
+
+        # if self.room and self.check_in_date and self.check_out_date and self.status in blocking_statuses:
+        #     overlapping_reservations = Reservation.objects.filter(
+        #         room=self.room,
+        #         check_in_date__lt=self.check_out_date,  # Overlap starts before self ends
+        #         check_out_date__gt=self.check_in_date,    # Overlap ends after self starts
+        #         status__in=blocking_statuses
+        #     ).exclude(pk=self.pk) # Exclude self if it's an existing object
+
+        #     if overlapping_reservations.exists():
+        #          # Provide details about the first overlapping reservation for context
+        #          overlap = overlapping_reservations.first()
+        #          raise ValidationError(
+        #             _("Room {room_number} is not available "
+        #               "from {check_in} to {check_out} "
+        #               "due to existing reservation #{res_id} "
+        #               "({overlap_start} to {overlap_end}).").format(
+        #                 room_number=self.room.room_number,
+        #                 check_in=self.check_in_date,
+        #                 check_out=self.check_out_date,
+        #                 res_id=overlap.id,
+        #                 overlap_start=overlap.check_in_date,
+        #                 overlap_end=overlap.check_out_date
+        #             )
+        #          )
+        
 
     
 

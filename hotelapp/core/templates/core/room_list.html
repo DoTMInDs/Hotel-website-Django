@@ -68,6 +68,16 @@
             </a>
             {% endif %}
         </form>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="relative border border-slate-200 rounded-md">
+                <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in</label>
+                <input type="date" id="check_in_date" class="w-full p-2">
+            </div>
+            <div class="relative border border-slate-200 rounded-md">
+                <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-out</label>
+                <input type="date" id="check_out_date" class="w-full p-2">
+            </div>
+        </div>
     </section>
     <section class="flex gap-[1rem] feature_secction relative">
         <aside id="dropdownLeftEnd" class="absolute right-0 top-[50px] z-[100] hidden">
@@ -171,9 +181,13 @@
                         {% for room in rooms %}
                             <div class="card_wrapper">
                                 <div class="img_card">
-                                    <small class="absolute text-slate-50 top-0 right-0 {% if room.status == 'A' %}bg-green-500 {% elif room.status == 'M' %}bg-yellow-500 {% else %}bg-red-500{% endif %} p-[0.5rem]">{{room.get_status_display}}</small>
+                                    <small class="absolute text-slate-50 top-0 right-0 {% if room.status == 'Available' %}bg-green-500 
+                                        {% elif room.status == 'Maintenance' %}bg-yellow-500 
+                                        {% elif room.status == 'Unavailable' %}bg-red-500{% endif %} p-[0.5rem]">
+                                        {{room.get_status_display}}
+                                    </small>
                                     <img src="{{room.image.url}}" alt="" class="card_img1">
-                                    <p class="view_price" data-pk="{{room.pk}}">View price</p>
+                                    <p class="view_price bg-rose-500" data-pk="{{room.pk}}">View price</p>
                                 </div>
                                 <div class="p-[1rem]">
                                     <div class="py-[0.5rem]">
@@ -202,7 +216,7 @@
                                             <p class="font-medium">{{ room.created_at|date:"H:i" }}</p>
                                         </div>
                                     </div>
-                                    <p id="priceTag-{{room.pk}}" class="price_tag">{{room.price}}</p>
+                                    <p id="priceTag-{{room.pk}}" class="price_tag">GHS{{room.price}}</p>
                                     <div class="hotel_btn gap-[0.5rem]">
                                         <button onclick="BookRoomBtn('{{ room.id }}', '{{ room.hotel.name }}')" class="hotel_btnn">BOOK ROOM</button>
                                         <button class="hotel_btnn">
@@ -371,6 +385,34 @@
                 }, 5000);
             });
         });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const checkInInput = document.getElementById('check_in_date');
+        const checkOutInput = document.getElementById('check_out_date');
+        
+        // Set minimum dates (today)
+        const today = new Date().toISOString().split('T')[0];
+        checkInInput.min = today;
+        
+        checkInInput.addEventListener('change', function() {
+            checkOutInput.min = this.value;
+            checkAvailability();
+        });
+        
+        checkOutInput.addEventListener('change', checkAvailability);
+        
+        function checkAvailability() {
+            if (checkInInput.value && checkOutInput.value) {
+                // You would typically make an AJAX call here to check availability
+                // For now, we'll just update the UI
+                document.querySelectorAll('.card_wrapper').forEach(card => {
+                    // In a real implementation, you'd check actual availability
+                    card.querySelector('.hotel_btnn').disabled = false;
+                });
+            }
+        }
+    });
     </script>
 
 {% endblock %}

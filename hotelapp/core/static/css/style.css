@@ -1019,7 +1019,7 @@ textarea{
     left: 5px;
     bottom: -15px;
     color: #ffffff;
-    background: #ffae17;
+    /* background: #ffae17; */
     font-family: 'Montserrat Alternates', sans-serif;
     border-radius: 20px;
     padding: 0.3rem 0.5rem;
@@ -1032,9 +1032,10 @@ textarea{
     background: #4b4b4b;
 }
 .price_tag{
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
+    color: #E9332A;
     display: none;
     transition: display 200ms ease;
 }
@@ -1048,7 +1049,7 @@ textarea{
     object-position: center;
 }
 .hotel_name{
-    font-family: verdana;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 1.2rem;
     color: #4b4b4b;
     font-weight: bold;
