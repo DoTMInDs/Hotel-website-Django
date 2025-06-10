@@ -1,6 +1,6 @@
 venv/
-.env*
-.env
+# .env*
+# .env
 
 # Ignore virtual environment directories
 *.pyc
