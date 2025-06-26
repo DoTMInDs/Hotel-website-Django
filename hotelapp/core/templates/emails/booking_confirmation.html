@@ -1,0 +1,14 @@
+<h2>Thank you for your booking!</h2>
+<p>Dear {{ guest.get_full_name }},</p>
+
+<p>Your payment was successful and your booking is confirmed:</p>
+
+<ul>
+    <li><strong>Room:</strong> {{ booking.room.room_type }} ({{ booking.room.room_number }})</li>
+    <li><strong>Hotel:</strong> {{ booking.room.hotel.name }}</li>
+    <li><strong>Check-in:</strong> {{ booking.check_in_date }}</li>
+    <li><strong>Check-out:</strong> {{ booking.check_out_date }}</li>
+    <li><strong>Total:</strong> GHS{{ booking.total_price }}</li>
+</ul>
+
+<p>We look forward to hosting you!</p>

@@ -15,16 +15,21 @@
                     <table class="w-full min-w-[600px]">
                         <thead class="">
                             <tr class="text-left text-slate-500 border-b border-slate-300 whitespace-nowrap">
+                                <th class="px-4 py-3 font-semibold text-sm">Reference ID</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Customer Name</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Room #</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Room-Type</th>
-                                <th class="px-4 py-3 font-semibold text-sm">Check-In</th>
                                 <th class="px-4 py-3 font-semibold text-sm">Check-Out</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Total Price</th>
+                                <th class="px-4 py-3 font-semibold text-sm">Status</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-300">
                             {% for booking in guests %}
                             <tr class="hover:bg-gray-200 rounded-[15px] transition-colors whitespace-nowrap">
+                                <td class="px-4 py-3 text-slate-600 text-sm">
+                                    {{ booking.paystack_reference }} 
+                                </td>
                                 <td class="px-4 py-3 text-slate-600 text-sm">
                                     {% if booking.guest %}
                                         {{ booking.guest.get_full_name }} 
@@ -46,8 +51,13 @@
                                         -
                                     {% endif %}
                                 </td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ booking.check_in_date }}</td>
-                                <td class="px-4 py-3 text-slate-600 text-sm">{{ booking.check_out_date }}</td>
+                                <td class="px-4 py-3 text-slate-600 text-sm"> {{ booking.check_out_date }}</td>
+                                <td class="px-4 py-3 text-slate-600 text-sm">{{ booking.total_price }}</td>
+                                {% if booking.is_paid == "True" %}
+                                <td class="px-4 py-3 text-green-600 text-sm">PAID</td>
+                                {% else %}
+                                <td class="px-4 py-3 text-red-600 text-sm">UNPAID</td>
+                                {% endif %}
                             </tr>
                             {% empty %}
                             <tr>

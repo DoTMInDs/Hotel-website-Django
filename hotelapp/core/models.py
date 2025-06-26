@@ -6,6 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from datetime import date, time, datetime
+from decimal import Decimal
+from datetime import timedelta
 from cloudinary.models import CloudinaryField # type: ignore
 
 User = get_user_model()
@@ -151,6 +153,21 @@ class Booking(models.Model):
     message = models.TextField(blank=True, null=True, verbose_name=_("Message"))
     created_at = models.DateTimeField(auto_now_add=True)
     
+    paystack_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    is_paid = models.BooleanField(default=False)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
+    def calculate_total_price(self):
+        if self.room and self.check_in_date and self.check_out_date:
+            nights = (self.check_out_date - self.check_in_date).days
+            return Decimal(nights) * (self.room.price or 0)
+        return Decimal(0)
+
+    def save(self, *args, **kwargs):
+        if not self.total_price:
+            self.total_price = self.calculate_total_price()
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = 'Booking'
         verbose_name_plural = 'Bookings'

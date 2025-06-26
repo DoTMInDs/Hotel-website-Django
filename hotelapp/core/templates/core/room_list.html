@@ -284,7 +284,7 @@
                     <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
                 </svg>
               </p>
-              <form action="" method="post" class="bg-transparent">
+              <form action="{% url 'create_booking' %}" method="post" class="bg-transparent">
                   {% csrf_token %}
                   <input type="hidden" name="room_id" id="roomIdInput" value="">
                   <div class="flex text-[#3b5362] text-[22px] gap-[0.5rem] justify-center items-center mb-[1rem]">
@@ -294,16 +294,19 @@
                   <div class="flex gap-[0.5rem] items-center w-full">
                     <div class="relative border border-slate-200 mb-[1rem] rounded-md w-full">
                         <i class="fa-solid fa-user text-[#3b5362] absolute left-[10px] top-[35%]"></i>
-                        <input type="text" name="first_name" id="first_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="First name" >
+                        <input type="text" name="first_name" id="first_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="First name" 
+                        value="{{ user.guest_profile.first_name }}">
                     </div>
                     <div class="relative border border-slate-200 mb-[1rem] rounded-md w-full">
                         <i class="fa-solid fa-user text-[#3b5362] absolute left-[10px] top-[35%]"></i>
-                        <input type="text" name="last_name" id="last_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Last name" >
+                        <input type="text" name="last_name" id="last_name" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" placeholder="Last name" 
+                        value="{{ user.guest_profile.last_name }}">
                     </div>
                   </div>
                   <div class="relative border border-slate-200 mb-[1rem] rounded-md">
                       <i class="fa-solid fa-envelope text-[#3b5362] absolute left-[10px] top-[35%]"></i>
-                      <input type="email" name="email" id="email" placeholder="Email" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" >
+                      <input type="email" name="email" id="email" placeholder="Email" class="w-full border border-slate-400 rounded-md pl-[2rem] py-[0.5rem] focus:outline-none focus:border-slate-600" 
+                      value="{{ user.email }}">
                   </div>
                   <div class="relative border border-slate-200 mb-[1rem] rounded-md">
                       <i class="fa-solid fa-location-dot text-[#3b5362] absolute left-[10px] top-[35%]"></i>

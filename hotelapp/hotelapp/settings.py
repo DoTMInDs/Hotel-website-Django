@@ -192,5 +192,13 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
 }
 
-PAYSTACK_SECRET_KEY = 'sk_test_17be3f7bad59526f7c4497a31c47aac8ee09860f'  # Replace with your actual secret key
-PAYSTACK_PUBLIC_KEY = 'pk_test_9420771745b54f3edc7888242bfc1f2c64e6c578'  # For frontend
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')  # Replace with your actual secret key
+PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')  # For frontend
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL =  os.getenv('DEFAULT_FROM_EMAIL')
