@@ -57,7 +57,7 @@ class RoomForm(forms.ModelForm):
             'status',
             'max_guests',
             'image',
-            'star_rating',
+            # 'star_rating',
             'amenities',
         ]
         exclude = ['hotel']
@@ -168,12 +168,13 @@ class HotelForm(forms.ModelForm):
 class AddAmenitiesForm(forms.ModelForm):
     class Meta:
         model = Amenity
-        fields = [
-            'amenity_name'
-        ]
-        widgets = {
-            'amenity_name': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+        fields = ['amenity_name']
+
+    def clean_amenity_name(self):
+        name = self.cleaned_data.get('amenity_name')
+        if not name:
+            raise forms.ValidationError("Amenity name is required.")
+        return name
 
 class ServiceForm(forms.ModelForm):
     class Meta:

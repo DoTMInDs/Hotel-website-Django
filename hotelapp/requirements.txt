@@ -23,7 +23,6 @@ mdurl==0.1.2
 packaging==25.0
 pillow==11.0.0
 psycopg==3.2.6
-psycopg-binary==3.2.6
 psycopg2-binary==2.9.10
 Pygments==2.19.1
 python-dateutil==2.9.0.post0

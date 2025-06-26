@@ -81,6 +81,15 @@ STORAGES = {
 
 ROOT_URLCONF = 'hotelapp.urls'
 
+# Set session to expire after 15 minutes of **inactivity**
+SESSION_COOKIE_AGE = 900  # 900 seconds = 15 minutes
+
+# Log user out when browser is closed (optional but recommended)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Refresh session expiration on each request (to detect activity)
+SESSION_SAVE_EVERY_REQUEST = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -99,26 +108,27 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hotelapp.wsgi.application'
-
+NPM_BIN_PATH = 'npm.cmd'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get("DB_ENGINE", "django.db.backends.postgresql"),
+#         'NAME': os.environ.get("DB_NAME", ""),
+#         'USER': os.environ.get("DB_USER", ""),
+#         'PASSWORD': os.environ.get("DB_PASSWORD", ""),
+#         'HOST': os.environ.get("DB_HOST", ""),
+#         'PORT': os.environ.get("DB_PORT", ""),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get("DB_ENGINE", "django.db.backends.postgresql"),
-        'NAME': os.environ.get("DB_NAME", ""),
-        'USER': os.environ.get("DB_USER", ""),
-        'PASSWORD': os.environ.get("DB_PASSWORD", ""),
-        'HOST': os.environ.get("DB_HOST", ""),
-        'PORT': os.environ.get("DB_PORT", ""),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=600,  # Optional: Persistent connections
-        conn_health_checks=True, # Optional: Check connection health
-    )
 
 
 # Password validation
@@ -161,11 +171,14 @@ STATICFILES_DIR = [
 ]
 
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'home'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -178,3 +191,6 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
 }
+
+PAYSTACK_SECRET_KEY = 'sk_test_17be3f7bad59526f7c4497a31c47aac8ee09860f'  # Replace with your actual secret key
+PAYSTACK_PUBLIC_KEY = 'pk_test_9420771745b54f3edc7888242bfc1f2c64e6c578'  # For frontend

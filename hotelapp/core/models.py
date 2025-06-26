@@ -50,10 +50,10 @@ class Rating(models.Model):
         return f"{self.star}★"
 
 class Amenity(models.Model):
-    amenity_name = models.CharField(max_length=50, null=True)
-    
+    amenity_name = models.CharField(max_length=100, blank=True, null=True)
+
     def __str__(self):
-        return self.amenity_name
+        return self.amenity_name or "Unnamed Amenity"
     
 class Hotel(models.Model):
     name = models.CharField(max_length=200)
@@ -127,7 +127,7 @@ class Room(models.Model):
     bed_type = models.CharField(max_length=100,choices=BED_TYPE_CHOICES,default='double')
     room_number = models.CharField(max_length=10, null=True,verbose_name=_("Room Number"))
     image = CloudinaryField(folder='rooms/')
-    star_rating = models.ForeignKey(Rating, on_delete=models.PROTECT)  # Prevent accidental rating deletion
+    star_rating = models.ForeignKey(Rating, on_delete=models.SET_NULL,null=True)  # Prevent accidental rating deletion
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 

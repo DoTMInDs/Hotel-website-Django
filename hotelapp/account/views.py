@@ -21,6 +21,8 @@ def get_manager_hotel(user):
     
 # Create your views here.
 def login_user(request):
+    if 'next' in request.GET:
+        messages.warning(request, "Your session expired due to inactivity. Please log in again.")
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get('password')
@@ -111,23 +113,25 @@ def manage_hotel_account(request):
                         messages.error(request, f"{field}: {error}")
         
         elif 'amenity_submit' in request.POST:
-            try:
+            amenities_form = AddAmenitiesForm(request.POST)
+            if amenities_form.is_valid():
                 amenity = amenities_form.save(commit=False)
-                existing_amenity = Amenity.objects.filter(
+                existing = Amenity.objects.filter(
                     amenity_name__iexact=amenity.amenity_name,
                     hotels=hotel
                 ).first()
-                
-                if existing_amenity:
-                    messages.info(request, f"Amenity '{amenity.amenity_name}' already exists for your hotel.")
+
+                if existing:
+                    messages.info(request, f"Amenity '{amenity.amenity_name}' already exists.")
                 else:
                     amenity.save()
                     hotel.amenities.add(amenity)
                     messages.success(request, "Amenity added successfully!")
-                
                 return redirect('manage-hotel-account')
-            except Exception as e:
-                messages.error(request, f"Error adding amenity: {str(e)}")
+            else:
+                for field, errors in amenities_form.errors.items():
+                    for error in errors:
+                        messages.error(request, f"{field}: {error}")
     
     context = {
         'hotel_form': hotel_form,
