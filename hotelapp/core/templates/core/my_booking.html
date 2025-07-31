@@ -128,6 +128,7 @@
         const deleteContainer = document.getElementById('deleteContainer');
         const deleteModalContent =  document.getElementById('deleteModalContent');
         const deleteForm = document.getElementById('deleteForm');
+        
         function deleteBtn(bookingId) {
             deleteForm.action = `/booking/delete/${bookingId}/`;
             deleteContainer.classList.toggle('opacity-0');
@@ -135,6 +136,7 @@
             deleteModalContent.classList.toggle('scale-95');
             deleteModalContent.classList.toggle('opacity-0');
         }
+        
         // Close when clicking outside
         function closeBtn() {
             const deleteContainer = document.getElementById('deleteContainer');
@@ -142,8 +144,48 @@
             deleteContainer.classList.add('opacity-0', 'invisible');
             deleteModalContent.classList.add('scale-95', 'opacity-0');
         }
+        
         document.getElementById('deleteModalContent').addEventListener('click', (e) => {
             e.stopPropagation();
+        });
+        
+        // Handle delete form submission with toast notifications
+        document.addEventListener('DOMContentLoaded', function() {
+            if (deleteForm) {
+                deleteForm.addEventListener('submit', function(e) {
+                    // Show confirmation toast
+                    if (window.toastNotification) {
+                        window.toastNotification.info(
+                            'Deleting Booking', 
+                            'Please wait while we delete your booking...', 
+                            3000
+                        );
+                    }
+                });
+            }
+        });
+        
+        // Check for URL parameters to show delete notifications
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const deleteStatus = urlParams.get('delete_status');
+            const deleteMessage = urlParams.get('delete_message');
+            
+            if (deleteStatus && deleteMessage) {
+                if (deleteStatus === 'success') {
+                    if (window.toastNotification) {
+                        window.toastNotification.success('Booking Deleted', deleteMessage, 5000);
+                    }
+                } else if (deleteStatus === 'error') {
+                    if (window.toastNotification) {
+                        window.toastNotification.error('Delete Failed', deleteMessage, 5000);
+                    }
+                }
+                
+                // Clean up URL parameters
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
         });
     </script>
 {% endblock %}

@@ -1,0 +1,1979 @@
+INFO 2025-07-30 19:02:08,327 autoreload 14648 20772 Watching for file changes with StatReloader
+INFO 2025-07-30 19:02:11,577 basehttp 14648 6576 "GET /hotel_rooms/ HTTP/1.1" 200 12320
+INFO 2025-07-30 19:02:11,666 basehttp 14648 6576 "GET /static/css/dist/styles.css?v=1753945331 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:25,048 basehttp 14648 11116 "GET /hotel_rooms/ HTTP/1.1" 200 12320
+INFO 2025-07-30 19:02:25,102 basehttp 14648 11116 "GET /static/css/dist/styles.css?v=1753945345 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:27,772 basehttp 14648 16892 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 43805
+INFO 2025-07-30 19:02:27,823 basehttp 14648 16892 "GET /static/css/dist/styles.css?v=1753945347 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:33,524 basehttp 14648 20900 "GET /login/ HTTP/1.1" 200 3922
+INFO 2025-07-30 19:02:33,574 basehttp 14648 20900 "GET /static/css/dist/styles.css?v=1753945353 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:40,885 basehttp 14648 5352 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:02:40,917 basehttp 14648 5352 "GET / HTTP/1.1" 200 16585
+INFO 2025-07-30 19:02:40,968 basehttp 14648 5352 "GET /static/css/dist/styles.css?v=1753945360 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:41,029 basehttp 14648 20276 "GET /media/default.png HTTP/1.1" 200 9321
+INFO 2025-07-30 19:02:43,236 basehttp 14648 5352 "GET /hotel_rooms/ HTTP/1.1" 200 15586
+INFO 2025-07-30 19:02:43,287 basehttp 14648 5352 "GET /static/css/dist/styles.css?v=1753945363 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:02:44,970 basehttp 14648 17244 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 47065
+INFO 2025-07-30 19:02:45,016 basehttp 14648 17244 "GET /static/css/dist/styles.css?v=1753945364 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:03:01,044 basehttp 14648 16188 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:03:22,094 basehttp 14648 16188 "GET /verify-booking-payment/?trxref=af513ab7-83b2-4623-92ce-05085252ce1d&reference=af513ab7-83b2-4623-92ce-05085252ce1d HTTP/1.1" 302 0
+INFO 2025-07-30 19:03:22,114 basehttp 14648 16188 "GET /booking-success/ HTTP/1.1" 200 1611
+INFO 2025-07-30 19:03:22,189 basehttp 14648 16188 "GET /static/css/dist/styles.css?v=1753945402 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:07:17,857 basehttp 14648 2176 "GET /booking-success/ HTTP/1.1" 200 3924
+INFO 2025-07-30 19:07:17,900 basehttp 14648 2176 "GET /static/css/dist/styles.css?v=1753945637 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:07:47,406 basehttp 14648 22712 "GET /booking-success/ HTTP/1.1" 200 3924
+INFO 2025-07-30 19:07:47,495 basehttp 14648 22712 "GET /static/css/dist/styles.css?v=1753945667 HTTP/1.1" 200 69921
+ERROR 2025-07-30 19:08:12,933 log 14648 22300 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 394, in booking_success
+    return render(request, 'payments/success.html')
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:08:12,945 basehttp 14648 22300 "GET /booking-success/ HTTP/1.1" 500 160110
+ERROR 2025-07-30 19:08:40,289 log 14648 19820 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 394, in booking_success
+    return render(request, 'payments/success.html')
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:08:40,295 basehttp 14648 19820 "GET /booking-success/ HTTP/1.1" 500 160110
+INFO 2025-07-30 19:09:07,042 autoreload 14648 20772 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:09:08,114 autoreload 5928 15196 Watching for file changes with StatReloader
+ERROR 2025-07-30 19:09:09,042 log 5928 12232 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 406, in booking_success
+    return render(request, 'payments/success.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:09:09,053 basehttp 5928 12232 "GET /booking-success/ HTTP/1.1" 500 160916
+ERROR 2025-07-30 19:09:42,730 log 5928 6160 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 406, in booking_success
+    return render(request, 'payments/success.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:09:42,737 basehttp 5928 6160 "GET /booking-success/ HTTP/1.1" 500 160916
+ERROR 2025-07-30 19:10:07,907 log 5928 5884 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 406, in booking_success
+    return render(request, 'payments/success.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:10:07,915 basehttp 5928 5884 "GET /booking-success/ HTTP/1.1" 500 160916
+INFO 2025-07-30 19:10:27,581 autoreload 5928 15196 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:10:29,502 autoreload 18884 21544 Watching for file changes with StatReloader
+ERROR 2025-07-30 19:10:30,455 log 18884 16352 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 409, in booking_success
+    return render(request, 'payments/success.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:10:30,464 basehttp 18884 16352 "GET /booking-success/ HTTP/1.1" 500 160916
+INFO 2025-07-30 19:10:52,398 autoreload 18884 21544 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:10:53,501 autoreload 22484 4260 Watching for file changes with StatReloader
+ERROR 2025-07-30 19:10:54,574 log 22484 10048 Internal Server Error: /booking-success/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 409, in booking_success
+    return render(request, 'payments/success.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'my-booking' not found. 'my-booking' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:10:54,586 basehttp 22484 10048 "GET /booking-success/ HTTP/1.1" 500 160916
+INFO 2025-07-30 19:11:40,094 basehttp 22484 20424 "GET /booking-success/ HTTP/1.1" 200 7347
+INFO 2025-07-30 19:11:40,173 basehttp 22484 20424 "GET /static/css/dist/styles.css?v=1753945900 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:12:37,191 basehttp 22484 19852 "GET /booking-success/ HTTP/1.1" 200 7347
+INFO 2025-07-30 19:12:37,228 basehttp 22484 19852 "GET /static/css/dist/styles.css?v=1753945957 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:12:57,793 basehttp 22484 5720 "GET /my_booking/ HTTP/1.1" 200 24792
+INFO 2025-07-30 19:12:57,840 basehttp 22484 5720 "GET /static/css/dist/styles.css?v=1753945977 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:13:10,274 basehttp 22484 19428 "GET / HTTP/1.1" 200 16641
+INFO 2025-07-30 19:13:10,316 basehttp 22484 19428 "GET /static/css/dist/styles.css?v=1753945990 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:13:15,138 basehttp 22484 20632 "GET /hotel_rooms/ HTTP/1.1" 200 17899
+INFO 2025-07-30 19:13:15,198 basehttp 22484 20632 "GET /static/css/dist/styles.css?v=1753945995 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:13:17,046 basehttp 22484 5220 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50039
+INFO 2025-07-30 19:13:17,084 basehttp 22484 5220 "GET /static/css/dist/styles.css?v=1753945997 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:13:37,079 basehttp 22484 20408 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:13:37,105 basehttp 22484 20408 "GET /hotel_rooms/ HTTP/1.1" 200 19442
+INFO 2025-07-30 19:13:37,144 basehttp 22484 20408 "GET /static/css/dist/styles.css?v=1753946017 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:13:55,510 basehttp 22484 21316 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50039
+INFO 2025-07-30 19:13:55,545 basehttp 22484 21316 "GET /static/css/dist/styles.css?v=1753946035 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:14:10,105 basehttp 22484 16000 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:14:21,543 basehttp 22484 16000 "GET /verify-booking-payment/?trxref=6e468522-1bae-428c-a935-e135a69bbbbd&reference=6e468522-1bae-428c-a935-e135a69bbbbd HTTP/1.1" 302 0
+WARNING 2025-07-30 19:14:21,566 log 22484 16000 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:14:21,566 basehttp 22484 16000 "GET /booking-payment-success/?booking_id=8 HTTP/1.1" 404 12335
+INFO 2025-07-30 19:15:28,377 autoreload 22484 4260 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:15:29,236 autoreload 14496 20772 Watching for file changes with StatReloader
+WARNING 2025-07-30 19:15:30,192 log 14496 12232 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:15:30,193 basehttp 14496 12232 "GET /booking-payment-success/?booking_id=8 HTTP/1.1" 404 12335
+INFO 2025-07-30 19:16:06,751 autoreload 14496 20772 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:16:08,117 autoreload 6612 22000 Watching for file changes with StatReloader
+WARNING 2025-07-30 19:16:08,861 log 6612 15540 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:16:08,863 basehttp 6612 15540 "GET /booking-payment-success/?booking_id=8 HTTP/1.1" 404 12335
+INFO 2025-07-30 19:16:18,503 autoreload 6612 22000 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-07-30 19:16:19,574 autoreload 5932 7024 Watching for file changes with StatReloader
+WARNING 2025-07-30 19:16:20,864 log 5932 21188 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:16:20,865 basehttp 5932 21188 "GET /booking-payment-success/?booking_id=8 HTTP/1.1" 404 12335
+WARNING 2025-07-30 19:16:27,717 log 5932 21604 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:16:27,718 basehttp 5932 21604 "GET /booking-payment-success/ HTTP/1.1" 404 12322
+WARNING 2025-07-30 19:16:30,591 log 5932 10236 Not Found: /booking-payment-success/
+WARNING 2025-07-30 19:16:30,594 basehttp 5932 10236 "GET /booking-payment-success/ HTTP/1.1" 404 12322
+INFO 2025-07-30 19:16:33,868 basehttp 5932 17952 "GET / HTTP/1.1" 200 14538
+INFO 2025-07-30 19:16:33,936 basehttp 5932 17952 "GET /static/css/dist/styles.css?v=1753946193 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:16:46,401 basehttp 5932 20516 "GET / HTTP/1.1" 200 14538
+INFO 2025-07-30 19:16:46,443 basehttp 5932 20516 "GET /static/css/dist/styles.css?v=1753946206 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:17:15,601 autoreload 3568 16868 Watching for file changes with StatReloader
+INFO 2025-07-30 19:17:22,604 basehttp 3568 17536 "GET / HTTP/1.1" 200 14538
+INFO 2025-07-30 19:17:22,663 basehttp 3568 17536 "GET /static/css/dist/styles.css?v=1753946242 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:17:26,026 basehttp 3568 22988 "GET /hotel_rooms/ HTTP/1.1" 200 17899
+INFO 2025-07-30 19:17:26,078 basehttp 3568 22988 "GET /static/css/dist/styles.css?v=1753946245 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:17:27,649 basehttp 3568 9008 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50039
+INFO 2025-07-30 19:17:27,694 basehttp 3568 9008 "GET /static/css/dist/styles.css?v=1753946247 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:17:41,835 basehttp 3568 8600 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:17:50,299 basehttp 3568 8600 "GET /verify-booking-payment/?trxref=6cc2495a-e726-45a9-b68b-8aca26f08c7c&reference=6cc2495a-e726-45a9-b68b-8aca26f08c7c HTTP/1.1" 302 0
+INFO 2025-07-30 19:17:50,323 basehttp 3568 8600 "GET /booking-success/?booking_id=9 HTTP/1.1" 200 7368
+INFO 2025-07-30 19:17:50,391 basehttp 3568 8600 "GET /static/css/dist/styles.css?v=1753946270 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:18:33,064 basehttp 3568 14124 "GET /booking-success/?booking_id=9 HTTP/1.1" 200 7368
+INFO 2025-07-30 19:18:33,101 basehttp 3568 14124 "GET /static/css/dist/styles.css?v=1753946313 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:18:59,225 basehttp 3568 23044 "GET /hotel_rooms/ HTTP/1.1" 200 17899
+INFO 2025-07-30 19:18:59,270 basehttp 3568 23044 "GET /static/css/dist/styles.css?v=1753946339 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:06,783 basehttp 3568 20704 "GET /my_booking/ HTTP/1.1" 200 32334
+INFO 2025-07-30 19:19:06,865 basehttp 3568 20704 "GET /static/css/dist/styles.css?v=1753946346 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:12,190 basehttp 3568 15844 "GET /hotel_rooms/ HTTP/1.1" 200 17899
+INFO 2025-07-30 19:19:12,261 basehttp 3568 15844 "GET /static/css/dist/styles.css?v=1753946352 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:13,909 basehttp 3568 14884 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50039
+INFO 2025-07-30 19:19:13,977 basehttp 3568 14884 "GET /static/css/dist/styles.css?v=1753946353 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:29,023 basehttp 3568 20852 "GET /contact/ HTTP/1.1" 200 16481
+INFO 2025-07-30 19:19:29,087 basehttp 3568 20852 "GET /static/css/dist/styles.css?v=1753946368 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:30,413 basehttp 3568 9376 "GET /my_booking/ HTTP/1.1" 200 32334
+INFO 2025-07-30 19:19:30,486 basehttp 3568 9376 "GET /static/css/dist/styles.css?v=1753946370 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:33,516 basehttp 3568 23508 "GET /about/ HTTP/1.1" 200 14433
+INFO 2025-07-30 19:19:33,583 basehttp 3568 23508 "GET /static/css/dist/styles.css?v=1753946373 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:35,275 basehttp 3568 23256 "GET / HTTP/1.1" 200 14538
+INFO 2025-07-30 19:19:35,343 basehttp 3568 23256 "GET /static/css/dist/styles.css?v=1753946375 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:43,428 basehttp 3568 16388 "GET /profile/ HTTP/1.1" 200 21720
+INFO 2025-07-30 19:19:43,500 basehttp 3568 16388 "GET /static/css/dist/styles.css?v=1753946383 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:45,711 basehttp 3568 4280 "GET /contact/ HTTP/1.1" 200 16481
+INFO 2025-07-30 19:19:45,792 basehttp 3568 4280 "GET /static/css/dist/styles.css?v=1753946385 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:47,323 basehttp 3568 7224 "GET / HTTP/1.1" 200 14538
+INFO 2025-07-30 19:19:47,392 basehttp 3568 7224 "GET /static/css/dist/styles.css?v=1753946387 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:51,775 basehttp 3568 796 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:19:51,791 basehttp 3568 796 "GET / HTTP/1.1" 200 13159
+INFO 2025-07-30 19:19:51,846 basehttp 3568 796 "GET /static/css/dist/styles.css?v=1753946391 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:19:54,325 basehttp 3568 1856 "GET /sign_up/ HTTP/1.1" 200 7561
+INFO 2025-07-30 19:19:54,400 basehttp 3568 1856 "GET /static/css/dist/styles.css?v=1753946394 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:21:26,423 basehttp 3568 4748 "GET /sign_up/ HTTP/1.1" 200 7561
+INFO 2025-07-30 19:21:26,523 basehttp 3568 4748 "GET /static/css/dist/styles.css?v=1753946486 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:23:15,725 basehttp 3568 6120 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:23:15,809 basehttp 3568 6120 "GET /static/css/dist/styles.css?v=1753946595 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:23:20,042 basehttp 3568 11896 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:23:20,122 basehttp 3568 11896 "GET /static/css/dist/styles.css?v=1753946600 HTTP/1.1" 200 69921
+INFO 2025-07-30 19:24:30,158 basehttp 3568 23076 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:24:30,232 basehttp 3568 23076 "GET /static/css/dist/styles.css?v=1753946670 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:24:35,289 basehttp 3568 17148 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:24:35,352 basehttp 3568 17148 "GET /static/css/dist/styles.css?v=1753946675 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:25:13,612 basehttp 3568 15368 "GET /login/ HTTP/1.1" 200 12966
+INFO 2025-07-30 19:25:13,690 basehttp 3568 15368 "GET /static/css/dist/styles.css?v=1753946713 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:25:27,968 basehttp 3568 21720 "GET /login/ HTTP/1.1" 200 12966
+INFO 2025-07-30 19:25:28,062 basehttp 3568 21720 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 19:25:28,068 basehttp 3568 7624 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 19:25:28,071 basehttp 3568 18652 "GET /static/css/dist/styles.css?v=1753946727 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:25:28,206 basehttp 3568 18652 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 19:25:33,370 basehttp 3568 18652 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:25:33,422 basehttp 3568 18652 "GET /static/css/dist/styles.css?v=1753946733 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:25:36,591 basehttp 3568 18652 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:25:36,684 basehttp 3568 18652 "GET /static/css/dist/styles.css?v=1753946736 HTTP/1.1" 200 95977
+INFO 2025-07-30 19:27:28,109 basehttp 3568 18652 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:27:28,196 basehttp 3568 18652 "GET /static/css/dist/styles.css?v=1753946848 HTTP/1.1" 200 81920
+INFO 2025-07-30 19:27:28,751 basehttp 3568 7624 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:27:46,466 basehttp 3568 7624 "GET /sign_up/ HTTP/1.1" 200 17935
+INFO 2025-07-30 19:27:46,722 basehttp 3568 7624 "GET /static/css/dist/styles.css?v=1753946866 HTTP/1.1" 200 98568
+INFO 2025-07-30 19:27:50,284 basehttp 3568 21720 "GET /login/ HTTP/1.1" 200 11460
+INFO 2025-07-30 19:27:50,388 basehttp 3568 21720 "GET /static/css/dist/styles.css?v=1753946870 HTTP/1.1" 200 98568
+INFO 2025-07-30 19:28:12,442 basehttp 3568 19368 "GET /login/ HTTP/1.1" 200 11460
+INFO 2025-07-30 19:28:12,611 basehttp 3568 19368 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 19:28:12,621 basehttp 3568 8660 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 19:28:12,636 basehttp 3568 23036 "GET /static/css/dist/styles.css?v=1753946892 HTTP/1.1" 200 98568
+INFO 2025-07-30 19:28:12,925 basehttp 3568 23036 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 19:29:14,392 basehttp 3568 23036 "GET /login/ HTTP/1.1" 200 11460
+INFO 2025-07-30 19:29:14,449 basehttp 3568 23036 "GET /static/css/dist/styles.css?v=1753946954 HTTP/1.1" 200 99107
+INFO 2025-07-30 19:29:35,246 basehttp 3568 23036 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:29:35,304 basehttp 3568 23036 "GET /static/css/dist/styles.css?v=1753946975 HTTP/1.1" 200 99107
+INFO 2025-07-30 19:29:36,954 basehttp 3568 23036 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:29:37,028 basehttp 3568 23036 "GET /static/css/dist/styles.css?v=1753946976 HTTP/1.1" 200 99107
+INFO 2025-07-30 19:29:42,678 basehttp 3568 23036 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:29:42,760 basehttp 3568 23036 "GET /static/css/dist/styles.css?v=1753946982 HTTP/1.1" 200 99107
+INFO 2025-07-30 19:32:18,365 basehttp 3568 20104 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:32:20,999 basehttp 3568 20104 "GET /static/css/dist/styles.css?v=1753947138 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:32:21,891 basehttp 3568 20104 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:32:47,224 basehttp 3568 13724 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:32:47,460 basehttp 3568 13724 "GET /static/css/dist/styles.css?v=1753947167 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:33:47,801 autoreload 3568 16868 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 19:33:53,460 autoreload 21464 18212 Watching for file changes with StatReloader
+INFO 2025-07-30 19:34:02,897 autoreload 21464 18212 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 19:34:05,037 autoreload 20512 8660 Watching for file changes with StatReloader
+INFO 2025-07-30 19:34:07,366 basehttp 20512 5952 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:34:07,610 basehttp 20512 5952 "GET /static/css/dist/styles.css?v=1753947247 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:34:27,406 autoreload 20512 8660 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 19:34:29,302 autoreload 21824 17720 Watching for file changes with StatReloader
+INFO 2025-07-30 19:34:30,967 basehttp 21824 22024 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:34:31,019 basehttp 21824 17004 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:34:31,122 basehttp 21824 22024 "GET /static/css/dist/styles.css?v=1753947270 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:34:34,906 autoreload 21824 17720 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 19:34:36,822 autoreload 18484 9008 Watching for file changes with StatReloader
+INFO 2025-07-30 19:34:38,502 basehttp 18484 20892 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:34:38,646 basehttp 18484 20892 "GET /static/css/dist/styles.css?v=1753947278 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:35:23,198 basehttp 18484 16652 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:35:23,307 basehttp 18484 16652 "GET /static/css/dist/styles.css?v=1753947323 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:35:25,404 basehttp 18484 9064 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:35:25,456 basehttp 18484 9064 "GET /static/css/dist/styles.css?v=1753947325 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:35:55,098 basehttp 18484 5928 "GET /login/ HTTP/1.1" 200 11475
+INFO 2025-07-30 19:35:55,206 basehttp 18484 5928 "GET /static/css/dist/styles.css?v=1753947355 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:35:56,848 basehttp 18484 15516 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:35:56,936 basehttp 18484 15516 "GET /static/css/dist/styles.css?v=1753947356 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:36:00,899 basehttp 18484 11172 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:36:00,978 basehttp 18484 11172 "GET /static/css/dist/styles.css?v=1753947360 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:36:04,840 basehttp 18484 22880 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:36:04,918 basehttp 18484 22880 "GET /static/css/dist/styles.css?v=1753947364 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:37:01,632 basehttp 18484 14280 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:37:01,725 basehttp 18484 14280 "GET /static/css/dist/styles.css?v=1753947421 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:37:01,730 basehttp 18484 23528 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:37:07,127 basehttp 18484 14280 "GET /login/ HTTP/1.1" 200 11475
+INFO 2025-07-30 19:37:07,217 basehttp 18484 14280 "GET /static/css/dist/styles.css?v=1753947427 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:37:12,195 basehttp 18484 21420 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:37:12,281 basehttp 18484 21420 "GET /static/css/dist/styles.css?v=1753947432 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:37:56,010 basehttp 18484 6076 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:37:56,077 basehttp 18484 6076 "GET /static/css/dist/styles.css?v=1753947476 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:39:18,324 basehttp 18484 22848 "GET /reset_password/ HTTP/1.1" 200 8531
+INFO 2025-07-30 19:39:18,425 basehttp 18484 22848 "GET /static/css/dist/styles.css?v=1753947558 HTTP/1.1" 200 101025
+INFO 2025-07-30 19:39:53,250 basehttp 18484 23276 "GET /reset_password/ HTTP/1.1" 200 8531
+INFO 2025-07-30 19:39:53,320 basehttp 18484 22876 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:39:53,326 basehttp 18484 23276 "GET /static/css/dist/styles.css?v=1753947593 HTTP/1.1" 200 101455
+ERROR 2025-07-30 19:40:17,859 forms 18484 22876 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 424, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'Authentication Failed')
+INFO 2025-07-30 19:40:17,982 basehttp 18484 22876 "POST /reset_password/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:40:18,030 basehttp 18484 22876 "GET /reset_password_sent/ HTTP/1.1" 200 7451
+INFO 2025-07-30 19:40:18,174 basehttp 18484 22876 "GET /static/css/dist/styles.css?v=1753947618 HTTP/1.1" 200 101455
+INFO 2025-07-30 19:41:10,958 basehttp 18484 21264 "GET /reset_password_sent/ HTTP/1.1" 200 7451
+INFO 2025-07-30 19:41:11,077 basehttp 18484 21264 "GET /static/css/dist/styles.css?v=1753947670 HTTP/1.1" 200 101455
+INFO 2025-07-30 19:41:47,842 basehttp 18484 21340 "GET /reset_password_sent/ HTTP/1.1" 200 7451
+INFO 2025-07-30 19:41:47,914 basehttp 18484 21340 "GET /static/css/dist/styles.css?v=1753947707 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:43:01,515 basehttp 18484 17308 "GET /reset_password/ HTTP/1.1" 200 8531
+INFO 2025-07-30 19:43:01,634 basehttp 18484 20920 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:43:01,635 basehttp 18484 17308 "GET /static/css/dist/styles.css?v=1753947781 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:43:43,090 basehttp 18484 20920 "GET /reset_password/ HTTP/1.1" 200 8531
+INFO 2025-07-30 19:43:43,214 basehttp 18484 20920 "GET /static/css/dist/styles.css?v=1753947823 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:43:48,466 basehttp 18484 22488 "GET /reset_password/ HTTP/1.1" 200 11114
+INFO 2025-07-30 19:43:48,770 basehttp 18484 22488 "GET /static/css/dist/styles.css?v=1753947828 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:04,763 basehttp 18484 18752 "GET /reset_password/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:44:04,862 basehttp 18484 18752 "GET /static/css/dist/styles.css?v=1753947844 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:13,374 basehttp 18484 19956 "GET /reset_password/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:44:13,446 basehttp 18484 19956 "GET /static/css/dist/styles.css?v=1753947853 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:17,791 basehttp 18484 20336 "GET /reset_password/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:44:17,858 basehttp 18484 20336 "GET /static/css/dist/styles.css?v=1753947857 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:21,071 basehttp 18484 19736 "GET /reset_password/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:44:21,147 basehttp 18484 19736 "GET /static/css/dist/styles.css?v=1753947861 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:24,322 basehttp 18484 10268 "GET /reset_password/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:44:24,389 basehttp 18484 10268 "GET /static/css/dist/styles.css?v=1753947864 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:44:40,370 basehttp 18484 21268 "GET /reset_password/ HTTP/1.1" 200 7688
+INFO 2025-07-30 19:44:40,424 basehttp 18484 21268 "GET /static/css/dist/styles.css?v=1753947880 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:46,658 basehttp 18484 22396 "GET /reset_password/ HTTP/1.1" 200 7694
+INFO 2025-07-30 19:45:46,731 basehttp 18484 22396 "GET /static/css/dist/styles.css?v=1753947946 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:48,272 basehttp 18484 15292 "GET /reset_password/ HTTP/1.1" 200 7697
+INFO 2025-07-30 19:45:48,335 basehttp 18484 15292 "GET /static/css/dist/styles.css?v=1753947948 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:50,068 basehttp 18484 1868 "GET /reset_password/ HTTP/1.1" 200 7699
+INFO 2025-07-30 19:45:50,119 basehttp 18484 1868 "GET /static/css/dist/styles.css?v=1753947950 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:53,340 basehttp 18484 11248 "GET /reset_password/ HTTP/1.1" 200 7711
+INFO 2025-07-30 19:45:53,409 basehttp 18484 11248 "GET /static/css/dist/styles.css?v=1753947953 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:54,895 basehttp 18484 6156 "GET /reset_password/ HTTP/1.1" 200 7711
+INFO 2025-07-30 19:45:54,955 basehttp 18484 6156 "GET /static/css/dist/styles.css?v=1753947954 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:45:58,374 basehttp 18484 8676 "GET /reset_password/ HTTP/1.1" 200 7711
+INFO 2025-07-30 19:45:58,429 basehttp 18484 8676 "GET /static/css/dist/styles.css?v=1753947958 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:46:00,733 basehttp 18484 21696 "GET /reset_password/ HTTP/1.1" 200 7711
+INFO 2025-07-30 19:46:00,787 basehttp 18484 21696 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 19:46:00,794 basehttp 18484 9860 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 19:46:00,800 basehttp 18484 21116 "GET /static/css/dist/styles.css?v=1753947960 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:46:02,480 basehttp 18484 21116 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 19:46:02,942 log 18484 9860 Not Found: /favicon.ico
+WARNING 2025-07-30 19:46:02,943 basehttp 18484 9860 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-07-30 19:46:19,282 basehttp 18484 9860 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:46:19,333 basehttp 18484 9860 "GET /static/css/dist/styles.css?v=1753947979 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:47:28,789 basehttp 18484 21696 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:47:28,853 basehttp 18484 21696 "GET /static/css/dist/styles.css?v=1753948048 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:47:38,412 basehttp 18484 1940 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:47:38,468 basehttp 18484 1940 "GET /static/css/dist/styles.css?v=1753948058 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:47:59,516 basehttp 18484 9192 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:47:59,571 basehttp 18484 9192 "GET /static/css/dist/styles.css?v=1753948079 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:48:01,321 basehttp 18484 6884 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:48:01,381 basehttp 18484 6884 "GET /static/css/dist/styles.css?v=1753948081 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:48:07,903 basehttp 18484 18412 "GET /login/ HTTP/1.1" 200 11475
+INFO 2025-07-30 19:48:07,986 basehttp 18484 18412 "GET /static/css/dist/styles.css?v=1753948087 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:48:12,172 basehttp 18484 12328 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:48:12,244 basehttp 18484 12328 "GET /static/css/dist/styles.css?v=1753948092 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:48:27,603 basehttp 18484 18408 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:48:27,677 basehttp 18484 18408 "GET /static/css/dist/styles.css?v=1753948107 HTTP/1.1" 200 101816
+ERROR 2025-07-30 19:48:44,406 forms 18484 17760 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 424, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'Authentication Failed')
+INFO 2025-07-30 19:48:44,413 basehttp 18484 17760 "POST /reset_password/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:48:44,461 basehttp 18484 17760 "GET /reset_password_sent/ HTTP/1.1" 200 3750
+INFO 2025-07-30 19:48:44,534 basehttp 18484 17760 "GET /static/css/dist/styles.css?v=1753948124 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:05,132 basehttp 18484 20324 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:49:05,197 basehttp 18484 20324 "GET /static/css/dist/styles.css?v=1753948145 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:08,335 basehttp 18484 9800 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:49:08,410 basehttp 18484 9800 "GET /static/css/dist/styles.css?v=1753948148 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:11,565 basehttp 18484 20772 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:49:11,623 basehttp 18484 20772 "GET /static/css/dist/styles.css?v=1753948151 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:19,937 basehttp 18484 21212 "GET /login/ HTTP/1.1" 200 11475
+INFO 2025-07-30 19:49:20,016 basehttp 18484 21212 "GET /static/css/dist/styles.css?v=1753948159 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:23,527 basehttp 18484 3676 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:49:23,605 basehttp 18484 3676 "GET /static/css/dist/styles.css?v=1753948163 HTTP/1.1" 200 101816
+ERROR 2025-07-30 19:49:29,829 forms 18484 10448 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 424, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'Authentication Failed')
+INFO 2025-07-30 19:49:29,833 basehttp 18484 10448 "POST /reset_password/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:49:29,845 basehttp 18484 10448 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:49:29,920 basehttp 18484 10448 "GET /static/css/dist/styles.css?v=1753948169 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:42,638 basehttp 18484 6340 "GET /login/ HTTP/1.1" 200 11475
+INFO 2025-07-30 19:49:42,720 basehttp 18484 6340 "GET /static/css/dist/styles.css?v=1753948182 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:49:42,726 basehttp 18484 17368 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:49:54,959 basehttp 18484 6340 "POST /login/ HTTP/1.1" 200 11820
+INFO 2025-07-30 19:49:55,026 basehttp 18484 6340 "GET /static/css/dist/styles.css?v=1753948194 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:50:33,862 basehttp 18484 5584 "GET /reset_password/ HTTP/1.1" 200 7689
+INFO 2025-07-30 19:50:33,923 basehttp 18484 5584 "GET /static/css/dist/styles.css?v=1753948233 HTTP/1.1" 200 101816
+ERROR 2025-07-30 19:50:40,336 forms 18484 12896 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 424, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'Authentication Failed')
+INFO 2025-07-30 19:50:40,341 basehttp 18484 12896 "POST /reset_password/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:50:40,352 basehttp 18484 12896 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:50:40,416 basehttp 18484 12896 "GET /static/css/dist/styles.css?v=1753948240 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:08,034 basehttp 18484 15400 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:08,089 basehttp 18484 15400 "GET /static/css/dist/styles.css?v=1753948268 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:11,234 basehttp 18484 19676 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:11,284 basehttp 18484 19676 "GET /static/css/dist/styles.css?v=1753948271 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:29,593 basehttp 18484 14832 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:29,651 basehttp 18484 14832 "GET /static/css/dist/styles.css?v=1753948289 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:38,171 basehttp 18484 15188 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:38,248 basehttp 18484 15188 "GET /static/css/dist/styles.css?v=1753948298 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:48,981 basehttp 18484 23532 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:49,040 basehttp 18484 23532 "GET /static/css/dist/styles.css?v=1753948308 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:52,199 basehttp 18484 17104 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:52,249 basehttp 18484 17104 "GET /static/css/dist/styles.css?v=1753948312 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:51:59,717 basehttp 18484 8692 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:51:59,771 basehttp 18484 8692 "GET /static/css/dist/styles.css?v=1753948319 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:52:25,479 basehttp 18484 20640 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:52:25,569 basehttp 18484 20640 "GET /static/css/dist/styles.css?v=1753948345 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:52:51,180 basehttp 18484 22832 "GET /reset_password_sent/ HTTP/1.1" 200 5896
+INFO 2025-07-30 19:52:51,240 basehttp 18484 22832 "GET /static/css/dist/styles.css?v=1753948371 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:52:54,213 basehttp 18484 4764 "GET /login/ HTTP/1.1" 200 11804
+INFO 2025-07-30 19:52:54,291 basehttp 18484 4764 "GET /static/css/dist/styles.css?v=1753948374 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:53:06,382 basehttp 18484 4280 "POST /login/ HTTP/1.1" 200 12149
+INFO 2025-07-30 19:53:06,434 basehttp 18484 4280 "GET /static/css/dist/styles.css?v=1753948386 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:53:40,661 basehttp 18484 3196 "POST /login/ HTTP/1.1" 200 12171
+INFO 2025-07-30 19:53:40,728 basehttp 18484 18692 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:53:40,730 basehttp 18484 3196 "GET /static/css/dist/styles.css?v=1753948420 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:53:50,925 basehttp 18484 3196 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:53:51,006 basehttp 18484 3196 "GET / HTTP/1.1" 200 16809
+INFO 2025-07-30 19:53:51,075 basehttp 18484 3196 "GET /static/css/dist/styles.css?v=1753948430 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:53:51,168 basehttp 18484 3196 "GET /media/profile/profile.jpg HTTP/1.1" 200 100768
+INFO 2025-07-30 19:54:00,963 basehttp 18484 10992 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:54:00,993 basehttp 18484 10992 "GET / HTTP/1.1" 200 13159
+INFO 2025-07-30 19:54:01,099 basehttp 18484 10992 "GET /static/css/dist/styles.css?v=1753948440 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:54:03,754 basehttp 18484 20704 "GET /sign_up/ HTTP/1.1" 200 16036
+INFO 2025-07-30 19:54:03,843 basehttp 18484 20704 "GET /static/css/dist/styles.css?v=1753948443 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:54:05,813 basehttp 18484 19584 "GET /login/ HTTP/1.1" 200 11826
+INFO 2025-07-30 19:54:05,891 basehttp 18484 19584 "GET /static/css/dist/styles.css?v=1753948445 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:54:47,280 basehttp 18484 6948 "GET /login/ HTTP/1.1" 200 11859
+INFO 2025-07-30 19:54:47,350 basehttp 18484 6948 "GET /static/css/dist/styles.css?v=1753948487 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:55:04,737 basehttp 18484 17016 "POST /login/ HTTP/1.1" 200 12204
+INFO 2025-07-30 19:55:04,796 basehttp 18484 17016 "GET /static/css/dist/styles.css?v=1753948504 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:55:19,159 basehttp 18484 17572 "POST /login/ HTTP/1.1" 200 12384
+INFO 2025-07-30 19:55:19,219 basehttp 18484 17572 "GET /static/css/dist/styles.css?v=1753948519 HTTP/1.1" 200 101816
+ERROR 2025-07-30 19:55:25,490 log 18484 8868 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 41, in login_user
+    return render(request, 'account/login.html')
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+ERROR 2025-07-30 19:55:25,520 basehttp 18484 8868 "POST /login/ HTTP/1.1" 500 159271
+INFO 2025-07-30 19:55:30,273 basehttp 18484 5464 "POST /login/ HTTP/1.1" 200 11841
+INFO 2025-07-30 19:55:30,324 basehttp 18484 5464 "GET /static/css/dist/styles.css?v=1753948530 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:55:33,866 basehttp 18484 18168 "POST /login/ HTTP/1.1" 200 11820
+INFO 2025-07-30 19:55:33,930 basehttp 18484 18168 "GET /static/css/dist/styles.css?v=1753948533 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:55:44,506 basehttp 18484 15296 "POST /login/ HTTP/1.1" 200 11853
+INFO 2025-07-30 19:55:44,557 basehttp 18484 15296 "GET /static/css/dist/styles.css?v=1753948544 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:55:44,905 basehttp 18484 20280 "GET /login/ HTTP/1.1" 200 11508
+INFO 2025-07-30 19:55:52,954 basehttp 18484 15956 "POST /login/ HTTP/1.1" 200 11853
+INFO 2025-07-30 19:55:53,019 basehttp 18484 15956 "GET /static/css/dist/styles.css?v=1753948552 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:56:22,022 basehttp 18484 20052 "POST /login/ HTTP/1.1" 200 11853
+INFO 2025-07-30 19:56:22,085 basehttp 18484 20052 "GET /static/css/dist/styles.css?v=1753948582 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:56:29,209 basehttp 18484 13960 "GET /reset_password/ HTTP/1.1" 200 7725
+INFO 2025-07-30 19:56:29,280 basehttp 18484 13960 "GET /static/css/dist/styles.css?v=1753948589 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:56:32,574 basehttp 18484 19552 "GET /login/ HTTP/1.1" 200 11508
+INFO 2025-07-30 19:56:32,649 basehttp 18484 19552 "GET /static/css/dist/styles.css?v=1753948592 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:56:34,642 basehttp 18484 13824 "GET /sign_up/ HTTP/1.1" 200 16069
+INFO 2025-07-30 19:56:34,720 basehttp 18484 13824 "GET /static/css/dist/styles.css?v=1753948594 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:02,320 basehttp 18484 16232 "POST /sign_up/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:57:02,370 basehttp 18484 16232 "GET / HTTP/1.1" 200 16624
+INFO 2025-07-30 19:57:02,455 basehttp 18484 16232 "GET /static/css/dist/styles.css?v=1753948622 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:08,673 basehttp 18484 14840 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:57:08,709 basehttp 18484 14840 "GET / HTTP/1.1" 200 13159
+INFO 2025-07-30 19:57:08,990 basehttp 18484 14840 "GET /static/css/dist/styles.css?v=1753948628 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:12,143 basehttp 18484 2796 "GET /sign_up/ HTTP/1.1" 200 16069
+INFO 2025-07-30 19:57:12,236 basehttp 18484 2796 "GET /static/css/dist/styles.css?v=1753948632 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:15,200 basehttp 18484 6112 "GET /login/ HTTP/1.1" 200 11508
+INFO 2025-07-30 19:57:15,283 basehttp 18484 6112 "GET /static/css/dist/styles.css?v=1753948635 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:22,974 basehttp 18484 16564 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-07-30 19:57:23,019 basehttp 18484 16564 "GET / HTTP/1.1" 200 16809
+INFO 2025-07-30 19:57:23,096 basehttp 18484 16564 "GET /static/css/dist/styles.css?v=1753948643 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:25,858 basehttp 18484 20080 "GET /dashboard/ HTTP/1.1" 200 47972
+INFO 2025-07-30 19:57:25,953 basehttp 18484 20080 "GET /static/css/dist/styles.css?v=1753948645 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:32,701 basehttp 18484 21180 "GET /dashboard/ HTTP/1.1" 200 47972
+INFO 2025-07-30 19:57:32,762 basehttp 18484 21180 "GET /static/css/dist/styles.css?v=1753948652 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:38,802 basehttp 18484 4576 "GET /add-room/ HTTP/1.1" 200 42108
+INFO 2025-07-30 19:57:38,880 basehttp 18484 4576 "GET /static/css/dist/styles.css?v=1753948658 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:40,471 basehttp 18484 18996 "GET /services/ HTTP/1.1" 200 40847
+INFO 2025-07-30 19:57:40,555 basehttp 18484 18996 "GET /static/css/dist/styles.css?v=1753948660 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:42,379 basehttp 18484 11192 "GET /services/ HTTP/1.1" 200 40847
+INFO 2025-07-30 19:57:42,438 basehttp 18484 11192 "GET /static/css/dist/styles.css?v=1753948662 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:43,459 basehttp 18484 22152 "GET /guest/ HTTP/1.1" 200 31653
+INFO 2025-07-30 19:57:43,540 basehttp 18484 22152 "GET /static/css/dist/styles.css?v=1753948663 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:45,825 basehttp 18484 14372 "GET /reservation/ HTTP/1.1" 200 46837
+INFO 2025-07-30 19:57:45,926 basehttp 18484 14372 "GET /static/css/dist/styles.css?v=1753948665 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:47,306 basehttp 18484 17732 "GET /guest/ HTTP/1.1" 200 31653
+INFO 2025-07-30 19:57:47,396 basehttp 18484 17732 "GET /static/css/dist/styles.css?v=1753948667 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:53,858 basehttp 18484 8632 "GET /reservation/ HTTP/1.1" 200 46837
+INFO 2025-07-30 19:57:53,936 basehttp 18484 8632 "GET /static/css/dist/styles.css?v=1753948673 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:56,096 basehttp 18484 23232 "GET /manage-hotel-account/ HTTP/1.1" 200 39661
+INFO 2025-07-30 19:57:56,174 basehttp 18484 23232 "GET /static/css/dist/styles.css?v=1753948676 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:57,957 basehttp 18484 21708 "GET /manage-account/ HTTP/1.1" 200 33559
+INFO 2025-07-30 19:57:58,036 basehttp 18484 21708 "GET /static/css/dist/styles.css?v=1753948677 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:57:58,045 basehttp 18484 19780 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 19:57:59,720 basehttp 18484 21708 "GET /reservation/ HTTP/1.1" 200 46837
+INFO 2025-07-30 19:57:59,800 basehttp 18484 21708 "GET /static/css/dist/styles.css?v=1753948679 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:58:00,473 basehttp 18484 2752 "GET /guest/ HTTP/1.1" 200 31653
+INFO 2025-07-30 19:58:00,555 basehttp 18484 2752 "GET /static/css/dist/styles.css?v=1753948680 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:59:56,768 basehttp 18484 17432 "GET /guest/ HTTP/1.1" 200 31653
+INFO 2025-07-30 19:59:56,846 basehttp 18484 17432 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 19:59:56,863 basehttp 18484 18076 "GET /static/css/dist/styles.css?v=1753948796 HTTP/1.1" 200 101816
+INFO 2025-07-30 19:59:56,893 basehttp 18484 22964 "GET /media/profile/profile.jpg HTTP/1.1" 200 100768
+INFO 2025-07-30 19:59:56,925 basehttp 18484 22964 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 19:59:57,416 basehttp 18484 22964 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:00:08,961 basehttp 18484 22964 "GET /guest/ HTTP/1.1" 200 31653
+INFO 2025-07-30 20:00:09,062 basehttp 18484 22964 "GET /static/css/dist/styles.css?v=1753948808 HTTP/1.1" 200 101816
+INFO 2025-07-30 20:00:22,446 basehttp 18484 18076 "GET /services/ HTTP/1.1" 200 40847
+INFO 2025-07-30 20:00:22,532 basehttp 18484 18076 "GET /static/css/dist/styles.css?v=1753948822 HTTP/1.1" 200 101816
+INFO 2025-07-30 20:00:23,752 basehttp 18484 17432 "GET /dashboard/ HTTP/1.1" 200 47972
+INFO 2025-07-30 20:00:23,829 basehttp 18484 17432 "GET /static/css/dist/styles.css?v=1753948823 HTTP/1.1" 200 101816
+INFO 2025-07-30 20:03:20,647 basehttp 18484 18140 - Broken pipe from ('127.0.0.1', 64582)
+INFO 2025-07-30 20:03:20,747 basehttp 18484 15420 "GET /dashboard/ HTTP/1.1" 200 47510
+INFO 2025-07-30 20:03:20,857 basehttp 18484 15420 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:03:20,880 basehttp 18484 15420 "GET /static/css/dist/styles.css?v=1753949000 HTTP/1.1" 200 104477
+INFO 2025-07-30 20:04:55,216 basehttp 18484 7312 "GET /dashboard/ HTTP/1.1" 200 47510
+INFO 2025-07-30 20:04:55,307 basehttp 18484 7312 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:04:55,364 basehttp 18484 5040 "GET /static/css/dist/styles.css?v=1753949094 HTTP/1.1" 200 104477
+INFO 2025-07-30 20:04:55,478 basehttp 18484 18532 "GET /media/profile/profile.jpg HTTP/1.1" 200 100768
+INFO 2025-07-30 20:04:55,772 basehttp 18484 18532 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:04:55,912 basehttp 18484 18532 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:05:00,886 basehttp 18484 18532 "GET /dashboard/ HTTP/1.1" 200 47510
+INFO 2025-07-30 20:05:01,022 basehttp 18484 18532 "GET /static/css/dist/styles.css?v=1753949100 HTTP/1.1" 200 104477
+ERROR 2025-07-30 20:05:14,538 log 18484 5040 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 211, in dashboard
+    return render(request, 'dashboard/dashboard.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 745, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaultfilters.py", line 601, in first
+    return value[0]
+           ~~~~~^^^
+TypeError: 'User' object is not subscriptable
+ERROR 2025-07-30 20:05:14,568 basehttp 18484 5040 "GET /dashboard/ HTTP/1.1" 500 206717
+ERROR 2025-07-30 20:05:26,886 log 18484 7312 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 211, in dashboard
+    return render(request, 'dashboard/dashboard.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 745, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaultfilters.py", line 601, in first
+    return value[0]
+           ~~~~~^^^
+TypeError: 'User' object is not subscriptable
+ERROR 2025-07-30 20:05:26,899 basehttp 18484 7312 "GET /dashboard/ HTTP/1.1" 500 206717
+ERROR 2025-07-30 20:05:34,793 log 18484 8584 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 211, in dashboard
+    return render(request, 'dashboard/dashboard.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 745, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaultfilters.py", line 601, in first
+    return value[0]
+           ~~~~~^^^
+TypeError: 'User' object is not subscriptable
+ERROR 2025-07-30 20:05:34,808 basehttp 18484 8584 "GET /dashboard/ HTTP/1.1" 500 206717
+ERROR 2025-07-30 20:07:57,267 log 18484 20908 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 211, in dashboard
+    return render(request, 'dashboard/dashboard.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 745, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaultfilters.py", line 601, in first
+    return value[0]
+           ~~~~~^^^
+TypeError: 'User' object is not subscriptable
+ERROR 2025-07-30 20:07:57,313 basehttp 18484 20908 "GET /dashboard/ HTTP/1.1" 500 206717
+INFO 2025-07-30 20:07:58,804 basehttp 18484 6544 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:07:58,843 basehttp 18484 6544 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:07:58,863 basehttp 18484 6544 "GET /static/css/dist/styles.css?v=1753949278 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:08:12,115 basehttp 18484 7108 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:08:12,195 basehttp 18484 7108 "GET /static/css/dist/styles.css?v=1753949292 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:25,669 basehttp 18484 17192 "GET / HTTP/1.1" 200 14762
+INFO 2025-07-30 20:09:25,755 basehttp 18484 17192 "GET /static/css/dist/styles.css?v=1753949365 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:28,623 basehttp 18484 1612 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:09:28,723 basehttp 18484 1612 "GET /static/css/dist/styles.css?v=1753949368 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:31,012 basehttp 18484 13164 "GET /add-room/ HTTP/1.1" 200 34733
+INFO 2025-07-30 20:09:31,120 basehttp 18484 13164 "GET /static/css/dist/styles.css?v=1753949370 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:32,784 basehttp 18484 17396 "GET /services/ HTTP/1.1" 200 33472
+INFO 2025-07-30 20:09:32,881 basehttp 18484 17396 "GET /static/css/dist/styles.css?v=1753949372 HTTP/1.1" 200 106475
+WARNING 2025-07-30 20:09:34,188 log 18484 8572 Not Found: /api/mark-guests-seen/
+WARNING 2025-07-30 20:09:34,189 basehttp 18484 8572 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-07-30 20:09:34,263 basehttp 18484 15828 "GET /guest/ HTTP/1.1" 200 24278
+INFO 2025-07-30 20:09:34,350 basehttp 18484 15828 "GET /static/css/dist/styles.css?v=1753949374 HTTP/1.1" 200 106475
+WARNING 2025-07-30 20:09:36,011 log 18484 8572 Not Found: /api/mark-reservations-seen/
+WARNING 2025-07-30 20:09:36,013 basehttp 18484 8572 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-07-30 20:09:36,042 basehttp 18484 17656 "GET /reservation/ HTTP/1.1" 200 39462
+INFO 2025-07-30 20:09:36,144 basehttp 18484 17656 "GET /static/css/dist/styles.css?v=1753949375 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:37,160 basehttp 18484 8572 "GET /manage-hotel-account/ HTTP/1.1" 200 32286
+INFO 2025-07-30 20:09:37,241 basehttp 18484 8572 "GET /static/css/dist/styles.css?v=1753949377 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:42,999 basehttp 18484 17792 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:09:43,084 basehttp 18484 17792 "GET /static/css/dist/styles.css?v=1753949382 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:55,396 basehttp 18484 7660 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:09:55,453 basehttp 18484 7660 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:09:55,455 basehttp 18484 20008 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:09:55,462 basehttp 18484 14268 "GET /static/css/dist/styles.css?v=1753949395 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:09:55,572 basehttp 18484 14268 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:09:55,882 basehttp 18484 14268 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:09:57,606 basehttp 18484 20008 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:09:57,647 basehttp 18484 20008 "GET /static/css/dist/styles.css?v=1753949397 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:10:57,600 basehttp 18484 20008 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:10:57,724 basehttp 18484 20008 "GET /static/css/dist/styles.css?v=1753949457 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:17:07,866 basehttp 18484 9148 "GET /dashboard/ HTTP/1.1" 200 40135
+INFO 2025-07-30 20:17:08,130 basehttp 18484 9148 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:17:08,143 basehttp 18484 9148 "GET /static/css/dist/styles.css?v=1753949827 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:17:08,290 basehttp 18484 9148 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 20:17:10,093 basehttp 18484 9752 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:17:10,253 basehttp 18484 9752 "GET /static/css/dist/styles.css?v=1753949829 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:17:32,801 basehttp 18484 20732 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:17:32,985 basehttp 18484 20732 "GET /static/css/dist/styles.css?v=1753949852 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:18:15,532 basehttp 18484 11716 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:18:15,592 basehttp 18484 11716 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:18:15,603 basehttp 18484 16176 "GET /static/css/dist/styles.css?v=1753949895 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:18:15,612 basehttp 18484 16176 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:18:16,300 basehttp 18484 16176 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:18:26,048 basehttp 18484 16176 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:18:26,148 basehttp 18484 16176 "GET /static/css/dist/styles.css?v=1753949905 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:18:32,767 basehttp 18484 11716 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:18:32,802 basehttp 18484 11716 "GET /static/css/dist/styles.css?v=1753949912 HTTP/1.1" 200 106475
+INFO 2025-07-30 20:18:55,296 basehttp 18484 11716 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:18:55,335 basehttp 18484 11716 "GET /static/css/dist/styles.css?v=1753949935 HTTP/1.1" 200 0
+INFO 2025-07-30 20:18:58,690 basehttp 18484 11716 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:18:58,734 basehttp 18484 11716 "GET /static/css/dist/styles.css?v=1753949938 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:19:22,050 basehttp 18484 11716 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:19:22,182 basehttp 18484 11716 "GET /static/css/dist/styles.css?v=1753949962 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:19,750 basehttp 18484 19236 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:19,823 basehttp 18484 19236 "GET /static/css/dist/styles.css?v=1753950019 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:22,910 basehttp 18484 6536 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:23,073 basehttp 18484 6536 "GET /static/css/dist/styles.css?v=1753950022 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:24,656 basehttp 18484 21988 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:24,710 basehttp 18484 21988 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:20:24,735 basehttp 18484 1704 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:20:24,739 basehttp 18484 21988 "GET /static/css/dist/styles.css?v=1753950024 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:25,301 basehttp 18484 21988 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 20:20:26,174 log 18484 1704 Not Found: /favicon.ico
+WARNING 2025-07-30 20:20:26,176 basehttp 18484 1704 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-07-30 20:20:31,910 basehttp 18484 1704 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:31,986 basehttp 18484 1704 "GET /static/css/dist/styles.css?v=1753950031 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:35,642 basehttp 18484 21464 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:35,691 basehttp 18484 21464 "GET /static/css/dist/styles.css?v=1753950035 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:36,327 basehttp 18484 14760 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:36,383 basehttp 18484 14760 "GET /static/css/dist/styles.css?v=1753950036 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:45,160 basehttp 18484 14372 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:45,210 basehttp 18484 14372 "GET /static/css/dist/styles.css?v=1753950045 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:53,374 basehttp 18484 3856 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:53,430 basehttp 18484 3856 "GET /static/css/dist/styles.css?v=1753950053 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:55,469 basehttp 18484 8668 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:20:55,529 basehttp 18484 8668 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:20:55,535 basehttp 18484 20296 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:20:55,539 basehttp 18484 23000 "GET /static/css/dist/styles.css?v=1753950055 HTTP/1.1" 200 106539
+INFO 2025-07-30 20:20:58,162 basehttp 18484 23000 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 20:20:58,652 log 18484 20296 Not Found: /favicon.ico
+WARNING 2025-07-30 20:20:58,653 basehttp 18484 20296 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-07-30 20:21:08,071 basehttp 18484 20296 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:21:08,131 basehttp 18484 20296 "GET /static/css/dist/styles.css?v=1753950068 HTTP/1.1" 200 0
+INFO 2025-07-30 20:21:12,624 basehttp 18484 8668 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:21:12,739 basehttp 18484 8668 "GET /static/css/dist/styles.css?v=1753950072 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:14,834 basehttp 18484 17716 "GET /dashboard/ HTTP/1.1" 200 40161
+INFO 2025-07-30 20:21:14,884 basehttp 18484 17716 "GET /static/css/dist/styles.css?v=1753950074 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:18,361 basehttp 18484 21128 "GET /dashboard/ HTTP/1.1" 200 40165
+INFO 2025-07-30 20:21:18,439 basehttp 18484 21128 "GET /static/css/dist/styles.css?v=1753950078 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:21,785 basehttp 18484 15484 "GET /dashboard/ HTTP/1.1" 200 40165
+INFO 2025-07-30 20:21:21,847 basehttp 18484 15484 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:21:21,856 basehttp 18484 21792 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:21:21,859 basehttp 18484 4292 "GET /static/css/dist/styles.css?v=1753950081 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:24,072 basehttp 18484 21792 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 20:21:24,538 log 18484 4292 Not Found: /favicon.ico
+WARNING 2025-07-30 20:21:24,541 basehttp 18484 4292 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-07-30 20:21:40,486 basehttp 18484 4292 "GET /dashboard/ HTTP/1.1" 200 40166
+INFO 2025-07-30 20:21:40,571 basehttp 18484 4292 "GET /static/css/dist/styles.css?v=1753950100 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:43,551 basehttp 18484 15484 "GET /dashboard/ HTTP/1.1" 200 40166
+INFO 2025-07-30 20:21:43,623 basehttp 18484 15484 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:21:43,652 basehttp 18484 15484 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:21:43,657 basehttp 18484 12900 "GET /static/css/dist/styles.css?v=1753950103 HTTP/1.1" 200 106572
+INFO 2025-07-30 20:21:43,731 basehttp 18484 12900 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 20:21:44,344 log 18484 15484 Not Found: /favicon.ico
+WARNING 2025-07-30 20:21:44,345 basehttp 18484 15484 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-07-30 20:22:05,570 basehttp 18484 15484 "GET /dashboard/ HTTP/1.1" 200 40166
+INFO 2025-07-30 20:22:05,636 basehttp 18484 15484 "GET /static/css/dist/styles.css?v=1753950125 HTTP/1.1" 200 0
+INFO 2025-07-30 20:22:08,849 basehttp 18484 6148 "GET /dashboard/ HTTP/1.1" 200 40166
+INFO 2025-07-30 20:22:08,960 basehttp 18484 6148 "GET /static/css/dist/styles.css?v=1753950128 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:22:25,681 basehttp 18484 19664 "GET /dashboard/ HTTP/1.1" 200 40165
+INFO 2025-07-30 20:22:25,778 basehttp 18484 19664 "GET /static/css/dist/styles.css?v=1753950145 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:22:44,242 basehttp 18484 13052 "GET /dashboard/ HTTP/1.1" 200 40165
+INFO 2025-07-30 20:22:44,309 basehttp 18484 13052 "GET /static/css/dist/styles.css?v=1753950164 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:23:10,691 autoreload 23428 12796 Watching for file changes with StatReloader
+INFO 2025-07-30 20:23:13,127 basehttp 23428 20268 "GET /dashboard/ HTTP/1.1" 200 40165
+INFO 2025-07-30 20:23:13,427 basehttp 23428 20268 "GET /static/css/dist/styles.css?v=1753950192 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:23:24,012 basehttp 23428 18624 "GET /dashboard/ HTTP/1.1" 200 40159
+INFO 2025-07-30 20:23:24,088 basehttp 23428 18624 "GET /static/css/dist/styles.css?v=1753950203 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:23:53,896 basehttp 23428 4024 "GET /dashboard/ HTTP/1.1" 200 40155
+INFO 2025-07-30 20:23:54,402 basehttp 23428 4024 "GET /static/css/dist/styles.css?v=1753950233 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:24:00,343 basehttp 23428 20228 "GET /dashboard/ HTTP/1.1" 200 40149
+INFO 2025-07-30 20:24:00,416 basehttp 23428 20228 "GET /static/css/dist/styles.css?v=1753950239 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:24:21,023 basehttp 23428 6868 "GET /dashboard/ HTTP/1.1" 200 40149
+INFO 2025-07-30 20:24:21,077 basehttp 23428 6868 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:24:21,118 basehttp 23428 3856 "GET /static/css/dist/styles.css?v=1753950260 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:24:21,123 basehttp 23428 12392 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:24:21,250 basehttp 23428 12392 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:25:32,924 basehttp 23428 12392 "GET /dashboard/ HTTP/1.1" 200 40145
+INFO 2025-07-30 20:25:32,962 basehttp 23428 12392 "GET /static/css/dist/styles.css?v=1753950332 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:25:42,853 basehttp 23428 12392 "GET /dashboard/ HTTP/1.1" 200 40149
+INFO 2025-07-30 20:25:42,881 basehttp 23428 12392 "GET /static/css/dist/styles.css?v=1753950342 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:26:39,850 basehttp 23428 12392 "GET /add-room/ HTTP/1.1" 200 34723
+INFO 2025-07-30 20:26:39,949 basehttp 23428 12392 "GET /static/css/dist/styles.css?v=1753950399 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:26:49,415 basehttp 23428 12392 "GET /dashboard/ HTTP/1.1" 200 40149
+INFO 2025-07-30 20:26:49,503 basehttp 23428 12392 "GET /static/css/dist/styles.css?v=1753950409 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:27:43,308 basehttp 23428 12392 "GET /dashboard/ HTTP/1.1" 200 41912
+INFO 2025-07-30 20:27:43,342 basehttp 23428 12392 "GET /static/css/dist/styles.css?v=1753950463 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:27:58,463 basehttp 23428 12392 "GET /dashboard/ HTTP/1.1" 200 41912
+INFO 2025-07-30 20:27:58,496 basehttp 23428 12392 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:27:58,500 basehttp 23428 3856 "GET /static/css/dist/styles.css?v=1753950478 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:31:03,554 basehttp 23428 3856 "GET /dashboard/ HTTP/1.1" 200 48883
+INFO 2025-07-30 20:31:03,650 basehttp 23428 3856 "GET /static/css/dist/styles.css?v=1753950663 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:31:39,123 autoreload 23428 12796 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:31:41,984 autoreload 22964 20808 Watching for file changes with StatReloader
+INFO 2025-07-30 20:31:44,711 basehttp 22964 10796 "GET /dashboard/ HTTP/1.1" 200 49549
+INFO 2025-07-30 20:31:44,763 basehttp 22964 15284 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 20:31:45,049 basehttp 22964 10796 "GET /static/css/dist/styles.css?v=1753950704 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:32:04,155 autoreload 22964 20808 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:32:06,332 autoreload 23020 20252 Watching for file changes with StatReloader
+INFO 2025-07-30 20:32:08,365 basehttp 23020 21508 "GET /dashboard/ HTTP/1.1" 200 49549
+INFO 2025-07-30 20:32:08,405 basehttp 23020 6836 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:32:08,530 basehttp 23020 21508 "GET /static/css/dist/styles.css?v=1753950728 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:32:59,211 basehttp 23020 21508 "GET /dashboard/ HTTP/1.1" 200 49549
+INFO 2025-07-30 20:32:59,350 basehttp 23020 21508 "GET /static/css/dist/styles.css?v=1753950779 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:37:18,695 basehttp 23020 21368 "GET /dashboard/ HTTP/1.1" 200 49819
+INFO 2025-07-30 20:37:18,751 basehttp 23020 21368 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:37:18,763 basehttp 23020 21368 "GET /static/css/dist/styles.css?v=1753951038 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:38:25,227 basehttp 23020 14092 "GET /dashboard/ HTTP/1.1" 200 49819
+INFO 2025-07-30 20:38:25,291 basehttp 23020 14092 "GET /static/css/dist/styles.css?v=1753951105 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:39:50,231 autoreload 23020 20252 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:39:52,916 autoreload 11468 5928 Watching for file changes with StatReloader
+INFO 2025-07-30 20:39:54,702 basehttp 11468 19840 "GET /dashboard/ HTTP/1.1" 200 50019
+INFO 2025-07-30 20:39:54,769 basehttp 11468 21248 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 20:39:54,878 basehttp 11468 19840 "GET /static/css/dist/styles.css?v=1753951194 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:40:01,614 autoreload 11468 5928 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:40:03,704 autoreload 9776 8196 Watching for file changes with StatReloader
+INFO 2025-07-30 20:40:05,592 basehttp 9776 18496 "GET /dashboard/ HTTP/1.1" 200 50019
+INFO 2025-07-30 20:40:05,759 basehttp 9776 18496 "GET /static/css/dist/styles.css?v=1753951205 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:40:31,854 basehttp 9776 5108 "GET /dashboard/ HTTP/1.1" 200 50019
+INFO 2025-07-30 20:40:31,917 basehttp 9776 5108 "GET /static/css/dist/styles.css?v=1753951231 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:41:28,847 autoreload 9776 8196 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:41:30,845 autoreload 12576 4128 Watching for file changes with StatReloader
+INFO 2025-07-30 20:41:32,622 basehttp 12576 6612 "GET /dashboard/ HTTP/1.1" 200 50019
+INFO 2025-07-30 20:41:32,783 basehttp 12576 6612 "GET /static/css/dist/styles.css?v=1753951292 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:41:46,153 autoreload 12576 4128 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:41:48,019 autoreload 8564 21744 Watching for file changes with StatReloader
+INFO 2025-07-30 20:41:49,591 basehttp 8564 16740 "GET /dashboard/ HTTP/1.1" 200 50233
+INFO 2025-07-30 20:41:49,765 basehttp 8564 16740 "GET /static/css/dist/styles.css?v=1753951309 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:42:03,140 autoreload 8564 21744 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:42:04,962 autoreload 19668 15896 Watching for file changes with StatReloader
+INFO 2025-07-30 20:42:10,655 autoreload 19668 15896 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:42:13,034 autoreload 22332 14928 Watching for file changes with StatReloader
+INFO 2025-07-30 20:42:14,940 basehttp 22332 20920 "GET /dashboard/ HTTP/1.1" 200 50204
+INFO 2025-07-30 20:42:14,986 basehttp 22332 20920 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:42:15,141 basehttp 22332 19044 "GET /static/css/dist/styles.css?v=1753951334 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:42:16,792 autoreload 22332 14928 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:42:18,633 autoreload 22672 13912 Watching for file changes with StatReloader
+INFO 2025-07-30 20:42:20,803 basehttp 22672 5424 "GET /dashboard/ HTTP/1.1" 200 50208
+INFO 2025-07-30 20:42:20,966 basehttp 22672 5424 "GET /static/css/dist/styles.css?v=1753951340 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:42:26,292 basehttp 22672 4308 "GET /dashboard/ HTTP/1.1" 200 50208
+INFO 2025-07-30 20:42:26,351 basehttp 22672 4308 "GET /static/css/dist/styles.css?v=1753951346 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:44:17,335 basehttp 22672 22024 "GET /dashboard/ HTTP/1.1" 200 50207
+INFO 2025-07-30 20:44:17,409 basehttp 22672 22024 "GET /static/css/dist/styles.css?v=1753951457 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:44:26,126 basehttp 22672 16348 "GET /dashboard/ HTTP/1.1" 200 50208
+INFO 2025-07-30 20:44:26,181 basehttp 22672 16348 "GET /static/css/dist/styles.css?v=1753951466 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:44:56,021 basehttp 22672 23248 "GET /dashboard/ HTTP/1.1" 200 50211
+INFO 2025-07-30 20:44:56,070 basehttp 22672 23248 "GET /static/css/dist/styles.css?v=1753951495 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:45:04,298 basehttp 22672 16564 "GET /dashboard/ HTTP/1.1" 200 50211
+INFO 2025-07-30 20:45:04,354 basehttp 22672 16564 "GET /static/css/dist/styles.css?v=1753951504 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:45:15,400 basehttp 22672 1856 "GET /dashboard/ HTTP/1.1" 200 50212
+INFO 2025-07-30 20:45:15,455 basehttp 22672 1856 "GET /static/css/dist/styles.css?v=1753951515 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:45:17,502 basehttp 22672 15368 "GET /dashboard/ HTTP/1.1" 200 50212
+INFO 2025-07-30 20:45:17,562 basehttp 22672 15368 "GET /static/css/dist/styles.css?v=1753951517 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:46:45,920 basehttp 22672 13508 "GET /dashboard/ HTTP/1.1" 200 50213
+INFO 2025-07-30 20:46:46,331 basehttp 22672 13508 "GET /static/css/dist/styles.css?v=1753951605 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:46:51,278 basehttp 22672 18420 "GET /dashboard/ HTTP/1.1" 200 50215
+INFO 2025-07-30 20:46:51,328 basehttp 22672 18420 "GET /static/css/dist/styles.css?v=1753951611 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:46:55,573 basehttp 22672 22644 "GET /dashboard/ HTTP/1.1" 200 50224
+INFO 2025-07-30 20:46:55,629 basehttp 22672 22644 "GET /static/css/dist/styles.css?v=1753951615 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:46:57,104 basehttp 22672 20184 "GET /dashboard/ HTTP/1.1" 200 50224
+INFO 2025-07-30 20:46:57,160 basehttp 22672 20184 "GET /static/css/dist/styles.css?v=1753951617 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:47:57,466 basehttp 22672 14260 "GET /dashboard/ HTTP/1.1" 200 50225
+INFO 2025-07-30 20:47:57,582 basehttp 22672 14260 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:47:57,595 basehttp 22672 14260 "GET /static/css/dist/styles.css?v=1753951677 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:47:59,481 basehttp 22672 18588 "GET /dashboard/ HTTP/1.1" 200 50229
+INFO 2025-07-30 20:47:59,534 basehttp 22672 18588 "GET /static/css/dist/styles.css?v=1753951679 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:48:02,766 basehttp 22672 7632 "GET /dashboard/ HTTP/1.1" 200 50233
+INFO 2025-07-30 20:48:02,818 basehttp 22672 7632 "GET /static/css/dist/styles.css?v=1753951682 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:48:05,655 basehttp 22672 16828 "GET /dashboard/ HTTP/1.1" 200 50233
+INFO 2025-07-30 20:48:05,698 basehttp 22672 16828 "GET /static/css/dist/styles.css?v=1753951685 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:50:54,691 autoreload 22672 13912 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:50:57,276 autoreload 8572 7396 Watching for file changes with StatReloader
+INFO 2025-07-30 20:50:58,934 basehttp 8572 11724 "GET /dashboard/ HTTP/1.1" 200 50197
+INFO 2025-07-30 20:50:58,992 basehttp 8572 6612 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 20:50:59,106 basehttp 8572 11724 "GET /static/css/dist/styles.css?v=1753951858 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:51:52,826 basehttp 8572 6612 "GET /dashboard/ HTTP/1.1" 200 54839
+INFO 2025-07-30 20:51:52,901 basehttp 8572 6612 "GET /static/css/dist/styles.css?v=1753951912 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:52:11,966 autoreload 8572 7396 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:52:14,194 autoreload 20028 17592 Watching for file changes with StatReloader
+INFO 2025-07-30 20:52:16,244 basehttp 20028 2328 "GET /dashboard/ HTTP/1.1" 200 54839
+INFO 2025-07-30 20:52:16,433 basehttp 20028 2328 "GET /static/css/dist/styles.css?v=1753951936 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:52:22,889 basehttp 20028 11060 "GET /dashboard/ HTTP/1.1" 200 54839
+INFO 2025-07-30 20:52:22,953 basehttp 20028 11060 "GET /static/css/dist/styles.css?v=1753951942 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:55:56,556 basehttp 20028 18932 "POST /dashboard/ HTTP/1.1" 302 0
+INFO 2025-07-30 20:55:56,617 basehttp 20028 18932 "GET /dashboard/ HTTP/1.1" 200 59739
+INFO 2025-07-30 20:55:56,681 basehttp 20028 18932 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 20:55:56,694 basehttp 20028 12164 "GET /static/css/dist/styles.css?v=1753952156 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:56:13,411 basehttp 20028 18932 "GET /dashboard/ HTTP/1.1" 200 58391
+INFO 2025-07-30 20:56:13,477 basehttp 20028 18932 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 20:56:13,485 basehttp 20028 2976 "GET /static/css/dist/styles.css?v=1753952173 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:56:14,194 basehttp 20028 2976 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 20:56:14,196 basehttp 20028 18932 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 20:56:21,443 basehttp 20028 18932 "GET /dashboard/ HTTP/1.1" 200 58391
+INFO 2025-07-30 20:56:21,526 basehttp 20028 18932 "GET /static/css/dist/styles.css?v=1753952181 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:56:36,369 basehttp 20028 2976 "GET /add-room/ HTTP/1.1" 200 34723
+INFO 2025-07-30 20:56:36,434 basehttp 20028 2976 "GET /static/css/dist/styles.css?v=1753952196 HTTP/1.1" 200 106610
+INFO 2025-07-30 20:56:46,897 autoreload 20028 17592 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 20:56:49,030 autoreload 5324 8016 Watching for file changes with StatReloader
+INFO 2025-07-30 20:56:51,123 basehttp 5324 17256 "GET /add-room/ HTTP/1.1" 200 34723
+INFO 2025-07-30 20:56:51,291 basehttp 5324 17256 "GET /static/css/dist/styles.css?v=1753952210 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:01:49,277 basehttp 5324 19124 "GET /add-room/ HTTP/1.1" 200 57938
+INFO 2025-07-30 21:01:49,343 basehttp 5324 19124 "GET /static/css/dist/styles.css?v=1753952509 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:02:15,645 autoreload 5324 8016 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:02:18,914 autoreload 20804 23420 Watching for file changes with StatReloader
+INFO 2025-07-30 21:02:20,997 basehttp 20804 11456 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:02:21,271 basehttp 20804 11456 "GET /static/css/dist/styles.css?v=1753952540 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:02:37,094 autoreload 20804 23420 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:02:39,618 autoreload 21404 17852 Watching for file changes with StatReloader
+INFO 2025-07-30 21:02:41,696 basehttp 21404 17664 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:02:41,837 basehttp 21404 17664 "GET /static/css/dist/styles.css?v=1753952561 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:03:05,268 basehttp 21404 4920 "GET /add_room_detail/4/ HTTP/1.1" 200 26074
+INFO 2025-07-30 21:03:05,328 basehttp 21404 4920 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 21:03:05,345 basehttp 21404 16976 "GET /static/css/dist/styles.css?v=1753952585 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:03:07,102 basehttp 21404 4920 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:03:07,168 basehttp 21404 4920 "GET /static/css/dist/styles.css?v=1753952587 HTTP/1.1" 200 106610
+INFO 2025-07-30 21:03:42,194 basehttp 21404 19192 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:03:42,296 basehttp 21404 19192 "GET /static/css/dist/styles.css?v=1753952622 HTTP/1.1" 200 102484
+INFO 2025-07-30 21:04:05,407 basehttp 21404 1868 "GET /add_room_detail/4/ HTTP/1.1" 200 26074
+INFO 2025-07-30 21:04:05,472 basehttp 21404 1868 "GET /static/css/dist/styles.css?v=1753952645 HTTP/1.1" 200 102484
+INFO 2025-07-30 21:04:06,729 basehttp 21404 9008 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:04:06,809 basehttp 21404 9008 "GET /static/css/dist/styles.css?v=1753952646 HTTP/1.1" 200 102484
+INFO 2025-07-30 21:04:11,157 basehttp 21404 16420 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:04:11,242 basehttp 21404 16420 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 21:04:11,244 basehttp 21404 1120 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 21:04:11,249 basehttp 21404 17760 "GET /static/css/dist/styles.css?v=1753952651 HTTP/1.1" 200 102484
+INFO 2025-07-30 21:04:11,394 basehttp 21404 17760 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-30 21:04:19,884 basehttp 21404 17760 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:04:19,999 basehttp 21404 17760 "GET /static/css/dist/styles.css?v=1753952659 HTTP/1.1" 200 102484
+INFO 2025-07-30 21:04:47,321 basehttp 21404 1120 "GET /add-room/ HTTP/1.1" 200 59015
+INFO 2025-07-30 21:04:47,667 basehttp 21404 1120 "GET /static/css/dist/styles.css?v=1753952687 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:04:50,836 basehttp 21404 16420 "GET /add-room/ HTTP/1.1" 200 59019
+INFO 2025-07-30 21:04:50,913 basehttp 21404 16420 "GET /static/css/dist/styles.css?v=1753952690 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:04,230 basehttp 21404 9504 "GET /add-room/ HTTP/1.1" 200 59019
+INFO 2025-07-30 21:05:04,294 basehttp 21404 9504 "GET /static/css/dist/styles.css?v=1753952704 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:12,163 basehttp 21404 11676 "GET /edit_room/4/edit/ HTTP/1.1" 200 25378
+INFO 2025-07-30 21:05:12,233 basehttp 21404 11676 "GET /static/css/dist/styles.css?v=1753952712 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:16,155 basehttp 21404 10752 "GET /add_room_detail/4/ HTTP/1.1" 200 26074
+INFO 2025-07-30 21:05:16,223 basehttp 21404 10752 "GET /static/css/dist/styles.css?v=1753952716 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:24,474 basehttp 21404 22140 "GET /edit_room/4/edit/ HTTP/1.1" 200 25378
+INFO 2025-07-30 21:05:24,545 basehttp 21404 22140 "GET /static/css/dist/styles.css?v=1753952724 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:26,809 basehttp 21404 23496 "GET /add_room_detail/4/ HTTP/1.1" 200 26074
+INFO 2025-07-30 21:05:26,873 basehttp 21404 23496 "GET /static/css/dist/styles.css?v=1753952726 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:30,582 basehttp 21404 4284 "GET /services/ HTTP/1.1" 200 33462
+INFO 2025-07-30 21:05:30,648 basehttp 21404 4284 "GET /static/css/dist/styles.css?v=1753952730 HTTP/1.1" 200 102514
+WARNING 2025-07-30 21:05:35,834 log 21404 21608 Not Found: /api/mark-guests-seen/
+WARNING 2025-07-30 21:05:35,836 basehttp 21404 21608 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-07-30 21:05:35,869 basehttp 21404 20512 "GET /guest/ HTTP/1.1" 200 24268
+INFO 2025-07-30 21:05:35,935 basehttp 21404 20512 "GET /static/css/dist/styles.css?v=1753952735 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:41,723 basehttp 21404 21608 "GET /add-room/ HTTP/1.1" 200 59019
+INFO 2025-07-30 21:05:41,781 basehttp 21404 21608 "GET /static/css/dist/styles.css?v=1753952741 HTTP/1.1" 200 102514
+WARNING 2025-07-30 21:05:44,651 log 21404 16904 Not Found: /api/mark-guests-seen/
+WARNING 2025-07-30 21:05:44,653 basehttp 21404 16904 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-07-30 21:05:44,713 basehttp 21404 14292 "GET /guest/ HTTP/1.1" 200 24268
+INFO 2025-07-30 21:05:44,781 basehttp 21404 14292 "GET /static/css/dist/styles.css?v=1753952744 HTTP/1.1" 200 102514
+WARNING 2025-07-30 21:05:46,970 log 21404 16904 Not Found: /api/mark-reservations-seen/
+WARNING 2025-07-30 21:05:46,972 basehttp 21404 16904 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-07-30 21:05:47,060 basehttp 21404 18424 "GET /reservation/ HTTP/1.1" 200 39452
+INFO 2025-07-30 21:05:47,124 basehttp 21404 18424 "GET /static/css/dist/styles.css?v=1753952746 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:05:57,222 autoreload 21404 17852 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:05:59,867 autoreload 17168 16188 Watching for file changes with StatReloader
+INFO 2025-07-30 21:06:02,076 basehttp 17168 16264 "GET /reservation/ HTTP/1.1" 200 39452
+INFO 2025-07-30 21:06:02,248 basehttp 17168 16264 "GET /static/css/dist/styles.css?v=1753952761 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:09:27,446 basehttp 17168 15832 "GET /reservation/ HTTP/1.1" 200 44633
+INFO 2025-07-30 21:09:27,502 basehttp 17168 15832 "GET /static/css/dist/styles.css?v=1753952967 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:10:10,338 autoreload 17168 16188 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:10:13,382 autoreload 23532 18456 Watching for file changes with StatReloader
+INFO 2025-07-30 21:10:15,871 basehttp 23532 4764 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:10:16,139 basehttp 23532 4764 "GET /static/css/dist/styles.css?v=1753953015 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:10:34,870 autoreload 23532 18456 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:10:37,826 autoreload 1004 1612 Watching for file changes with StatReloader
+INFO 2025-07-30 21:10:40,446 basehttp 1004 1464 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:10:40,648 basehttp 1004 1464 "GET /static/css/dist/styles.css?v=1753953040 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:10:41,384 basehttp 1004 12644 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:10:41,454 basehttp 1004 12644 "GET /static/css/dist/styles.css?v=1753953041 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:12:25,677 basehttp 1004 21388 "GET /manage-hotel-account/ HTTP/1.1" 200 32276
+INFO 2025-07-30 21:12:25,743 basehttp 1004 21388 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 21:12:25,760 basehttp 1004 12764 "GET /static/css/dist/styles.css?v=1753953145 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:12:46,243 autoreload 1004 1612 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:12:48,506 autoreload 23376 22644 Watching for file changes with StatReloader
+INFO 2025-07-30 21:12:50,822 basehttp 23376 13928 "GET /manage-hotel-account/ HTTP/1.1" 200 32276
+INFO 2025-07-30 21:12:50,981 basehttp 23376 13928 "GET /static/css/dist/styles.css?v=1753953170 HTTP/1.1" 200 102514
+INFO 2025-07-30 21:16:57,742 basehttp 23376 8376 "GET /manage-hotel-account/ HTTP/1.1" 200 45553
+INFO 2025-07-30 21:16:57,861 basehttp 23376 8376 "GET /static/css/dist/styles.css?v=1753953417 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:16:57,930 basehttp 23376 8376 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 21:16:58,813 basehttp 23376 18056 "GET /manage-hotel-account/ HTTP/1.1" 200 45553
+INFO 2025-07-30 21:16:58,895 basehttp 23376 18056 "GET /static/css/dist/styles.css?v=1753953418 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:17:21,371 autoreload 23376 22644 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:17:23,994 autoreload 20168 7540 Watching for file changes with StatReloader
+INFO 2025-07-30 21:17:26,513 basehttp 20168 11476 "GET /manage-hotel-account/ HTTP/1.1" 200 46768
+INFO 2025-07-30 21:17:26,841 basehttp 20168 11476 "GET /static/css/dist/styles.css?v=1753953446 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:17:44,057 autoreload 20168 7540 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:17:46,546 autoreload 18228 20900 Watching for file changes with StatReloader
+INFO 2025-07-30 21:17:48,982 basehttp 18228 1544 "GET /manage-hotel-account/ HTTP/1.1" 200 46768
+INFO 2025-07-30 21:17:49,493 basehttp 18228 1544 "GET /static/css/dist/styles.css?v=1753953468 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:19:32,289 basehttp 18228 8332 "GET /remove-amenity/4/ HTTP/1.1" 302 0
+INFO 2025-07-30 21:19:32,403 basehttp 18228 8332 "GET /manage-hotel-account/ HTTP/1.1" 200 47375
+INFO 2025-07-30 21:19:32,522 basehttp 18228 8332 "GET /static/css/dist/styles.css?v=1753953572 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:19:53,618 basehttp 18228 20976 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-07-30 21:19:53,687 basehttp 18228 20976 "GET /manage-hotel-account/ HTTP/1.1" 200 48144
+INFO 2025-07-30 21:19:53,752 basehttp 18228 20976 "GET /static/css/dist/styles.css?v=1753953593 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:23:43,256 basehttp 18228 19260 "GET /manage-account/ HTTP/1.1" 200 26174
+INFO 2025-07-30 21:23:43,339 basehttp 18228 19260 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 21:23:43,351 basehttp 18228 14272 "GET /static/css/dist/styles.css?v=1753953823 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:24:00,342 autoreload 18228 20900 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:24:13,620 autoreload 16012 14080 Watching for file changes with StatReloader
+INFO 2025-07-30 21:24:21,534 basehttp 16012 16556 "GET /manage-account/ HTTP/1.1" 200 26174
+INFO 2025-07-30 21:24:21,725 basehttp 16012 16556 "GET /static/css/dist/styles.css?v=1753953861 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:24:31,820 basehttp 16012 20060 "GET /manage-hotel-account/ HTTP/1.1" 200 46801
+INFO 2025-07-30 21:24:31,907 basehttp 16012 20060 "GET /static/css/dist/styles.css?v=1753953871 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:24:34,795 basehttp 16012 15580 "GET /manage-hotel-account/ HTTP/1.1" 200 46801
+INFO 2025-07-30 21:24:34,984 basehttp 16012 15580 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-07-30 21:24:35,007 basehttp 16012 6508 "GET /static/css/dist/styles.css?v=1753953874 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:24:35,649 basehttp 16012 6508 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-07-30 21:24:35,770 basehttp 16012 6508 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-07-30 21:24:45,429 log 16012 6508 Not Found: /api/mark-reservations-seen/
+WARNING 2025-07-30 21:24:45,435 basehttp 16012 6508 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-07-30 21:24:45,587 basehttp 16012 15580 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:24:45,664 basehttp 16012 15580 "GET /static/css/dist/styles.css?v=1753953885 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:24:57,756 basehttp 16012 15580 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:24:57,951 basehttp 16012 15580 "GET /static/css/dist/styles.css?v=1753953897 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:27:50,055 basehttp 16012 6508 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:27:50,226 basehttp 16012 6508 "GET /static/css/dist/styles.css?v=1753954069 HTTP/1.1" 200 103988
+INFO 2025-07-30 21:27:53,211 basehttp 16012 18604 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:27:53,270 basehttp 16012 18604 "GET /static/css/dist/styles.css?v=1753954073 HTTP/1.1" 200 104872
+INFO 2025-07-30 21:28:09,791 autoreload 16012 14080 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:28:15,413 autoreload 20316 7420 Watching for file changes with StatReloader
+INFO 2025-07-30 21:29:06,925 autoreload 20472 3744 Watching for file changes with StatReloader
+INFO 2025-07-30 21:31:36,607 autoreload 6148 16976 Watching for file changes with StatReloader
+INFO 2025-07-30 21:31:57,043 autoreload 6148 16976 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-07-30 21:32:00,177 autoreload 11916 14092 Watching for file changes with StatReloader
+ERROR 2025-07-30 21:32:03,275 log 11916 14780 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 175, in manage_account
+    return render(request, 'dashboard/manage-account.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_change' not found. 'password_change' is not a valid view function or pattern name.
+ERROR 2025-07-30 21:32:03,298 basehttp 11916 14780 "GET /manage-account/ HTTP/1.1" 500 172318
+INFO 2025-07-30 21:32:58,518 autoreload 11916 14092 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 21:33:00,757 autoreload 21064 6108 Watching for file changes with StatReloader
+INFO 2025-07-30 21:33:03,529 basehttp 21064 7984 "GET /manage-account/ HTTP/1.1" 200 41976
+INFO 2025-07-30 21:33:03,805 basehttp 21064 7984 "GET /static/css/dist/styles.css?v=1753954383 HTTP/1.1" 200 104872
+INFO 2025-07-30 21:33:54,921 basehttp 21064 16884 "GET /manage-account/ HTTP/1.1" 200 41976
+INFO 2025-07-30 21:33:55,433 basehttp 21064 16884 "GET /static/css/dist/styles.css?v=1753954434 HTTP/1.1" 200 104872
+INFO 2025-07-30 21:33:57,443 basehttp 21064 18868 "GET /manage-account/ HTTP/1.1" 200 41976
+INFO 2025-07-30 21:33:57,571 basehttp 21064 18868 "GET /static/css/dist/styles.css?v=1753954437 HTTP/1.1" 200 104872
+INFO 2025-07-30 21:34:20,196 autoreload 21064 6108 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\urls.py changed, reloading.
+INFO 2025-07-30 21:34:22,659 autoreload 20496 19784 Watching for file changes with StatReloader
+ERROR 2025-07-30 21:34:24,991 log 20496 20796 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 175, in manage_account
+    return render(request, 'dashboard/manage-account.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_change' not found. 'password_change' is not a valid view function or pattern name.
+ERROR 2025-07-30 21:34:25,017 basehttp 20496 20796 "GET /manage-account/ HTTP/1.1" 500 172353
+ERROR 2025-07-30 21:35:07,179 log 20496 14160 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 175, in manage_account
+    return render(request, 'dashboard/manage-account.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_change' not found. 'password_change' is not a valid view function or pattern name.
+ERROR 2025-07-30 21:35:07,193 basehttp 20496 14160 "GET /manage-account/ HTTP/1.1" 500 172353
+INFO 2025-07-30 21:35:19,062 basehttp 20496 21672 "GET /manage-account/ HTTP/1.1" 200 41959
+INFO 2025-07-30 21:35:19,135 basehttp 20496 21672 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-07-30 21:35:19,259 basehttp 20496 14412 "GET /static/css/dist/styles.css?v=1753954519 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:36:16,298 basehttp 20496 21672 "GET /manage-account/ HTTP/1.1" 200 41962
+INFO 2025-07-30 21:36:16,381 basehttp 20496 21672 "GET /static/css/dist/styles.css?v=1753954576 HTTP/1.1" 200 104973
+ERROR 2025-07-30 21:36:18,727 log 20496 10924 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 175, in manage_account
+    return render(request, 'dashboard/manage-account.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+ERROR 2025-07-30 21:36:18,755 basehttp 20496 10924 "GET /manage-account/ HTTP/1.1" 500 171978
+ERROR 2025-07-30 21:36:20,942 log 20496 22712 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 175, in manage_account
+    return render(request, 'dashboard/manage-account.html',context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'reset' not found. 'reset' is not a valid view function or pattern name.
+ERROR 2025-07-30 21:36:20,958 basehttp 20496 22712 "GET /manage-account/ HTTP/1.1" 500 172093
+INFO 2025-07-30 21:36:24,449 basehttp 20496 5628 "GET /manage-account/ HTTP/1.1" 200 41975
+INFO 2025-07-30 21:36:24,514 basehttp 20496 5628 "GET /static/css/dist/styles.css?v=1753954584 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:39:07,084 basehttp 20496 16564 "GET /manage-account/ HTTP/1.1" 200 42039
+INFO 2025-07-30 21:39:07,255 basehttp 20496 19000 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-07-30 21:39:07,262 basehttp 20496 16564 "GET /static/css/dist/styles.css?v=1753954746 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:39:23,646 basehttp 20496 19000 "GET /manage-account/ HTTP/1.1" 200 42039
+INFO 2025-07-30 21:39:23,718 basehttp 20496 19000 "GET /static/css/dist/styles.css?v=1753954763 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:39:58,162 basehttp 20496 15864 "GET /manage-account/ HTTP/1.1" 200 42039
+INFO 2025-07-30 21:39:58,249 basehttp 20496 15864 "GET /static/css/dist/styles.css?v=1753954798 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:04,926 basehttp 20496 23480 "GET /manage-account/ HTTP/1.1" 200 42039
+INFO 2025-07-30 21:40:04,991 basehttp 20496 23480 "GET /static/css/dist/styles.css?v=1753954804 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:18,669 basehttp 20496 21676 "GET /reset_password/ HTTP/1.1" 200 7725
+INFO 2025-07-30 21:40:18,776 basehttp 20496 21676 "GET /static/css/dist/styles.css?v=1753954818 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:23,379 basehttp 20496 14684 "GET /manage-hotel-account/ HTTP/1.1" 200 46801
+INFO 2025-07-30 21:40:23,468 basehttp 20496 14684 "GET /static/css/dist/styles.css?v=1753954823 HTTP/1.1" 200 104973
+WARNING 2025-07-30 21:40:25,612 log 20496 18508 Not Found: /api/mark-reservations-seen/
+WARNING 2025-07-30 21:40:25,613 basehttp 20496 18508 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-07-30 21:40:25,700 basehttp 20496 17832 "GET /reservation/ HTTP/1.1" 200 46814
+INFO 2025-07-30 21:40:25,778 basehttp 20496 17832 "GET /static/css/dist/styles.css?v=1753954825 HTTP/1.1" 200 104973
+WARNING 2025-07-30 21:40:27,235 log 20496 18508 Not Found: /api/mark-guests-seen/
+WARNING 2025-07-30 21:40:27,237 basehttp 20496 18508 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-07-30 21:40:27,292 basehttp 20496 8692 "GET /guest/ HTTP/1.1" 200 24268
+INFO 2025-07-30 21:40:27,377 basehttp 20496 8692 "GET /static/css/dist/styles.css?v=1753954827 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:29,024 basehttp 20496 18508 "GET /services/ HTTP/1.1" 200 33462
+INFO 2025-07-30 21:40:29,111 basehttp 20496 18508 "GET /static/css/dist/styles.css?v=1753954828 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:30,657 basehttp 20496 17744 "GET /add-room/ HTTP/1.1" 200 59056
+INFO 2025-07-30 21:40:30,743 basehttp 20496 17744 "GET /static/css/dist/styles.css?v=1753954830 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:40:32,736 basehttp 20496 22788 "GET /dashboard/ HTTP/1.1" 200 58391
+INFO 2025-07-30 21:40:32,820 basehttp 20496 22788 "GET /static/css/dist/styles.css?v=1753954832 HTTP/1.1" 200 104973
+INFO 2025-07-30 21:41:02,281 basehttp 20496 22700 "GET /dashboard/ HTTP/1.1" 200 58391
+WARNING 2025-07-30 21:41:02,355 basehttp 20496 22700 "GET /static/css/dist/styles.css?v=1753954862 HTTP/1.1" 404 1884
+INFO 2025-07-30 21:41:09,799 basehttp 20496 7328 "GET /dashboard/ HTTP/1.1" 200 58391
+INFO 2025-07-30 21:41:09,853 basehttp 20496 7328 "GET /static/css/dist/styles.css?v=1753954869 HTTP/1.1" 200 81570

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .payment_service import paystack_webhook
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -17,4 +18,5 @@ urlpatterns = [
     path('verify-booking-payment/', views.verify_booking_payment, name='verify_booking_payment'),
     path('booking-success/', views.booking_success, name='booking-payment-success'),
     path('booking-failure/', views.booking_failure, name='booking-payment-failure'),
+    path('webhook/paystack/', paystack_webhook, name='paystack_webhook'),
 ]
