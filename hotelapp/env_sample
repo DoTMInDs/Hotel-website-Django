@@ -1,0 +1,31 @@
+# Django Project
+PROJECT_NAME=suapon
+SECRET_KEY=django-insecure-b*qh1y-#rni%+^xq9fr0@vt(4+^e3ngc*$15pb_kd-)v-ih%um
+DEBUG=1
+
+# To allow only specific IP addresses, provide space-separated list. Defaults to allow all.
+ALLOWED_HOSTS=*
+
+# Port mappings to host machine
+# Defaults to 8000
+SERVER_PORT=
+# Defaults to 5432
+DATABASE_PORT=
+
+# DATABASE Credentials
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_HOST=localhost
+DB_PORT=5432
+
+EMAIL_HOST_USER=your_email@example.com
+EMAIL_HOST_PASSWORD=your_email_password
+DEFAULT_FROM_EMAIL=your_email@example.com
+
+# MAILJET_API_KEY=your_mailjet_api_key
+# MAILJET_SECRET_KEY=your_mailjet_secret_key
+
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret

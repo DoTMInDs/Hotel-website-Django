@@ -1,7 +1,6 @@
 venv/
-# .env*
-# .env
-
+.venv
+.env*
 # Ignore virtual environment directories
 *.pyc
 *.pyo
@@ -16,4 +15,11 @@ db.sqlite3
 staticfiles
 # Ignore Python cache files
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs
+logs/
+*.log
 # Ignore Django migrations
