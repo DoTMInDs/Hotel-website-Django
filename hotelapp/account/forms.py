@@ -38,7 +38,8 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = ProfileModel
         fields = [
-            'full_name',
+            'first_name',
+            'last_name',
             'email',
             'phone',
             'profile',
@@ -46,6 +47,40 @@ class UserUpdateForm(forms.ModelForm):
             'nationality',
             'address',
         ]
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = ProfileModel
+        fields = ['first_name', 'last_name', 'phone', 'nationality', 'gender', 'address', 'profile']
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter your first name'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter your last name'
+            }),
+            'phone': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter your phone number'
+            }),
+            'nationality': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter your nationality'
+            }),
+            'gender': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'address': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter your address'
+            }),
+            'profile': forms.FileInput(attrs={
+                'class': 'block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                'accept': 'image/*'
+            }),
+        }
 
 class RoomForm(forms.ModelForm):
     class Meta:
@@ -61,6 +96,38 @@ class RoomForm(forms.ModelForm):
             'amenities',
         ]
         exclude = ['hotel']
+        widgets = {
+            'room_number': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter room number'
+            }),
+            'room_type': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'price': forms.NumberInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter price per night',
+                'step': '0.01',
+                'min': '0'
+            }),
+            'status': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'max_guests': forms.NumberInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Maximum number of guests',
+                'min': '1',
+                'max': '10'
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'hidden',
+                'accept': 'image/*'
+            }),
+            'amenities': forms.SelectMultiple(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'size': '5'
+            }),
+        }
 
 class BookingForm(forms.ModelForm):
     class Meta:
@@ -96,11 +163,64 @@ class ReservationForm(forms.ModelForm):
             'num_children', 'num_guests', 'notes'
         ]
         widgets = {
-            'check_in_date': forms.DateInput(attrs={'type': 'date'}),
-            'check_out_date': forms.DateInput(attrs={'type': 'date'}),
-            'check_in_time': forms.TimeInput(attrs={'type': 'time'}),
-            'check_out_time': forms.TimeInput(attrs={'type': 'time'}),
-            'notes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'first_name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter first name'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter last name'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter email address'
+            }),
+            'phone_number': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter phone number'
+            }),
+            'room': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'check_in_date': forms.DateInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'type': 'date'
+            }),
+            'check_out_date': forms.DateInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'type': 'date'
+            }),
+            'check_in_time': forms.TimeInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'type': 'time'
+            }),
+            'check_out_time': forms.TimeInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'type': 'time'
+            }),
+            'num_adults': forms.NumberInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Number of adults',
+                'min': '1',
+                'max': '10'
+            }),
+            'num_children': forms.NumberInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Number of children',
+                'min': '0',
+                'max': '10'
+            }),
+            'num_guests': forms.NumberInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Total number of guests',
+                'min': '1',
+                'max': '10'
+            }),
+            'notes': forms.Textarea(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'rows': 3,
+                'placeholder': 'Additional notes or special requests'
+            }),
         }
 
     def __init__(self, *args, **kwargs):
@@ -134,35 +254,100 @@ class StaffForm(forms.ModelForm):
             'address',
             'emergency_contact',
             'emergency_phone',
-            'notes',
-            'is_active'
+            'join_date',
+            'is_active',
+            'notes'
         ]
         widgets = {
-            'position': forms.Select(attrs={'class': 'form-control'}),
-            'department': forms.Select(attrs={'class': 'form-control'}),
-            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
-            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
-            'emergency_contact': forms.TextInput(attrs={'class': 'form-control'}),
-            'emergency_phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'notes': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'full_name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter full name'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter email address'
+            }),
+            'phone_number': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter phone number'
+            }),
+            'position': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'department': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'address': forms.Textarea(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'rows': 3,
+                'placeholder': 'Enter address'
+            }),
+            'emergency_contact': forms.TextInput(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Emergency contact name'
+            }),
+            'emergency_phone': forms.TextInput(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Emergency contact phone'
+            }),
+            'join_date': forms.DateInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'type': 'date'
+            }),
+            'notes': forms.Textarea(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'rows': 3,
+                'placeholder': 'Additional notes'
+            }),
+            'is_active': forms.CheckboxInput(attrs={
+                'class': 'w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2'
+            }),
+            'profile_picture': forms.FileInput(attrs={
+                'class': 'hidden',
+                'accept': 'image/*'
+            }),
         }
 
 class HotelForm(forms.ModelForm):
     class Meta:
         model = Hotel
-        fields = [
-            'name',
-            'email',
-            'phone_number',
-            'location',
-            'region',
-            'description',
-            'amenities',
-            'hotel_image',
-            'logo',
-        ]
+        fields = ['name', 'location', 'region', 'phone_number', 'email', 'description', 'hotel_image', 'logo', 'amenities']
         widgets = {
-            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'name': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter hotel name'
+            }),
+            'location': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter hotel location'
+            }),
+            'region': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
+            'phone_number': forms.TextInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter phone number'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'placeholder': 'Enter email address'
+            }),
+            'description': forms.Textarea(attrs={
+                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'rows': 4,
+                'placeholder': 'Enter hotel description'
+            }),
+            'hotel_image': forms.FileInput(attrs={
+                'class': 'block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                'accept': 'image/*'
+            }),
+            'logo': forms.FileInput(attrs={
+                'class': 'block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100',
+                'accept': 'image/*'
+            }),
+            'amenities': forms.SelectMultiple(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
+            }),
         }
 
 class AddAmenitiesForm(forms.ModelForm):

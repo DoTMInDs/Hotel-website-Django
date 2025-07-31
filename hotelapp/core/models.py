@@ -6,6 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from datetime import date, time, datetime
+from decimal import Decimal
+from datetime import timedelta
 from cloudinary.models import CloudinaryField # type: ignore
 
 User = get_user_model()
@@ -144,6 +146,10 @@ class Room(models.Model):
         return f"{self.room_number} - ({self.get_room_type_display()})"
 
 class Booking(models.Model):
+    """
+    Booking model for online reservations with payment processing.
+    This model handles the initial booking process and payment integration.
+    """
     guest = models.ForeignKey('Guest', on_delete=models.CASCADE, related_name='bookings',null=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='bookings',null=True)
     check_in_date = models.DateField()
@@ -151,19 +157,41 @@ class Booking(models.Model):
     message = models.TextField(blank=True, null=True, verbose_name=_("Message"))
     created_at = models.DateTimeField(auto_now_add=True)
     
+    # Payment-related fields
+    paystack_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    is_paid = models.BooleanField(default=False)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
+    def calculate_total_price(self):
+        if self.room and self.check_in_date and self.check_out_date:
+            nights = (self.check_out_date - self.check_in_date).days
+            return Decimal(nights) * (self.room.price or 0)
+        return Decimal(0)
+
+    def save(self, *args, **kwargs):
+        if not self.total_price:
+            self.total_price = self.calculate_total_price()
+        super().save(*args, **kwargs)
+
     class Meta:
-        verbose_name = 'Booking'
-        verbose_name_plural = 'Bookings'
+        verbose_name = 'Online Booking'
+        verbose_name_plural = 'Online Bookings'
         ordering = ('-created_at',)
+        indexes = [
+            models.Index(fields=['guest', 'created_at']),
+            models.Index(fields=['is_paid', 'created_at']),
+            models.Index(fields=['paystack_reference']),
+        ]
     
     def __str__(self):
-        return f"Booking {self.id} by {self.guest.first_name} for {self.room.room_number}"
+        return f"Online Booking {self.id} by {self.guest.first_name} for {self.room.room_number}"
+    
     def clean(self):
         super().clean()
         if self.check_in_date >= self.check_out_date:
             raise ValidationError(_("Check-out date must be after check-in date."))
-        # if self.room.status != 'Available':
-        #     raise ValidationError(_("Room is not available for booking."))
+        
+        # Check for overlapping bookings
         overlapping_bookings = Booking.objects.filter(
             room=self.room,
             check_in_date__lt=self.check_out_date,
@@ -171,11 +199,10 @@ class Booking(models.Model):
         ).exclude(pk=self.pk)
         if overlapping_bookings.exists():
             raise ValidationError(_("Room is already booked for the selected dates."))
+    
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
-        # self.room.status = 'Occupied'
-        # self.room.save()
 
 class Guest(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='guest_profile')
@@ -242,9 +269,12 @@ class Lead(models.Model):
     def __str__(self):
         return self.full_name
     
-class Reservation(models.Model): # Consolidated and enhanced Reservation model
+class Reservation(models.Model):
     """
-    Represents a confirmed booking of a room by a guest for a specific period.
+    Reservation model for confirmed bookings managed by hotel staff.
+    This model handles detailed reservation information including guest details,
+    check-in/out times, guest counts, and reservation status tracking.
+    Used for both online bookings (after payment confirmation) and manual reservations.
     """
     STATUS_CHOICES = [
         ('Pending', _('Pending Confirmation')), # Booking received, awaiting confirmation
@@ -288,6 +318,29 @@ class Reservation(models.Model): # Consolidated and enhanced Reservation model
 
     def __str__(self):
         return f"Res #{self.id} for {self.guest} in {self.room} ({self.check_in_date} to {self.check_out_date})"
+    
+    @classmethod
+    def create_from_booking(cls, booking):
+        """Create a Reservation from a confirmed Booking"""
+        if not booking.is_paid:
+            raise ValidationError(_("Cannot create reservation from unpaid booking"))
+        
+        reservation = cls.objects.create(
+            guest=booking.guest,
+            room=booking.room,
+            first_name=booking.guest.first_name,
+            last_name=booking.guest.last_name,
+            email=booking.guest.email,
+            phone_number=booking.guest.phone_number,
+            check_in_date=booking.check_in_date,
+            check_out_date=booking.check_out_date,
+            price_per_night_at_booking=booking.room.price,
+            total_price=booking.total_price,
+            status='Confirmed',
+            booking_source='Online',
+            notes=f"Created from online booking #{booking.id}"
+        )
+        return reservation
     
     def clean(self):
         super().clean() # Call default clean first

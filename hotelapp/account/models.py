@@ -11,9 +11,10 @@ class Gender(models.TextChoices):
 
 class ProfileModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    full_name = models.CharField(max_length=200, null=True)
-    profile = models.ImageField(default='default.png', upload_to='profile', validators=[FileExtensionValidator(['png', 'jpg', 'jfif'])])
-    phone = models.CharField(max_length=20,null=True)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
+    profile = models.ImageField(default='default.png', upload_to='profile',null=True,blank=True)
+    phone = models.CharField(max_length=20,null=True,blank=True)
     email=models.EmailField(validators=[EmailValidator],null=True)
     gender=models.CharField(max_length=1,choices=Gender,null=True)
     nationality = models.CharField(max_length=100,null=True)

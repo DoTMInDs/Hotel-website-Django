@@ -6,9 +6,20 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core.exceptions import ValidationError
+import uuid
+import logging
+from django.conf import settings
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from datetime import datetime
 
 from .models import Room,Rating,Hotel,Reservation,Booking,Guest
 from account.forms import LeadForm,ReservationForm,BookingForm
+from .payment_service import PaymentService
+from .validators import BookingValidator, ContactValidator, FormValidator
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -242,7 +253,160 @@ def room_detail(request, pk):
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, guest__user=request.user)
     if request.method == 'POST':
-        booking.delete()
-        messages.success(request, 'Booking deleted successfully!')
-        return HttpResponseRedirect(reverse('my_booking'))
-    return HttpResponseRedirect(reverse('my_booking'))
+        try:
+            booking.delete()
+            return redirect(f'{reverse("my_booking")}?delete_status=success&delete_message=Booking deleted successfully!')
+        except Exception as e:
+            logger.error(f"Error deleting booking: {str(e)}")
+            return redirect(f'{reverse("my_booking")}?delete_status=error&delete_message=Failed to delete booking. Please try again.')
+    return redirect('my_booking')
+
+
+
+# payment for booking using paystack
+def create_booking_and_pay(request):
+    if request.method == 'POST':
+        try:
+            # Validate required fields
+            required_fields = ['room_id', 'check_in_date', 'check_out_date', 'email']
+            FormValidator.validate_required_fields(request.POST, required_fields)
+            
+            room_id = request.POST.get('room_id')
+            check_in_date = request.POST.get('check_in_date')
+            check_out_date = request.POST.get('check_out_date')
+            email = request.POST.get('email')
+            
+            # Validate email
+            ContactValidator.validate_email(email)
+            
+            # Get room and validate
+            room = get_object_or_404(Room, id=room_id)
+            
+            # Parse and validate dates
+            try:
+                check_in = datetime.strptime(check_in_date, "%Y-%m-%d").date()
+                check_out = datetime.strptime(check_out_date, "%Y-%m-%d").date()
+            except ValueError:
+                messages.error(request, "Invalid date format. Please use YYYY-MM-DD format.")
+                return redirect('room-list', pk=room.hotel.pk)
+            
+            # Validate dates using validator
+            BookingValidator.validate_dates(check_in, check_out)
+            
+            # Validate payment amount
+            total_price = room.price * (check_out - check_in).days
+            BookingValidator.validate_payment_amount(total_price)
+            
+            # Create booking
+            booking = Booking.objects.create(
+                guest=request.user.guest_profile,
+                room=room,
+                check_in_date=check_in,
+                check_out_date=check_out,
+                message=request.POST.get('message', ''),
+                total_price=0
+            )
+            
+            # Calculate total price
+            booking.total_price = booking.calculate_total_price()
+            booking.save()
+            
+            # Generate reference
+            reference = str(uuid.uuid4())
+            booking.paystack_reference = reference
+            booking.save()
+            
+            # Initialize payment using service
+            callback_url = request.build_absolute_uri(reverse('verify_booking_payment'))
+            payment_response = PaymentService.initialize_payment(
+                email=email,
+                amount=float(booking.total_price),
+                reference=reference,
+                callback_url=callback_url
+            )
+            
+            if payment_response.get("status"):
+                return redirect(payment_response["data"]["authorization_url"])
+            else:
+                messages.error(request, "Payment could not be initialized. Please try again.")
+                booking.delete()  # Clean up failed booking
+                
+        except ValidationError as e:
+            messages.error(request, str(e))
+        except Exception as e:
+            logger.error(f"Payment initialization error: {str(e)}")
+            messages.error(request, "An error occurred while processing your payment. Please try again.")
+        
+        # Fallback redirect
+        return redirect('hotel-rooms')
+    
+def verify_booking_payment(request):
+    reference = request.GET.get('reference')
+    
+    if not reference:
+        messages.error(request, "Invalid payment reference.")
+        return redirect('booking-payment-failure')
+    
+    try:
+        # Verify payment using service
+        payment_data = PaymentService.verify_payment(reference)
+        
+        if payment_data.get("status") and payment_data["data"]["status"] == "success":
+            booking = Booking.objects.filter(paystack_reference=reference).first()
+            
+            if booking and not booking.is_paid:
+                booking.is_paid = True
+                booking.save()
+
+                # Send confirmation email
+                try:
+                    subject = "Booking Confirmation - Payment Successful"
+                    message = render_to_string("emails/booking_confirmation.html", {
+                        'booking': booking,
+                        'guest': booking.guest,
+                    })
+                    send_mail(
+                        subject,
+                        '',
+                        settings.DEFAULT_FROM_EMAIL,
+                        [booking.guest.email],
+                        html_message=message,
+                        fail_silently=True
+                    )
+                except Exception as e:
+                    logger.error(f"Failed to send confirmation email: {str(e)}")
+                
+                # Redirect to success page with booking data
+                return redirect(f'{reverse("booking-payment-success")}?booking_id={booking.id}')
+            else:
+                messages.warning(request, "Payment already processed or booking not found.")
+                return redirect('booking-payment-success')
+        else:
+            messages.error(request, "Payment verification failed.")
+            return redirect('booking-payment-failure')
+            
+    except ValidationError as e:
+        messages.error(request, str(e))
+        return redirect('booking-payment-failure')
+    except Exception as e:
+        logger.error(f"Payment verification error: {str(e)}")
+        messages.error(request, "An error occurred while verifying your payment.")
+        return redirect('booking-payment-failure')
+
+def booking_success(request):
+    booking_id = request.GET.get('booking_id')
+    booking = None
+    
+    if booking_id:
+        try:
+            booking = Booking.objects.get(id=booking_id, is_paid=True)
+        except Booking.DoesNotExist:
+            pass
+    
+    context = {
+        'booking': booking
+    }
+    return render(request, 'payments/success.html', context)
+
+def booking_failure(request):
+    return render(request, 'payments/failure.html')

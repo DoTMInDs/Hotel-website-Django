@@ -1,0 +1,72 @@
+{% extends "partials/layout.html" %}
+{% block main-content %}
+<div class="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div class="text-center">
+            <!-- Success Icon -->
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Payment Successful!</h2>
+            <p class="text-gray-600 mb-8">Your booking has been confirmed and payment processed successfully.</p>
+            
+            <!-- Booking Details Card -->
+            <div class="bg-white shadow rounded-lg p-6 mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Booking Details</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Booking ID:</span>
+                        <span class="font-medium text-gray-900">#{{ booking.id|default:"N/A" }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Room:</span>
+                        <span class="font-medium text-gray-900">{{ booking.room.room_number|default:"N/A" }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Check-in:</span>
+                        <span class="font-medium text-gray-900">{{ booking.check_in_date|date:"M d, Y"|default:"N/A" }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Check-out:</span>
+                        <span class="font-medium text-gray-900">{{ booking.check_out_date|date:"M d, Y"|default:"N/A" }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Total Amount:</span>
+                        <span class="font-medium text-green-600">GHS{{ booking.total_price|default:"N/A" }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="space-y-3">
+                <a href="{% url 'my_booking' %}" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                    View My Bookings
+                </a>
+                <a href="{% url 'hotel-rooms' %}" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                    Book Another Room
+                </a>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-6">
+                A confirmation email has been sent to your email address.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Show success toast notification
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.toastNotification) {
+        window.toastNotification.success(
+            'Payment Successful!', 
+            'Your booking has been confirmed and payment processed successfully.', 
+            8000
+        );
+    }
+});
+</script>
+{% endblock %}

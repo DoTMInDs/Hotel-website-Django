@@ -3,6 +3,39 @@
 {% load tailwind_filters %}
 {% block main-content %}
     {% include "partials/nav.html" %}
+    {% if messages %}
+       <div class="flex justify-center fixed top-0 left-0 right-0 w-full z-[9999]" role="alert">
+           {% for message in messages %}
+           <div id="toast-success" class="flex items-center w-full max-w-lg p-4 mb-4 rounded-lg shadow-lg
+               {% if 'unavailable' in message|lower %}bg-yellow-100 text-yellow-800
+               {% elif message.tags == 'error' %}bg-red-100 text-red-800
+               {% else %}bg-blue-100 text-blue-800{% endif %}" role="alert">
+               <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 {% if message.tags == 'error' %}text-red-700{% else %} text-green-500 {% endif %} bg-green-100 rounded-lg ">
+                   {% if message.tags == 'error' %}
+                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M12 17C12.2833 17 12.521 16.904 12.713 16.712C12.905 16.52 13.0007 16.2827 13 16C12.9993 15.7173 12.9033 15.48 12.712 15.288C12.5207 15.096 12.2833 15 12 15C11.7167 15 11.4793 15.096 11.288 15.288C11.0967 15.48 11.0007 15.7173 11 16C10.9993 
+                       16.2827 11.0953 16.5203 11.288 16.713C11.4807 16.9057 11.718 17.0013 12 17ZM11 13H13V7H11V13ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88334 20.6867 5.825 19.9743 4.925 19.075C4.025 18.1757 3.31267 17.1173 2.788 15.9C2.26333 14.6827 2.00067 
+                       13.3827 2 12C1.99933 10.6173 2.262 9.31733 2.788 8.1C3.314 6.88267 4.02633 5.82433 4.925 4.925C5.82367 4.02567 6.882 3.31333 8.1 2.788C9.318 2.26267 10.618 2 12 2C13.382 2 14.682 2.26267 15.9 2.788C17.118 3.31333 18.1763 4.02567 19.075 4.925C19.9737 
+                       5.82433 20.6863 6.88267 21.213 8.1C21.7397 9.31733 22.002 10.6173 22 12C21.998 13.3827 21.7353 14.6827 21.212 15.9C20.6887 17.1173 19.9763 18.1757 19.075 19.075C18.1737 19.9743 17.1153 20.687 15.9 21.213C14.6847 21.739 13.3847 22.0013 12 22Z" fill="currentColor"/>
+                   </svg>
+                   {% else %}
+                   <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                       <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                   </svg>
+                   {% endif %}
+                   <span class="sr-only">Check icon</span>
+               </div>
+               <div class="ms-3 text-sm font-normal">{{ message }}</div>
+               <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 " data-dismiss-target="#toast-success" aria-label="Close">
+                   <span class="sr-only">Close</span>
+                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                   </svg>
+               </button>
+           </div>
+           {% endfor %}
+       </div>
+    {% endif %}
     <section>
        <div class="flex justify-between items-center">
             <div class="">
@@ -26,7 +59,7 @@
        <div class="">
            <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
                <h3 class="edit_detail_name text-[18px] basis-2/6">Fullname</h3>
-               <p class="mt-[10px] basis-3/5">{{user.profilemodel.full_name}} </p>
+               <p class="mt-[10px] basis-3/5">{{user.profilemodel.first_name}} {{user.profilemodel.last_name}} </p>
            </div>
            <div class="flex items-center border-t border-[#e7e0e07e] py-[1rem]">
              <h3 class="text-[18px] basis-2/6">Username</h3>
@@ -67,37 +100,49 @@
                     </svg>
                   </p>
               </div>
-              <form action="" method="POST" enctype="multipart/form-data" class="bg-transparent w-full">
-                {% csrf_token %}
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    <input type="text" name="full_name" id="id_full_name" placeholder="Enter your full name..." class="border-none bg-transparent outline-none">
-                </div>
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    <input type="text" name="email" id="id_email" placeholder="Enter your email..." class="border-none bg-transparent outline-none">
-                </div>
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    <input type="text" name="username" id="id_username" placeholder="Enter your username..." class="border-none bg-transparent outline-none">
-                </div>
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    {{ p_form.gender }}
-                </div>
-                <div class="mb-[1rem]">
-                    {{ p_form.profile }}
-                </div>
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    <input type="text" name="nationality" id="id_nationality" placeholder="Enter your nationality..." class="border-none bg-transparent outline-none">
-                </div>
-                <div class="border border-slate-200 rounded-full mb-[1rem]">
-                    <input type="text" name="address" id="id_address" placeholder="Enter your address..." class="border-none bg-transparent outline-none">
-                </div>
-                <div class="modal-footer ">
-                  <div class="flex justify-center items-center w-full gap-[20px]">
-                    <button type="button" class="px-[50px] py-[12px] rounded-full bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
-                    <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded-full text-[#fff] text-[14px] font-medium">Save</button>
+              <div class="overflow-y-auto w-full">
+                <form action="" method="POST" enctype="multipart/form-data" class="bg-transparent w-full  h-[60vh]">
+                  {% csrf_token %}
+                  {{p_form|crispy}}
+                  {% comment %} <div class="w-full flex gap-[1rem] items-center">
+                      <div class="border border-slate-200 rounded-full mb-[1rem] w-full">
+                        <input type="text" name="first_name" id="id_first_name" placeholder="Enter your first name..." class="border-none bg-transparent outline-none">
+                      </div>
+                      <div class="border border-slate-200 rounded-full mb-[1rem] w-full">
+                          <input type="text" name="last_name" id="id_last_name" placeholder="Enter your last name..." class="border-none bg-transparent outline-none">
+                      </div>
                   </div>
-                </div>
-            </form>
-            </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      <input type="text" name="email" id="id_email" placeholder="Enter your email..." class="border-none bg-transparent outline-none">
+                  </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      <input type="text" name="username" id="id_username" placeholder="Enter your username..." class="border-none bg-transparent outline-none">
+                  </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      <input type="tel" name="phone" id="id_phone" placeholder="Enter your phone number..." class="border-none bg-transparent outline-none">
+                  </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      {{ p_form.gender }}
+                  </div>
+                  <div class="mb-[1rem]">
+                      {{ p_form.profile }}
+                  </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      <input type="text" name="nationality" id="id_nationality" placeholder="Enter your nationality..." class="border-none bg-transparent outline-none">
+                  </div>
+                  <div class="border border-slate-200 rounded-full mb-[1rem]">
+                      <input type="text" name="address" id="id_address" placeholder="Enter your address..." class="border-none bg-transparent outline-none">
+                  </div>
+                   {% endcomment %}
+                  <div class="modal-footer ">
+                    <div class="flex justify-center items-center w-full gap-[20px]">
+                      <button type="button" class="px-[50px] py-[12px] rounded-full bg-[#c2bfbf]" data-bs-dismiss="modal">cancel</button>
+                      <button type="submit" class="bg-[#4b4b4b] px-[50px] py-[12px] rounded-full text-[#fff] text-[14px] font-medium">Save</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          </div>
       </div>
   </div>
 
@@ -118,5 +163,15 @@
       ProfileContent.addEventListener('click', (e) => {
         e.stopPropagation();
     });
+
+    // Auto-dismiss messages after 5 seconds
+      document.addEventListener('DOMContentLoaded', function() {
+          const alerts = document.querySelectorAll('[role="alert"]');
+          alerts.forEach(alert => {
+              setTimeout(() => {
+                  alert.remove();
+              }, 5000);
+          });
+      });
 </script>
 {% endblock %}

@@ -81,7 +81,9 @@ def profile(request):
             messages.success(request, "Profile updated successfully!")
             return redirect('profile')
         else:
-            messages.error(request, "Your data wasn't saved.. Please check your form!!")
+            for field, errors in p_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
         p_form = UserUpdateForm(instance=request.user.profilemodel)
    

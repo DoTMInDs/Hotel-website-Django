@@ -5,186 +5,363 @@
 {% block title %}Manage Hotel Account{% endblock title %}
 {% block main-content %}
     {% include "dashboard/partials/nav.html" %}
+    
+    <!-- Messages Toast -->
     {% if messages %}
-            <div class="flex justify-center fixed top-0 left-0 right-0 w-full z-[9999]" role="alert">
-                {% for message in messages %}
-                <div id="toast-success" class="flex items-center w-full max-w-lg p-4 mb-4 rounded-lg shadow-lg
-                    {% if 'unavailable' in message|lower %}bg-yellow-100 text-yellow-800
-                    {% elif message.tags == 'error' %}bg-red-100 text-red-800
-                    {% else %}bg-blue-100 text-blue-800{% endif %}" role="alert">
-                    <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 {% if message.tags == 'error' %}text-red-700{% else %} text-green-500 {% endif %} bg-green-100 rounded-lg ">
+        <div class="fixed top-4 right-4 z-50 space-y-2">
+            {% for message in messages %}
+                <div class="flex items-center p-4 rounded-lg shadow-lg max-w-sm
+                    {% if 'unavailable' in message|lower %}bg-yellow-50 text-yellow-800 border border-yellow-200
+                    {% elif message.tags == 'error' %}bg-red-50 text-red-800 border border-red-200
+                    {% else %}bg-green-50 text-green-800 border border-green-200{% endif %}">
+                    <div class="flex-shrink-0">
                         {% if message.tags == 'error' %}
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 17C12.2833 17 12.521 16.904 12.713 16.712C12.905 16.52 13.0007 16.2827 13 16C12.9993 15.7173 12.9033 15.48 12.712 15.288C12.5207 15.096 12.2833 15 12 15C11.7167 15 11.4793 15.096 11.288 15.288C11.0967 15.48 11.0007 15.7173 11 16C10.9993 
-                            16.2827 11.0953 16.5203 11.288 16.713C11.4807 16.9057 11.718 17.0013 12 17ZM11 13H13V7H11V13ZM12 22C10.6167 22 9.31667 21.7373 8.1 21.212C6.88334 20.6867 5.825 19.9743 4.925 19.075C4.025 18.1757 3.31267 17.1173 2.788 15.9C2.26333 14.6827 2.00067 
-                            13.3827 2 12C1.99933 10.6173 2.262 9.31733 2.788 8.1C3.314 6.88267 4.02633 5.82433 4.925 4.925C5.82367 4.02567 6.882 3.31333 8.1 2.788C9.318 2.26267 10.618 2 12 2C13.382 2 14.682 2.26267 15.9 2.788C17.118 3.31333 18.1763 4.02567 19.075 4.925C19.9737 
-                            5.82433 20.6863 6.88267 21.213 8.1C21.7397 9.31733 22.002 10.6173 22 12C21.998 13.3827 21.7353 14.6827 21.212 15.9C20.6887 17.1173 19.9763 18.1757 19.075 19.075C18.1737 19.9743 17.1153 20.687 15.9 21.213C14.6847 21.739 13.3847 22.0013 12 22Z" fill="currentColor"/>
-                        </svg>
+                            <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
                         {% else %}
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
                         {% endif %}
-                        <span class="sr-only">Check icon</span>
                     </div>
-                    <div class="ms-3 text-sm font-normal">{{ message }}</div>
-                    <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 " data-dismiss-target="#toast-success" aria-label="Close">
-                        <span class="sr-only">Close</span>
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    <div class="ml-3 text-sm font-medium">{{ message }}</div>
+                    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8" onclick="this.parentElement.remove()">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
     {% endif %}
-    <section class="mr-[0.3rem] ml-[0.3rem] md:ml-[260px] transition-all duration-300 bg-white border border-slate-600 border-opacity-20 rounded-[15px] p-4 mt-[100px]">
-        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
-            <div class="px-6 py-4 border-b border-slate-200 bg-gray-50">
-                <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                    </svg>
-                    {{ hotel.name }} Settings
-                </h2>
-                <p class="text-sm text-slate-500 mt-1">Manage your hotel's account information and settings</p>
-            </div>
 
-            <div class="p-6">
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700 bg-gray-100 p-4 rounded-md">
-                     <div><strong>Hotel Name:</strong> {{ hotel.name }}</div>
-                     <div><strong>Location:</strong> {{ hotel.location }}</div>
-                     <div><strong>Region:</strong> {{ hotel.get_region_display }}</div>
-                     <div><strong>Phone Number:</strong> {{ hotel.phone_number }}</div>
-                     <div><strong>Email:</strong> {{ hotel.email }}</div>
-                     <div><strong>Created At:</strong> {{ hotel.created_at|date:"Y-m-d H:i" }}</div>
-                     {% if hotel.description %}
-                        <div class="md:col-span-2"><strong>Description:</strong> {{ hotel.description|linebreaksbr }}</div>
-                     {% endif %}
-                     {% if hotel.amenities.all %}
-                        <div class="md:col-span-2">
-                            <strong>Amenities:</strong>
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                {% for amenity in hotel.amenities.all %}
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center">
-                                        {{ amenity.amenity_name }}
-                                        <a href="{% url 'remove-amenity' amenity.id %}" class="ml-1 text-blue-400 hover:text-blue-600">
-                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                            </svg>
-                                        </a>
-                                    </span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endif %}
-                 </div>
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 ml-0 md:ml-64 pt-16">
+        <!-- Header Section -->
+        <div class="bg-white shadow-sm border-b border-gray-200 px-4 sm:px-6 py-4">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div class="mb-4 sm:mb-0">
+                    <h1 class="text-2xl font-bold text-gray-900">Hotel Settings</h1>
+                    <p class="text-gray-600">Manage your hotel's account information and settings</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                        {{ hotel.name }}
+                    </span>
+                </div>
             </div>
         </div>
-        
 
-         <!-- Edit Form -->
-         <div class="bg-white rounded-lg shadow-md p-6 mt-6">
-            <form method="post" enctype="multipart/form-data" class="bg-transparent shadow">
-                {% csrf_token %}
-                <input type="hidden" name="hotel_submit" value="1">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Left Column -->
-                    <div>
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Hotel Image</label>
-                            {% if hotel.hotel_image %}
-                            <img src="{{ hotel.hotel_image.url }}" alt="Current Room Image" class="w-full h-48 object-cover mb-2 rounded">
-                            {% endif %}
-                            {{ hotel_form.hotel_image }}
+        <!-- Content Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+            <!-- Current Hotel Info Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+                <div class="px-4 sm:px-6 py-4 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
                         </div>
-
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Hotel Logo</label>
-                            {% if hotel.logo %}
-                            <img src="{{ hotel.logo.url }}" alt="Current Room Image" class="w-[50px] h-[50px] object-center object-cover mb-2 rounded">
-                            {% endif %}
-                            {{ hotel_form.logo }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                            {{ hotel_form.name }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Location</label>
-                            {{ hotel_form.location }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Region</label>
-                            {{ hotel_form.region }}
-                        </div>
-                    </div>
-                    
-                    <!-- Right Column -->
-                    <div>
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                            {{ hotel_form.phone_number }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                            {{ hotel_form.email }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Description</label>
-                            {{ hotel_form.description }}
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Amenities</label>
-                            <div class="flex items-center gap-2 mb-2">
-                                {{ hotel_form.amenities }}
-                                <button type="button" onclick="openAmenityModal()" class="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-700 transition">
-                                    <i class="fa-solid fa-plus"></i> Add New
-                                </button>
-                            </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900">Current Hotel Information</h2>
+                            <p class="text-sm text-gray-600">Review your hotel's current details</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Form Buttons -->
-                <div class="flex justify-end gap-2 mt-6">
-                    <a href="" class="px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300 transition">
-                        Cancel
-                    </a>
-                    <button type="submit" class="px-6 py-2 text-sm font-semibold text-white bg-slate-600 rounded-md shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                        <i class="fa-solid fa-save mr-2"></i> Save Changes
-                    </button>
+                <div class="p-4 sm:p-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Hotel Name</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.name }}</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Location</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.location }}</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Region</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.get_region_display }}</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Phone</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.phone_number }}</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Email</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.email }}</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Created</span>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">{{ hotel.created_at|date:"M d, Y" }}</p>
+                        </div>
+                    </div>
+                    
+                    {% if hotel.description %}
+                    <div class="mt-4 bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Description</span>
+                        </div>
+                        <p class="text-sm text-gray-700">{{ hotel.description|linebreaksbr }}</p>
+                    </div>
+                    {% endif %}
+                    
+                    {% if hotel.amenities.all %}
+                    <div class="mt-4 bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">Amenities</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            {% for amenity in hotel.amenities.all %}
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    {{ amenity.amenity_name }}
+                                    <a href="{% url 'remove-amenity' amenity.id %}" class="ml-2 text-blue-400 hover:text-blue-600 transition-colors duration-200">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </a>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
-            </form>
+            </div>
+
+            <!-- Edit Form Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-4 sm:px-6 py-4 bg-gradient-to-r from-green-50 to-emerald-50 border-b border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900">Edit Hotel Information</h2>
+                            <p class="text-sm text-gray-600">Update your hotel's details and settings</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form method="post" enctype="multipart/form-data" class="p-4 sm:p-6">
+                    {% csrf_token %}
+                    <input type="hidden" name="hotel_submit" value="1">
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Left Column -->
+                        <div class="space-y-6">
+                            <!-- Hotel Images Section -->
+                            <div class="space-y-4">
+                                <h3 class="text-sm font-medium text-gray-900 border-b border-gray-200 pb-2">Hotel Images</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Hotel Image</label>
+                                        {% if hotel.hotel_image %}
+                                            <div class="mb-3">
+                                                <img src="{{ hotel.hotel_image.url }}" alt="Current Hotel Image" class="w-full h-48 object-cover rounded-lg border border-gray-200">
+                                            </div>
+                                        {% endif %}
+                                        <div class="relative">
+                                            <input type="file" name="hotel_image" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Hotel Logo</label>
+                                        {% if hotel.logo %}
+                                            <div class="mb-3">
+                                                <img src="{{ hotel.logo.url }}" alt="Current Hotel Logo" class="w-16 h-16 object-cover rounded-lg border border-gray-200">
+                                            </div>
+                                        {% endif %}
+                                        <div class="relative">
+                                            <input type="file" name="logo" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Basic Information -->
+                            <div class="space-y-4">
+                                <h3 class="text-sm font-medium text-gray-900 border-b border-gray-200 pb-2">Basic Information</h3>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Hotel Name</label>
+                                    {{ hotel_form.name }}
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                                    {{ hotel_form.location }}
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Region</label>
+                                    {{ hotel_form.region }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column -->
+                        <div class="space-y-6">
+                            <!-- Contact Information -->
+                            <div class="space-y-4">
+                                <h3 class="text-sm font-medium text-gray-900 border-b border-gray-200 pb-2">Contact Information</h3>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    {{ hotel_form.phone_number }}
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    {{ hotel_form.email }}
+                                </div>
+                            </div>
+                            
+                            <!-- Additional Information -->
+                            <div class="space-y-4">
+                                <h3 class="text-sm font-medium text-gray-900 border-b border-gray-200 pb-2">Additional Information</h3>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                    {{ hotel_form.description }}
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Amenities</label>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="flex-1">
+                                            {{ hotel_form.amenities }}
+                                        </div>
+                                        <button type="button" onclick="openAmenityModal()" 
+                                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                            </svg>
+                                            Add New
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200 mt-6">
+                        <button type="button" onclick="history.back()" 
+                                class="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200 flex items-center justify-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                                class="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 flex items-center justify-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 
     <!-- Add Amenity Modal -->
-    <div id="amenityModal" class="fixed inset-0 bg-black bg-opacity-50 h-screen flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-md">
-            <div class="p-4 border-b border-gray-200">
-                <h3 class="text-lg font-semibold text-gray-900">Add New Amenity</h3>
-                <button type="button" onclick="closeAmenityModal()" class="text-gray-400 hover:text-gray-500 absolute top-3 right-3">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+    <div onclick="closeAmenityModal()" id="amenityModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md transform scale-95 transition-all duration-300">
+            <!-- Header -->
+            <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Add New Amenity</h3>
+                            <p class="text-sm text-gray-500">Create a new amenity for your hotel</p>
+                        </div>
+                    </div>
+                    <button onclick="closeAmenityModal()" class="text-gray-400 hover:text-gray-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <form id="amenityForm" enctype="multipart/form-data" method="post" action="{% url 'manage-hotel-account' %}" class="p-4 bg-transparent">
+            
+            <!-- Form Content -->
+            <form id="amenityForm" enctype="multipart/form-data" method="post" action="{% url 'manage-hotel-account' %}" class="p-4 sm:p-6">
                 {% csrf_token %}
                 <input type="hidden" name="amenity_submit" value="1">
                 {{amenities_form|crispy}}
-                <div class="flex justify-end gap-2 pt-2">
-                    <button type="button" onclick="closeAmenityModal()" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200 mt-6">
+                    <button type="button" onclick="closeAmenityModal()" 
+                            class="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
                         Cancel
                     </button>
-                    <button type="submit" class="px-4 py-2 bg-slate-600 text-white rounded-md hover:bg-blue-700">
+                    <button type="submit" 
+                            class="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
                         Add Amenity
                     </button>
                 </div>
@@ -195,12 +372,21 @@
     <script>
         // Amenity Modal Functions
         function openAmenityModal() {
-            document.getElementById('amenityModal').classList.remove('hidden');
+            const modal = document.getElementById('amenityModal');
+            modal.classList.remove('opacity-0', 'invisible');
+            modal.querySelector('.bg-white').classList.remove('scale-95', 'opacity-0');
         }
 
         function closeAmenityModal() {
-            document.getElementById('amenityModal').classList.add('hidden');
+            const modal = document.getElementById('amenityModal');
+            modal.classList.add('opacity-0', 'invisible');
+            modal.querySelector('.bg-white').classList.add('scale-95', 'opacity-0');
         }
+
+        // Prevent modal close when clicking on content
+        document.getElementById('amenityModal').querySelector('.bg-white').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
         // Auto-dismiss messages after 5 seconds
         document.addEventListener('DOMContentLoaded', function() {
@@ -211,6 +397,5 @@
                 }, 5000);
             });
         });
-
     </script>
 {% endblock %}
