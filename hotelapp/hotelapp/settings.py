@@ -31,7 +31,21 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG", False))
 
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
+CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in debug mode
+if not DEBUG:
+    CORS_ALLOWED_ORIGINS = [
+        'https://baselink.onrender.com',
+    ]
+
+
+CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost').split(' ')
+CSRF_TRUSTED_ORIGINS = [
+    'https://baselink.onrender.com', 
+]
 
 
 # Application definition
