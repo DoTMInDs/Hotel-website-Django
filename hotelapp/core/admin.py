@@ -2,9 +2,60 @@ from django.contrib import admin
 from .models import Rating,Room,Hotel,Lead,Manager,Staff,Amenity,OurRoomsImage,Reservation,Guest,Booking,Service
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _ 
 from django.urls import reverse
 from django.utils.html import format_html
+from .models import CustomUser
+
+User = get_user_model()
+try:
+    admin.site.unregister(User)
+except admin.sites.NotRegistered:
+    pass
+
+class ManagerInline(admin.StackedInline):
+    model=Manager
+    can_delete=False
+    fields = ('phone', 'hotel_post', 'created_at', 'updated_at')
+    readonly_fields = ('created_at', 'updated_at')
+class CustomUserAdmin(BaseUserAdmin):
+    inlines=[ManagerInline]
+
+# Custom User Admin (if you want to customize the User admin)
+@admin.register(CustomUser)  # Register the CustomUser model
+class CustomUserAdmin(BaseUserAdmin):  # Inherit from UserAdmin for better default functionality
+    inlines = [ManagerInline]
+    list_display = ('username', 'email', 'user_type', 'is_verified')
+    list_filter = ('user_type', 'is_staff', 'is_superuser', 'is_verified')
+    search_fields = ('username', 'email', 'first_name', 'last_name')
+    ordering = ('username',)
+    
+    fieldsets = (
+        (None, {
+            'fields': ('username', 'password')
+        }),
+        # ('Personal Info', {
+        #     'fields': ('first_name', 'last_name', 'email')
+        # }),
+        ('User Info', {
+            'fields': ('first_name', 'last_name')
+        }),
+        ('Permissions', {
+            'fields': ('user_type', 'is_verified', 'is_active', 'is_staff', 'is_superuser', 
+                      'groups', 'user_permissions')
+        }),
+        ('Important dates', {
+            'fields': ('last_login', 'date_joined')
+        }),
+    )
+    
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2', 'user_type'),
+        }),
+    )
 
 class ManagerAdmin(admin.ModelAdmin):
     list_display = ('user', 'phone', 'hotel_post', 'created_at', 'updated_at')
@@ -17,13 +68,7 @@ class ManagerAdmin(admin.ModelAdmin):
         return obj.user.get_full_name() or obj.user.username
     user_display.short_description = _("User")
     
-class ManagerInline(admin.StackedInline):
-    model=Manager
-    can_delete=False
-    fields = ('phone', 'hotel_post', 'created_at', 'updated_at')
-    readonly_fields = ('created_at', 'updated_at')
-class UserAdmin(BaseUserAdmin):
-    inlines=[ManagerInline]
+
 class LeadAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'phone', 'created_at')
     list_filter = ('created_at',)
@@ -120,12 +165,11 @@ admin.site.register(Room,RoomAdmin)
 admin.site.register(Hotel,HotelAdmin)
 admin.site.register(Service,ServiceAdmin)
 admin.site.register(Lead,LeadAdmin)
-admin.site.unregister(User)
 admin.site.register(Manager,ManagerAdmin)
 admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Guest)
 admin.site.register(Booking)
 admin.site.register(Amenity)
 admin.site.register(OurRoomsImage)
-admin.site.register(User,UserAdmin)
+# admin.site.register(CustomUser,CustomUserAdmin)
 admin.site.register(Staff)

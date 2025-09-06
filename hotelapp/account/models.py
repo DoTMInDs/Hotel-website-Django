@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User 
 from django.core.validators import EmailValidator
 from django.core.validators import FileExtensionValidator
+from django.conf import settings
 
 # Create your models here.
 class Gender(models.TextChoices):
@@ -10,7 +10,7 @@ class Gender(models.TextChoices):
     FEMALE="F",_("Female")
 
 class ProfileModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name='profilemodel')
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
     profile = models.ImageField(default='default.png', upload_to='profile',null=True,blank=True)

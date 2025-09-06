@@ -2196,3 +2196,818 @@ INFO 2025-08-05 08:00:28,442 basehttp 9184 20464 "GET / HTTP/1.1" 200 11110
 INFO 2025-08-05 08:00:28,544 basehttp 9184 20464 "GET /static/css/dist/styles.css?v=1754424028 HTTP/1.1" 200 81570
 INFO 2025-08-07 00:24:57,813 autoreload 16188 8040 Watching for file changes with StatReloader
 INFO 2025-08-07 00:41:26,072 autoreload 18128 2928 Watching for file changes with StatReloader
+INFO 2025-09-06 01:19:26,784 autoreload 19656 13980 Watching for file changes with StatReloader
+INFO 2025-09-06 01:19:50,799 basehttp 19656 18896 "GET / HTTP/1.1" 200 11110
+INFO 2025-09-06 01:19:50,967 basehttp 19656 18896 "GET /static/css/style.css HTTP/1.1" 200 25498
+INFO 2025-09-06 01:19:50,967 basehttp 19656 19776 "GET /static/css/dist/styles.css?v=1757164790 HTTP/1.1" 200 104504
+INFO 2025-09-06 01:19:50,984 basehttp 19656 18896 "GET /static/image/assets/hotel_48dp_FILL0_wght400_GRAD0_opsz48.png HTTP/1.1" 200 4257
+INFO 2025-09-06 01:19:50,993 basehttp 19656 18896 "GET /static/js/app.js HTTP/1.1" 200 4028
+INFO 2025-09-06 01:19:51,030 basehttp 19656 19776 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-09-06 01:20:12,753 basehttp 19656 6444 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-09-06 01:20:12,775 basehttp 19656 6444 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+WARNING 2025-09-06 01:20:13,005 log 19656 6896 Not Found: /favicon.ico
+WARNING 2025-09-06 01:20:13,006 basehttp 19656 6896 "GET /favicon.ico HTTP/1.1" 404 13423
+INFO 2025-09-06 01:20:16,054 basehttp 19656 6896 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-09-06 01:20:19,101 basehttp 19656 6896 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-09-06 01:20:22,060 basehttp 19656 6896 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-09-06 01:20:25,053 basehttp 19656 6896 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-09-06 01:20:28,176 basehttp 19656 6896 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-09-06 01:21:22,385 basehttp 19656 17160 "GET / HTTP/1.1" 200 11110
+INFO 2025-09-06 01:21:22,467 basehttp 19656 17160 "GET /static/css/dist/styles.css?v=1757164882 HTTP/1.1" 200 104504
+INFO 2025-09-06 01:21:50,480 basehttp 19656 17508 "GET /sign_up/ HTTP/1.1" 200 16069
+INFO 2025-09-06 01:21:50,553 basehttp 19656 17508 "GET /static/css/dist/styles.css?v=1757164910 HTTP/1.1" 200 104504
+INFO 2025-09-06 01:22:01,072 basehttp 19656 19752 "GET /contact/ HTTP/1.1" 200 13215
+INFO 2025-09-06 01:22:01,127 basehttp 19656 19752 "GET /static/css/dist/styles.css?v=1757164921 HTTP/1.1" 200 104504
+INFO 2025-09-06 01:22:01,166 basehttp 19656 11960 "GET /static/image/assets/undraw_conversation_15p8.svg HTTP/1.1" 200 24075
+INFO 2025-09-06 01:22:08,403 basehttp 19656 19752 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-06 01:22:08,636 basehttp 19656 19752 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4350
+INFO 2025-09-06 01:22:08,697 basehttp 19656 19752 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-09-06 01:22:08,704 basehttp 19656 8516 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-09-06 01:22:08,714 basehttp 19656 11760 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-06 01:22:08,721 basehttp 19656 19908 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-09-06 01:22:08,731 basehttp 19656 24544 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-09-06 01:22:08,732 basehttp 19656 5276 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-06 01:22:08,744 basehttp 19656 24544 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-06 01:22:32,587 basehttp 19656 5276 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-06 01:22:32,658 basehttp 19656 5276 "GET /admin/ HTTP/1.1" 200 17522
+INFO 2025-09-06 01:22:32,713 basehttp 19656 5276 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-06 01:22:32,729 basehttp 19656 5276 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-06 01:22:32,734 basehttp 19656 11760 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-06 01:22:32,748 basehttp 19656 19908 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-06 01:22:42,295 basehttp 19656 11760 "GET /admin/core/lead/ HTTP/1.1" 200 16951
+INFO 2025-09-06 01:22:42,351 basehttp 19656 11760 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-06 01:22:42,383 basehttp 19656 19752 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-06 01:22:42,384 basehttp 19656 11760 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-06 01:22:42,390 basehttp 19656 5184 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-09-06 01:22:42,396 basehttp 19656 16436 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-06 01:22:42,406 basehttp 19656 19752 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-06 01:22:42,412 basehttp 19656 11760 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-06 01:22:42,427 basehttp 19656 5276 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 01:22:42,448 basehttp 19656 16436 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-06 01:22:42,575 basehttp 19656 8516 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-06 01:22:42,586 basehttp 19656 8516 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-06 01:22:42,696 basehttp 19656 5184 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-06 01:22:42,731 basehttp 19656 5184 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-06 01:22:42,745 basehttp 19656 16436 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-06 01:22:42,746 basehttp 19656 8516 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-06 01:24:52,233 basehttp 19656 16436 "GET /admin/core/booking/ HTTP/1.1" 200 15827
+INFO 2025-09-06 01:24:52,326 basehttp 19656 16436 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 01:25:54,041 basehttp 19656 4776 "GET /admin/auth/user/ HTTP/1.1" 200 18531
+INFO 2025-09-06 01:25:54,156 basehttp 19656 1304 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-09-06 01:25:54,165 basehttp 19656 4776 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 01:25:54,175 basehttp 19656 5876 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-06 01:30:20,203 autoreload 19656 13980 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:23,317 autoreload 16736 8188 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:24,709 basehttp 16736 22344 "GET /admin/auth/user/ HTTP/1.1" 200 18531
+INFO 2025-09-06 01:30:24,838 basehttp 16736 22344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 01:30:33,570 autoreload 16736 8188 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:35,021 autoreload 17444 12228 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:35,956 basehttp 17444 13720 "GET /admin/auth/user/ HTTP/1.1" 200 18531
+INFO 2025-09-06 01:30:36,010 basehttp 17444 13720 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 01:30:39,529 autoreload 17444 12228 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:40,732 autoreload 23000 18440 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:42,050 autoreload 23000 18440 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:42,819 autoreload 5316 1588 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:44,301 autoreload 5316 1588 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:45,513 autoreload 20356 9004 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:46,919 autoreload 20356 9004 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:47,846 autoreload 20252 7232 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:49,086 autoreload 20252 7232 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:50,932 autoreload 10912 4328 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:54,040 autoreload 10912 4328 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:55,035 autoreload 6612 16900 Watching for file changes with StatReloader
+INFO 2025-09-06 01:30:56,355 autoreload 6612 16900 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:30:58,574 autoreload 24544 1616 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:00,992 autoreload 24544 1616 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:01,906 autoreload 15852 16284 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:04,227 autoreload 15852 16284 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:05,544 autoreload 9920 8204 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:06,854 autoreload 9920 8204 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:08,246 autoreload 16520 23744 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:09,711 autoreload 16520 23744 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:10,852 autoreload 10036 4580 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:12,171 autoreload 10036 4580 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:13,120 autoreload 23608 11376 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:14,548 autoreload 23608 11376 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:15,678 autoreload 3536 21180 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:19,562 autoreload 3536 21180 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:20,801 autoreload 10984 21656 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:33,647 autoreload 10984 21656 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:34,595 autoreload 7032 18008 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:37,916 autoreload 7032 18008 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:38,670 autoreload 6368 17224 Watching for file changes with StatReloader
+INFO 2025-09-06 01:31:40,765 autoreload 6368 17224 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:31:41,612 autoreload 7968 18720 Watching for file changes with StatReloader
+INFO 2025-09-06 01:39:14,977 autoreload 7968 18720 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:39:16,663 autoreload 1508 14256 Watching for file changes with StatReloader
+INFO 2025-09-06 01:39:20,045 autoreload 1508 14256 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:39:21,240 autoreload 14664 16136 Watching for file changes with StatReloader
+INFO 2025-09-06 01:39:23,542 autoreload 14664 16136 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:39:24,303 autoreload 19884 24572 Watching for file changes with StatReloader
+INFO 2025-09-06 01:39:28,446 autoreload 19884 24572 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:39:29,265 autoreload 17284 18584 Watching for file changes with StatReloader
+INFO 2025-09-06 01:40:29,411 autoreload 17284 18584 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:40:30,417 autoreload 14236 12412 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:25,146 autoreload 14236 12412 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:26,013 autoreload 18612 16136 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:27,350 autoreload 18612 16136 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:28,495 autoreload 6056 11596 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:32,897 autoreload 6056 11596 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:33,987 autoreload 10700 18388 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:36,341 autoreload 10700 18388 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:37,041 autoreload 972 24436 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:38,372 autoreload 972 24436 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:39,297 autoreload 17812 15684 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:40,594 autoreload 17812 15684 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:41,335 autoreload 13072 12636 Watching for file changes with StatReloader
+INFO 2025-09-06 01:43:47,598 autoreload 13072 12636 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:43:48,659 autoreload 9336 17044 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:03,945 autoreload 9336 17044 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:05,027 autoreload 1604 4416 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:06,304 autoreload 1604 4416 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:07,775 autoreload 8796 9748 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:16,263 autoreload 8796 9748 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:17,118 autoreload 21608 1452 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:20,203 autoreload 21608 1452 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:21,227 autoreload 14392 8396 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:26,459 autoreload 14392 8396 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:27,327 autoreload 7396 3640 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:29,581 autoreload 7396 3640 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:30,576 autoreload 4280 21692 Watching for file changes with StatReloader
+INFO 2025-09-06 01:44:31,838 autoreload 4280 21692 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:44:32,619 autoreload 17916 8276 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:01,679 autoreload 17916 8276 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:02,448 autoreload 10264 14068 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:14,998 autoreload 10264 14068 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:16,455 autoreload 17860 19628 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:18,599 autoreload 17860 19628 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:19,305 autoreload 15152 5140 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:36,158 autoreload 15152 5140 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:37,027 autoreload 11980 22184 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:47,590 autoreload 11980 22184 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:48,306 autoreload 2756 9008 Watching for file changes with StatReloader
+INFO 2025-09-06 01:45:49,585 autoreload 2756 9008 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:45:50,296 autoreload 20964 4672 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:01,838 autoreload 20964 4672 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:03,092 autoreload 19432 23980 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:05,500 autoreload 19432 23980 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:06,139 autoreload 23088 21532 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:12,633 autoreload 23088 21532 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:13,529 autoreload 16064 24080 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:19,894 autoreload 16064 24080 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:20,640 autoreload 2584 19100 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:22,964 autoreload 2584 19100 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:23,917 autoreload 21672 15344 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:28,204 autoreload 21672 15344 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:28,980 autoreload 15096 20036 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:39,412 autoreload 15096 20036 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:40,563 autoreload 24052 24228 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:43,063 autoreload 24052 24228 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:43,867 autoreload 4396 2620 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:49,227 autoreload 4396 2620 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:49,887 autoreload 6496 19408 Watching for file changes with StatReloader
+INFO 2025-09-06 01:46:52,191 autoreload 6496 19408 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:46:52,902 autoreload 172 22460 Watching for file changes with StatReloader
+INFO 2025-09-06 01:47:00,354 autoreload 172 22460 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:47:01,022 autoreload 16792 12504 Watching for file changes with StatReloader
+INFO 2025-09-06 01:47:07,414 autoreload 16792 12504 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:47:08,378 autoreload 5832 6720 Watching for file changes with StatReloader
+INFO 2025-09-06 01:47:21,004 autoreload 5832 6720 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:47:22,077 autoreload 10904 8084 Watching for file changes with StatReloader
+INFO 2025-09-06 01:47:25,352 autoreload 10904 8084 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:47:26,354 autoreload 15824 18232 Watching for file changes with StatReloader
+INFO 2025-09-06 01:48:56,176 autoreload 15824 18232 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:48:56,994 autoreload 17832 8152 Watching for file changes with StatReloader
+INFO 2025-09-06 01:49:34,990 autoreload 17832 8152 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-09-06 01:49:35,801 autoreload 16672 19596 Watching for file changes with StatReloader
+INFO 2025-09-06 01:52:54,819 autoreload 16672 19596 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-09-06 01:52:55,625 autoreload 5248 7804 Watching for file changes with StatReloader
+INFO 2025-09-06 01:52:56,910 autoreload 5248 7804 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-09-06 01:52:57,866 autoreload 17376 19452 Watching for file changes with StatReloader
+INFO 2025-09-06 02:13:02,943 autoreload 23216 3736 Watching for file changes with StatReloader
+INFO 2025-09-06 02:13:25,571 basehttp 23216 24200 "GET / HTTP/1.1" 200 11110
+INFO 2025-09-06 02:13:25,792 basehttp 23216 24200 "GET /static/css/dist/styles.css?v=1757168005 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:13:33,024 basehttp 23216 8592 "GET /hotel_rooms/ HTTP/1.1" 200 14633
+INFO 2025-09-06 02:13:33,107 basehttp 23216 8592 "GET /static/css/dist/styles.css?v=1757168013 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:13:33,579 basehttp 23216 7080 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-09-06 02:13:39,921 basehttp 23216 13508 "GET / HTTP/1.1" 200 11110
+INFO 2025-09-06 02:13:39,997 basehttp 23216 13508 "GET /static/css/dist/styles.css?v=1757168019 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:13:47,853 basehttp 23216 14100 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:13:47,969 basehttp 23216 14100 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4350
+ERROR 2025-09-06 02:13:58,490 log 23216 10904 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_customuser
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 444, in login
+    return LoginView.as_view(**defaults)(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 356, in clean
+    self.user_cache = authenticate(
+                      ~~~~~~~~~~~~^
+        self.request, username=username, password=password
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_customuser
+ERROR 2025-09-06 02:13:58,506 basehttp 23216 10904 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 261743
+INFO 2025-09-06 02:16:45,061 autoreload 20220 14704 Watching for file changes with StatReloader
+INFO 2025-09-06 02:16:47,739 basehttp 20220 19144 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4514
+INFO 2025-09-06 02:17:01,825 basehttp 20220 4032 "GET / HTTP/1.1" 200 11110
+INFO 2025-09-06 02:17:01,960 basehttp 20220 4032 "GET /static/css/dist/styles.css?v=1757168221 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:17:07,595 basehttp 20220 15060 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:17:07,650 basehttp 20220 15060 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4350
+INFO 2025-09-06 02:17:15,576 basehttp 20220 19660 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4514
+INFO 2025-09-06 02:18:00,075 autoreload 4384 7176 Watching for file changes with StatReloader
+INFO 2025-09-06 02:18:01,712 basehttp 4384 15616 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:18:01,818 basehttp 4384 15616 "GET /admin/ HTTP/1.1" 200 14187
+INFO 2025-09-06 02:18:29,011 basehttp 4384 13332 "GET / HTTP/1.1" 200 14512
+INFO 2025-09-06 02:18:29,136 basehttp 4384 13332 "GET /static/css/dist/styles.css?v=1757168308 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:18:41,303 basehttp 4384 15872 "GET /admin/ HTTP/1.1" 200 14187
+INFO 2025-09-06 02:19:06,520 basehttp 4384 8820 "GET /admin/core/customuser/ HTTP/1.1" 200 17448
+INFO 2025-09-06 02:19:06,636 basehttp 4384 8820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:03,653 basehttp 4384 13156 "GET /admin/core/staff/ HTTP/1.1" 200 13247
+INFO 2025-09-06 02:20:03,779 basehttp 4384 13156 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:06,847 basehttp 4384 21980 "GET /admin/core/service/ HTTP/1.1" 200 15172
+INFO 2025-09-06 02:20:06,974 basehttp 4384 21980 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:09,375 basehttp 4384 14312 "GET /admin/core/room/ HTTP/1.1" 200 15323
+INFO 2025-09-06 02:20:09,464 basehttp 4384 14312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:11,155 basehttp 4384 17764 "GET /admin/core/reservation/ HTTP/1.1" 200 13291
+INFO 2025-09-06 02:20:11,267 basehttp 4384 17764 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:13,020 basehttp 4384 22132 "GET /admin/core/rating/ HTTP/1.1" 200 13256
+INFO 2025-09-06 02:20:13,097 basehttp 4384 22132 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:16,910 basehttp 4384 14588 "GET /admin/core/ourroomsimage/ HTTP/1.1" 200 13315
+INFO 2025-09-06 02:20:16,984 basehttp 4384 14588 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:19,673 basehttp 4384 9536 "GET /admin/core/booking/ HTTP/1.1" 200 13298
+INFO 2025-09-06 02:20:19,779 basehttp 4384 9536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:22,055 basehttp 4384 9660 "GET /admin/core/manager/ HTTP/1.1" 200 13588
+INFO 2025-09-06 02:20:22,136 basehttp 4384 9660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:24,774 basehttp 4384 18360 "GET /admin/core/lead/ HTTP/1.1" 200 14873
+INFO 2025-09-06 02:20:24,849 basehttp 4384 18360 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:27,139 basehttp 4384 20016 "GET /admin/core/hotel/ HTTP/1.1" 200 15124
+INFO 2025-09-06 02:20:27,230 basehttp 4384 20016 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:29,108 basehttp 4384 23048 "GET /admin/core/guest/ HTTP/1.1" 200 13249
+INFO 2025-09-06 02:20:29,205 basehttp 4384 23048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:32,429 basehttp 4384 19872 "GET /admin/core/customuser/ HTTP/1.1" 200 17448
+INFO 2025-09-06 02:20:32,532 basehttp 4384 19872 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:34,595 basehttp 4384 16936 "GET /admin/core/customuser/add/ HTTP/1.1" 200 17989
+INFO 2025-09-06 02:20:34,672 basehttp 4384 16936 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-09-06 02:20:34,690 basehttp 4384 16452 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-09-06 02:20:34,706 basehttp 4384 16936 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-09-06 02:20:34,738 basehttp 4384 18452 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:20:34,752 basehttp 4384 19216 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-06 02:20:34,779 basehttp 4384 19216 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-09-06 02:20:34,856 basehttp 4384 18452 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-06 02:24:28,433 autoreload 4384 7176 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:24:30,280 autoreload 20968 17160 Watching for file changes with StatReloader
+INFO 2025-09-06 02:24:31,565 autoreload 20968 17160 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:24:32,633 autoreload 15640 2788 Watching for file changes with StatReloader
+INFO 2025-09-06 02:24:53,047 autoreload 15640 2788 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:24:54,041 autoreload 18624 13820 Watching for file changes with StatReloader
+INFO 2025-09-06 02:25:27,872 autoreload 18624 13820 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:25:28,904 autoreload 8660 24516 Watching for file changes with StatReloader
+INFO 2025-09-06 02:25:40,122 autoreload 19556 11920 Watching for file changes with StatReloader
+INFO 2025-09-06 02:26:03,384 autoreload 19556 11920 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:26:04,359 autoreload 14184 4292 Watching for file changes with StatReloader
+INFO 2025-09-06 02:26:05,534 basehttp 14184 1064 "GET /admin/core/customuser/add/ HTTP/1.1" 200 17989
+INFO 2025-09-06 02:26:05,663 basehttp 14184 1064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:26:39,892 autoreload 14184 4292 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:26:43,507 autoreload 9692 9620 Watching for file changes with StatReloader
+INFO 2025-09-06 02:26:45,788 basehttp 9692 12036 "GET /admin/core/customuser/add/ HTTP/1.1" 200 17989
+INFO 2025-09-06 02:26:46,757 basehttp 9692 12036 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:26:53,064 autoreload 9692 9620 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:26:56,180 autoreload 16836 12472 Watching for file changes with StatReloader
+INFO 2025-09-06 02:26:57,551 basehttp 16836 13700 "GET /admin/core/customuser/add/ HTTP/1.1" 200 27317
+INFO 2025-09-06 02:26:57,711 basehttp 16836 13700 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:26:57,937 basehttp 16836 10060 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2025-09-06 02:26:58,069 basehttp 16836 10060 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+INFO 2025-09-06 02:27:01,607 basehttp 16836 13700 "GET /admin/core/customuser/add/ HTTP/1.1" 200 27317
+INFO 2025-09-06 02:27:01,700 basehttp 16836 13700 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:27:06,137 basehttp 16836 12868 "GET /admin/core/hotel/add/?_to_field=id&_popup=1 HTTP/1.1" 200 11800
+INFO 2025-09-06 02:27:06,231 basehttp 16836 12868 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:27:06,288 basehttp 16836 18500 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+INFO 2025-09-06 02:27:06,295 basehttp 16836 17232 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-06 02:27:06,424 basehttp 16836 17232 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-06 02:31:01,756 autoreload 16836 12472 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:31:03,083 autoreload 4108 12248 Watching for file changes with StatReloader
+INFO 2025-09-06 02:34:28,544 autoreload 4108 12248 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:34:30,852 autoreload 17544 1104 Watching for file changes with StatReloader
+INFO 2025-09-06 02:34:35,473 autoreload 17544 1104 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:34:36,593 autoreload 2440 9996 Watching for file changes with StatReloader
+INFO 2025-09-06 02:34:39,475 autoreload 2440 9996 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:34:40,492 autoreload 18820 14832 Watching for file changes with StatReloader
+INFO 2025-09-06 02:34:45,923 autoreload 18820 14832 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:34:47,352 autoreload 18156 18372 Watching for file changes with StatReloader
+INFO 2025-09-06 02:35:37,456 autoreload 18156 18372 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:35:39,737 autoreload 17880 8976 Watching for file changes with StatReloader
+INFO 2025-09-06 02:35:43,095 autoreload 17880 8976 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:35:44,787 autoreload 2088 15464 Watching for file changes with StatReloader
+INFO 2025-09-06 02:35:49,635 autoreload 2088 15464 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:35:50,577 autoreload 22120 19712 Watching for file changes with StatReloader
+INFO 2025-09-06 02:36:51,518 autoreload 22120 19712 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:36:52,761 autoreload 4248 22888 Watching for file changes with StatReloader
+INFO 2025-09-06 02:36:56,134 autoreload 4248 22888 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:36:57,834 autoreload 3008 8436 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:03,249 autoreload 3008 8436 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:04,589 autoreload 7960 13844 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:08,069 autoreload 7960 13844 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:09,072 autoreload 18952 8756 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:11,385 autoreload 18952 8756 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:12,314 autoreload 1644 3512 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:18,423 autoreload 1644 3512 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:19,865 autoreload 17884 22480 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:24,711 autoreload 17884 22480 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:25,853 autoreload 15292 5108 Watching for file changes with StatReloader
+INFO 2025-09-06 02:37:30,812 autoreload 15292 5108 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:37:31,720 autoreload 3352 6448 Watching for file changes with StatReloader
+INFO 2025-09-06 02:38:04,322 autoreload 3352 6448 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:38:05,483 autoreload 14480 15028 Watching for file changes with StatReloader
+INFO 2025-09-06 02:38:10,795 autoreload 14480 15028 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:38:11,658 autoreload 17796 9684 Watching for file changes with StatReloader
+INFO 2025-09-06 02:39:10,562 autoreload 17796 9684 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-09-06 02:39:11,749 autoreload 21176 24120 Watching for file changes with StatReloader
+INFO 2025-09-06 02:39:19,003 basehttp 21176 13884 "GET /admin/core/customuser/add/ HTTP/1.1" 200 26711
+INFO 2025-09-06 02:39:19,074 basehttp 21176 13884 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:40:50,825 basehttp 21176 7436 "GET /admin/core/hotel/add/?_to_field=id&_popup=1 HTTP/1.1" 200 11800
+INFO 2025-09-06 02:40:50,906 basehttp 21176 7436 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:42:56,145 basehttp 21176 7436 "POST /admin/core/hotel/add/?_to_field=id&_popup=1 HTTP/1.1" 200 523
+INFO 2025-09-06 02:42:56,193 basehttp 21176 7436 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2025-09-06 02:43:06,135 basehttp 21176 7436 "POST /admin/core/customuser/add/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:43:06,295 basehttp 21176 7436 "GET /admin/core/customuser/2/change/ HTTP/1.1" 200 41392
+INFO 2025-09-06 02:43:06,408 basehttp 21176 7436 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-06 02:43:06,413 basehttp 21176 22500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:43:06,471 basehttp 21176 9392 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-06 02:43:06,611 basehttp 21176 7436 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2025-09-06 02:43:06,612 basehttp 21176 22500 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-09-06 02:43:06,620 basehttp 21176 4868 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-06 02:43:06,672 basehttp 21176 3692 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-06 02:43:25,263 basehttp 21176 3692 "GET /admin/core/manager/ HTTP/1.1" 200 15671
+INFO 2025-09-06 02:43:25,344 basehttp 21176 3692 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-06 02:43:29,032 basehttp 21176 4868 "GET / HTTP/1.1" 200 14512
+INFO 2025-09-06 02:43:29,097 basehttp 21176 4868 "GET /static/css/dist/styles.css?v=1757169809 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:43:34,958 basehttp 21176 7436 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:43:34,986 basehttp 21176 7436 "GET / HTTP/1.1" 200 13159
+INFO 2025-09-06 02:43:35,084 basehttp 21176 7436 "GET /static/css/dist/styles.css?v=1757169814 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:43:37,336 basehttp 21176 22500 "GET /sign_up/ HTTP/1.1" 200 16069
+INFO 2025-09-06 02:43:37,427 basehttp 21176 22500 "GET /static/css/dist/styles.css?v=1757169817 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:43:39,862 basehttp 21176 17636 "GET /login/ HTTP/1.1" 200 11508
+INFO 2025-09-06 02:43:39,911 basehttp 21176 17636 "GET /static/css/dist/styles.css?v=1757169819 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:44:00,960 basehttp 21176 7180 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:44:00,987 basehttp 21176 7180 "GET / HTTP/1.1" 200 16775
+INFO 2025-09-06 02:44:01,054 basehttp 21176 7180 "GET /static/css/dist/styles.css?v=1757169840 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:45:30,302 autoreload 21176 24120 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 02:45:31,511 autoreload 11928 23960 Watching for file changes with StatReloader
+INFO 2025-09-06 02:45:32,620 basehttp 11928 7344 "GET / HTTP/1.1" 200 14728
+INFO 2025-09-06 02:45:32,745 basehttp 11928 7344 "GET /static/css/dist/styles.css?v=1757169932 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:45:55,389 basehttp 11928 13096 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:45:55,412 basehttp 11928 13096 "GET / HTTP/1.1" 200 13159
+INFO 2025-09-06 02:45:55,462 basehttp 11928 13096 "GET /static/css/dist/styles.css?v=1757169955 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:45:57,455 basehttp 11928 21404 "GET /sign_up/ HTTP/1.1" 200 16069
+INFO 2025-09-06 02:45:57,546 basehttp 11928 21404 "GET /static/css/dist/styles.css?v=1757169957 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:45:59,359 basehttp 11928 14860 "GET /login/ HTTP/1.1" 200 11508
+INFO 2025-09-06 02:45:59,442 basehttp 11928 14860 "GET /static/css/dist/styles.css?v=1757169959 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:46:13,811 basehttp 11928 12080 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:46:14,029 basehttp 11928 12080 "GET /dashboard/ HTTP/1.1" 200 56171
+INFO 2025-09-06 02:46:14,083 basehttp 11928 12080 "GET /static/css/dist/styles.css?v=1757169973 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:46:48,546 basehttp 11928 22760 "GET /add-room/ HTTP/1.1" 200 40800
+INFO 2025-09-06 02:46:48,630 basehttp 11928 22760 "GET /static/css/dist/styles.css?v=1757170008 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:47:21,862 basehttp 11928 16488 "GET /services/ HTTP/1.1" 200 31397
+INFO 2025-09-06 02:47:21,976 basehttp 11928 16488 "GET /static/css/dist/styles.css?v=1757170041 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:47:23,855 basehttp 11928 16028 "GET /services/ HTTP/1.1" 200 31397
+INFO 2025-09-06 02:47:23,918 basehttp 11928 16028 "GET /static/css/dist/styles.css?v=1757170043 HTTP/1.1" 200 104504
+WARNING 2025-09-06 02:47:25,717 log 11928 18940 Not Found: /api/mark-guests-seen/
+WARNING 2025-09-06 02:47:25,719 basehttp 11928 18940 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-09-06 02:47:25,752 basehttp 11928 8564 "GET /guest/ HTTP/1.1" 200 20208
+INFO 2025-09-06 02:47:25,811 basehttp 11928 8564 "GET /static/css/dist/styles.css?v=1757170045 HTTP/1.1" 200 104504
+WARNING 2025-09-06 02:47:37,431 log 11928 18940 Not Found: /api/mark-reservations-seen/
+WARNING 2025-09-06 02:47:37,431 basehttp 11928 18940 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-09-06 02:47:37,490 basehttp 11928 23052 "GET /reservation/ HTTP/1.1" 200 40192
+INFO 2025-09-06 02:47:37,534 basehttp 11928 23052 "GET /static/css/dist/styles.css?v=1757170057 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:47:46,679 basehttp 11928 18940 "GET /manage-hotel-account/ HTTP/1.1" 200 44371
+INFO 2025-09-06 02:47:46,733 basehttp 11928 18940 "GET /static/css/dist/styles.css?v=1757170066 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:48:05,283 basehttp 11928 20240 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:48:05,316 basehttp 11928 20240 "GET /manage-hotel-account/ HTTP/1.1" 200 47325
+INFO 2025-09-06 02:48:05,362 basehttp 11928 20240 "GET /static/css/dist/styles.css?v=1757170085 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:48:14,122 basehttp 11928 9980 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:48:14,171 basehttp 11928 9980 "GET /manage-hotel-account/ HTTP/1.1" 200 48113
+INFO 2025-09-06 02:48:14,217 basehttp 11928 9980 "GET /static/css/dist/styles.css?v=1757170094 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:48:27,019 basehttp 11928 17336 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:48:27,054 basehttp 11928 17336 "GET /manage-hotel-account/ HTTP/1.1" 200 48915
+INFO 2025-09-06 02:48:27,090 basehttp 11928 17336 "GET /static/css/dist/styles.css?v=1757170107 HTTP/1.1" 200 104504
+INFO 2025-09-06 02:48:55,161 basehttp 11928 16408 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-09-06 02:48:55,201 basehttp 11928 16408 "GET /manage-hotel-account/ HTTP/1.1" 200 48927
+INFO 2025-09-06 02:48:55,250 basehttp 11928 16408 "GET /static/css/dist/styles.css?v=1757170135 HTTP/1.1" 200 104504
+ERROR 2025-09-06 02:48:56,934 log 11928 14380 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+core.models.CustomUser.profilemodel.RelatedObjectDoesNotExist: CustomUser has no profilemodel.
+ERROR 2025-09-06 02:48:56,941 basehttp 11928 14380 "GET /manage-account/ HTTP/1.1" 500 83911
+INFO 2025-09-06 02:55:00,820 autoreload 11928 23960 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\models.py changed, reloading.
+INFO 2025-09-06 02:55:02,045 autoreload 9676 19208 Watching for file changes with StatReloader
+ERROR 2025-09-06 02:55:03,177 log 9676 1356 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'CustomUser' object has no attribute 'profilemodel'
+ERROR 2025-09-06 02:55:03,256 basehttp 9676 1356 "GET /manage-account/ HTTP/1.1" 500 79195
+INFO 2025-09-06 02:55:19,860 autoreload 9676 19208 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\models.py changed, reloading.
+INFO 2025-09-06 02:55:20,896 autoreload 14276 3372 Watching for file changes with StatReloader
+ERROR 2025-09-06 02:55:22,147 log 14276 13376 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+core.models.CustomUser.profilemodel.RelatedObjectDoesNotExist: CustomUser has no profilemodel.
+ERROR 2025-09-06 02:55:22,240 basehttp 14276 13376 "GET /manage-account/ HTTP/1.1" 500 83911
+INFO 2025-09-06 02:56:23,719 autoreload 14276 3372 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\signals.py changed, reloading.
+INFO 2025-09-06 02:56:24,969 autoreload 2752 12576 Watching for file changes with StatReloader
+INFO 2025-09-06 02:56:26,235 autoreload 2752 12576 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\signals.py changed, reloading.
+INFO 2025-09-06 02:56:27,149 autoreload 24100 10192 Watching for file changes with StatReloader
+INFO 2025-09-06 02:56:51,982 autoreload 24100 10192 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\signals.py changed, reloading.
+INFO 2025-09-06 02:56:52,826 autoreload 11536 18840 Watching for file changes with StatReloader
+INFO 2025-09-06 02:57:01,277 autoreload 11536 18840 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\signals.py changed, reloading.
+INFO 2025-09-06 02:57:02,071 autoreload 18232 15072 Watching for file changes with StatReloader
+ERROR 2025-09-06 02:57:02,940 log 18232 17832 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+core.models.CustomUser.profilemodel.RelatedObjectDoesNotExist: CustomUser has no profilemodel.
+ERROR 2025-09-06 02:57:02,976 basehttp 18232 17832 "GET /manage-account/ HTTP/1.1" 500 83911
+INFO 2025-09-06 02:58:22,550 autoreload 3284 11404 Watching for file changes with StatReloader
+ERROR 2025-09-06 02:58:23,401 log 3284 3372 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+core.models.CustomUser.profilemodel.RelatedObjectDoesNotExist: CustomUser has no profilemodel.
+ERROR 2025-09-06 02:58:23,441 basehttp 3284 3372 "GET /manage-account/ HTTP/1.1" 500 83911
+INFO 2025-09-06 03:01:37,868 autoreload 3284 11404 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\signals.py changed, reloading.
+INFO 2025-09-06 03:01:39,282 autoreload 10304 23504 Watching for file changes with StatReloader
+ERROR 2025-09-06 03:01:40,137 log 10304 19332 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 178, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 531, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+core.models.CustomUser.profilemodel.RelatedObjectDoesNotExist: CustomUser has no profilemodel.
+ERROR 2025-09-06 03:01:40,170 basehttp 10304 19332 "GET /manage-account/ HTTP/1.1" 500 83911
+INFO 2025-09-06 03:02:16,941 autoreload 10304 23504 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 03:02:19,230 autoreload 15888 24544 Watching for file changes with StatReloader
+ERROR 2025-09-06 03:02:20,202 log 15888 24092 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 170, in manage_account
+    profile, created = ProfileModel.objects.get_or_create(user=request.user)
+                       ^^^^^^^^^^^^
+NameError: name 'ProfileModel' is not defined
+ERROR 2025-09-06 03:02:20,232 basehttp 15888 24092 "GET /manage-account/ HTTP/1.1" 500 75021
+INFO 2025-09-06 03:02:33,108 autoreload 15888 24544 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 03:02:33,921 autoreload 7496 7228 Watching for file changes with StatReloader
+ERROR 2025-09-06 03:02:35,075 log 7496 21200 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 171, in manage_account
+    profile, created = ProfileModel.objects.get_or_create(user=request.user)
+                       ^^^^^^^^^^^^
+NameError: name 'ProfileModel' is not defined
+ERROR 2025-09-06 03:02:35,124 basehttp 7496 21200 "GET /manage-account/ HTTP/1.1" 500 75021
+INFO 2025-09-06 03:02:38,202 autoreload 7496 7228 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-06 03:02:39,208 autoreload 18400 17196 Watching for file changes with StatReloader
+INFO 2025-09-06 03:02:40,416 basehttp 18400 8544 "GET /manage-account/ HTTP/1.1" 200 41949
+INFO 2025-09-06 03:02:40,523 basehttp 18400 8544 "GET /static/css/dist/styles.css?v=1757170960 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:02:40,559 basehttp 18400 18996 "GET /media/default.png HTTP/1.1" 200 9321
+INFO 2025-09-06 03:03:10,096 basehttp 18400 6056 "GET /reset_password/ HTTP/1.1" 200 7725
+INFO 2025-09-06 03:03:10,175 basehttp 18400 6056 "GET /static/css/dist/styles.css?v=1757170990 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:04:03,380 basehttp 18400 13964 "GET /manage-account/ HTTP/1.1" 200 41949
+INFO 2025-09-06 03:04:03,457 basehttp 18400 13964 "GET /static/css/dist/styles.css?v=1757171043 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:04:15,585 basehttp 18400 14420 "GET /manage-hotel-account/ HTTP/1.1" 200 47572
+INFO 2025-09-06 03:04:15,641 basehttp 18400 14420 "GET /static/css/dist/styles.css?v=1757171055 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:06:44,042 basehttp 18400 22832 "GET /manage-hotel-account/ HTTP/1.1" 200 47573
+INFO 2025-09-06 03:06:44,139 basehttp 18400 22832 "GET /static/css/dist/styles.css?v=1757171203 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:06:46,286 basehttp 18400 16296 "GET /manage-hotel-account/ HTTP/1.1" 200 47577
+INFO 2025-09-06 03:06:46,328 basehttp 18400 16296 "GET /static/css/dist/styles.css?v=1757171206 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:06:49,569 basehttp 18400 12448 "GET /manage-hotel-account/ HTTP/1.1" 200 47581
+INFO 2025-09-06 03:06:49,605 basehttp 18400 12448 "GET /static/css/dist/styles.css?v=1757171209 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:06:51,754 basehttp 18400 3272 "GET /manage-hotel-account/ HTTP/1.1" 200 47583
+INFO 2025-09-06 03:06:51,795 basehttp 18400 3272 "GET /static/css/dist/styles.css?v=1757171211 HTTP/1.1" 200 104504
+INFO 2025-09-06 03:06:55,028 basehttp 18400 10788 "GET /manage-hotel-account/ HTTP/1.1" 200 47587
+INFO 2025-09-06 03:06:55,118 basehttp 18400 10788 "GET /static/css/dist/styles.css?v=1757171214 HTTP/1.1" 200 104538
+INFO 2025-09-06 03:06:56,023 basehttp 18400 18072 "GET /manage-hotel-account/ HTTP/1.1" 200 47589
+INFO 2025-09-06 03:06:56,058 basehttp 18400 18072 "GET /static/css/dist/styles.css?v=1757171215 HTTP/1.1" 200 104538
+INFO 2025-09-06 03:06:57,101 basehttp 18400 3008 "GET /manage-hotel-account/ HTTP/1.1" 200 47589
+INFO 2025-09-06 03:06:57,161 basehttp 18400 3008 "GET /static/css/dist/styles.css?v=1757171217 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:06:58,412 basehttp 18400 7964 "GET /manage-hotel-account/ HTTP/1.1" 200 47584
+INFO 2025-09-06 03:06:58,465 basehttp 18400 7964 "GET /static/css/dist/styles.css?v=1757171218 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:03,791 basehttp 18400 21964 "GET /manage-hotel-account/ HTTP/1.1" 200 47588
+INFO 2025-09-06 03:07:03,831 basehttp 18400 21964 "GET /static/css/dist/styles.css?v=1757171223 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:04,858 basehttp 18400 20320 "GET /manage-hotel-account/ HTTP/1.1" 200 47590
+INFO 2025-09-06 03:07:04,912 basehttp 18400 20320 "GET /static/css/dist/styles.css?v=1757171224 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:07,955 basehttp 18400 20140 "GET /manage-hotel-account/ HTTP/1.1" 200 47595
+INFO 2025-09-06 03:07:07,985 basehttp 18400 20140 "GET /static/css/dist/styles.css?v=1757171227 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:16,101 basehttp 18400 4328 "GET /manage-hotel-account/ HTTP/1.1" 200 47595
+INFO 2025-09-06 03:07:16,138 basehttp 18400 4328 "GET /static/css/dist/styles.css?v=1757171236 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:35,945 basehttp 18400 23452 "GET /manage-hotel-account/ HTTP/1.1" 200 47573
+INFO 2025-09-06 03:07:35,989 basehttp 18400 23452 "GET /static/css/dist/styles.css?v=1757171255 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:36,985 basehttp 18400 14832 "GET /manage-hotel-account/ HTTP/1.1" 200 47572
+INFO 2025-09-06 03:07:37,014 basehttp 18400 14832 "GET /static/css/dist/styles.css?v=1757171256 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:42,678 basehttp 18400 20212 "GET /manage-hotel-account/ HTTP/1.1" 200 47573
+INFO 2025-09-06 03:07:42,715 basehttp 18400 20212 "GET /static/css/dist/styles.css?v=1757171262 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:07:44,750 basehttp 18400 22496 "GET /manage-hotel-account/ HTTP/1.1" 200 47595
+INFO 2025-09-06 03:07:44,796 basehttp 18400 22496 "GET /static/css/dist/styles.css?v=1757171264 HTTP/1.1" 200 104576
+WARNING 2025-09-06 03:08:19,369 log 18400 11948 Not Found: /api/mark-reservations-seen/
+WARNING 2025-09-06 03:08:19,371 basehttp 18400 11948 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-09-06 03:08:19,463 basehttp 18400 7124 "GET /reservation/ HTTP/1.1" 200 40192
+INFO 2025-09-06 03:08:19,524 basehttp 18400 7124 "GET /static/css/dist/styles.css?v=1757171299 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:08:50,620 basehttp 18400 11948 "GET /add-room/ HTTP/1.1" 200 40909
+INFO 2025-09-06 03:08:50,672 basehttp 18400 11948 "GET /static/css/dist/styles.css?v=1757171330 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:10:00,866 basehttp 18400 4936 "POST /add-room/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:10:00,949 basehttp 18400 4936 "GET /dashboard/ HTTP/1.1" 200 56171
+INFO 2025-09-06 03:10:00,997 basehttp 18400 4936 "GET /static/css/dist/styles.css?v=1757171400 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:10:05,922 basehttp 18400 18092 "GET /add-room/ HTTP/1.1" 200 43130
+INFO 2025-09-06 03:10:05,967 basehttp 18400 18092 "GET /static/css/dist/styles.css?v=1757171405 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:10:08,535 basehttp 18400 15048 "GET /add_room_detail/1/ HTTP/1.1" 200 25454
+INFO 2025-09-06 03:10:08,600 basehttp 18400 15048 "GET /static/css/dist/styles.css?v=1757171408 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:10:17,686 basehttp 18400 14368 "GET /edit_room/1/edit/ HTTP/1.1" 200 25324
+INFO 2025-09-06 03:10:17,724 basehttp 18400 14368 "GET /static/css/dist/styles.css?v=1757171417 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:10:59,719 basehttp 18400 6400 "GET /edit_room/1/edit/ HTTP/1.1" 200 25325
+INFO 2025-09-06 03:10:59,779 basehttp 18400 6400 "GET /static/css/dist/styles.css?v=1757171459 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:11:00,673 basehttp 18400 23716 "GET /edit_room/1/edit/ HTTP/1.1" 200 25347
+INFO 2025-09-06 03:11:00,722 basehttp 18400 23716 "GET /static/css/dist/styles.css?v=1757171460 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:11:12,401 basehttp 18400 14908 "POST /edit_room/1/edit/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:11:12,450 basehttp 18400 14908 "GET /add_room_detail/1/ HTTP/1.1" 200 27135
+INFO 2025-09-06 03:11:12,499 basehttp 18400 14908 "GET /static/css/dist/styles.css?v=1757171472 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:11:22,892 basehttp 18400 21084 "GET /add-room/ HTTP/1.1" 200 43130
+INFO 2025-09-06 03:11:22,950 basehttp 18400 21084 "GET /static/css/dist/styles.css?v=1757171482 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:12:17,092 basehttp 18400 7436 "POST /add-room/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:12:17,189 basehttp 18400 7436 "GET /dashboard/ HTTP/1.1" 200 56171
+INFO 2025-09-06 03:12:17,242 basehttp 18400 7436 "GET /static/css/dist/styles.css?v=1757171537 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:12:19,868 basehttp 18400 10244 "GET /add-room/ HTTP/1.1" 200 48427
+INFO 2025-09-06 03:12:19,913 basehttp 18400 10244 "GET /static/css/dist/styles.css?v=1757171539 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:13:09,934 basehttp 18400 21808 "POST /add-room/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:13:09,989 basehttp 18400 21808 "GET /dashboard/ HTTP/1.1" 200 56171
+INFO 2025-09-06 03:13:10,037 basehttp 18400 21808 "GET /static/css/dist/styles.css?v=1757171589 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:13:18,067 basehttp 18400 22448 "GET /add-room/ HTTP/1.1" 200 53724
+INFO 2025-09-06 03:13:18,135 basehttp 18400 22448 "GET /static/css/dist/styles.css?v=1757171598 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:13:54,159 basehttp 18400 21496 "POST /add-room/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:13:54,250 basehttp 18400 21496 "GET /dashboard/ HTTP/1.1" 200 56171
+INFO 2025-09-06 03:13:54,299 basehttp 18400 21496 "GET /static/css/dist/styles.css?v=1757171634 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:13:57,093 basehttp 18400 7344 "GET /services/ HTTP/1.1" 200 31397
+INFO 2025-09-06 03:13:57,135 basehttp 18400 7344 "GET /static/css/dist/styles.css?v=1757171637 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:13:58,527 basehttp 18400 17976 "GET /services/ HTTP/1.1" 200 31397
+INFO 2025-09-06 03:13:58,596 basehttp 18400 17976 "GET /static/css/dist/styles.css?v=1757171638 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:15:07,286 basehttp 18400 3880 "POST /services/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:15:07,340 basehttp 18400 3880 "GET /services/ HTTP/1.1" 200 35186
+INFO 2025-09-06 03:15:07,387 basehttp 18400 3880 "GET /static/css/dist/styles.css?v=1757171707 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:15:48,992 basehttp 18400 13160 "POST /services/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:15:49,064 basehttp 18400 13160 "GET /services/ HTTP/1.1" 200 37581
+INFO 2025-09-06 03:15:49,118 basehttp 18400 13160 "GET /static/css/dist/styles.css?v=1757171749 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:16:42,395 basehttp 18400 20880 "POST /services/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:16:42,454 basehttp 18400 20880 "GET /services/ HTTP/1.1" 200 40049
+INFO 2025-09-06 03:16:42,506 basehttp 18400 20880 "GET /static/css/dist/styles.css?v=1757171802 HTTP/1.1" 200 104576
+WARNING 2025-09-06 03:16:50,198 log 18400 3216 Not Found: /api/mark-reservations-seen/
+WARNING 2025-09-06 03:16:50,199 basehttp 18400 3216 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-09-06 03:16:50,220 basehttp 18400 20432 "GET /reservation/ HTTP/1.1" 200 40373
+INFO 2025-09-06 03:16:50,260 basehttp 18400 20432 "GET /static/css/dist/styles.css?v=1757171810 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:17:55,482 basehttp 18400 3216 "POST /reservation/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:17:55,562 basehttp 18400 3216 "GET /reservation/ HTTP/1.1" 200 48164
+INFO 2025-09-06 03:17:55,627 basehttp 18400 3216 "GET /static/css/dist/styles.css?v=1757171875 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:18:02,511 basehttp 18400 17284 "POST /reservation/ HTTP/1.1" 200 48158
+INFO 2025-09-06 03:18:02,572 basehttp 18400 17284 "GET /static/css/dist/styles.css?v=1757171882 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:18:08,875 basehttp 18400 14808 "GET /manage-hotel-account/ HTTP/1.1" 200 47595
+INFO 2025-09-06 03:18:08,922 basehttp 18400 14808 "GET /static/css/dist/styles.css?v=1757171888 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:18:10,503 basehttp 18400 21868 "GET /manage-account/ HTTP/1.1" 200 41949
+INFO 2025-09-06 03:18:10,543 basehttp 18400 21868 "GET /static/css/dist/styles.css?v=1757171890 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:18:20,013 basehttp 18400 1416 "GET /dashboard/ HTTP/1.1" 200 54831
+INFO 2025-09-06 03:18:20,061 basehttp 18400 9736 "GET /static/css/dist/styles.css?v=1757171899 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:20:26,820 basehttp 18400 23308 "POST /dashboard/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:20:26,916 basehttp 18400 23308 "GET /dashboard/ HTTP/1.1" 200 59719
+INFO 2025-09-06 03:20:26,955 basehttp 18400 23308 "GET /static/css/dist/styles.css?v=1757172026 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:20:42,182 basehttp 18400 21216 "GET /manage-account/ HTTP/1.1" 200 41949
+INFO 2025-09-06 03:20:42,279 basehttp 18400 21216 "GET /static/css/dist/styles.css?v=1757172042 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:09,436 basehttp 18400 1416 "POST /manage-account/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:21:09,533 basehttp 18400 1416 "GET /profile/ HTTP/1.1" 200 23801
+INFO 2025-09-06 03:21:09,565 basehttp 18400 1416 "GET /static/css/dist/styles.css?v=1757172069 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:09,611 basehttp 18400 7780 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-09-06 03:21:20,733 basehttp 18400 7780 "GET / HTTP/1.1" 200 14770
+INFO 2025-09-06 03:21:20,773 basehttp 18400 7780 "GET /static/css/dist/styles.css?v=1757172080 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:20,798 basehttp 18400 23452 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:21:28,436 basehttp 18400 7780 "GET /dashboard/ HTTP/1.1" 200 58371
+INFO 2025-09-06 03:21:28,508 basehttp 18400 7780 "GET /static/css/dist/styles.css?v=1757172088 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:39,948 basehttp 18400 23868 "GET / HTTP/1.1" 200 14770
+INFO 2025-09-06 03:21:39,987 basehttp 18400 23868 "GET /static/css/dist/styles.css?v=1757172099 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:40,010 basehttp 18400 23868 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:21:41,871 basehttp 18400 12228 "GET /hotel_rooms/ HTTP/1.1" 200 18150
+INFO 2025-09-06 03:21:41,934 basehttp 18400 12228 "GET /static/css/dist/styles.css?v=1757172101 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:43,665 basehttp 18400 15780 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50270
+INFO 2025-09-06 03:21:43,715 basehttp 18400 15780 "GET /static/css/dist/styles.css?v=1757172103 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:21:43,735 basehttp 18400 7556 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:22:38,283 basehttp 18400 15780 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-09-06 03:22:58,008 basehttp 18400 15780 "GET /verify-booking-payment/?trxref=6fdbf4bc-cc6f-44bb-bfdf-d211e39ad811&reference=6fdbf4bc-cc6f-44bb-bfdf-d211e39ad811 HTTP/1.1" 302 0
+INFO 2025-09-06 03:22:58,094 basehttp 18400 15780 "GET /booking-success/?booking_id=1 HTTP/1.1" 200 7367
+INFO 2025-09-06 03:22:58,161 basehttp 18400 15780 "GET /static/css/dist/styles.css?v=1757172178 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:11,944 basehttp 18400 2576 "GET /my_booking/ HTTP/1.1" 200 25030
+INFO 2025-09-06 03:23:12,003 basehttp 18400 2576 "GET /static/css/dist/styles.css?v=1757172191 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:12,023 basehttp 18400 16740 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:23:18,247 basehttp 18400 2576 "GET /my_booking/ HTTP/1.1" 200 25030
+INFO 2025-09-06 03:23:18,270 basehttp 18400 2576 "GET /static/css/dist/styles.css?v=1757172198 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:20,906 basehttp 18400 18040 "GET /hotel/ HTTP/1.1" 200 15981
+INFO 2025-09-06 03:23:20,948 basehttp 18400 18040 "GET /static/css/dist/styles.css?v=1757172200 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:23,276 basehttp 18400 12140 "GET /hotel/services/1/ HTTP/1.1" 200 21656
+INFO 2025-09-06 03:23:23,313 basehttp 18400 12140 "GET /static/css/dist/styles.css?v=1757172203 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:25,749 basehttp 18400 18840 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 50270
+INFO 2025-09-06 03:23:25,811 basehttp 18400 18840 "GET /static/css/dist/styles.css?v=1757172205 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:25,849 basehttp 18400 15556 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:23:29,873 basehttp 18400 18840 "GET /my_booking/ HTTP/1.1" 200 25030
+INFO 2025-09-06 03:23:29,961 basehttp 18400 18840 "GET /static/css/dist/styles.css?v=1757172209 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:32,893 basehttp 18400 18184 "GET /hotel/ HTTP/1.1" 200 15981
+INFO 2025-09-06 03:23:32,972 basehttp 18400 18184 "GET /static/css/dist/styles.css?v=1757172212 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:36,641 basehttp 18400 21484 "GET /about/ HTTP/1.1" 200 14677
+INFO 2025-09-06 03:23:36,716 basehttp 18400 21484 "GET /static/css/dist/styles.css?v=1757172216 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:38,921 basehttp 18400 21040 "GET / HTTP/1.1" 200 14770
+INFO 2025-09-06 03:23:39,000 basehttp 18400 21040 "GET /static/css/dist/styles.css?v=1757172218 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:39,030 basehttp 18400 4276 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 304 0
+INFO 2025-09-06 03:23:41,122 basehttp 18400 21040 "GET /hotel_rooms/ HTTP/1.1" 200 18150
+INFO 2025-09-06 03:23:41,219 basehttp 18400 21040 "GET /static/css/dist/styles.css?v=1757172221 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:23:46,409 basehttp 18400 8084 "GET /dashboard/ HTTP/1.1" 200 58371
+INFO 2025-09-06 03:23:46,467 basehttp 18400 8084 "GET /static/css/dist/styles.css?v=1757172226 HTTP/1.1" 200 104576
+WARNING 2025-09-06 03:23:55,949 log 18400 4216 Not Found: /api/mark-guests-seen/
+WARNING 2025-09-06 03:23:55,951 basehttp 18400 4216 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-09-06 03:23:55,979 basehttp 18400 8016 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-06 03:23:56,047 basehttp 18400 8016 "GET /static/css/dist/styles.css?v=1757172235 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:27:34,385 basehttp 18400 4216 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-06 03:27:34,444 basehttp 18400 4216 "GET /static/css/dist/styles.css?v=1757172454 HTTP/1.1" 200 104576
+INFO 2025-09-06 03:27:56,571 basehttp 18400 23400 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-06 03:27:56,638 basehttp 18400 23400 "GET /static/css/dist/styles.css?v=1757172476 HTTP/1.1" 200 104468
+INFO 2025-09-06 03:28:08,129 basehttp 18400 24312 "GET /guest/ HTTP/1.1" 200 21371
+WARNING 2025-09-06 03:28:08,187 basehttp 18400 24312 "GET /static/css/dist/styles.css?v=1757172488 HTTP/1.1" 404 1884
+INFO 2025-09-06 03:28:11,256 basehttp 18400 8248 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-06 03:28:11,288 basehttp 18400 8248 "GET /static/css/dist/styles.css?v=1757172491 HTTP/1.1" 200 81543

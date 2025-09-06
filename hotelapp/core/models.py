@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator, MinValueValidator, MaxValueValidator
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
@@ -10,7 +10,7 @@ from decimal import Decimal
 from datetime import timedelta
 from cloudinary.models import CloudinaryField # type: ignore
 
-User = get_user_model()
+# User = get_user_model()
 # Create your models here.
 
 class ServiceCategory(models.TextChoices):
@@ -42,7 +42,37 @@ class RegionChoices(models.TextChoices):
     AHAFO="AR",_("Ahafo")
     BONO="BR",_("Bono")
     WESTERN_NORTH="WN",_("Western North")
+
+class CustomUser(AbstractUser):
+    USER_TYPE_CHOICES = (
+        ('admin', 'Admin'),
+        ('manager', 'Hotel Manager'),
+        ('Guest', 'Guest'),
+        ('staff', 'Staff'),
+    )
+    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, default='Guest')
+    is_verified = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+        ordering = ('username',)
+        indexes = [
+            models.Index(fields=['-created_at']),
+        ]
+
+    def __str__(self):
+        return self.username
     
+    @property
+    def is_guest(self):
+        return self.user_type == 'Guest'
+    
+    @property
+    def is_manager(self):
+        return self.user_type == 'manager'
+
 class Rating(models.Model):
     star = models.PositiveIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)],
@@ -205,7 +235,7 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
 class Guest(models.Model):
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='guest_profile')
+    user = models.OneToOneField(CustomUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='guest_profile')
     first_name = models.CharField(max_length=100, verbose_name=_("First Name"))
     last_name = models.CharField(max_length=100, verbose_name=_("Last Name"))
     email = models.EmailField(blank=True, null=True, verbose_name=_("Email Address"))
@@ -245,7 +275,7 @@ class OurRoomsImage(models.Model):
         return self.room.room_type
    
 class Manager(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='manager')
+    user=models.OneToOneField(CustomUser,on_delete=models.CASCADE,related_name='manager')
     phone = models.CharField(max_length=13, unique=True)
     hotel_post=models.ForeignKey(Hotel,on_delete=models.SET_NULL, null=True,blank=True)
     

@@ -1,14 +1,13 @@
 from django import forms
 from typing import Any
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from django.forms import DateInput, TimeInput
 from .models import ProfileModel
-from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service
+from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service,CustomUser
 
 class CreateUserForm(UserCreationForm):
     class Meta:
-        model = User
+        model = CustomUser
         fields = [
             'username',
             'email',

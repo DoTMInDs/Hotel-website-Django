@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
+from .models import ProfileModel
 from core.models import Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking
 from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -32,11 +33,15 @@ def login_user(request):
             login(request, user)
             Guest.objects.get_or_create(user=user)
             messages.success(request, "Logged In successfully!!")
-            return redirect('home')
+            if user.user_type == 'manager':
+                return redirect('dashboard')
+            elif user.user_type == 'Staff':
+                return redirect('staff_dashboard')
+            else:
+                return redirect('home')
         else:
             print('there is an error')
             messages.error(request, "Please input a valid username and password!!") 
-                
 
     return render(request, 'account/login.html')
 
@@ -51,7 +56,11 @@ def sign_up(request):
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.is_active = True  # Activate user immediately
+            user.is_verified = True  # Mark user as verified
+            user.user_type = 'Guest'  # Set user type to 'Guest'
+            user.save()
             messages.success(request, "You have successfully registered an account!!")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
@@ -158,6 +167,8 @@ def manage_account(request):
     if not hotel:
         messages.error(request, "You are not registered as a hotel manager")
         return redirect('home')
+    
+    profile, created = ProfileModel.objects.get_or_create(user=request.user)
     if request.method == "POST":
         p_form = UserUpdateForm(request.POST, request.FILES, instance=request.user.profilemodel)
         if p_form.is_valid():
