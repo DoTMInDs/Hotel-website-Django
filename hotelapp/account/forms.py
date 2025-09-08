@@ -277,8 +277,8 @@ class StaffForm(forms.ModelForm):
                 'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
             }),
             'address': forms.Textarea(attrs={
-                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
-                'rows': 3,
+                'class': 'block w-full px-3 py-3 shadow rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'rows': 2,
                 'placeholder': 'Enter address'
             }),
             'emergency_contact': forms.TextInput(attrs={
@@ -294,7 +294,7 @@ class StaffForm(forms.ModelForm):
                 'type': 'date'
             }),
             'notes': forms.Textarea(attrs={
-                'class': 'block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
+                'class': 'block w-full px-3 py-3 shadow  rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
                 'rows': 3,
                 'placeholder': 'Additional notes'
             }),

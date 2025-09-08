@@ -3011,3 +3011,428 @@ INFO 2025-09-06 03:28:08,129 basehttp 18400 24312 "GET /guest/ HTTP/1.1" 200 213
 WARNING 2025-09-06 03:28:08,187 basehttp 18400 24312 "GET /static/css/dist/styles.css?v=1757172488 HTTP/1.1" 404 1884
 INFO 2025-09-06 03:28:11,256 basehttp 18400 8248 "GET /guest/ HTTP/1.1" 200 21371
 INFO 2025-09-06 03:28:11,288 basehttp 18400 8248 "GET /static/css/dist/styles.css?v=1757172491 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:28:43,933 autoreload 20836 6596 Watching for file changes with StatReloader
+INFO 2025-09-08 05:29:20,087 basehttp 20836 10152 "GET /guest/ HTTP/1.1" 302 0
+INFO 2025-09-08 05:29:20,314 basehttp 20836 10152 "GET /login/?next=/guest/ HTTP/1.1" 200 11875
+INFO 2025-09-08 05:29:20,429 basehttp 20836 10152 "GET /static/css/dist/styles.css?v=1757352560 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:29:43,455 basehttp 20836 14492 "POST /login/?next=/guest/ HTTP/1.1" 302 0
+INFO 2025-09-08 05:29:43,635 basehttp 20836 14492 "GET /dashboard/ HTTP/1.1" 200 60997
+INFO 2025-09-08 05:29:43,684 basehttp 20836 14492 "GET /static/css/dist/styles.css?v=1757352583 HTTP/1.1" 200 81543
+WARNING 2025-09-08 05:29:55,930 log 20836 20196 Not Found: /api/mark-reservations-seen/
+WARNING 2025-09-08 05:29:55,931 basehttp 20836 20196 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-09-08 05:29:56,103 basehttp 20836 6860 "GET /reservation/ HTTP/1.1" 200 46802
+INFO 2025-09-08 05:29:56,221 basehttp 20836 6860 "GET /static/css/dist/styles.css?v=1757352595 HTTP/1.1" 200 81543
+WARNING 2025-09-08 05:30:01,547 log 20836 20196 Not Found: /api/mark-guests-seen/
+WARNING 2025-09-08 05:30:01,548 basehttp 20836 20196 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-09-08 05:30:01,583 basehttp 20836 19392 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-08 05:30:01,646 basehttp 20836 19392 "GET /static/css/dist/styles.css?v=1757352601 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:30:04,189 basehttp 20836 20196 "GET /manage-hotel-account/ HTTP/1.1" 200 47595
+INFO 2025-09-08 05:30:04,249 basehttp 20836 20196 "GET /static/css/dist/styles.css?v=1757352604 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:30:45,153 basehttp 20836 19116 "POST /manage-hotel-account/ HTTP/1.1" 302 0
+INFO 2025-09-08 05:30:45,202 basehttp 20836 19116 "GET /manage-hotel-account/ HTTP/1.1" 200 49740
+INFO 2025-09-08 05:30:45,253 basehttp 20836 19116 "GET /static/css/dist/styles.css?v=1757352645 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:31:13,335 basehttp 20836 17524 "GET /manage-hotel-account/ HTTP/1.1" 200 48397
+INFO 2025-09-08 05:31:13,392 basehttp 20836 17524 "GET /static/css/dist/styles.css?v=1757352673 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:31:18,193 basehttp 20836 22736 "GET /dashboard/ HTTP/1.1" 200 58371
+INFO 2025-09-08 05:31:18,255 basehttp 20836 22736 "GET /static/css/dist/styles.css?v=1757352678 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:31:24,732 basehttp 20836 7088 "GET /edit_staff/1/ HTTP/1.1" 200 27363
+INFO 2025-09-08 05:31:24,831 basehttp 20836 7088 "GET /static/css/dist/styles.css?v=1757352684 HTTP/1.1" 200 81543
+INFO 2025-09-08 05:32:00,361 basehttp 20836 12956 "GET /edit_staff/1/ HTTP/1.1" 200 27363
+INFO 2025-09-08 05:32:00,435 basehttp 20836 12956 "GET /static/css/dist/styles.css?v=1757352720 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:32:51,625 basehttp 20836 11152 "GET /edit_staff/1/ HTTP/1.1" 200 27366
+INFO 2025-09-08 05:32:51,689 basehttp 20836 11152 "GET /static/css/dist/styles.css?v=1757352771 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:32:53,851 basehttp 20836 9728 "GET /edit_staff/1/ HTTP/1.1" 200 27369
+INFO 2025-09-08 05:32:53,896 basehttp 20836 9728 "GET /static/css/dist/styles.css?v=1757352773 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:32:56,037 basehttp 20836 9248 "GET /edit_staff/1/ HTTP/1.1" 200 27370
+INFO 2025-09-08 05:32:56,071 basehttp 20836 9248 "GET /static/css/dist/styles.css?v=1757352776 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:32:59,397 basehttp 20836 13084 "GET /edit_staff/1/ HTTP/1.1" 200 27374
+INFO 2025-09-08 05:32:59,479 basehttp 20836 13084 "GET /static/css/dist/styles.css?v=1757352779 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:33:01,784 basehttp 20836 22088 "GET /edit_staff/1/ HTTP/1.1" 200 27376
+INFO 2025-09-08 05:33:01,852 basehttp 20836 22088 "GET /static/css/dist/styles.css?v=1757352781 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:33:04,893 basehttp 20836 10068 "GET /edit_staff/1/ HTTP/1.1" 200 27381
+INFO 2025-09-08 05:33:04,920 basehttp 20836 10068 "GET /static/css/dist/styles.css?v=1757352784 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:33:09,237 basehttp 20836 4028 "GET /edit_staff/1/ HTTP/1.1" 200 27396
+INFO 2025-09-08 05:33:09,309 basehttp 20836 4028 "GET /static/css/dist/styles.css?v=1757352789 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:33:12,438 basehttp 20836 23428 "GET /edit_staff/1/ HTTP/1.1" 200 27396
+INFO 2025-09-08 05:33:12,481 basehttp 20836 23428 "GET /static/css/dist/styles.css?v=1757352792 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:35:36,739 basehttp 20836 10476 "GET /edit_staff/1/ HTTP/1.1" 200 27400
+INFO 2025-09-08 05:35:36,793 basehttp 20836 10476 "GET /static/css/dist/styles.css?v=1757352936 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:35:43,085 basehttp 20836 7372 "GET /edit_staff/1/ HTTP/1.1" 200 27396
+INFO 2025-09-08 05:35:43,138 basehttp 20836 7372 "GET /static/css/dist/styles.css?v=1757352943 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:36:39,506 autoreload 20836 6596 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:36:40,531 autoreload 15948 22004 Watching for file changes with StatReloader
+INFO 2025-09-08 05:36:42,047 basehttp 15948 5296 "GET /edit_staff/1/ HTTP/1.1" 200 27397
+INFO 2025-09-08 05:36:42,192 basehttp 15948 5296 "GET /static/css/dist/styles.css?v=1757353001 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:36:59,395 autoreload 15948 22004 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:37:00,955 autoreload 7724 17512 Watching for file changes with StatReloader
+INFO 2025-09-08 05:37:01,856 basehttp 7724 22192 "GET /edit_staff/1/ HTTP/1.1" 200 27398
+INFO 2025-09-08 05:37:01,966 basehttp 7724 22192 "GET /static/css/dist/styles.css?v=1757353021 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:37:13,518 basehttp 7724 8992 "POST /edit_staff/1/ HTTP/1.1" 200 27713
+INFO 2025-09-08 05:37:13,569 basehttp 7724 8992 "GET /static/css/dist/styles.css?v=1757353033 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:12,642 basehttp 7724 14224 "POST /edit_staff/1/ HTTP/1.1" 200 27742
+INFO 2025-09-08 05:38:12,694 basehttp 7724 14224 "GET /static/css/dist/styles.css?v=1757353092 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:17,914 basehttp 7724 4136 "POST /edit_staff/1/ HTTP/1.1" 200 27744
+INFO 2025-09-08 05:38:17,970 basehttp 7724 4136 "GET /static/css/dist/styles.css?v=1757353097 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:18,992 basehttp 7724 10036 "POST /edit_staff/1/ HTTP/1.1" 200 27749
+INFO 2025-09-08 05:38:19,019 basehttp 7724 10036 "GET /static/css/dist/styles.css?v=1757353098 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:24,312 basehttp 7724 14364 "POST /edit_staff/1/ HTTP/1.1" 200 27760
+INFO 2025-09-08 05:38:24,354 basehttp 7724 14364 "GET /static/css/dist/styles.css?v=1757353104 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:27,553 basehttp 7724 15592 "POST /edit_staff/1/ HTTP/1.1" 200 27789
+INFO 2025-09-08 05:38:27,587 basehttp 7724 15592 "GET /static/css/dist/styles.css?v=1757353107 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:30,783 basehttp 7724 17436 "POST /edit_staff/1/ HTTP/1.1" 200 27953
+INFO 2025-09-08 05:38:30,830 basehttp 7724 17436 "GET /static/css/dist/styles.css?v=1757353110 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:31,814 basehttp 7724 12300 "POST /edit_staff/1/ HTTP/1.1" 200 27955
+INFO 2025-09-08 05:38:31,856 basehttp 7724 12300 "GET /static/css/dist/styles.css?v=1757353111 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:32,857 basehttp 7724 19392 "POST /edit_staff/1/ HTTP/1.1" 200 27988
+INFO 2025-09-08 05:38:32,903 basehttp 7724 19392 "GET /static/css/dist/styles.css?v=1757353112 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:33,887 basehttp 7724 14916 "POST /edit_staff/1/ HTTP/1.1" 200 27990
+INFO 2025-09-08 05:38:33,932 basehttp 7724 14916 "GET /static/css/dist/styles.css?v=1757353113 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:38:38,954 basehttp 7724 22332 "GET /edit_staff/1/ HTTP/1.1" 200 27675
+INFO 2025-09-08 05:38:38,999 basehttp 7724 22332 "GET /static/css/dist/styles.css?v=1757353118 HTTP/1.1" 200 104468
+ERROR 2025-09-08 05:39:02,258 log 7724 1292 Internal Server Error: /edit_staff/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 574, in edit_staff
+    return render(request, 'dashboard/edit-staff.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''join_date',' from 'form.'join_date','
+ERROR 2025-09-08 05:39:02,276 basehttp 7724 1292 "GET /edit_staff/1/ HTTP/1.1" 500 216761
+ERROR 2025-09-08 05:39:05,593 log 7724 5212 Internal Server Error: /edit_staff/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 574, in edit_staff
+    return render(request, 'dashboard/edit-staff.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''join_date' from 'form.'join_date'
+ERROR 2025-09-08 05:39:05,610 basehttp 7724 5212 "GET /edit_staff/1/ HTTP/1.1" 500 216621
+ERROR 2025-09-08 05:39:07,820 log 7724 12460 Internal Server Error: /edit_staff/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 574, in edit_staff
+    return render(request, 'dashboard/edit-staff.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''join_date' from 'form.'join_date'
+ERROR 2025-09-08 05:39:07,826 basehttp 7724 12460 "GET /edit_staff/1/ HTTP/1.1" 500 216068
+ERROR 2025-09-08 05:39:10,999 log 7724 22088 Internal Server Error: /edit_staff/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 574, in edit_staff
+    return render(request, 'dashboard/edit-staff.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''join_date'' from 'form.'join_date''
+ERROR 2025-09-08 05:39:11,006 basehttp 7724 22088 "GET /edit_staff/1/ HTTP/1.1" 500 216741
+ERROR 2025-09-08 05:39:15,328 log 7724 12876 Internal Server Error: /edit_staff/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 574, in edit_staff
+    return render(request, 'dashboard/edit-staff.html', context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''join_date' from 'form.'join_date'
+ERROR 2025-09-08 05:39:15,336 basehttp 7724 12876 "GET /edit_staff/1/ HTTP/1.1" 500 216621
+INFO 2025-09-08 05:39:17,453 basehttp 7724 23668 "GET /edit_staff/1/ HTTP/1.1" 200 28001
+INFO 2025-09-08 05:39:17,494 basehttp 7724 23668 "GET /static/css/dist/styles.css?v=1757353157 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:39:57,912 autoreload 7724 17512 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:40:00,183 autoreload 11408 7516 Watching for file changes with StatReloader
+INFO 2025-09-08 05:40:01,229 basehttp 11408 7112 "GET /edit_staff/1/ HTTP/1.1" 200 27987
+INFO 2025-09-08 05:40:01,350 basehttp 11408 7112 "GET /static/css/dist/styles.css?v=1757353201 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:40:11,931 autoreload 11408 7516 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:40:13,160 autoreload 19916 15740 Watching for file changes with StatReloader
+INFO 2025-09-08 05:40:14,313 basehttp 19916 19628 "GET /edit_staff/1/ HTTP/1.1" 200 27974
+INFO 2025-09-08 05:40:14,456 basehttp 19916 19628 "GET /static/css/dist/styles.css?v=1757353214 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:40:33,291 autoreload 19916 15740 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:40:37,881 autoreload 23808 20744 Watching for file changes with StatReloader
+INFO 2025-09-08 05:40:39,000 basehttp 23808 23064 "GET /edit_staff/1/ HTTP/1.1" 200 27968
+INFO 2025-09-08 05:40:39,132 basehttp 23808 23064 "GET /static/css/dist/styles.css?v=1757353238 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:41:05,351 autoreload 23808 20744 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py changed, reloading.
+INFO 2025-09-08 05:41:06,389 autoreload 23576 6264 Watching for file changes with StatReloader
+INFO 2025-09-08 05:41:07,525 basehttp 23576 1004 "GET /edit_staff/1/ HTTP/1.1" 200 27968
+INFO 2025-09-08 05:41:07,634 basehttp 23576 1004 "GET /static/css/dist/styles.css?v=1757353267 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:41:19,359 basehttp 23576 2152 "POST /edit_staff/1/ HTTP/1.1" 302 0
+INFO 2025-09-08 05:41:19,418 basehttp 23576 2152 "GET /dashboard/ HTTP/1.1" 200 59690
+INFO 2025-09-08 05:41:19,470 basehttp 23576 2152 "GET /static/css/dist/styles.css?v=1757353279 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:41:24,589 basehttp 23576 23396 "GET /add-room/ HTTP/1.1" 200 59060
+INFO 2025-09-08 05:41:24,626 basehttp 23576 23396 "GET /static/css/dist/styles.css?v=1757353284 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:41:29,265 basehttp 23576 21284 "GET /services/ HTTP/1.1" 200 38323
+INFO 2025-09-08 05:41:29,313 basehttp 23576 21284 "GET /static/css/dist/styles.css?v=1757353289 HTTP/1.1" 200 104468
+WARNING 2025-09-08 05:41:32,656 log 23576 18504 Not Found: /api/mark-guests-seen/
+WARNING 2025-09-08 05:41:32,657 basehttp 23576 18504 "POST /api/mark-guests-seen/ HTTP/1.1" 404 13454
+INFO 2025-09-08 05:41:32,678 basehttp 23576 5928 "GET /guest/ HTTP/1.1" 200 21371
+INFO 2025-09-08 05:41:32,722 basehttp 23576 5928 "GET /static/css/dist/styles.css?v=1757353292 HTTP/1.1" 200 104468
+WARNING 2025-09-08 05:41:34,391 log 23576 18504 Not Found: /api/mark-reservations-seen/
+WARNING 2025-09-08 05:41:34,391 basehttp 23576 18504 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 13472
+INFO 2025-09-08 05:41:34,435 basehttp 23576 8980 "GET /reservation/ HTTP/1.1" 200 46802
+INFO 2025-09-08 05:41:34,477 basehttp 23576 8980 "GET /static/css/dist/styles.css?v=1757353294 HTTP/1.1" 200 104468
+INFO 2025-09-08 05:43:52,705 basehttp 23576 2752 "GET /reservation/ HTTP/1.1" 200 46802
+WARNING 2025-09-08 05:43:52,763 basehttp 23576 2752 "GET /static/css/dist/styles.css?v=1757353432 HTTP/1.1" 404 1884
+INFO 2025-09-08 05:43:56,925 basehttp 23576 22240 "GET /reservation/ HTTP/1.1" 200 46802
+INFO 2025-09-08 05:43:56,956 basehttp 23576 22240 "GET /static/css/dist/styles.css?v=1757353436 HTTP/1.1" 200 81543

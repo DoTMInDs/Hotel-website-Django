@@ -33,7 +33,7 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                <form method="POST" enctype="multipart/form-data" class="bg-transparent shadow">
+                <form method="POST" enctype="multipart/form-data" class="bg-transparent shadow max-w-7xl mx-auto p-6 rounded-lg">
                     {% csrf_token %}
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Left Column -->
@@ -90,6 +90,11 @@
                             <div class="mb-4">
                                 <label class="block text-sm font-medium text-slate-700 mb-1">Address</label>
                                 {{ form.address }}
+                            </div>
+                            <!--Joined date-->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Joined Date</label>
+                                {{ form.join_date }}  
                             </div>
                             
                             <div class="flex items-center mb-4">
