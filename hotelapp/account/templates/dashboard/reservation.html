@@ -96,20 +96,42 @@
                             </div>
                         </div>
                         
-                        <!-- Status Update Form -->
+                        <!-- Modern Status Badge + Dropdown (UI only — no form) -->
                         <div class="mb-4 p-3 bg-gray-50 rounded-lg">
-                            <form method="post" class="flex items-center gap-2">
-                                {% csrf_token %}
-                                <input type="hidden" name="reservation_id" value="{{ reservation.id }}">
-                                <input type="hidden" name="room" value="{{ reservation.room.id }}">
-                                <input type="hidden" name="update_status" value="true">
+                            <div class="status-wrapper flex items-center gap-2" data-reservation-id="{{ reservation.id }}" data-room-id="{{ reservation.room.id }}" data-current-status="{{ reservation.status }}">
                                 <label class="text-xs font-medium text-gray-700">Status:</label>
-                                <select name="status" onchange="this.form.submit()" class="flex-1 text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
-                                    {% for value, label in status_choices %}
-                                        <option value="{{ value }}" {% if reservation.status == value %}selected{% endif %}>{{ label }}</option>
-                                    {% endfor %}
-                                </select>
-                            </form>
+
+                                <div class="relative">
+                                    {% comment %} Badge color by status (display only) {% endcomment %}
+                                    <button type="button" class="status-badge inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3 py-1 focus:outline-none transition"
+                                        data-current="{{ reservation.status }}"
+                                        aria-expanded="false">
+                                        {% if reservation.status == 'Confirmed' %}
+                                            <span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+                                        {% elif reservation.status == 'Pending' %}
+                                            <span class="w-2 h-2 rounded-full bg-yellow-500 inline-block"></span>
+                                        {% elif reservation.status == 'Checked In' %}
+                                            <span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
+                                        {% elif reservation.status == 'Checked Out' %}
+                                            <span class="w-2 h-2 rounded-full bg-gray-500 inline-block"></span>
+                                        {% elif reservation.status == 'Cancelled' %}
+                                            <span class="w-2 h-2 rounded-full bg-red-500 inline-block"></span>
+                                        {% else %}
+                                            <span class="w-2 h-2 rounded-full bg-gray-400 inline-block"></span>
+                                        {% endif %}
+                                        <span class="status-label">{{ reservation.get_status_display }}</span>
+                                        <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+
+                                    <div class="status-dropdown hidden absolute right-0 mt-2 w-44 bg-white border rounded-md shadow-lg z-10 py-1">
+                                        {% for value, label in status_choices %}
+                                            <button type="button" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-50 status-option" data-value="{{ value }}">{{ label }}</button>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="flex items-center justify-end space-x-2 pt-3 border-t border-gray-200">
@@ -187,17 +209,33 @@
                                     <div class="text-sm text-gray-500">{{ reservation.check_out_time|time:"g:i A" }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <form method="post" class="flex items-center gap-2">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="reservation_id" value="{{ reservation.id }}">
-                                        <input type="hidden" name="room" value="{{ reservation.room.id }}">
-                                        <input type="hidden" name="update_status" value="true">
-                                        <select name="status" onchange="this.form.submit()" class="text-sm border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
-                                            {% for value, label in status_choices %}
-                                                <option value="{{ value }}" {% if reservation.status == value %}selected{% endif %}>{{ label }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </form>
+                                        <div class="status-wrapper inline-flex items-center gap-2" data-reservation-id="{{ reservation.id }}" data-room-id="{{ reservation.room.id }}" data-current-status="{{ reservation.status }}">
+                                            <div class="relative">
+                                                <button class="status-badge inline-flex items-center gap-2 cursor-not-allowed text-sm font-semibold rounded-full px-3 py-1 focus:outline-none transition"
+                                                    data-current="{{ reservation.status }}" aria-expanded="false">
+                                                    {% if reservation.status == 'Confirmed' %}
+                                                        <span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+                                                    {% elif reservation.status == 'Pending' %}
+                                                        <span class="w-2 h-2 rounded-full bg-yellow-500 inline-block"></span>
+                                                    {% elif reservation.status == 'Checked In' %}
+                                                        <span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
+                                                    {% elif reservation.status == 'Checked Out' %}
+                                                        <span class="w-2 h-2 rounded-full bg-gray-500 inline-block"></span>
+                                                    {% elif reservation.status == 'Cancelled' %}
+                                                        <span class="w-2 h-2 rounded-full bg-red-500 inline-block"></span>
+                                                    {% else %}
+                                                        <span class="w-2 h-2 rounded-full bg-gray-400 inline-block"></span>
+                                                    {% endif %}
+                                                    <span class="status-label">{{ reservation.get_status_display }}</span>
+                                                </button>
+
+                                                <div class="status-dropdown hidden absolute right-0 mt-2 w-44 bg-white border rounded-md shadow-lg z-10 py-1">
+                                                    {% for value, label in status_choices %}
+                                                        <button type="button" class="w-full text-left px-3 py-2 text-sm hover:bg-gray-50 status-option" data-value="{{ value }}">{{ label }}</button>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                     <div class="flex items-center space-x-3">
@@ -398,6 +436,72 @@
                 }, 5000);
             });
         });
+
+        // Status badge dropdown behavior
+        (function(){
+            // Open/close dropdown when clicking badge
+            document.querySelectorAll('.status-badge').forEach(btn => {
+                btn.addEventListener('click', function(e){
+                    e.stopPropagation();
+                    const wrapper = this.closest('form');
+                    const dropdown = wrapper.querySelector('.status-dropdown');
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    // close other open dropdowns
+                    document.querySelectorAll('.status-dropdown').forEach(dd => { if(dd !== dropdown) dd.classList.add('hidden'); });
+                    document.querySelectorAll('.status-badge').forEach(b => { if(b !== this) b.setAttribute('aria-expanded', 'false'); });
+
+                    if (expanded) {
+                        dropdown.classList.add('hidden');
+                        this.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdown.classList.remove('hidden');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Option click -> update badge UI only (no form submission)
+            document.querySelectorAll('.status-option').forEach(option => {
+                option.addEventListener('click', function(e){
+                    e.stopPropagation();
+                    const value = this.getAttribute('data-value');
+                    const wrapper = this.closest('.status-wrapper');
+                    const badge = wrapper.querySelector('.status-badge');
+
+                    // update badge label and color for perceived responsiveness
+                    const label = this.textContent.trim();
+                    const dot = badge.querySelector('span');
+                    const labelSpan = badge.querySelector('.status-label');
+                    labelSpan.textContent = label;
+                    // simple color mapping
+                    dot.className = 'w-2 h-2 rounded-full inline-block ' + (
+                        value === 'Confirmed' ? 'bg-green-500' :
+                        value === 'Pending' ? 'bg-yellow-500' :
+                        value === 'Checked In' ? 'bg-blue-500' :
+                        value === 'Checked Out' ? 'bg-gray-500' :
+                        value === 'Cancelled' ? 'bg-red-500' : 'bg-gray-400'
+                    );
+
+                    // close dropdown
+                    const dropdown = wrapper.querySelector('.status-dropdown');
+                    dropdown.classList.add('hidden');
+                    badge.setAttribute('aria-expanded', 'false');
+
+                    // store new status in data attribute (client-only)
+                    wrapper.setAttribute('data-current-status', value);
+
+                    // NOTE: this no longer posts to the server. If you'd like to persist
+                    // the change, we can wire this to an API endpoint (fetch) and show
+                    // success/error to the user.
+                });
+            });
+
+            // Close dropdown on outside click
+            document.addEventListener('click', function(){
+                document.querySelectorAll('.status-dropdown').forEach(dd => dd.classList.add('hidden'));
+                document.querySelectorAll('.status-badge').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            });
+        })();
     </script>
 
 {% endblock %}

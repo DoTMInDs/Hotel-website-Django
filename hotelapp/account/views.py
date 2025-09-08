@@ -174,7 +174,7 @@ def manage_account(request):
         if p_form.is_valid():
             p_form.save()
             messages.success(request, "Profile updated successfully!")
-            return redirect('profile')
+            return redirect('manage-account')
         else:
             messages.error(request, "Your data wasn't saved.. Please check your form!!")
     else:
