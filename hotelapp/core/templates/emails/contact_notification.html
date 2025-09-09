@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>body{font-family:Arial,Helvetica,sans-serif;color:#111}</style>
+    <title>New Contact Request</title>
+  </head>
+  <body>
+    <h2>New contact request from {{ lead.full_name }}</h2>
+    <p><strong>Email:</strong> {{ lead.email }}</p>
+    <p><strong>Phone:</strong> {{ lead.phone }}</p>
+    {% if lead.hotel_name %}<p><strong>Hotel Name:</strong> {{ lead.hotel_name }}</p>{% endif %}
+    <p><strong>Message:</strong></p>
+    <div style="background:#f7f7f7;padding:12px;border-radius:6px">{{ lead.message|linebreaksbr }}</div>
+    <p style="margin-top:14px;color:#666">Submitted on {{ lead.created_at }}</p>
+  </body>
+</html>

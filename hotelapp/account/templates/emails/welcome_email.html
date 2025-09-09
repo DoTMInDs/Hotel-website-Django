@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Welcome to {{ site_name }}</title>
+        <style>
+            /* Basic inline-friendly styles for email clients */
+            body { margin:0; padding:0; background-color:#f3f4f6; font-family: Arial, Helvetica, sans-serif; }
+            .wrapper { width:100%; table-layout:fixed; background-color:#f3f4f6; padding:32px 0; }
+            .container { max-width:640px; margin:0 auto; background:#ffffff; border-radius:8px; overflow:hidden; }
+            .hero { background:linear-gradient(90deg,#0ea5a4,#2563eb); color:#fff; padding:28px 24px; text-align:center; }
+            .logo { font-weight:700; font-size:20px; letter-spacing:0.2px; }
+            .title { font-size:22px; margin:8px 0 0; }
+            .sub { font-size:14px; opacity:0.9; margin-top:6px; }
+            .content { padding:24px; color:#374151; font-size:15px; line-height:1.5; }
+            .btn { display:inline-block; background:#0ea5a4; color:#fff; text-decoration:none; padding:12px 18px; border-radius:6px; font-weight:600; }
+            .muted { color:#6b7280; font-size:13px; }
+            .card { background:#f9fafb; border-radius:6px; padding:14px; margin:14px 0; }
+            .two { display:flex; gap:12px; flex-wrap:wrap; }
+            .left { flex:1 1 220px; }
+            .right { flex:1 1 220px; }
+            .footer { padding:18px 24px; font-size:13px; color:#6b7280; text-align:center; }
+            a.social { margin:0 6px; color:#6b7280; text-decoration:none; }
+            @media (max-width:480px){ .two{flex-direction:column} .hero{padding:20px} .content{padding:18px} }
+        </style>
+    </head>
+    <body>
+        <table class="wrapper" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <table class="container" width="100%" cellpadding="0" cellspacing="0">
+                        <!-- Hero -->
+                        <tr>
+                            <td class="hero">
+                                <div class="logo">{{ site_name }}</div>
+                                <div class="title">Welcome, {{ user.first_name|default:user.username }}!</div>
+                                <div class="sub">We're delighted you've chosen to stay with us.</div>
+                            </td>
+                        </tr>
+
+                        <!-- Content -->
+                        <tr>
+                            <td class="content">
+                                <p style="margin-top:0">Thank you for creating an account at <strong>{{ site_name }}</strong>. Your profile is ready — you can now search rooms, make reservations, and manage bookings quickly from your dashboard.</p>
+
+                                <div class="two">
+                                    <div class="card left">
+                                        <strong>Reservation quick links</strong>
+                                        <p class="muted" style="margin:8px 0 0">Manage your upcoming bookings or create a new reservation:</p>
+                                        <p style="margin:12px 0 0"><a href="{{ site_url|default:'#' }}" class="btn">Make a Reservation</a></p>
+                                    </div>
+
+                                    <div class="card right">
+                                        <strong>Your account</strong>
+                                        <p class="muted" style="margin:8px 0 0">Username: <strong>{{ user.username }}</strong><br>Email: <strong>{{ user.email }}</strong></p>
+                                        {% if user.get_user_type_display %}
+                                            <p class="muted" style="margin:8px 0 0">Account type: <strong>{{ user.get_user_type_display }}</strong></p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="card" style="margin-top:8px">
+                                    <strong>Need help?</strong>
+                                    <p class="muted" style="margin:8px 0 0">Contact our front desk or reservations team:</p>
+                                    <p style="margin:8px 0 0">Email: <a href="mailto:{{ hotel_email|default:'support@'|add:site_name|add:'.com' }}">{{ hotel_email|default:'support@'|add:site_name|add:'.com' }}</a><br>Phone: {{ hotel_phone|default:'+' }}</p>
+                                </div>
+
+                                <p style="margin:10px 0 0">We look forward to hosting you. If you have any special requests, let us know and we'll do our best to accommodate them.</p>
+
+                                <p class="muted" style="margin-top:14px">Warm regards,<br>The {{ site_name }} Team</p>
+                            </td>
+                        </tr>
+
+                        <!-- Footer -->
+                        <tr>
+                            <td class="footer">
+                                <div style="margin-bottom:8px">Follow us</div>
+                                <div>
+                                    <a class="social" href="#">Facebook</a> · <a class="social" href="#">Instagram</a> · <a class="social" href="#">Twitter</a>
+                                </div>
+                                <div style="margin-top:12px" class="muted">This email was sent to {{ user.email }}. If you didn't create this account, please ignore this message.</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

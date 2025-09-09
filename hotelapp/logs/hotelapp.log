@@ -3580,3 +3580,46 @@ INFO 2025-09-08 06:08:08,400 basehttp 3644 16072 "GET / HTTP/1.1" 200 14770
 WARNING 2025-09-08 06:08:08,450 basehttp 3644 16072 "GET /static/css/dist/styles.css?v=1757354888 HTTP/1.1" 404 1884
 INFO 2025-09-08 06:08:12,558 basehttp 3644 22044 "GET / HTTP/1.1" 200 14770
 INFO 2025-09-08 06:08:12,588 basehttp 3644 22044 "GET /static/css/dist/styles.css?v=1757354892 HTTP/1.1" 200 81945
+INFO 2025-09-08 21:09:23,320 autoreload 22576 21188 Watching for file changes with StatReloader
+INFO 2025-09-08 21:13:15,870 autoreload 22576 21188 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-08 21:13:18,156 autoreload 23676 22184 Watching for file changes with StatReloader
+INFO 2025-09-08 21:13:43,178 autoreload 23676 22184 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-08 21:13:44,126 autoreload 13936 8232 Watching for file changes with StatReloader
+INFO 2025-09-08 21:44:46,517 autoreload 13936 8232 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-09-08 21:44:47,750 autoreload 16860 20420 Watching for file changes with StatReloader
+INFO 2025-09-08 21:52:09,343 autoreload 16860 20420 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:52:11,544 autoreload 740 20056 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:11,526 autoreload 740 20056 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:12,588 autoreload 7972 8336 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:15,019 autoreload 7972 8336 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:15,899 autoreload 4488 5160 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:20,860 autoreload 4488 5160 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:21,807 autoreload 1656 19984 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:31,315 autoreload 1656 19984 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:33,008 autoreload 21940 19736 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:42,970 autoreload 21940 19736 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:43,932 autoreload 10488 7384 Watching for file changes with StatReloader
+INFO 2025-09-08 21:53:55,505 autoreload 10488 7384 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:53:56,896 autoreload 16484 3540 Watching for file changes with StatReloader
+INFO 2025-09-08 21:54:00,080 autoreload 16484 3540 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:54:01,517 autoreload 11068 14224 Watching for file changes with StatReloader
+INFO 2025-09-08 21:54:03,776 autoreload 11068 14224 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:54:04,534 autoreload 17752 9732 Watching for file changes with StatReloader
+INFO 2025-09-08 21:54:11,848 autoreload 17752 9732 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:54:12,626 autoreload 24012 22384 Watching for file changes with StatReloader
+INFO 2025-09-08 21:54:27,475 autoreload 24012 22384 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:54:28,300 autoreload 16992 18712 Watching for file changes with StatReloader
+INFO 2025-09-08 21:54:30,493 autoreload 16992 18712 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:54:31,473 autoreload 13540 17852 Watching for file changes with StatReloader
+INFO 2025-09-08 21:59:19,042 autoreload 13540 17852 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:59:20,060 autoreload 19668 19256 Watching for file changes with StatReloader
+INFO 2025-09-08 21:59:24,874 autoreload 19668 19256 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:59:26,191 autoreload 1100 4284 Watching for file changes with StatReloader
+INFO 2025-09-08 21:59:29,783 autoreload 1100 4284 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:59:30,761 autoreload 13080 10984 Watching for file changes with StatReloader
+INFO 2025-09-08 21:59:39,326 autoreload 13080 10984 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 21:59:40,237 autoreload 22148 3928 Watching for file changes with StatReloader
+INFO 2025-09-08 22:02:20,584 autoreload 22148 3928 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 22:02:22,416 autoreload 14896 15868 Watching for file changes with StatReloader
+INFO 2025-09-08 22:03:44,522 autoreload 14896 15868 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-09-08 22:03:45,558 autoreload 20672 19644 Watching for file changes with StatReloader

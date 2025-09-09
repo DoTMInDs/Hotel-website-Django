@@ -12,6 +12,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from datetime import datetime
 
 from .models import Room,Rating,Hotel,Reservation,Booking,Guest
@@ -59,8 +60,55 @@ def contact(request):
     if request.method == 'POST':
         form = LeadForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Your message has been sent successfully! We will Email you details to login in your Dashboard... Thank You!!')
+            lead = form.save()
+
+            # Compose email settings and content
+            domain = getattr(settings, 'DOMAIN', request.get_host())
+            site_name = getattr(settings, 'SITE_NAME', 'Our Hotel')
+            from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'no-reply@%s' % request.get_host())
+            contact_recipient = getattr(settings, 'CONTACT_EMAIL', from_email)
+
+            # ---- Notify site / reservations team ----
+            try:
+                subject_admin = f"New contact request from {lead.full_name}"
+                html_admin = render_to_string('emails/contact_notification.html', {
+                    'lead': lead,
+                    'site_name': site_name,
+                    'domain': domain,
+                })
+                plain_admin = strip_tags(html_admin)
+                send_mail(
+                    subject_admin,
+                    plain_admin,
+                    from_email,
+                    [contact_recipient],
+                    html_message=html_admin,
+                    fail_silently=False,
+                )
+            except Exception as e:
+                logger.warning(f"Failed to send contact notification email: {e}")
+
+            # ---- Confirmation email to user ----
+            try:
+                subject_user = f"Thanks for contacting {site_name}"
+                html_user = render_to_string('emails/contact_confirmation.html', {
+                    'lead': lead,
+                    'site_name': site_name,
+                    'domain': domain,
+                })
+                plain_user = strip_tags(html_user)
+                send_mail(
+                    subject_user,
+                    plain_user,
+                    from_email,
+                    [lead.email],
+                    html_message=html_user,
+                    fail_silently=False,
+                )
+            except Exception as e:
+                logger.warning(f"Failed to send contact confirmation email to user: {e}")
+
+            messages.success(request, 'Your message has been sent successfully! You will receive a confirmation email shortly.')
             return redirect('contact')
         else:
             messages.error(request, 'Please fill in all fields correctly.')

@@ -11,6 +11,7 @@ from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from .utils import send_welcome_email
 
 def get_manager_hotel(user):
     try:
@@ -61,6 +62,14 @@ def sign_up(request):
             user.is_verified = True  # Mark user as verified
             user.user_type = 'Guest'  # Set user type to 'Guest'
             user.save()
+
+            # Send welcome email
+            try:
+                send_welcome_email(user)
+            except Exception as e:
+                # Log the error but don't prevent registration
+                print(f"Error sending welcome email: {e}")
+
             messages.success(request, "You have successfully registered an account!!")
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
@@ -510,7 +519,6 @@ def edit_service(request, pk):
         'title': f"Edit Service: {service.name}"
     }
     return render(request, 'dashboard/edit-service.html', context)
-
 
 
 def add_room_detail(request, pk):
