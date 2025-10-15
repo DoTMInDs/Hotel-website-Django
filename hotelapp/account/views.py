@@ -409,7 +409,7 @@ def add_room(request):
            room.hotel = hotel  
            room.save()
            messages.success(request, "Room added successfully!")
-           return redirect('dashboard')
+           return redirect('add-room')
         else:
            messages.error(request, "Room failed to save! Check your form...")
     else:

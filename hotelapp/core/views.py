@@ -66,27 +66,7 @@ def contact(request):
             domain = getattr(settings, 'DOMAIN', request.get_host())
             site_name = getattr(settings, 'SITE_NAME', 'Our Hotel')
             from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'no-reply@%s' % request.get_host())
-            contact_recipient = getattr(settings, 'CONTACT_EMAIL', from_email)
-
-            # ---- Notify site / reservations team ----
-            try:
-                subject_admin = f"New contact request from {lead.full_name}"
-                html_admin = render_to_string('emails/contact_notification.html', {
-                    'lead': lead,
-                    'site_name': site_name,
-                    'domain': domain,
-                })
-                plain_admin = strip_tags(html_admin)
-                send_mail(
-                    subject_admin,
-                    plain_admin,
-                    from_email,
-                    [contact_recipient],
-                    html_message=html_admin,
-                    fail_silently=False,
-                )
-            except Exception as e:
-                logger.warning(f"Failed to send contact notification email: {e}")
+            # contact_recipient = getattr(settings, 'CONTACT_EMAIL', from_email)
 
             # ---- Confirmation email to user ----
             try:
