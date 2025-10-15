@@ -210,6 +210,8 @@ CLOUDINARY_STORAGE = {
 PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')  # Replace with your actual secret key
 PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')  # For frontend
 
+DEFAULT_HOTEL_EMAIL = 'esmondabban@gmail.com'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587

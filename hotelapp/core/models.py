@@ -90,7 +90,7 @@ class Amenity(models.Model):
 class Hotel(models.Model):
     name = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=20, unique=True, null=True)
-    email = models.EmailField(blank=True, null=True)
+    email = models.EmailField(blank=False, null=False)
     location = models.CharField(max_length=100, null=True)
     description = models.TextField(blank=True, null=True)
     amenities = models.ManyToManyField('Amenity', blank=True, related_name='hotels')

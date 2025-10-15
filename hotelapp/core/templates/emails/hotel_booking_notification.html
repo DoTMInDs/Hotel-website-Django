@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #f4f4f4; padding: 10px; border-radius: 5px; text-align: center; }
+        .booking-details { background: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .guest-info { background: #f0f8ff; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .footer { margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee; font-size: 12px; color: #666; }
+        .highlight { background: #ffffcc; padding: 10px; border-left: 4px solid #ffcc00; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 New Booking Alert!</h1>
+            <p>{{ hotel.name }}</p>
+        </div>
+        
+        <p>Dear Hotel Management,</p>
+        
+        <p>You have received a new booking reservation. Please review the details below:</p>
+        
+        <div class="highlight">
+            <h3>📅 Booking Summary</h3>
+            <p><strong>Booking Reference:</strong> #{{ booking.id }}</p>
+            <p><strong>Booking Date:</strong> {{ booking_date|date:"F j, Y g:i A" }}</p>
+        </div>
+        
+        <div class="booking-details">
+            <h3>🏨 Room Details</h3>
+            <p><strong>Room:</strong> {{ room.room_number }} - {{ room.get_room_type_display }}</p>
+            <p><strong>Check-in:</strong> {{ booking.check_in_date }}</p>
+            <p><strong>Check-out:</strong> {{ booking.check_out_date }}</p>
+            <p><strong>Duration:</strong> {{ nights }} night{{ nights|pluralize }}</p>
+            <p><strong>Room Rate:</strong> ${{ room.price }}/night</p>
+            {% if booking.total_price %}
+            <p><strong>Total Amount:</strong> ${{ booking.total_price }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="guest-info">
+            <h3>👤 Guest Information</h3>
+            <p><strong>Name:</strong> {{ guest.first_name }} {{ guest.last_name }}</p>
+            <p><strong>Email:</strong> {{ guest.email }}</p>
+            <p><strong>Phone:</strong> {{ guest.phone_number|default:"Not provided" }}</p>
+            {% if booking.message %}
+            <p><strong>Special Requests:</strong><br>{{ booking.message }}</p>
+            {% endif %}
+        </div>
+        
+        <p>Please ensure the room is prepared and all arrangements are made for the guest's arrival.</p>
+        
+        <div class="footer">
+            <p>This is an automated notification from your booking system.</p>
+            <p>Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

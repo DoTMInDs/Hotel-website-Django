@@ -24,6 +24,49 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
+def send_hotel_booking_notification(booking, hotel=None):
+    """
+    Send email notification to hotel about new booking
+    """
+    # If hotel is not provided, try to get it from the booking
+    if hotel is None:
+        hotel = booking.room.hotel
+        logger.info(f"Extracted hotel from booking: {hotel.name}")
+    
+    logger.info(f"Sending hotel notification for booking {booking.id} to {hotel.email}")
+    
+    subject = f"New Booking Notification - {hotel.name}"
+    
+    context = {
+        'hotel': hotel,
+        'booking': booking,
+        'room': booking.room,
+        'guest': booking.guest,
+        'booking_date': booking.created_at,
+        'nights': (booking.check_out_date - booking.check_in_date).days,
+    }
+    
+    try:
+        html_message = render_to_string('emails/hotel_booking_notification.html', context)
+        plain_message = strip_tags(html_message)
+        
+        from_email = settings.DEFAULT_FROM_EMAIL
+        
+        send_mail(
+            subject,
+            plain_message,
+            from_email,
+            [hotel.email],
+            html_message=html_message,
+            fail_silently=False,
+        )
+        logger.info(f"Hotel notification sent successfully to {hotel.email}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to send hotel notification email: {str(e)}")
+        return False
+
 def index(request):
     l_form = LeadForm()
     
@@ -180,7 +223,6 @@ def room_list(request, pk):
             if b_form.is_valid():  # First validate the form
                 booking = b_form.save(commit=False)
                 booking.room = room
-                # booking.guest, _ = Guest.objects.get_or_create(user=request.user)
                 guest, created = Guest.objects.get_or_create(
                     user=request.user,
                     defaults={
@@ -191,8 +233,16 @@ def room_list(request, pk):
                 )
                 booking.guest = guest
                 try:
-                    booking.save()  # This will trigger the clean() method
-                    messages.success(request, 'Booking request submitted successfully!')
+                    booking.save()
+                    
+                    # Send hotel notification email immediately after successful booking
+                    email_sent = send_hotel_booking_notification(booking, hotel)  # Make sure hotel is passed
+                    
+                    if email_sent:
+                        messages.success(request, 'Booking request submitted successfully! Notification sent to the hotel.')
+                    else:
+                        messages.warning(request, 'Booking submitted, but we could not notify the hotel. Please contact them directly.')
+                    
                     return redirect('room-list', pk=hotel.pk)
                 except ValidationError as e:
                     for error in e.messages:
@@ -386,7 +436,7 @@ def verify_booking_payment(request):
                 booking.is_paid = True
                 booking.save()
 
-                # Send confirmation email
+                # Send confirmation email to guest
                 try:
                     subject = "Booking Confirmation - Payment Successful"
                     message = render_to_string("emails/booking_confirmation.html", {
@@ -402,7 +452,14 @@ def verify_booking_payment(request):
                         fail_silently=True
                     )
                 except Exception as e:
-                    logger.error(f"Failed to send confirmation email: {str(e)}")
+                    logger.error(f"Failed to send confirmation email to guest: {str(e)}")
+                
+                # Send notification email to hotel - FIXED: Added hotel parameter
+                try:
+                    hotel = booking.room.hotel  # Get the hotel from the booking
+                    send_hotel_booking_notification(booking, hotel)  # Now passing both arguments
+                except Exception as e:
+                    logger.error(f"Failed to send hotel notification email: {str(e)}")
                 
                 # Redirect to success page with booking data
                 return redirect(f'{reverse("booking-payment-success")}?booking_id={booking.id}')
@@ -438,3 +495,5 @@ def booking_success(request):
 
 def booking_failure(request):
     return render(request, 'payments/failure.html')
+
+
