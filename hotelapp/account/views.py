@@ -1,12 +1,13 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required, user_passes_test 
 from .models import ProfileModel
-from core.models import Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking
+from core.models import CustomUser,Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking
 from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponseRedirect
+from django.db.models import Q, Count
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -20,7 +21,18 @@ def get_manager_hotel(user):
         return None
     except AttributeError:
         return None
-    
+
+def staff_required(view_func):
+    """
+    Decorator to ensure user is staff and superuser
+    """
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated or not request.user.is_staff or not request.user.is_superuser:
+            messages.error(request, "You do not have permission to access this page.")
+            return redirect('home')
+        return view_func(request, *args, **kwargs)
+    return wrapper
+
 # Create your views here.
 def login_user(request):
     if 'next' in request.GET:
@@ -36,7 +48,7 @@ def login_user(request):
             messages.success(request, "Logged In successfully!!")
             if user.user_type == 'manager':
                 return redirect('dashboard')
-            elif user.user_type == 'Staff':
+            elif user.is_staff and user.is_superuser:
                 return redirect('staff_dashboard')
             else:
                 return redirect('home')
@@ -633,3 +645,473 @@ def delete_service(request, service_id):
         messages.success(request, 'Reservation deleted successfully!')
         return redirect('services')
     return redirect('services')
+
+
+
+
+# Staff Dasboard
+def staff_dashboard(request):
+    if not request.user.is_staff or not request.user.is_superuser:
+        messages.error(request, "You do not have permission to access the staff dashboard.")
+        return redirect('home')
+    
+    return render(request, "staff/dashboard/staff_dashboard.html")
+
+@login_required
+@staff_required
+def user_management(request):
+    """
+    Main user management view with filtering and search
+    """
+    # Get all users - remove problematic prefetch_related
+    users = CustomUser.objects.select_related(
+        'manager', 
+        'guest_profile'
+    ).all().order_by('-date_joined')
+    
+    # Search functionality
+    search_query = request.GET.get('search', '')
+    if search_query:
+        users = users.filter(
+            Q(username__icontains=search_query) |
+            Q(email__icontains=search_query) |
+            Q(first_name__icontains=search_query) |
+            Q(last_name__icontains=search_query)
+        )
+    
+    # Filter by user type
+    user_type = request.GET.get('user_type', '')
+    if user_type:
+        users = users.filter(user_type=user_type)
+    
+    # Filter by status
+    status_filter = request.GET.get('status', '')
+    if status_filter == 'active':
+        users = users.filter(is_active=True)
+    elif status_filter == 'inactive':
+        users = users.filter(is_active=False)
+    elif status_filter == 'verified':
+        users = users.filter(is_verified=True)
+    elif status_filter == 'unverified':
+        users = users.filter(is_verified=False)
+
+    # create User Form
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            # Set password if provided
+            password = form.cleaned_data.get('password')
+            if password:
+                user.set_password(password)
+            user.save()
+            
+            messages.success(request, f"User {user.username} created successfully!")
+            return redirect('user_management')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+    else:
+        form = UserUpdateForm()
+    
+    # Pagination
+    paginator = Paginator(users, 10)  # 10 users per page
+    page_number = request.GET.get('page')
+    
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+    
+    # Get user statistics
+    user_stats = {
+        'total_users': CustomUser.objects.count(),
+        'active_users': CustomUser.objects.filter(is_active=True).count(),
+        'verified_users': CustomUser.objects.filter(is_verified=True).count(),
+        'admin_users': CustomUser.objects.filter(user_type='admin').count(),
+        'manager_users': CustomUser.objects.filter(user_type='manager').count(),
+        'staff_users': CustomUser.objects.filter(user_type='staff').count(),
+        'guest_users': CustomUser.objects.filter(user_type='Guest').count(),
+    }
+    
+    context = {
+        'form': form,
+        'users': page_obj,
+        'page_obj': page_obj,
+        'user_stats': user_stats,
+        'search_query': search_query,
+        'page_title': "Create New User",
+        'selected_user_type': user_type,
+        'selected_status': status_filter,
+        'user_type_choices': CustomUser.USER_TYPE_CHOICES,
+    }
+    
+    return render(request, "staff/dashboard/user_management.html", context)
+
+@login_required
+@staff_required
+def user_detail(request, user_id):
+    """
+    View individual user details
+    """
+    user = get_object_or_404(CustomUser, id=user_id)
+
+    user_type = request.GET.get('user_type', '')
+    if user_type:
+        users = users.filter(user_type=user_type)
+    
+    # Get related data based on user type
+    related_data = {}
+    
+    if user.user_type == 'manager':
+        try:
+            related_data['manager_profile'] = user.manager
+            related_data['hotel'] = user.manager.hotel_post
+        except Manager.DoesNotExist:
+            related_data['manager_profile'] = None
+            related_data['hotel'] = None
+    
+    elif user.user_type == 'staff':
+        # For staff users, get their staff profiles
+        related_data['staff_profiles'] = Staff.objects.filter(email=user.email)
+    
+    elif user.user_type == 'Guest':
+        try:
+            related_data['guest_profile'] = user.guest_profile
+        except Guest.DoesNotExist:
+            related_data['guest_profile'] = None
+    
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f"User {user.username} updated successfully!")
+            return redirect('user_management')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+    else:
+        form = UserUpdateForm(instance=user)
+    
+    context = {
+        'form': form,
+        'user': user,
+        'related_data': related_data,
+        'page_title': f"Edit User: {user.username}",
+        'selected_user_type': user_type,
+        'user_type_choices': CustomUser.USER_TYPE_CHOICES,
+    }
+    
+    return render(request, "staff/dashboard/user_detail.html", context)
+
+
+@login_required
+@staff_required
+def toggle_user_status(request, user_id):
+    """
+    Toggle user active status
+    """
+    user = get_object_or_404(CustomUser, id=user_id)
+    
+    if request.method == 'POST':
+        user.is_active = not user.is_active
+        user.save()
+        
+        action = "activated" if user.is_active else "deactivated"
+        messages.success(request, f"User {user.username} has been {action}.")
+    
+    return redirect('user_management')
+
+@login_required
+@staff_required
+def toggle_verification(request, user_id):
+    """
+    Toggle user verification status
+    """
+    user = get_object_or_404(CustomUser, id=user_id)
+    
+    if request.method == 'POST':
+        user.is_verified = not user.is_verified
+        user.save()
+        
+        action = "verified" if user.is_verified else "unverified"
+        messages.success(request, f"User {user.username} has been {action}.")
+    
+    return redirect('user_management')
+
+@login_required
+@staff_required
+def delete_user(request, user_id):
+    """
+    Delete a user account
+    """
+    user = get_object_or_404(CustomUser, id=user_id)
+    
+    if request.method == 'POST':
+        username = user.username
+        user.delete()
+        messages.success(request, f"User {username} has been deleted successfully.")
+        return redirect('user_management')
+    
+    context = {
+        'user': user,
+    }
+    
+    return render(request, "staff/dashboard/confirm_delete.html", context)
+
+@login_required
+@staff_required
+def manage_staff(request):
+    """
+    Manage staff members across all hotels
+    """
+    staff_members = Staff.objects.select_related('hotel', 'user').all().order_by('-created_at')
+    
+    # Search functionality
+    search_query = request.GET.get('search', '')
+    if search_query:
+        staff_members = staff_members.filter(
+            Q(full_name__icontains=search_query) |
+            Q(email__icontains=search_query) |
+            Q(hotel__name__icontains=search_query) |
+            Q(position__icontains=search_query)
+        )
+    
+    # Filter by department
+    department = request.GET.get('department', '')
+    if department:
+        staff_members = staff_members.filter(department=department)
+    
+    # Filter by status
+    status_filter = request.GET.get('status', '')
+    if status_filter == 'active':
+        staff_members = staff_members.filter(is_active=True)
+    elif status_filter == 'inactive':
+        staff_members = staff_members.filter(is_active=False)
+    
+    # Pagination
+    paginator = Paginator(staff_members, 10)
+    page_number = request.GET.get('page')
+    
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+    
+    # Staff statistics
+    staff_stats = {
+        'total_staff': Staff.objects.count(),
+        'active_staff': Staff.objects.filter(is_active=True).count(),
+        'by_department': Staff.objects.values('department').annotate(count=Count('id')),
+        'by_position': Staff.objects.values('position').annotate(count=Count('id')),
+    }
+    
+    context = {
+        'staff_members': page_obj,
+        'page_obj': page_obj,
+        'staff_stats': staff_stats,
+        'search_query': search_query,
+        'selected_department': department,
+        'selected_status': status_filter,
+        'department_choices': Staff.DEPARTMENT_CHOICES,
+        'position_choices': Staff.POSITION_CHOICES,
+    }
+    
+    return render(request, "staff/dashboard/manage_staff.html", context)
+
+@login_required
+@staff_required
+def create_staff(request):
+    """
+    Create a new staff member
+    """
+    if request.method == 'POST':
+        form = StaffForm(request.POST, request.FILES)
+        if form.is_valid():
+            staff = form.save()
+            messages.success(request, f"Staff member {staff.full_name} created successfully!")
+            return redirect('manage_staff')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+    else:
+        form = StaffForm()
+    
+    context = {
+        'form': form,
+        'page_title': "Create New Staff Member",
+    }
+    
+    return render(request, "staff/dashboard/create_staff.html", context)
+
+@login_required
+@staff_required
+def edit_staff_admin(request, staff_id):
+    """
+    Edit staff member (admin version)
+    """
+    staff = get_object_or_404(Staff, id=staff_id)
+    
+    if request.method == 'POST':
+        form = StaffForm(request.POST, request.FILES, instance=staff)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f"Staff member {staff.full_name} updated successfully!")
+            return redirect('manage_staff')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+    else:
+        form = StaffForm(instance=staff)
+    
+    context = {
+        'form': form,
+        'staff': staff,
+        'page_title': f"Edit Staff: {staff.full_name}",
+    }
+    
+    return render(request, "staff/dashboard/edit_staff.html", context)
+
+@login_required
+@staff_required
+def toggle_staff_status(request, staff_id):
+    """
+    Toggle staff active status
+    """
+    staff = get_object_or_404(Staff, id=staff_id)
+    
+    if request.method == 'POST':
+        staff.is_active = not staff.is_active
+        staff.save()
+        
+        action = "activated" if staff.is_active else "deactivated"
+        messages.success(request, f"Staff member {staff.full_name} has been {action}.")
+    
+    return redirect('manage_staff')
+
+@login_required
+@staff_required
+def delete_staff_admin(request, staff_id):
+    """
+    Delete a staff member
+    """
+    staff = get_object_or_404(Staff, id=staff_id)
+    
+    if request.method == 'POST':
+        staff_name = staff.full_name
+        staff.delete()
+        messages.success(request, f"Staff member {staff_name} has been deleted successfully.")
+        return redirect('manage_staff')
+    
+    context = {
+        'staff': staff,
+    }
+    
+    return render(request, "staff/dashboard/confirm_delete_staff.html", context)
+
+@login_required
+@staff_required
+def user_analytics(request):
+    """
+    User analytics and statistics
+    """
+    # User registration trends (last 30 days)
+    thirty_days_ago = timezone.now() - timezone.timedelta(days=30)
+    
+    user_registrations = CustomUser.objects.filter(
+        date_joined__gte=thirty_days_ago
+    ).extra({
+        'date': "DATE(date_joined)"
+    }).values('date').annotate(count=Count('id')).order_by('date')
+    
+    # User type distribution
+    user_type_distribution = CustomUser.objects.values('user_type').annotate(
+        count=Count('id')
+    ).order_by('-count')
+    
+    # Active vs inactive users
+    active_users = CustomUser.objects.filter(is_active=True).count()
+    inactive_users = CustomUser.objects.filter(is_active=False).count()
+    
+    # Verified vs unverified users
+    verified_users = CustomUser.objects.filter(is_verified=True).count()
+    unverified_users = CustomUser.objects.filter(is_verified=False).count()
+    
+    # Recent activity (last 7 days)
+    seven_days_ago = timezone.now() - timezone.timedelta(days=7)
+    recent_users = CustomUser.objects.filter(
+        date_joined__gte=seven_days_ago
+    ).count()
+    
+    context = {
+        'user_registrations': list(user_registrations),
+        'user_type_distribution': list(user_type_distribution),
+        'active_users': active_users,
+        'inactive_users': inactive_users,
+        'verified_users': verified_users,
+        'unverified_users': unverified_users,
+        'recent_users': recent_users,
+        'total_users': active_users + inactive_users,
+    }
+    
+    return render(request, "staff/dashboard/user_analytics.html", context)
+
+@login_required
+@staff_required
+def bulk_user_actions(request):
+    """
+    Handle bulk actions for users
+    """
+    if request.method == 'POST':
+        user_ids = request.POST.getlist('user_ids')
+        action = request.POST.get('action')
+        
+        if not user_ids:
+            messages.error(request, "No users selected.")
+            return redirect('user_management')
+        
+        users = CustomUser.objects.filter(id__in=user_ids)
+        
+        if action == 'activate':
+            users.update(is_active=True)
+            messages.success(request, f"{len(users)} users activated successfully.")
+        elif action == 'deactivate':
+            users.update(is_active=False)
+            messages.success(request, f"{len(users)} users deactivated successfully.")
+        elif action == 'verify':
+            users.update(is_verified=True)
+            messages.success(request, f"{len(users)} users verified successfully.")
+        elif action == 'delete':
+            count = users.count()
+            users.delete()
+            messages.success(request, f"{count} users deleted successfully.")
+        else:
+            messages.error(request, "Invalid action selected.")
+    
+    return redirect('user_management')
+
+# API endpoints for AJAX requests
+@login_required
+@staff_required
+def get_user_stats(request):
+    """
+    API endpoint to get user statistics (for dashboard widgets)
+    """
+    stats = {
+        'total_users': CustomUser.objects.count(),
+        'active_users': CustomUser.objects.filter(is_active=True).count(),
+        'new_today': CustomUser.objects.filter(
+            date_joined__date=timezone.now().date()
+        ).count(),
+        'pending_verification': CustomUser.objects.filter(is_verified=False).count(),
+    }
+    
+    return JsonResponse(stats)

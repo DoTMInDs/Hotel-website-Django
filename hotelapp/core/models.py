@@ -45,10 +45,9 @@ class RegionChoices(models.TextChoices):
 
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = (
-        ('admin', 'Admin'),
+        ('Admin', 'Admin'),
         ('manager', 'Hotel Manager'),
         ('Guest', 'Guest'),
-        ('staff', 'Staff'),
     )
     user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, default='Guest')
     is_verified = models.BooleanField(default=False)
@@ -400,36 +399,6 @@ class Reservation(models.Model):
                     overlap_end=overlap.check_out_date
                 )
             )
-
-        # blocking_statuses = ['Pending', 'Confirmed', 'Checked In']
-
-        # if self.room and self.check_in_date and self.check_out_date and self.status in blocking_statuses:
-        #     overlapping_reservations = Reservation.objects.filter(
-        #         room=self.room,
-        #         check_in_date__lt=self.check_out_date,  # Overlap starts before self ends
-        #         check_out_date__gt=self.check_in_date,    # Overlap ends after self starts
-        #         status__in=blocking_statuses
-        #     ).exclude(pk=self.pk) # Exclude self if it's an existing object
-
-        #     if overlapping_reservations.exists():
-        #          # Provide details about the first overlapping reservation for context
-        #          overlap = overlapping_reservations.first()
-        #          raise ValidationError(
-        #             _("Room {room_number} is not available "
-        #               "from {check_in} to {check_out} "
-        #               "due to existing reservation #{res_id} "
-        #               "({overlap_start} to {overlap_end}).").format(
-        #                 room_number=self.room.room_number,
-        #                 check_in=self.check_in_date,
-        #                 check_out=self.check_out_date,
-        #                 res_id=overlap.id,
-        #                 overlap_start=overlap.check_in_date,
-        #                 overlap_end=overlap.check_out_date
-        #             )
-        #          )
-        
-
-    
 
 class Staff(models.Model):
     POSITION_CHOICES = [

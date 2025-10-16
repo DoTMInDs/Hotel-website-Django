@@ -1,0 +1,218 @@
+{% load static %}
+<nav class="flex w-full">
+  <!-- Sidebar -->
+  <aside id="dashboard_SideBar" class="dashboard_SideBar group fixed flex flex-col h-[100%] text-gray-100 bg-gradient-to-b from-gray-900 to-gray-800 left-0 p-[1rem] top-0 transition-all duration-300 z-50 w-[250px]">
+    <div class="nav-items space-y-4 h-full flex flex-col">
+      <!-- Logo & Institution -->
+      <div class="p-4 border-b border-gray-700 flex items-center space-x-3">
+        <img src="" class="w-10 h-10 rounded-full bg-gray-200 border border-white object-cover">
+        <div>
+          <h4 class="font-bold text-white">BaseLink Staff</h4>
+          <p class="text-xs text-gray-400">Admin Portal</p>
+        </div>
+      </div>
+      
+      <!-- Main Menu - Staff Only -->
+      <div class="flex-1 overflow-y-auto py-2">
+        <div class="px-4 py-2">
+          <h5 class="text-xs font-bold text-gray-500 uppercase tracking-wider">STAFF CONTROLS</h5>
+        </div>
+        
+        <nav class="space-y-1 px-2">
+          <!-- Dashboard -->
+          <a href="{% url "staff_dashboard" %}" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Staff Dashboard
+          </a>
+          
+          {% if user.is_staff %}
+          <!-- User Management -->
+          <a href="{% url "user_management" %}" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            User Management
+          </a>
+          {% endif %}
+        </nav>
+
+        <div class="px-4 py-2 mt-4">
+          <h5 class="text-xs font-bold text-gray-500 uppercase tracking-wider">MAIN MENU</h5>
+        </div>
+        <nav class="space-y-1 px-2">
+          <!-- Content Management -->
+          <a href="" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.51398 2C5.20998 2.129 4.33198 2.419 3.67598 3.076C2.50098 4.253 2.50098 6.148 2.50098 9.939V13.959C2.50098 17.749 2.50098 19.645 3.67598 20.823C4.85098 22.001 6.74298 22 10.526 22H12.533C16.316 22 18.208 22 19.383 20.823C20.45 19.753 20.549 18.106 20.558 14.977" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.526 7.00001L11.529 10.5C12.089 11.61 12.792 11.9 14.539 12C15.928 11.966 16.734 11.802 17.422 11.204C17.891 10.796 18.103 10.181 18.206 9.56901L18.55 7.50001M21.058 5.50001V10.5M8.60096 4.93301C10.188 3.61601 11.602 2.90901 14.535 2.13101C14.8658 2.04365 15.214 2.04538 15.544 2.13601C18.14 2.85001 19.542 3.48401 21.42 4.89401C21.5 4.95401 21.524 5.06601 21.468 5.14901C20.855 6.05101 19.486 6.78201 16.128 8.08401C15.4285 8.35314 14.6534 8.34886 13.957 8.07201C10.381 6.65201 8.73696 5.89201 8.53696 5.10301C8.53046 5.07152 8.53302 5.03884 8.54435 5.00875C8.55568 4.97866 8.57531 4.9524 8.60096 4.93301Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Gallery
+          </a>
+          <!-- Leads Management -->
+          <a href="" 
+          class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 4C4.8 4 3 5.8 3 8C3 10.2 4.8 12 7 12C9.2 12 11 10.2 11 8C11 5.8 9.2 4 7 4ZM7 10C5.9 10 5 9.1 5 8C5 6.9 5.9 6 7 6C8.1 6 9 6.9 9 8C9 9.1 8.1 10 7 10ZM7 14C3.1 14 0 15.8 0 18V20H11V18H2C2 17.4 3.8 16 7 16C8.8 16 10.2 16.5 11 17V14.8C9.9 14.3 8.5 14 7 14ZM22 4H15C13.9 4 13 4.9 13 6V18C13 19.1 13.9 20 15 20H22C23.1 20 24 19.1 24 18V6C24 4.9 23.1 4 22 4ZM16 18H15V6H16V18ZM22 18H18V6H22V18Z" fill="currentColor"/>
+            </svg>
+            Payments
+          </a>
+          <!-- Institution Management -->
+          <a href="" 
+          class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7V10C2 16.075 6.925 21 13 21C19.075 21 24 16.075 24 10V7L12 2ZM12 19C8.134 19 5 15.866 5 12V9.5L12 5.5L19 9.5V12C19 15.866 15.866 19 12 19Z" fill="currentColor"/>
+              <path d="M12 7C9.243 7 7 9.243 7 12C7 14.757 9.243 17 12 17C14.757 17 17 14.757 17 12C17 9.243 14.757 7 12 7ZM12 15C10.346 15 9 13.654 9 12C9 10.346 10.346 9 12 9C13.654 9 15 10.346 15 12C15 13.654 13.654 15 12 15Z" fill="currentColor"/>
+            </svg>
+            Hotels
+          </a>
+          <!-- INstitution Request -->
+          <a href="" class="flex items-center  justify-between px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-indigo-100" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 3.625C1 3.19402 1.1712 2.7807 1.47595 2.47595C1.7807 2.1712 2.19402 2 2.625 2H13.375C13.806 2 14.2193 2.1712 14.524 2.47595C14.8288 2.7807 15 3.19402 15 3.625V7.0615L14.933 7.0295L14.6755 6.9105C14.4633 6.81259 14.2336 6.75819 14 6.7505V3.625C14 3.28 13.72 3 13.375 3H2.625C2.28 3 2 3.28 2 3.625V12.375C2 12.72 2.28 13 2.625 13H4V11.25C4 10.9185 4.1317 10.6005 4.36612 10.3661C4.60054 10.1317 4.91848 10 5.25 10H10.75C10.9142 10 11.0767 10.0323 11.2284 10.0952C11.38 10.158 11.5178 10.25 11.6339 10.3661C11.75 10.4822 11.842 10.62 11.9048 10.7716C11.9677 10.9233 12 11.0858 12 11.25V11.624L11.6465 11.5315C11.4353 11.4766 11.2147 11.4684 11 11.5075V11.25C11 11.1837 10.9737 11.1201 10.9268 11.0732C10.8799 11.0263 10.8163 11 10.75 11H5.25C5.1837 11 5.12011 11.0263 5.07322 11.0732C5.02634 11.1201 5 11.1837 5 11.25V13H9.394C9.25755 13.3146 9.21651 13.6623 9.276 14H2.625C2.4116 14 2.20029 13.958 2.00314 13.8763C1.80599 13.7946 1.62685 13.6749 1.47595 13.524C1.32506 13.3732 1.20536 13.194 1.1237 12.9969C1.04203 12.7997 1 12.5884 1 12.375V3.625ZM8 8C7.60218 8 7.22064 7.84196 6.93934 7.56066C6.65804 7.27936 6.5 6.89782 6.5 6.5C6.5 6.10218 6.65804 5.72064 6.93934 5.43934C7.22064 5.15804 7.60218 5 8 5C8.39782 5 8.77936 5.15804 9.06066 5.43934C9.34196 5.72064 9.5 6.10218 9.5 6.5C9.5 6.89782 9.34196 7.27936 9.06066 7.56066C8.77936 7.84196 8.39782 8 8 8ZM8 9C8.66304 9 9.29893 8.73661 9.76777 8.26777C10.2366 7.79893 10.5 7.16304 10.5 6.5C10.5 5.83696 10.2366 5.20107 9.76777 4.73223C9.29893 4.26339 8.66304 4 8 4C7.33696 4 6.70107 4.26339 6.23223 4.73223C5.76339 5.20107 5.5 5.83696 5.5 6.5C5.5 7.16304 5.76339 7.79893 6.23223 8.26777C6.70107 8.73661 7.33696 9 8 9ZM12.775 8.8565L13.0145 8.1675C13.059 8.03678 13.1306 7.91688 13.2245 7.8156C13.3183 7.71431 13.4325 7.6339 13.5595 7.57959C13.6864 7.52527 13.8234 7.49826 13.9615 7.50031C14.0996 7.50237 14.2357 7.53343 14.361 7.5915L14.6185 7.7105C15.0385 7.904 15.3905 8.251 15.4585 8.712C15.7945 10.9695 14.018 14.092 11.9235 14.9255C11.496 15.0955 11.0235 14.9605 10.6485 14.688L10.4185 14.521C10.3061 14.4392 10.2118 14.3353 10.1413 14.2155C10.0707 14.0958 10.0255 13.9629 10.0085 13.825C9.9914 13.6871 10.0028 13.5471 10.0421 13.4138C10.0813 13.2805 10.1475 13.1567 10.2365 13.05L10.705 12.495C10.889 12.277 11.18 12.185 11.4565 12.257L12.467 12.522C13.231 12.0227 13.635 11.3127 13.679 10.392L12.9475 9.636C12.8497 9.5345 12.7818 9.40795 12.7514 9.2703C12.7209 9.13266 12.7291 8.98978 12.775 8.8565Z" fill="currentColor"/>
+                </svg>
+                Requests
+             </div>
+             {% if unseen_requests_count > 0 %}
+                  <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                      {{ unseen_requests_count }}
+                  </span>
+              {% endif %}
+          </a>
+        </nav>
+        
+        <!-- Reports Section -->
+        <div class="px-4 py-2 mt-4">
+          <h5 class="text-xs font-bold text-gray-500 uppercase tracking-wider">REPORTS</h5>
+        </div>
+        
+        <nav class="space-y-1 px-2">
+          <a href="" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Activity Reports
+          </a>
+          {% if user.is_superuser %}
+          <!-- System Settings -->
+          <a href="" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+            <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            System Settings
+          </a>
+          {% endif %}
+        </nav>
+      </div>
+      
+      <!-- Bottom Section -->
+      <div class="p-4 border-t border-gray-700">
+        <a href="{% url 'logout' %}" class="flex items-center px-3 py-2 text-sm font-medium rounded-md group hover:bg-gray-700 hover:text-white transition-colors">
+          <svg class="w-5 h-5 mr-3 text-indigo-100 group-hover:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+          </svg>
+          Logout
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Top Navigation -->
+  <div class="w-[100%] fixed z-[30] top-0 right-0 left-0">
+    <div class="mr-[0.3rem] ml-[0.3rem] md:ml-[250px] transition-all duration-300 h-auto">
+        <!-- Top Navigation -->
+          <div class="w-full flex justify-between items-center py-[0.8rem] px-[1rem] bg-white shadow-sm">
+            <div class="flex items-center">
+              <h1 class="text-lg font-semibold text-gray-900 flex flex-col">
+                {% block page_title %}Staff Dashboard{% endblock %}
+                <span class="text-xs text-gray-500">Last login: {{ user.last_login|date:"M d, Y H:i" }}</span>
+              </h1>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 md:me-0 focus:ring-4 focus:ring-gray-100" type="button">
+                  <span class="sr-only">Open user menu</span>
+                  <!-- User Profile -->
+                  <div class="p-4 flex items-center space-x-3">
+                    <div class="relative">
+                      {% if user.is_superuser %}
+                        <span class="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Admin</span>
+                      {% elif user.is_staff %}
+                        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Staff</span>
+                      {% endif %}
+                      <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/default.png' %}{% endif %}" 
+                          class="w-8 h-8 rounded-full border border-gray-600 object-cover">
+                    </div>
+                    <div class="hidden md:block">
+                      {% comment %} <h4 class="font-medium text-gray-800 truncate">{{ user.get_full_name|default:user.email }}</h4> {% endcomment %}
+                      <p class="text-xs text-gray-400">{{ user.email }}</p>
+                    </div>
+                  </div>
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                    <li>
+                      {% if user.is_superuser %}
+                      <a href="{% url "admin:index" %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Admin Panel</a>
+                      {% endif %}
+                    </li>
+                  </ul>
+                  <div class="py-2">
+                    <a href="{% url "logout" %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                  </div>
+              </div>
+
+               <div class="flex gap-[0.5rem] items-center">
+                    <div onclick="menuToggle()" role="button" aria-controls="dashboard_SideBar" aria-label="Toggle sidebar" aria-expanded="false"  tabindex="0" class="cursor-pointer md:hidden focus:bg-slate-200 transition-colors hover:bg-slate-100 w-[40px] h-[40px] flex justify-center items-center rounded-full p-[0.5rem] text-slate-700">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 18V20H3V18H21ZM6.596 3.90302L8.01 5.31801L4.828 8.50002L8.01 11.682L6.596 13.096L2 8.50002L6.596 3.90302ZM21 11V13H12V11H21ZM21 4.00002V6.00002H12V4.00002H21Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+               </div>
+            </div>
+          </div>
+        {% comment %} </header> {% endcomment %}
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Toggle sidebar
+  function menuToggle() {
+        const sidebar = document.getElementById('dashboard_SideBar');
+        sidebar.classList.toggle('translate-x-[-250px]');
+        sidebar.classList.toggle('md:translate-x-0');
+        
+        // Store the state in localStorage
+        const isHidden = sidebar.classList.contains('translate-x-[-250px]');
+        localStorage.setItem('sidebarHidden', isHidden);
+    }
+
+  // Initialize sidebar state
+ document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('dashboard_SideBar');
+    const topbar = document.getElementById('dashboard_TopBar');
+    
+    if (localStorage.getItem('sidebarCollapsed') === 'true') {
+      sidebar.classList.add('-translate-x-full');
+      topbar.classList.remove('ml-64 right-0 left-0');
+      topbar.classList.add('ml-0 right-0 left-0');
+    } 
+    
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('aside a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('bg-indigo-900', 'text-white');
+        link.querySelector('svg').classList.add('text-gray-300');
+      }
+    });
+  });
+
+</script>

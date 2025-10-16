@@ -1,6 +1,6 @@
 from django import forms
 from typing import Any
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.forms import DateInput, TimeInput
 from .models import ProfileModel
 from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service,CustomUser
@@ -32,20 +32,43 @@ class LeadForm(forms.ModelForm):
         ]
         exclude = ['hotel']
 
-
-class UserUpdateForm(forms.ModelForm):
+class UserUpdateForm(UserChangeForm):
+    password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        help_text="Leave blank to keep current password"
+    )
     class Meta:
-        model = ProfileModel
+        model = CustomUser
         fields = [
-            'first_name',
-            'last_name',
-            'email',
-            'phone',
-            'profile',
-            'gender',
-            'nationality',
-            'address',
+            'username', 'email', 'first_name', 'last_name', 
+            'user_type', 'is_active', 'is_verified', 'is_staff', 'is_superuser'
         ]
+        widgets = {
+            'user_type': forms.Select(choices=CustomUser.USER_TYPE_CHOICES),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add CSS classes to form fields
+        for field in self.fields:
+            if field != 'password':
+                self.fields[field].widget.attrs.update({'class': 'form-control'})
+
+
+# class UserUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = ProfileModel
+#         fields = [
+#             'first_name',
+#             'last_name',
+#             'email',
+#             'phone',
+#             'profile',
+#             'gender',
+#             'nationality',
+#             'address',
+#         ]
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -246,6 +269,7 @@ class StaffForm(forms.ModelForm):
         fields = [
             'full_name',
             'email',
+            'hotel',
             'profile_picture',
             'position',
             'department',
@@ -265,6 +289,9 @@ class StaffForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={
                 'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
                 'placeholder': 'Enter email address'
+            }),
+            'hotel': forms.Select(attrs={
+                'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm'
             }),
             'phone_number': forms.TextInput(attrs={
                 'class': 'block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm',
