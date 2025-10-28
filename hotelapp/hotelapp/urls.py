@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('core.urls')),
     path('', include('account.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('', include('pwa.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

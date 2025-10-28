@@ -11713,3 +11713,1205 @@ INFO 2025-10-28 07:32:22,503 basehttp 4168 3936 "GET /hotel/ HTTP/1.1" 200 45939
 INFO 2025-10-28 07:32:22,570 basehttp 4168 3936 "GET /static/css/dist/styles.css?v=1761679942 HTTP/1.1" 200 105931
 INFO 2025-10-28 07:32:32,008 basehttp 4168 13016 "GET /hotel/ HTTP/1.1" 200 45940
 INFO 2025-10-28 07:32:32,040 basehttp 4168 13016 "GET /static/css/dist/styles.css?v=1761679951 HTTP/1.1" 200 105931
+INFO 2025-10-28 09:59:38,425 autoreload 12444 20744 Watching for file changes with StatReloader
+INFO 2025-10-28 10:00:47,240 basehttp 12444 17516 "GET / HTTP/1.1" 200 27617
+INFO 2025-10-28 10:00:47,372 basehttp 12444 17516 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-28 10:00:47,374 basehttp 12444 11704 "GET /static/css/dist/styles.css?v=1761688847 HTTP/1.1" 200 105931
+INFO 2025-10-28 10:00:47,380 basehttp 12444 11704 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 304 0
+INFO 2025-10-28 10:00:47,386 basehttp 12444 11704 "GET /static/js/app.js HTTP/1.1" 200 5056
+WARNING 2025-10-28 10:00:48,475 log 12444 17516 Not Found: /favicon.ico
+WARNING 2025-10-28 10:00:48,479 basehttp 12444 17516 "GET /favicon.ico HTTP/1.1" 404 18413
+INFO 2025-10-28 10:01:29,700 basehttp 12444 17516 "GET / HTTP/1.1" 200 27617
+INFO 2025-10-28 10:01:29,744 basehttp 12444 17516 "GET /static/css/dist/styles.css?v=1761688889 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:22:34,510 autoreload 4548 16052 Watching for file changes with StatReloader
+INFO 2025-10-28 10:25:23,820 autoreload 16040 8652 Watching for file changes with StatReloader
+INFO 2025-10-28 10:25:32,909 basehttp 16040 12556 "GET / HTTP/1.1" 200 29440
+INFO 2025-10-28 10:25:33,175 basehttp 16040 12556 "GET /static/css/dist/styles.css?v=1761690332 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:25:33,804 basehttp 16040 12556 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:25:33,879 basehttp 16040 12556 "GET /offline HTTP/1.1" 301 0
+WARNING 2025-10-28 10:25:33,931 log 16040 18640 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:25:33,935 basehttp 16040 18640 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:25:33,980 log 16040 16616 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:25:34,060 basehttp 16040 16616 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:25:34,097 basehttp 16040 10724 - Broken pipe from ('127.0.0.1', 59912)
+INFO 2025-10-28 10:25:34,213 basehttp 16040 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:07,985 basehttp 16040 12412 "GET / HTTP/1.1" 200 29440
+INFO 2025-10-28 10:27:08,058 basehttp 16040 12412 "GET /static/css/dist/styles.css?v=1761690427 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:08,508 basehttp 16040 12412 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:08,588 log 16040 12412 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:08,615 basehttp 16040 12412 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:27:08,618 log 16040 15644 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:27:08,649 basehttp 16040 15644 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:27:08,652 log 16040 12412 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:27:08,660 basehttp 16040 12412 "GET /images/icons/icon-96x96.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:27:08,665 basehttp 16040 20316 - Broken pipe from ('127.0.0.1', 61034)
+WARNING 2025-10-28 10:27:08,718 log 16040 9624 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:27:08,745 log 16040 20840 Not Found: /images/icons/icon-144x144.png
+WARNING 2025-10-28 10:27:08,754 log 16040 15644 Not Found: /images/icons/icon-384x384.png
+WARNING 2025-10-28 10:27:08,805 log 16040 21572 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:27:08,818 basehttp 16040 9624 - Broken pipe from ('127.0.0.1', 63356)
+WARNING 2025-10-28 10:27:08,837 log 16040 14424 Not Found: /images/icons/icon-152x152.png
+WARNING 2025-10-28 10:27:08,855 log 16040 12412 Not Found: /images/icons/icon-512x512.png
+INFO 2025-10-28 10:27:08,864 basehttp 16040 20840 - Broken pipe from ('127.0.0.1', 61964)
+INFO 2025-10-28 10:27:08,871 basehttp 16040 15644 - Broken pipe from ('127.0.0.1', 53235)
+INFO 2025-10-28 10:27:08,874 basehttp 16040 21572 - Broken pipe from ('127.0.0.1', 53521)
+INFO 2025-10-28 10:27:08,878 basehttp 16040 18688 - Broken pipe from ('127.0.0.1', 58194)
+INFO 2025-10-28 10:27:08,907 basehttp 16040 14424 - Broken pipe from ('127.0.0.1', 64798)
+INFO 2025-10-28 10:27:08,908 basehttp 16040 18760 - Broken pipe from ('127.0.0.1', 60039)
+INFO 2025-10-28 10:27:08,911 basehttp 16040 12412 - Broken pipe from ('127.0.0.1', 54815)
+INFO 2025-10-28 10:27:08,914 basehttp 16040 4068 - Broken pipe from ('127.0.0.1', 60451)
+INFO 2025-10-28 10:27:08,923 basehttp 16040 2120 - Broken pipe from ('127.0.0.1', 54633)
+INFO 2025-10-28 10:27:08,926 basehttp 16040 7172 - Broken pipe from ('127.0.0.1', 51869)
+INFO 2025-10-28 10:27:08,953 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:08,958 basehttp 16040 8256 - Broken pipe from ('127.0.0.1', 54964)
+INFO 2025-10-28 10:27:12,476 basehttp 16040 21732 "GET / HTTP/1.1" 200 29440
+INFO 2025-10-28 10:27:12,564 basehttp 16040 21732 "GET /static/css/dist/styles.css?v=1761690432 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:12,684 basehttp 16040 21732 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:12,741 log 16040 21732 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:12,761 basehttp 16040 21732 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:27:12,771 log 16040 18956 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:27:12,781 basehttp 16040 18956 - Broken pipe from ('127.0.0.1', 55124)
+INFO 2025-10-28 10:27:12,783 basehttp 16040 10468 - Broken pipe from ('127.0.0.1', 59903)
+WARNING 2025-10-28 10:27:12,804 log 16040 21732 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:27:12,826 log 16040 2144 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:27:12,841 log 16040 18804 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:27:12,842 basehttp 16040 21732 - Broken pipe from ('127.0.0.1', 60979)
+INFO 2025-10-28 10:27:12,844 basehttp 16040 2144 - Broken pipe from ('127.0.0.1', 55729)
+INFO 2025-10-28 10:27:12,845 basehttp 16040 18804 - Broken pipe from ('127.0.0.1', 64090)
+INFO 2025-10-28 10:27:12,852 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:15,786 basehttp 16040 21004 "GET / HTTP/1.1" 200 29440
+INFO 2025-10-28 10:27:15,857 basehttp 16040 21004 "GET /static/css/dist/styles.css?v=1761690435 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:15,983 basehttp 16040 21004 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:16,059 log 16040 21004 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:16,070 basehttp 16040 21004 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:27:16,104 log 16040 19444 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:27:16,147 log 16040 10376 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:27:16,172 log 16040 21004 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:27:16,173 basehttp 16040 19444 - Broken pipe from ('127.0.0.1', 60619)
+INFO 2025-10-28 10:27:16,177 basehttp 16040 10376 - Broken pipe from ('127.0.0.1', 57460)
+WARNING 2025-10-28 10:27:16,207 log 16040 4916 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:27:16,207 basehttp 16040 21004 - Broken pipe from ('127.0.0.1', 65185)
+INFO 2025-10-28 10:27:16,207 basehttp 16040 3408 - Broken pipe from ('127.0.0.1', 56652)
+INFO 2025-10-28 10:27:16,216 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:16,216 basehttp 16040 4916 - Broken pipe from ('127.0.0.1', 63943)
+INFO 2025-10-28 10:27:21,319 basehttp 16040 14356 "GET / HTTP/1.1" 200 29440
+INFO 2025-10-28 10:27:21,370 basehttp 16040 14356 "GET /static/css/dist/styles.css?v=1761690441 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:21,571 basehttp 16040 14356 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:21,651 log 16040 14356 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:21,672 log 16040 3296 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:27:21,673 basehttp 16040 14356 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:27:21,674 basehttp 16040 3296 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:27:21,677 basehttp 16040 8048 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:27:21,699 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:49,374 basehttp 16040 3296 "GET / HTTP/1.1" 200 29443
+INFO 2025-10-28 10:27:49,422 basehttp 16040 3296 "GET /static/css/dist/styles.css?v=1761690469 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:49,594 basehttp 16040 3296 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:49,768 log 16040 3296 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:49,768 log 16040 14356 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:27:49,775 basehttp 16040 3296 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:27:49,777 basehttp 16040 14356 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:27:49,874 log 16040 3296 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:27:49,885 basehttp 16040 14356 - Broken pipe from ('127.0.0.1', 54588)
+WARNING 2025-10-28 10:27:49,886 basehttp 16040 3296 "GET /images/icons/icon-96x96.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:27:49,900 log 16040 14808 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:27:49,930 log 16040 12228 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:27:49,931 basehttp 16040 14808 - Broken pipe from ('127.0.0.1', 56189)
+INFO 2025-10-28 10:27:49,958 basehttp 16040 12228 - Broken pipe from ('127.0.0.1', 58275)
+WARNING 2025-10-28 10:27:49,968 log 16040 1892 Not Found: /images/icons/icon-152x152.png
+WARNING 2025-10-28 10:27:50,000 log 16040 18136 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:27:50,026 basehttp 16040 18136 - Broken pipe from ('127.0.0.1', 57924)
+WARNING 2025-10-28 10:27:50,027 log 16040 6024 Not Found: /images/icons/icon-384x384.png
+INFO 2025-10-28 10:27:50,028 basehttp 16040 1892 - Broken pipe from ('127.0.0.1', 54193)
+INFO 2025-10-28 10:27:50,036 basehttp 16040 6024 - Broken pipe from ('127.0.0.1', 55317)
+INFO 2025-10-28 10:27:50,039 basehttp 16040 3144 - Broken pipe from ('127.0.0.1', 54348)
+INFO 2025-10-28 10:27:50,043 basehttp 16040 3948 - Broken pipe from ('127.0.0.1', 51050)
+INFO 2025-10-28 10:27:50,089 basehttp 16040 9640 - Broken pipe from ('127.0.0.1', 64756)
+INFO 2025-10-28 10:27:50,092 basehttp 16040 4588 - Broken pipe from ('127.0.0.1', 53000)
+INFO 2025-10-28 10:27:50,110 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:27:50,124 basehttp 16040 21820 - Broken pipe from ('127.0.0.1', 60615)
+INFO 2025-10-28 10:27:52,921 basehttp 16040 15152 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:27:52,978 basehttp 16040 15152 "GET /static/css/dist/styles.css?v=1761690472 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:27:53,130 basehttp 16040 15152 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:27:53,194 log 16040 15152 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:27:53,217 log 16040 1068 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:27:53,217 basehttp 16040 15152 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:27:53,223 basehttp 16040 1068 - Broken pipe from ('127.0.0.1', 64542)
+INFO 2025-10-28 10:27:53,224 basehttp 16040 15152 - Broken pipe from ('127.0.0.1', 59840)
+INFO 2025-10-28 10:27:53,241 basehttp 16040 19128 - Broken pipe from ('127.0.0.1', 58222)
+WARNING 2025-10-28 10:27:53,254 log 16040 20472 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:27:53,258 basehttp 16040 20472 - Broken pipe from ('127.0.0.1', 55939)
+INFO 2025-10-28 10:27:53,264 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:28:15,437 basehttp 16040 20388 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:28:15,513 basehttp 16040 20388 "GET /static/css/dist/styles.css?v=1761690495 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:28:15,542 basehttp 16040 19240 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:28:15,641 basehttp 16040 20388 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:28:15,766 log 16040 20388 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:28:15,791 log 16040 12872 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:28:15,793 basehttp 16040 20388 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:28:15,795 basehttp 16040 12872 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:28:15,804 basehttp 16040 11064 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:28:15,835 log 16040 20388 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:28:15,841 basehttp 16040 20388 - Broken pipe from ('127.0.0.1', 50248)
+WARNING 2025-10-28 10:28:15,870 log 16040 11064 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:28:15,894 log 16040 19708 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:28:15,919 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:28:15,922 log 16040 10396 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:28:15,914 basehttp 16040 11064 - Broken pipe from ('127.0.0.1', 52109)
+INFO 2025-10-28 10:28:15,947 basehttp 16040 19708 - Broken pipe from ('127.0.0.1', 58266)
+INFO 2025-10-28 10:28:15,996 basehttp 16040 10396 - Broken pipe from ('127.0.0.1', 49435)
+INFO 2025-10-28 10:28:56,449 basehttp 16040 22336 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:28:56,494 basehttp 16040 22336 "GET /static/css/dist/styles.css?v=1761690536 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:28:56,526 basehttp 16040 6260 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:28:56,693 basehttp 16040 22336 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:28:56,759 log 16040 22336 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:28:56,781 log 16040 17112 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:28:56,782 basehttp 16040 22336 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:28:56,792 basehttp 16040 17112 - Broken pipe from ('127.0.0.1', 56753)
+INFO 2025-10-28 10:28:56,810 basehttp 16040 13824 - Broken pipe from ('127.0.0.1', 52892)
+WARNING 2025-10-28 10:28:56,824 log 16040 22336 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:28:56,848 log 16040 15012 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:28:56,863 basehttp 16040 15012 - Broken pipe from ('127.0.0.1', 51244)
+INFO 2025-10-28 10:28:56,868 basehttp 16040 22336 - Broken pipe from ('127.0.0.1', 65447)
+WARNING 2025-10-28 10:28:56,880 log 16040 21892 Not Found: /images/icons/icon-144x144.png
+WARNING 2025-10-28 10:28:56,906 log 16040 19648 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:28:56,912 basehttp 16040 21892 - Broken pipe from ('127.0.0.1', 50464)
+INFO 2025-10-28 10:28:56,913 basehttp 16040 19648 - Broken pipe from ('127.0.0.1', 49697)
+INFO 2025-10-28 10:28:56,920 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:21,433 basehttp 16040 17676 "GET / HTTP/1.1" 200 29444
+WARNING 2025-10-28 10:29:21,487 basehttp 16040 19608 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:29:21,487 basehttp 16040 17676 "GET /static/css/dist/styles.css?v=1761690561 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:29:21,646 basehttp 16040 17676 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:21,717 log 16040 17676 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:21,732 log 16040 20476 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:29:21,733 basehttp 16040 7164 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:29:21,734 basehttp 16040 17676 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:29:21,735 basehttp 16040 20476 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:29:21,757 log 16040 20476 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:29:21,760 basehttp 16040 20476 - Broken pipe from ('127.0.0.1', 54374)
+INFO 2025-10-28 10:29:21,809 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:22,352 basehttp 16040 7164 "GET / HTTP/1.1" 200 29444
+WARNING 2025-10-28 10:29:22,441 basehttp 16040 1664 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:29:22,442 basehttp 16040 7164 "GET /static/css/dist/styles.css?v=1761690562 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:29:22,575 basehttp 16040 7164 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:22,631 log 16040 7164 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:22,645 log 16040 21340 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:29:22,645 basehttp 16040 7164 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:29:22,645 basehttp 16040 22268 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:29:22,646 basehttp 16040 21340 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:29:22,721 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:22,876 basehttp 16040 22268 "GET / HTTP/1.1" 200 29444
+WARNING 2025-10-28 10:29:22,973 basehttp 16040 22268 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:29:23,090 basehttp 16040 7164 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:23,154 log 16040 7164 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:23,166 basehttp 16040 7164 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:29:23,176 log 16040 20756 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:29:23,181 basehttp 16040 12832 - Broken pipe from ('127.0.0.1', 58356)
+INFO 2025-10-28 10:29:23,182 basehttp 16040 20756 - Broken pipe from ('127.0.0.1', 51869)
+WARNING 2025-10-28 10:29:23,193 log 16040 19248 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:29:23,194 basehttp 16040 19248 - Broken pipe from ('127.0.0.1', 65158)
+INFO 2025-10-28 10:29:23,236 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:26,383 basehttp 16040 4192 "GET /about/ HTTP/1.1" 200 21130
+WARNING 2025-10-28 10:29:26,444 basehttp 16040 14672 "GET /static/image/assets/Baslink-logo.jpg HTTP/1.1" 404 1901
+INFO 2025-10-28 10:29:26,446 basehttp 16040 4192 "GET /static/css/dist/styles.css?v=1761690566 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:29:26,572 basehttp 16040 4192 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:26,648 log 16040 4192 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:26,672 log 16040 376 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:29:26,673 basehttp 16040 19572 - Broken pipe from ('127.0.0.1', 57921)
+WARNING 2025-10-28 10:29:26,673 basehttp 16040 4192 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:29:26,674 basehttp 16040 376 - Broken pipe from ('127.0.0.1', 58043)
+INFO 2025-10-28 10:29:26,675 basehttp 16040 4192 - Broken pipe from ('127.0.0.1', 54669)
+WARNING 2025-10-28 10:29:26,685 log 16040 3096 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:29:26,686 basehttp 16040 3096 - Broken pipe from ('127.0.0.1', 61063)
+INFO 2025-10-28 10:29:26,805 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:52,552 basehttp 16040 2324 "GET /about/ HTTP/1.1" 200 21186
+WARNING 2025-10-28 10:29:52,592 basehttp 16040 22100 "GET /static/image/assets/Hotel-website-Django/hotelapp/core/static/image/assets/Baselink-logo.jpg HTTP/1.1" 404 2069
+INFO 2025-10-28 10:29:52,594 basehttp 16040 2324 "GET /static/css/dist/styles.css?v=1761690592 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:29:52,811 basehttp 16040 2324 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:52,888 log 16040 2324 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:52,910 log 16040 19020 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:29:52,911 basehttp 16040 2324 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:29:52,915 basehttp 16040 19020 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:29:52,923 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:52,925 basehttp 16040 9220 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:29:52,939 log 16040 2324 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:29:52,949 log 16040 13868 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:29:52,949 basehttp 16040 2324 - Broken pipe from ('127.0.0.1', 58183)
+INFO 2025-10-28 10:29:52,950 basehttp 16040 13868 - Broken pipe from ('127.0.0.1', 58200)
+INFO 2025-10-28 10:29:58,116 basehttp 16040 19020 "GET /about/ HTTP/1.1" 200 21131
+INFO 2025-10-28 10:29:58,150 basehttp 16040 19020 "GET /static/css/dist/styles.css?v=1761690598 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:29:58,174 basehttp 16040 9220 "GET /static/image/assets/Baselink-logo.jpg HTTP/1.1" 200 744083
+INFO 2025-10-28 10:29:58,280 basehttp 16040 9220 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:29:58,387 log 16040 9220 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:29:58,390 log 16040 19020 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:29:58,396 basehttp 16040 9220 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:29:58,397 basehttp 16040 19020 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:29:58,403 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:29:58,409 basehttp 16040 18716 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:29:58,428 log 16040 19020 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:29:58,443 log 16040 9220 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:29:58,444 basehttp 16040 19020 - Broken pipe from ('127.0.0.1', 58222)
+WARNING 2025-10-28 10:29:58,454 log 16040 9740 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:29:58,454 basehttp 16040 9220 - Broken pipe from ('127.0.0.1', 49524)
+WARNING 2025-10-28 10:29:58,467 log 16040 18716 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:29:58,468 basehttp 16040 9740 - Broken pipe from ('127.0.0.1', 55181)
+INFO 2025-10-28 10:29:58,469 basehttp 16040 18716 - Broken pipe from ('127.0.0.1', 51175)
+INFO 2025-10-28 10:30:08,044 basehttp 16040 20476 "GET /about/ HTTP/1.1" 200 21131
+INFO 2025-10-28 10:30:08,101 basehttp 16040 20476 "GET /static/css/dist/styles.css?v=1761690608 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:30:08,259 basehttp 16040 20476 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:30:08,324 log 16040 20476 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:30:08,356 log 16040 22292 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:30:08,357 basehttp 16040 20476 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:30:08,366 basehttp 16040 22292 - Broken pipe from ('127.0.0.1', 60921)
+WARNING 2025-10-28 10:30:08,386 log 16040 20476 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:30:08,386 basehttp 16040 15544 - Broken pipe from ('127.0.0.1', 58625)
+WARNING 2025-10-28 10:30:08,399 log 16040 22268 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:30:08,400 basehttp 16040 20476 - Broken pipe from ('127.0.0.1', 56065)
+INFO 2025-10-28 10:30:08,400 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:30:08,401 basehttp 16040 22268 - Broken pipe from ('127.0.0.1', 65160)
+INFO 2025-10-28 10:30:37,360 basehttp 16040 16112 "GET /hotel/ HTTP/1.1" 200 47741
+INFO 2025-10-28 10:30:37,428 basehttp 16040 16112 "GET /static/css/dist/styles.css?v=1761690637 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:30:37,557 basehttp 16040 16112 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:30:37,619 log 16040 20324 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:30:37,627 log 16040 16112 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:30:37,628 basehttp 16040 9780 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:30:37,629 basehttp 16040 20324 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:30:37,632 basehttp 16040 16112 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:30:37,877 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:30:39,578 basehttp 16040 20324 "GET / HTTP/1.1" 200 29445
+INFO 2025-10-28 10:30:39,630 basehttp 16040 20324 "GET /static/css/dist/styles.css?v=1761690639 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:30:39,741 basehttp 16040 20324 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:30:39,794 log 16040 20324 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:30:39,801 log 16040 9780 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:30:39,801 basehttp 16040 18640 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:30:39,802 basehttp 16040 20324 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:30:39,802 basehttp 16040 9780 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:30:39,821 log 16040 9780 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:30:39,822 basehttp 16040 9780 - Broken pipe from ('127.0.0.1', 50265)
+INFO 2025-10-28 10:30:39,911 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:30:53,552 basehttp 16040 18640 "GET / HTTP/1.1" 200 29443
+INFO 2025-10-28 10:30:53,585 basehttp 16040 18640 "GET /static/css/dist/styles.css?v=1761690653 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:30:53,670 basehttp 16040 18640 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:30:53,707 log 16040 18640 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:30:53,722 log 16040 7360 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:30:53,725 basehttp 16040 18640 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:30:53,732 basehttp 16040 7360 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:30:53,738 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:30:53,742 basehttp 16040 20848 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:30:53,757 log 16040 7360 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:30:53,776 log 16040 18640 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:30:53,778 basehttp 16040 7360 - Broken pipe from ('127.0.0.1', 53856)
+WARNING 2025-10-28 10:30:53,803 log 16040 18908 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:30:53,804 basehttp 16040 18640 - Broken pipe from ('127.0.0.1', 64964)
+INFO 2025-10-28 10:30:53,834 basehttp 16040 18908 - Broken pipe from ('127.0.0.1', 49844)
+INFO 2025-10-28 10:30:55,659 basehttp 16040 20848 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:30:55,700 basehttp 16040 20848 "GET /static/css/dist/styles.css?v=1761690655 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:30:55,778 basehttp 16040 20848 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:30:55,817 log 16040 20848 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:30:55,820 basehttp 16040 20848 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:30:55,839 log 16040 19024 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:30:55,861 log 16040 20848 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:30:55,862 basehttp 16040 19024 - Broken pipe from ('127.0.0.1', 51869)
+INFO 2025-10-28 10:30:55,864 basehttp 16040 4432 - Broken pipe from ('127.0.0.1', 49767)
+WARNING 2025-10-28 10:30:55,873 log 16040 20328 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:30:55,875 basehttp 16040 20848 - Broken pipe from ('127.0.0.1', 63133)
+WARNING 2025-10-28 10:30:55,885 log 16040 3836 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:30:55,886 basehttp 16040 20328 - Broken pipe from ('127.0.0.1', 51754)
+INFO 2025-10-28 10:30:55,887 basehttp 16040 3836 - Broken pipe from ('127.0.0.1', 64358)
+INFO 2025-10-28 10:30:55,889 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:31:09,632 basehttp 16040 20140 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:31:09,690 basehttp 16040 20140 "GET /static/css/dist/styles.css?v=1761690669 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:31:09,921 basehttp 16040 20140 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:31:09,977 log 16040 20140 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:31:09,987 basehttp 16040 20140 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:31:09,998 log 16040 20232 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:31:10,008 basehttp 16040 20232 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:31:10,017 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:31:10,019 basehttp 16040 19916 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:31:10,049 log 16040 19988 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-28 10:31:10,074 log 16040 15284 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-28 10:31:10,077 log 16040 19916 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:31:10,078 basehttp 16040 19988 - Broken pipe from ('127.0.0.1', 57035)
+WARNING 2025-10-28 10:31:10,087 log 16040 2208 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:31:10,087 basehttp 16040 15284 - Broken pipe from ('127.0.0.1', 52180)
+INFO 2025-10-28 10:31:10,089 basehttp 16040 19916 - Broken pipe from ('127.0.0.1', 58839)
+WARNING 2025-10-28 10:31:10,097 log 16040 13652 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:31:10,098 basehttp 16040 2208 - Broken pipe from ('127.0.0.1', 50946)
+INFO 2025-10-28 10:31:10,101 basehttp 16040 13652 - Broken pipe from ('127.0.0.1', 63548)
+INFO 2025-10-28 10:31:20,979 basehttp 16040 3764 "GET /about/ HTTP/1.1" 200 21130
+INFO 2025-10-28 10:31:21,080 basehttp 16040 3764 "GET /static/css/dist/styles.css?v=1761690680 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:31:21,451 basehttp 16040 3764 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:31:21,540 log 16040 3764 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:31:21,550 log 16040 8172 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:31:21,551 basehttp 16040 3764 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:31:21,552 basehttp 16040 15332 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:31:21,552 basehttp 16040 8172 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:31:21,647 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:31:24,627 basehttp 16040 3764 "GET /hotel/ HTTP/1.1" 200 47740
+INFO 2025-10-28 10:31:24,716 basehttp 16040 3764 "GET /static/css/dist/styles.css?v=1761690684 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:31:24,822 basehttp 16040 3764 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:31:24,870 log 16040 3764 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:31:24,885 log 16040 15332 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:31:24,885 basehttp 16040 3764 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:31:24,886 basehttp 16040 15332 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:31:24,887 basehttp 16040 12628 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:31:24,917 basehttp 16040 11048 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:31:33,217 basehttp 16040 14664 "GET /my_booking/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:31:33,233 basehttp 16040 14664 "GET /login/?next=/my_booking/ HTTP/1.1" 200 13700
+INFO 2025-10-28 10:31:33,284 basehttp 16040 14664 "GET /static/css/dist/styles.css?v=1761690693 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:31:33,629 basehttp 16040 14664 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:31:33,690 log 16040 14664 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:31:33,716 log 16040 17516 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:31:33,716 basehttp 16040 14664 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:31:33,719 basehttp 16040 18860 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:31:33,725 basehttp 16040 17516 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:31:33,764 log 16040 18860 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:31:33,766 basehttp 16040 18860 - Broken pipe from ('127.0.0.1', 50441)
+INFO 2025-10-28 10:31:33,777 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:31:48,822 basehttp 16040 14664 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:31:48,905 log 16040 14664 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:31:48,918 basehttp 16040 14664 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:31:48,930 log 16040 12320 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:31:48,930 basehttp 16040 3820 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:31:48,932 basehttp 16040 12320 - Broken pipe from ('127.0.0.1', 55137)
+INFO 2025-10-28 10:31:49,074 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:32:07,505 basehttp 16040 3820 "GET /my_booking/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:32:07,518 basehttp 16040 3820 "GET /login/?next=/my_booking/ HTTP/1.1" 200 13700
+INFO 2025-10-28 10:32:07,586 basehttp 16040 3820 "GET /static/css/dist/styles.css?v=1761690727 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:32:07,757 basehttp 16040 3820 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:07,839 log 16040 3820 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:32:07,871 log 16040 14664 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:32:07,876 basehttp 16040 3820 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:32:07,880 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:32:07,882 basehttp 16040 14664 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:32:07,883 basehttp 16040 21536 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:32:11,069 basehttp 16040 21536 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:11,139 log 16040 3820 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:32:11,140 log 16040 21536 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:32:11,143 basehttp 16040 3820 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:32:11,143 basehttp 16040 21536 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:32:11,143 basehttp 16040 9244 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:32:11,357 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:32:14,558 basehttp 16040 9244 "GET /contact/ HTTP/1.1" 200 39328
+INFO 2025-10-28 10:32:14,673 basehttp 16040 9244 "GET /static/css/dist/styles.css?v=1761690734 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:32:14,752 basehttp 16040 9244 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:14,810 log 16040 9244 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:32:14,811 log 16040 21536 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:32:14,812 basehttp 16040 3820 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:32:14,813 basehttp 16040 9244 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:32:14,814 basehttp 16040 21536 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:32:14,923 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:32:47,559 basehttp 16040 9244 "GET /about/ HTTP/1.1" 200 21130
+INFO 2025-10-28 10:32:47,616 basehttp 16040 9244 "GET /static/css/dist/styles.css?v=1761690767 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:32:47,748 basehttp 16040 9244 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:47,827 log 16040 9244 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:32:47,839 log 16040 3820 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:32:47,840 basehttp 16040 15860 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:32:47,840 basehttp 16040 9244 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:32:47,841 basehttp 16040 3820 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:32:47,941 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:32:49,595 basehttp 16040 9244 "GET / HTTP/1.1" 200 29444
+INFO 2025-10-28 10:32:49,645 basehttp 16040 9244 "GET /static/css/dist/styles.css?v=1761690769 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:32:49,717 basehttp 16040 9244 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:49,752 log 16040 9244 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:32:49,762 log 16040 15860 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:32:49,763 basehttp 16040 21736 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:32:49,764 basehttp 16040 9244 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:32:49,764 basehttp 16040 15860 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:32:49,842 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:32:59,512 basehttp 16040 15860 "GET /sign_up/ HTTP/1.1" 200 17894
+INFO 2025-10-28 10:32:59,594 basehttp 16040 15860 "GET /static/css/dist/styles.css?v=1761690779 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:32:59,693 basehttp 16040 15860 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:32:59,750 log 16040 15860 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:32:59,772 log 16040 9244 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:32:59,776 basehttp 16040 15860 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:32:59,778 basehttp 16040 2240 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:32:59,779 basehttp 16040 9244 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:32:59,795 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:33:01,409 basehttp 16040 9244 "GET /login/ HTTP/1.1" 200 13333
+INFO 2025-10-28 10:33:01,470 basehttp 16040 9244 "GET /static/css/dist/styles.css?v=1761690781 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:01,650 basehttp 16040 9244 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:01,756 log 16040 9244 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:33:01,769 log 16040 15860 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:33:01,770 basehttp 16040 9244 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:33:01,770 basehttp 16040 10568 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:33:01,784 basehttp 16040 15860 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:33:01,792 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:33:11,672 basehttp 16040 9244 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:33:11,974 basehttp 16040 9244 "GET /dashboard/ HTTP/1.1" 200 61506
+INFO 2025-10-28 10:33:12,043 basehttp 16040 9244 "GET /static/css/dist/styles.css?v=1761690791 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:12,161 basehttp 16040 9244 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:12,262 log 16040 9244 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:33:12,267 basehttp 16040 9244 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:33:12,326 log 16040 10568 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:33:12,333 basehttp 16040 10568 - Broken pipe from ('127.0.0.1', 59113)
+INFO 2025-10-28 10:33:12,352 basehttp 16040 16404 - Broken pipe from ('127.0.0.1', 51061)
+INFO 2025-10-28 10:33:12,387 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:33:27,196 basehttp 16040 22420 "GET /add-room/ HTTP/1.1" 200 64950
+INFO 2025-10-28 10:33:27,277 basehttp 16040 22420 "GET /static/css/dist/styles.css?v=1761690807 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:27,370 basehttp 16040 22420 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:27,480 log 16040 21364 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:33:27,483 basehttp 16040 21364 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:33:27,519 log 16040 22420 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:33:27,523 basehttp 16040 22420 - Broken pipe from ('127.0.0.1', 56869)
+INFO 2025-10-28 10:33:27,546 basehttp 16040 14584 - Broken pipe from ('127.0.0.1', 62285)
+INFO 2025-10-28 10:33:27,568 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:33:34,709 basehttp 16040 5528 "GET /room/4/gallery/ HTTP/1.1" 200 54015
+INFO 2025-10-28 10:33:34,771 basehttp 16040 5528 "GET /static/css/dist/styles.css?v=1761690814 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:34,938 basehttp 16040 5528 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:35,029 log 16040 5528 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:33:35,030 basehttp 16040 5528 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:33:35,064 basehttp 16040 7336 - Broken pipe from ('127.0.0.1', 56857)
+WARNING 2025-10-28 10:33:35,081 log 16040 20312 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:33:35,091 basehttp 16040 20312 - Broken pipe from ('127.0.0.1', 52274)
+INFO 2025-10-28 10:33:35,102 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:33:43,034 basehttp 16040 18812 "GET /add_room_detail/4/ HTTP/1.1" 200 28898
+INFO 2025-10-28 10:33:43,089 basehttp 16040 18812 "GET /static/css/dist/styles.css?v=1761690823 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:43,198 basehttp 16040 18812 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:43,305 log 16040 18812 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:33:43,307 basehttp 16040 18812 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:33:43,365 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:33:43,385 log 16040 6072 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:33:43,387 basehttp 16040 6072 - Broken pipe from ('127.0.0.1', 51602)
+INFO 2025-10-28 10:33:43,413 basehttp 16040 9600 - Broken pipe from ('127.0.0.1', 65085)
+INFO 2025-10-28 10:33:58,519 basehttp 16040 18812 "GET /services/ HTTP/1.1" 200 40149
+INFO 2025-10-28 10:33:58,576 basehttp 16040 18812 "GET /static/css/dist/styles.css?v=1761690838 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:33:58,740 basehttp 16040 18812 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:33:58,812 log 16040 18812 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:33:58,818 basehttp 16040 18812 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:33:58,828 log 16040 19236 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:33:58,835 basehttp 16040 19236 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:33:58,869 basehttp 16040 11412 - Broken pipe from ('127.0.0.1', 51802)
+INFO 2025-10-28 10:33:58,923 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:34:00,526 log 16040 13468 Not Found: /api/mark-guests-seen/
+WARNING 2025-10-28 10:34:00,526 basehttp 16040 13468 "POST /api/mark-guests-seen/ HTTP/1.1" 404 19241
+INFO 2025-10-28 10:34:00,595 basehttp 16040 14524 "GET /guest/ HTTP/1.1" 200 31850
+INFO 2025-10-28 10:34:00,656 basehttp 16040 14524 "GET /static/css/dist/styles.css?v=1761690840 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:00,843 basehttp 16040 14524 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:00,930 log 16040 13468 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:34:00,932 basehttp 16040 13468 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:34:00,958 log 16040 14524 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:00,966 basehttp 16040 14524 - Broken pipe from ('127.0.0.1', 51597)
+INFO 2025-10-28 10:34:00,991 basehttp 16040 19576 - Broken pipe from ('127.0.0.1', 53212)
+INFO 2025-10-28 10:34:00,991 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:34:04,859 log 16040 6336 Not Found: /api/mark-reservations-seen/
+WARNING 2025-10-28 10:34:04,860 basehttp 16040 6336 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 19259
+INFO 2025-10-28 10:34:04,972 basehttp 16040 22288 "GET /reservation/ HTTP/1.1" 200 66380
+INFO 2025-10-28 10:34:05,030 basehttp 16040 22288 "GET /static/css/dist/styles.css?v=1761690844 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:05,150 basehttp 16040 22288 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:05,241 log 16040 22288 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:34:05,242 basehttp 16040 22288 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:34:05,274 basehttp 16040 11860 - Broken pipe from ('127.0.0.1', 54810)
+WARNING 2025-10-28 10:34:05,309 log 16040 6336 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:05,310 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:05,313 basehttp 16040 6336 - Broken pipe from ('127.0.0.1', 53749)
+WARNING 2025-10-28 10:34:08,267 log 16040 16884 Not Found: /api/mark-guests-seen/
+WARNING 2025-10-28 10:34:08,269 basehttp 16040 16884 "POST /api/mark-guests-seen/ HTTP/1.1" 404 19241
+INFO 2025-10-28 10:34:08,322 basehttp 16040 11472 "GET /guest/ HTTP/1.1" 200 31850
+INFO 2025-10-28 10:34:08,380 basehttp 16040 11472 "GET /static/css/dist/styles.css?v=1761690848 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:08,471 basehttp 16040 11472 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:08,567 log 16040 16884 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:34:08,585 basehttp 16040 16884 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:34:08,612 log 16040 11472 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:08,613 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:08,629 basehttp 16040 11472 - Broken pipe from ('127.0.0.1', 55584)
+INFO 2025-10-28 10:34:08,668 basehttp 16040 22048 - Broken pipe from ('127.0.0.1', 57245)
+WARNING 2025-10-28 10:34:09,225 log 16040 16884 Not Found: /api/mark-reservations-seen/
+WARNING 2025-10-28 10:34:09,225 basehttp 16040 16884 "POST /api/mark-reservations-seen/ HTTP/1.1" 404 19259
+INFO 2025-10-28 10:34:09,267 basehttp 16040 4168 "GET /reservation/ HTTP/1.1" 200 66380
+INFO 2025-10-28 10:34:09,327 basehttp 16040 4168 "GET /static/css/dist/styles.css?v=1761690849 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:09,471 basehttp 16040 4168 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:09,577 log 16040 4168 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:34:09,579 basehttp 16040 4168 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:34:09,652 log 16040 16884 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:34:09,655 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:09,674 basehttp 16040 16884 - Broken pipe from ('127.0.0.1', 63011)
+INFO 2025-10-28 10:34:09,692 basehttp 16040 7656 - Broken pipe from ('127.0.0.1', 50740)
+WARNING 2025-10-28 10:34:09,725 log 16040 4168 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:34:09,726 basehttp 16040 4168 - Broken pipe from ('127.0.0.1', 56563)
+WARNING 2025-10-28 10:34:09,756 log 16040 9640 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:34:09,757 basehttp 16040 9640 - Broken pipe from ('127.0.0.1', 65123)
+INFO 2025-10-28 10:34:13,068 basehttp 16040 10552 "GET /reservation/edit/2/ HTTP/1.1" 200 34366
+INFO 2025-10-28 10:34:13,125 basehttp 16040 10552 "GET /static/css/dist/styles.css?v=1761690853 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:13,235 basehttp 16040 10552 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:13,344 log 16040 10552 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:34:13,345 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:34:13,347 basehttp 16040 10552 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:34:13,402 log 16040 15188 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:13,404 basehttp 16040 15188 - Broken pipe from ('127.0.0.1', 50499)
+INFO 2025-10-28 10:34:13,423 basehttp 16040 14356 - Broken pipe from ('127.0.0.1', 62287)
+INFO 2025-10-28 10:34:27,752 basehttp 16040 10552 "GET /reservation/ HTTP/1.1" 200 66380
+INFO 2025-10-28 10:34:27,814 basehttp 16040 10552 "GET /static/css/dist/styles.css?v=1761690867 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:27,928 basehttp 16040 10552 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:28,022 log 16040 10552 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:34:28,023 basehttp 16040 10552 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:34:28,069 log 16040 11228 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:28,133 basehttp 16040 756 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:28,187 basehttp 16040 11228 - Broken pipe from ('127.0.0.1', 65276)
+INFO 2025-10-28 10:34:28,188 basehttp 16040 15152 - Broken pipe from ('127.0.0.1', 58406)
+WARNING 2025-10-28 10:34:28,209 log 16040 10552 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:34:28,212 basehttp 16040 10552 - Broken pipe from ('127.0.0.1', 55164)
+WARNING 2025-10-28 10:34:28,256 log 16040 9084 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:34:28,258 basehttp 16040 9084 - Broken pipe from ('127.0.0.1', 51407)
+WARNING 2025-10-28 10:34:28,273 log 16040 19716 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:34:28,275 basehttp 16040 19716 - Broken pipe from ('127.0.0.1', 49852)
+INFO 2025-10-28 10:34:33,654 basehttp 16040 16304 "GET /reservation/edit/2/ HTTP/1.1" 200 34366
+INFO 2025-10-28 10:34:33,722 basehttp 16040 16304 "GET /static/css/dist/styles.css?v=1761690873 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:33,943 basehttp 16040 16304 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:34:33,998 basehttp 16040 2948 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:34,162 basehttp 16040 16556 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:34:34,181 log 16040 9080 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:34:34,182 basehttp 16040 9080 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:34:34,211 log 16040 16556 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:34:34,212 basehttp 16040 16556 - Broken pipe from ('127.0.0.1', 56090)
+WARNING 2025-10-28 10:34:34,242 log 16040 4956 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:34:34,244 basehttp 16040 4956 - Broken pipe from ('127.0.0.1', 60191)
+INFO 2025-10-28 10:34:49,069 basehttp 16040 9080 "GET /reservation/ HTTP/1.1" 200 66380
+INFO 2025-10-28 10:34:49,126 basehttp 16040 9080 "GET /static/css/dist/styles.css?v=1761690889 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:49,220 basehttp 16040 9080 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:49,334 log 16040 9080 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:34:49,352 basehttp 16040 9080 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:34:49,388 log 16040 19740 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:34:49,395 basehttp 16040 2948 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:34:49,396 basehttp 16040 19740 - Broken pipe from ('127.0.0.1', 64909)
+INFO 2025-10-28 10:34:49,408 basehttp 16040 22128 - Broken pipe from ('127.0.0.1', 56005)
+INFO 2025-10-28 10:34:55,003 basehttp 16040 9080 "GET /manage-hotel-account/ HTTP/1.1" 200 50276
+INFO 2025-10-28 10:34:55,058 basehttp 16040 9080 "GET /static/css/dist/styles.css?v=1761690894 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:34:55,170 basehttp 16040 9080 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:34:55,291 log 16040 9080 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:34:55,293 basehttp 16040 9080 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:34:55,357 basehttp 16040 2948 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:34:55,363 log 16040 6260 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:34:55,375 basehttp 16040 6260 - Broken pipe from ('127.0.0.1', 50018)
+INFO 2025-10-28 10:34:55,391 basehttp 16040 18908 - Broken pipe from ('127.0.0.1', 50046)
+ERROR 2025-10-28 10:34:57,247 log 16040 16176 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 203, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py", line 69, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 301, in __init__
+    if self.instance and not self.instance.has_usable_password():
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProfileModel' object has no attribute 'has_usable_password'
+ERROR 2025-10-28 10:34:57,257 basehttp 16040 16176 "GET /manage-account/ HTTP/1.1" 500 88692
+INFO 2025-10-28 10:37:27,646 autoreload 16040 8652 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-10-28 10:37:30,531 autoreload 21332 19580 Watching for file changes with StatReloader
+ERROR 2025-10-28 10:37:31,742 log 21332 18504 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 206, in manage_account
+    p_form = UserUpdateForm(instance=request.user.profilemodel)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\forms.py", line 69, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\auth\forms.py", line 301, in __init__
+    if self.instance and not self.instance.has_usable_password():
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProfileModel' object has no attribute 'has_usable_password'
+ERROR 2025-10-28 10:37:31,771 basehttp 21332 18504 "GET /manage-account/ HTTP/1.1" 500 88692
+INFO 2025-10-28 10:37:41,710 autoreload 21332 19580 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-10-28 10:37:43,820 autoreload 2560 21644 Watching for file changes with StatReloader
+ERROR 2025-10-28 10:37:44,833 log 2560 20036 Internal Server Error: /manage-account/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py", line 208, in manage_account
+    p_form = ProfileForm(instance=profile)
+             ^^^^^^^^^^^
+NameError: name 'ProfileForm' is not defined. Did you mean: 'ProfileModel'?
+ERROR 2025-10-28 10:37:44,856 basehttp 2560 20036 "GET /manage-account/ HTTP/1.1" 500 78985
+INFO 2025-10-28 10:37:51,533 autoreload 2560 21644 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-10-28 10:37:55,129 autoreload 18596 1396 Watching for file changes with StatReloader
+INFO 2025-10-28 10:37:56,431 basehttp 18596 12060 "GET /manage-account/ HTTP/1.1" 200 44021
+INFO 2025-10-28 10:37:56,654 basehttp 18596 12060 "GET /static/css/dist/styles.css?v=1761691076 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:37:56,954 basehttp 18596 12060 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:37:57,043 log 18596 12060 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:37:57,045 basehttp 18596 12060 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:37:57,074 log 18596 9400 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:37:57,084 basehttp 18596 9400 - Broken pipe from ('127.0.0.1', 55746)
+INFO 2025-10-28 10:37:57,107 basehttp 18596 1892 - Broken pipe from ('127.0.0.1', 56649)
+WARNING 2025-10-28 10:37:57,117 log 18596 12060 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:37:57,119 basehttp 18596 12060 - Broken pipe from ('127.0.0.1', 50513)
+INFO 2025-10-28 10:37:57,232 basehttp 18596 5512 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:38:38,174 basehttp 18596 13248 "POST /manage-account/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:38:38,273 basehttp 18596 13248 "GET /manage-account/ HTTP/1.1" 200 45366
+INFO 2025-10-28 10:38:38,416 basehttp 18596 13248 "GET /static/css/dist/styles.css?v=1761691118 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:38:39,584 basehttp 18596 13248 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:38:39,806 basehttp 18596 20492 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:38:39,834 log 18596 13248 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:38:39,835 basehttp 18596 13248 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:38:39,939 log 18596 5868 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:38:40,004 basehttp 18596 5868 - Broken pipe from ('127.0.0.1', 59895)
+INFO 2025-10-28 10:38:40,152 basehttp 18596 2796 - Broken pipe from ('127.0.0.1', 51700)
+WARNING 2025-10-28 10:38:40,177 log 18596 2848 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:38:40,177 basehttp 18596 19868 - Broken pipe from ('127.0.0.1', 63481)
+INFO 2025-10-28 10:38:40,177 basehttp 18596 21244 - Broken pipe from ('127.0.0.1', 53627)
+INFO 2025-10-28 10:38:40,180 basehttp 18596 19608 - Broken pipe from ('127.0.0.1', 59847)
+INFO 2025-10-28 10:38:40,181 basehttp 18596 2848 - Broken pipe from ('127.0.0.1', 62741)
+WARNING 2025-10-28 10:38:40,193 log 18596 1664 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:38:40,195 basehttp 18596 1664 - Broken pipe from ('127.0.0.1', 55211)
+WARNING 2025-10-28 10:38:40,214 log 18596 21424 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:38:40,219 basehttp 18596 21424 - Broken pipe from ('127.0.0.1', 53810)
+WARNING 2025-10-28 10:38:40,236 log 18596 13248 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:38:40,238 basehttp 18596 13248 - Broken pipe from ('127.0.0.1', 54049)
+WARNING 2025-10-28 10:38:40,266 log 18596 3580 Not Found: /images/icons/icon-512x512.png
+INFO 2025-10-28 10:38:40,272 basehttp 18596 3580 - Broken pipe from ('127.0.0.1', 64349)
+WARNING 2025-10-28 10:38:40,292 log 18596 1348 Not Found: /images/icons/icon-384x384.png
+INFO 2025-10-28 10:38:40,296 basehttp 18596 1348 - Broken pipe from ('127.0.0.1', 65265)
+WARNING 2025-10-28 10:38:40,318 log 18596 8000 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:38:40,322 basehttp 18596 8000 - Broken pipe from ('127.0.0.1', 64552)
+INFO 2025-10-28 10:38:43,031 basehttp 18596 20680 "GET /reset_password/ HTTP/1.1" 200 9550
+INFO 2025-10-28 10:38:43,113 basehttp 18596 20680 "GET /static/css/dist/styles.css?v=1761691123 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:38:43,264 basehttp 18596 20680 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:38:43,371 basehttp 18596 20492 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:38:43,401 log 18596 20680 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:38:43,402 basehttp 18596 20680 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:38:43,434 log 18596 16156 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:38:43,438 basehttp 18596 16156 - Broken pipe from ('127.0.0.1', 57301)
+INFO 2025-10-28 10:38:43,448 basehttp 18596 17948 - Broken pipe from ('127.0.0.1', 61963)
+INFO 2025-10-28 10:38:47,079 basehttp 18596 20680 "GET /login/ HTTP/1.1" 200 13333
+INFO 2025-10-28 10:38:47,154 basehttp 18596 20680 "GET /static/css/dist/styles.css?v=1761691127 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:38:47,300 basehttp 18596 20680 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:38:47,423 basehttp 18596 20492 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:38:47,461 log 18596 20680 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:38:47,462 basehttp 18596 20680 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:38:47,506 log 18596 5948 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:38:47,509 basehttp 18596 5948 - Broken pipe from ('127.0.0.1', 57914)
+INFO 2025-10-28 10:38:47,551 basehttp 18596 16020 - Broken pipe from ('127.0.0.1', 62328)
+WARNING 2025-10-28 10:38:47,570 log 18596 20680 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:38:47,571 basehttp 18596 20680 - Broken pipe from ('127.0.0.1', 50005)
+INFO 2025-10-28 10:38:48,276 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:38:48,287 basehttp 18596 13192 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:38:48,386 log 18596 13192 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:38:48,387 basehttp 18596 13192 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:38:48,410 basehttp 18596 21624 - Broken pipe from ('127.0.0.1', 50493)
+WARNING 2025-10-28 10:38:48,431 log 18596 22444 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:38:48,432 basehttp 18596 22444 - Broken pipe from ('127.0.0.1', 58196)
+INFO 2025-10-28 10:38:49,018 basehttp 18596 13192 "GET /manage-account/ HTTP/1.1" 200 44021
+INFO 2025-10-28 10:38:49,080 basehttp 18596 13192 "GET /static/css/dist/styles.css?v=1761691128 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:38:49,120 basehttp 18596 13192 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:38:49,226 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:38:49,311 log 18596 13192 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:38:49,313 basehttp 18596 13192 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:38:49,344 log 18596 6268 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:38:49,346 basehttp 18596 6268 - Broken pipe from ('127.0.0.1', 60990)
+INFO 2025-10-28 10:38:49,412 basehttp 18596 2084 - Broken pipe from ('127.0.0.1', 57259)
+INFO 2025-10-28 10:38:55,828 basehttp 18596 13192 "GET /manage-hotel-account/ HTTP/1.1" 200 50276
+INFO 2025-10-28 10:38:55,882 basehttp 18596 13192 "GET /static/css/dist/styles.css?v=1761691135 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:38:56,081 basehttp 18596 13192 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:38:56,167 log 18596 13192 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:38:56,169 basehttp 18596 13192 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:38:56,224 log 18596 7160 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:38:56,284 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:38:56,298 basehttp 18596 7160 - Broken pipe from ('127.0.0.1', 59867)
+INFO 2025-10-28 10:38:56,300 basehttp 18596 9704 - Broken pipe from ('127.0.0.1', 51513)
+WARNING 2025-10-28 10:38:56,312 log 18596 21172 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:38:56,314 basehttp 18596 21172 - Broken pipe from ('127.0.0.1', 62369)
+WARNING 2025-10-28 10:38:56,332 log 18596 16176 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:38:56,334 basehttp 18596 16176 - Broken pipe from ('127.0.0.1', 62463)
+WARNING 2025-10-28 10:38:56,352 log 18596 13192 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:38:56,355 basehttp 18596 13192 - Broken pipe from ('127.0.0.1', 52449)
+INFO 2025-10-28 10:39:06,524 basehttp 18596 19104 "GET /manage-account/ HTTP/1.1" 200 44021
+INFO 2025-10-28 10:39:06,593 basehttp 18596 19104 "GET /static/css/dist/styles.css?v=1761691146 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:39:06,739 basehttp 18596 19104 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:39:06,813 log 18596 19104 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:39:06,814 basehttp 18596 19104 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:39:06,845 log 18596 21168 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:39:06,850 basehttp 18596 21168 - Broken pipe from ('127.0.0.1', 51372)
+INFO 2025-10-28 10:39:06,863 basehttp 18596 21340 - Broken pipe from ('127.0.0.1', 64530)
+INFO 2025-10-28 10:39:06,881 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:39:10,109 basehttp 18596 19904 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:39:10,129 basehttp 18596 19904 "GET / HTTP/1.1" 200 31206
+INFO 2025-10-28 10:39:10,196 basehttp 18596 19904 "GET /static/css/dist/styles.css?v=1761691150 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:39:10,325 basehttp 18596 19904 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:39:10,402 log 18596 19904 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:39:10,414 log 18596 13680 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:39:10,418 basehttp 18596 22148 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:39:10,420 basehttp 18596 19904 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:39:10,425 basehttp 18596 13680 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:39:10,443 log 18596 19904 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:39:10,444 basehttp 18596 19904 - Broken pipe from ('127.0.0.1', 56612)
+INFO 2025-10-28 10:39:10,528 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:39:13,336 basehttp 18596 8340 "GET /sign_up/ HTTP/1.1" 200 17894
+INFO 2025-10-28 10:39:13,451 basehttp 18596 8340 "GET /static/css/dist/styles.css?v=1761691153 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:39:13,538 basehttp 18596 8340 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:39:13,595 log 18596 8340 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:39:13,603 basehttp 18596 8340 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:39:13,614 basehttp 18596 10448 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:39:13,638 log 18596 17908 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:39:13,641 basehttp 18596 17908 - Broken pipe from ('127.0.0.1', 49798)
+INFO 2025-10-28 10:39:13,642 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:39:15,367 basehttp 18596 8340 "GET /login/ HTTP/1.1" 200 13333
+INFO 2025-10-28 10:39:15,436 basehttp 18596 8340 "GET /static/css/dist/styles.css?v=1761691155 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:39:15,578 basehttp 18596 8340 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:39:15,660 log 18596 8340 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:39:15,680 basehttp 18596 8340 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:39:15,695 log 18596 1480 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:39:15,696 basehttp 18596 10948 - Broken pipe from ('127.0.0.1', 60137)
+INFO 2025-10-28 10:39:15,699 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:39:15,700 basehttp 18596 1480 - Broken pipe from ('127.0.0.1', 59440)
+INFO 2025-10-28 10:39:29,339 basehttp 18596 8340 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:39:29,386 basehttp 18596 8340 "GET /staff/dashboard HTTP/1.1" 200 48100
+WARNING 2025-10-28 10:39:29,453 basehttp 18596 2324 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:39:29,455 basehttp 18596 8340 "GET /static/css/dist/styles.css?v=1761691169 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:39:29,560 basehttp 18596 8340 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:39:29,636 log 18596 21684 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:39:29,639 basehttp 18596 21684 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:39:29,691 log 18596 8340 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:39:29,694 basehttp 18596 8340 - Broken pipe from ('127.0.0.1', 63247)
+INFO 2025-10-28 10:39:29,707 basehttp 18596 20224 - Broken pipe from ('127.0.0.1', 58144)
+INFO 2025-10-28 10:39:30,094 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:40:08,077 basehttp 18596 21684 "GET /staff/user-management HTTP/1.1" 200 77862
+INFO 2025-10-28 10:40:08,129 basehttp 18596 21684 "GET /static/css/dist/styles.css?v=1761691208 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:40:08,140 basehttp 18596 19452 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:08,537 basehttp 18596 21684 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:40:08,642 log 18596 21684 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:08,643 basehttp 18596 21684 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:40:08,664 log 18596 21336 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:40:08,666 basehttp 18596 21336 - Broken pipe from ('127.0.0.1', 50087)
+INFO 2025-10-28 10:40:08,686 basehttp 18596 22368 - Broken pipe from ('127.0.0.1', 59727)
+INFO 2025-10-28 10:40:08,716 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:40:19,512 basehttp 18596 14188 "GET /staff/user-management/3/ HTTP/1.1" 200 32496
+WARNING 2025-10-28 10:40:19,567 basehttp 18596 22124 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:19,569 basehttp 18596 14188 "GET /static/css/dist/styles.css?v=1761691219 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:40:19,730 basehttp 18596 14188 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:40:19,839 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:40:19,868 log 18596 14188 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:19,869 basehttp 18596 14188 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:40:19,883 log 18596 18280 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:40:19,888 basehttp 18596 18280 - Broken pipe from ('127.0.0.1', 55172)
+INFO 2025-10-28 10:40:19,919 basehttp 18596 15232 - Broken pipe from ('127.0.0.1', 56011)
+INFO 2025-10-28 10:40:22,800 basehttp 18596 14188 "GET /staff/user-management HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:40:22,858 basehttp 18596 14532 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:22,861 basehttp 18596 14188 "GET /static/css/dist/styles.css?v=1761691222 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:40:23,006 basehttp 18596 14188 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:40:23,111 log 18596 14188 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:23,112 basehttp 18596 14188 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:40:23,127 log 18596 17832 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:40:23,178 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:40:23,197 basehttp 18596 18636 - Broken pipe from ('127.0.0.1', 63730)
+INFO 2025-10-28 10:40:23,199 basehttp 18596 17832 - Broken pipe from ('127.0.0.1', 52366)
+WARNING 2025-10-28 10:40:23,242 log 18596 14188 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:40:23,243 basehttp 18596 14188 - Broken pipe from ('127.0.0.1', 59345)
+WARNING 2025-10-28 10:40:23,258 log 18596 21368 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:40:23,259 basehttp 18596 21368 - Broken pipe from ('127.0.0.1', 60991)
+INFO 2025-10-28 10:40:24,734 basehttp 18596 14844 "GET /staff/user-management/2/ HTTP/1.1" 200 32473
+WARNING 2025-10-28 10:40:24,799 basehttp 18596 10684 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:24,801 basehttp 18596 14844 "GET /static/css/dist/styles.css?v=1761691224 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:40:25,064 basehttp 18596 14844 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:40:25,173 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:40:25,203 log 18596 14844 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:25,204 basehttp 18596 14844 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:40:25,266 basehttp 18596 22404 - Broken pipe from ('127.0.0.1', 50822)
+WARNING 2025-10-28 10:40:25,280 log 18596 10588 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:40:25,286 basehttp 18596 10588 - Broken pipe from ('127.0.0.1', 62856)
+WARNING 2025-10-28 10:40:25,305 log 18596 14844 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:40:25,308 basehttp 18596 14844 - Broken pipe from ('127.0.0.1', 61480)
+INFO 2025-10-28 10:40:27,347 basehttp 18596 14864 "GET /staff/user-management HTTP/1.1" 200 77862
+INFO 2025-10-28 10:40:27,409 basehttp 18596 14864 "GET /static/css/dist/styles.css?v=1761691227 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:40:27,409 basehttp 18596 9612 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:27,528 basehttp 18596 14864 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:40:27,616 log 18596 14864 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:40:27,620 basehttp 18596 14864 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:40:27,631 log 18596 16076 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:27,638 basehttp 18596 16076 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:40:27,650 basehttp 18596 16356 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:40:27,678 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:40:30,346 basehttp 18596 19388 "GET /staff/user-management/3/ HTTP/1.1" 200 32496
+WARNING 2025-10-28 10:40:30,410 basehttp 18596 21652 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:30,412 basehttp 18596 19388 "GET /static/css/dist/styles.css?v=1761691230 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:40:30,513 basehttp 18596 19388 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:40:30,606 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:40:30,636 log 18596 19388 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:40:30,636 basehttp 18596 19388 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:40:30,668 basehttp 18596 15044 - Broken pipe from ('127.0.0.1', 52347)
+WARNING 2025-10-28 10:40:30,695 log 18596 12432 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:40:30,698 basehttp 18596 12432 - Broken pipe from ('127.0.0.1', 53930)
+INFO 2025-10-28 10:40:39,394 basehttp 18596 19388 "GET /staff/user-management HTTP/1.1" 200 77862
+INFO 2025-10-28 10:40:39,445 basehttp 18596 19388 "GET /static/css/dist/styles.css?v=1761691239 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:40:39,454 basehttp 18596 20120 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:40:39,566 basehttp 18596 19388 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:40:39,663 log 18596 19388 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:40:39,683 basehttp 18596 19388 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:40:39,683 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:40:39,707 log 18596 16404 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:40:39,711 basehttp 18596 16404 - Broken pipe from ('127.0.0.1', 58971)
+INFO 2025-10-28 10:40:39,736 basehttp 18596 21296 - Broken pipe from ('127.0.0.1', 52724)
+INFO 2025-10-28 10:41:01,391 basehttp 18596 19388 "GET /user-analytics/ HTTP/1.1" 200 32173
+WARNING 2025-10-28 10:41:01,452 basehttp 18596 8428 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:01,454 basehttp 18596 19388 "GET /static/css/dist/styles.css?v=1761691261 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:01,584 basehttp 18596 19388 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:41:01,688 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:41:01,717 log 18596 19388 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:41:01,718 basehttp 18596 19388 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:41:01,763 log 18596 3360 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:41:01,764 basehttp 18596 3360 - Broken pipe from ('127.0.0.1', 60773)
+INFO 2025-10-28 10:41:01,783 basehttp 18596 21840 - Broken pipe from ('127.0.0.1', 51639)
+INFO 2025-10-28 10:41:18,100 basehttp 18596 19388 "GET /staff/user-management HTTP/1.1" 200 77862
+INFO 2025-10-28 10:41:18,155 basehttp 18596 19388 "GET /static/css/dist/styles.css?v=1761691278 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:41:18,162 basehttp 18596 12832 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:18,310 basehttp 18596 19388 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:18,425 log 18596 19388 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:41:18,427 basehttp 18596 19388 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:41:18,459 basehttp 18596 3928 - Broken pipe from ('127.0.0.1', 63282)
+WARNING 2025-10-28 10:41:18,483 log 18596 14356 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:41:18,485 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:18,488 basehttp 18596 14356 - Broken pipe from ('127.0.0.1', 49728)
+INFO 2025-10-28 10:41:29,829 basehttp 18596 21440 "GET /staff/user-management?search=Enoch+&user_type=&status= HTTP/1.1" 200 46419
+WARNING 2025-10-28 10:41:29,894 basehttp 18596 8492 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:29,896 basehttp 18596 21440 "GET /static/css/dist/styles.css?v=1761691289 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:30,116 basehttp 18596 21440 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:30,224 log 18596 21440 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:41:30,225 basehttp 18596 21440 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:41:30,243 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:30,249 basehttp 18596 9868 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:41:30,275 log 18596 6024 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:41:30,277 basehttp 18596 6024 - Broken pipe from ('127.0.0.1', 49396)
+INFO 2025-10-28 10:41:45,195 basehttp 18596 9868 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:41:45,274 basehttp 18596 18208 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:45,275 basehttp 18596 9868 "GET /static/css/dist/styles.css?v=1761691305 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:45,366 basehttp 18596 9868 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:41:45,463 basehttp 18596 18724 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:41:45,479 log 18596 9868 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:41:45,491 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:41:45,492 basehttp 18596 9868 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:41:45,524 log 18596 6412 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:41:45,540 basehttp 18596 6412 - Broken pipe from ('127.0.0.1', 58223)
+WARNING 2025-10-28 10:41:45,579 log 18596 21952 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:41:45,580 basehttp 18596 21952 - Broken pipe from ('127.0.0.1', 63201)
+INFO 2025-10-28 10:41:53,003 basehttp 18596 9868 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:41:53,053 basehttp 18596 20776 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:53,055 basehttp 18596 9868 "GET /static/css/dist/styles.css?v=1761691312 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:53,230 basehttp 18596 9868 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:53,357 log 18596 9868 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:41:53,358 basehttp 18596 9868 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:41:53,400 log 18596 20128 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:41:53,404 basehttp 18596 20128 - Broken pipe from ('127.0.0.1', 54286)
+INFO 2025-10-28 10:41:53,417 basehttp 18596 14228 - Broken pipe from ('127.0.0.1', 51970)
+INFO 2025-10-28 10:41:53,434 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:55,932 basehttp 18596 4268 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:41:55,979 basehttp 18596 5196 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:55,979 basehttp 18596 4268 "GET /static/css/dist/styles.css?v=1761691315 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:56,175 basehttp 18596 4268 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:56,319 log 18596 4268 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:41:56,327 basehttp 18596 4268 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:41:56,349 log 18596 22188 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:41:56,352 basehttp 18596 22188 - Broken pipe from ('127.0.0.1', 58619)
+INFO 2025-10-28 10:41:56,368 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:56,385 basehttp 18596 9948 - Broken pipe from ('127.0.0.1', 51975)
+INFO 2025-10-28 10:41:58,056 basehttp 18596 21956 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:41:58,106 basehttp 18596 21752 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:58,109 basehttp 18596 21956 "GET /static/css/dist/styles.css?v=1761691318 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:58,227 basehttp 18596 21956 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:58,317 log 18596 21956 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:41:58,323 basehttp 18596 21956 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:41:58,340 log 18596 20320 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:41:58,345 basehttp 18596 20320 - Broken pipe from ('127.0.0.1', 62688)
+INFO 2025-10-28 10:41:58,360 basehttp 18596 20560 - Broken pipe from ('127.0.0.1', 57665)
+INFO 2025-10-28 10:41:58,368 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:59,291 basehttp 18596 20576 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:41:59,335 basehttp 18596 1684 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:41:59,337 basehttp 18596 20576 "GET /static/css/dist/styles.css?v=1761691319 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:41:59,485 basehttp 18596 20576 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:41:59,583 log 18596 20576 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:41:59,585 basehttp 18596 20576 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:41:59,620 log 18596 4068 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:41:59,643 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:41:59,645 basehttp 18596 4068 - Broken pipe from ('127.0.0.1', 50496)
+INFO 2025-10-28 10:41:59,666 basehttp 18596 19748 - Broken pipe from ('127.0.0.1', 61139)
+WARNING 2025-10-28 10:41:59,719 log 18596 20576 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:41:59,724 basehttp 18596 20576 - Broken pipe from ('127.0.0.1', 52266)
+INFO 2025-10-28 10:42:00,591 basehttp 18596 21772 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:42:00,638 basehttp 18596 19860 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:42:00,640 basehttp 18596 21772 "GET /static/css/dist/styles.css?v=1761691320 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:42:00,838 basehttp 18596 21772 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:42:00,965 log 18596 21772 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:42:00,966 basehttp 18596 21772 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:42:00,997 basehttp 18596 19904 - Broken pipe from ('127.0.0.1', 61479)
+INFO 2025-10-28 10:42:01,016 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:42:01,027 log 18596 20544 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:42:01,029 basehttp 18596 20544 - Broken pipe from ('127.0.0.1', 50812)
+INFO 2025-10-28 10:42:02,809 basehttp 18596 3924 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:42:02,854 basehttp 18596 19404 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:42:02,855 basehttp 18596 3924 "GET /static/css/dist/styles.css?v=1761691322 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:42:02,965 basehttp 18596 3924 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:42:03,057 log 18596 3924 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:42:03,060 basehttp 18596 3924 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:42:03,079 log 18596 22148 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:42:03,081 basehttp 18596 22148 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:42:03,108 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:42:03,110 basehttp 18596 1480 - Broken pipe from ('127.0.0.1', 60904)
+INFO 2025-10-28 10:42:03,811 basehttp 18596 3924 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:42:03,879 basehttp 18596 2920 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:42:03,880 basehttp 18596 3924 "GET /static/css/dist/styles.css?v=1761691323 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:42:04,093 basehttp 18596 3924 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:42:04,221 log 18596 3924 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:42:04,223 basehttp 18596 3924 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:42:04,263 log 18596 21376 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:42:04,265 basehttp 18596 21376 - Broken pipe from ('127.0.0.1', 61809)
+INFO 2025-10-28 10:42:04,280 basehttp 18596 12436 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:42:04,291 basehttp 18596 19172 - Broken pipe from ('127.0.0.1', 59974)
+INFO 2025-10-28 10:42:37,931 autoreload 18596 1396 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\account\views.py changed, reloading.
+INFO 2025-10-28 10:42:39,284 autoreload 19944 1100 Watching for file changes with StatReloader
+INFO 2025-10-28 10:42:40,555 basehttp 19944 9540 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77862
+WARNING 2025-10-28 10:42:40,621 basehttp 19944 16224 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:42:40,697 basehttp 19944 12228 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:42:40,750 basehttp 19944 9540 "GET /static/css/dist/styles.css?v=1761691360 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:42:40,769 log 19944 9184 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:42:40,770 basehttp 19944 9184 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:42:40,801 log 19944 12228 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:42:40,803 basehttp 19944 12228 - Broken pipe from ('127.0.0.1', 65372)
+INFO 2025-10-28 10:42:40,825 basehttp 19944 1068 - Broken pipe from ('127.0.0.1', 63201)
+INFO 2025-10-28 10:42:40,843 basehttp 19944 20260 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:16,126 basehttp 19944 13032 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77933
+INFO 2025-10-28 10:43:16,160 basehttp 19944 13032 "GET /static/css/dist/styles.css?v=1761691396 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:16,186 basehttp 19944 18208 "GET /static/images/default.png HTTP/1.1" 404 1868
+WARNING 2025-10-28 10:43:16,198 log 19944 17724 Not Found: /staff/Hotel-website-Django/hotelapp/core/static/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:16,200 basehttp 19944 17724 "GET /staff/Hotel-website-Django/hotelapp/core/static/image/assets/Baslink-logo.png HTTP/1.1" 404 19408
+INFO 2025-10-28 10:43:16,758 basehttp 19944 17724 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:16,859 log 19944 17724 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:16,861 basehttp 19944 17724 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:16,876 log 19944 13032 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:43:16,888 basehttp 19944 13032 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:43:16,891 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:17,011 basehttp 19944 4532 - Broken pipe from ('127.0.0.1', 51075)
+WARNING 2025-10-28 10:43:17,041 log 19944 17724 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:43:17,044 basehttp 19944 17724 - Broken pipe from ('127.0.0.1', 52773)
+WARNING 2025-10-28 10:43:17,077 log 19944 19560 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:43:17,079 basehttp 19944 19560 - Broken pipe from ('127.0.0.1', 65454)
+WARNING 2025-10-28 10:43:17,101 log 19944 4676 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:43:17,104 basehttp 19944 4676 - Broken pipe from ('127.0.0.1', 62807)
+INFO 2025-10-28 10:43:20,853 basehttp 19944 10300 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+INFO 2025-10-28 10:43:20,946 basehttp 19944 10300 "GET /static/css/dist/styles.css?v=1761691400 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:20,993 basehttp 19944 3820 "GET /static/images/default.png HTTP/1.1" 404 1868
+WARNING 2025-10-28 10:43:21,004 log 19944 10376 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:21,006 basehttp 19944 10376 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:21,126 basehttp 19944 10376 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:21,276 log 19944 10376 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:43:21,278 basehttp 19944 10376 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:43:21,313 log 19944 10300 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:43:21,365 basehttp 19944 10300 - Broken pipe from ('127.0.0.1', 52855)
+INFO 2025-10-28 10:43:21,392 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:21,445 basehttp 19944 15016 - Broken pipe from ('127.0.0.1', 51770)
+INFO 2025-10-28 10:43:21,496 basehttp 19944 21864 - Broken pipe from ('127.0.0.1', 63054)
+INFO 2025-10-28 10:43:21,497 basehttp 19944 15224 - Broken pipe from ('127.0.0.1', 64447)
+WARNING 2025-10-28 10:43:21,554 log 19944 10376 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:43:21,574 basehttp 19944 10376 - Broken pipe from ('127.0.0.1', 60618)
+WARNING 2025-10-28 10:43:21,576 log 19944 4248 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:43:21,577 basehttp 19944 4248 - Broken pipe from ('127.0.0.1', 63905)
+WARNING 2025-10-28 10:43:21,591 log 19944 19440 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:43:21,592 basehttp 19944 19440 - Broken pipe from ('127.0.0.1', 55402)
+WARNING 2025-10-28 10:43:21,605 log 19944 16228 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:43:21,606 basehttp 19944 16228 - Broken pipe from ('127.0.0.1', 60788)
+WARNING 2025-10-28 10:43:21,625 log 19944 9356 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:43:21,627 basehttp 19944 9356 - Broken pipe from ('127.0.0.1', 61444)
+INFO 2025-10-28 10:43:21,639 basehttp 19944 9448 - Broken pipe from ('127.0.0.1', 53983)
+INFO 2025-10-28 10:43:28,460 basehttp 19944 10052 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:28,518 basehttp 19944 5064 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:28,522 basehttp 19944 10052 "GET /static/css/dist/styles.css?v=1761691408 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:28,533 log 19944 18148 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:28,533 basehttp 19944 18148 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:28,689 basehttp 19944 18148 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:28,771 log 19944 18148 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:28,772 basehttp 19944 18148 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:28,791 log 19944 10052 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:28,800 basehttp 19944 10052 - Broken pipe from ('127.0.0.1', 51629)
+INFO 2025-10-28 10:43:28,809 basehttp 19944 18516 - Broken pipe from ('127.0.0.1', 49700)
+INFO 2025-10-28 10:43:28,833 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:46,145 basehttp 19944 20188 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:46,208 basehttp 19944 11664 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:46,209 basehttp 19944 20188 "GET /static/css/dist/styles.css?v=1761691426 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:46,224 log 19944 3136 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:46,225 basehttp 19944 3136 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:46,365 basehttp 19944 3136 "GET /serviceworker.js HTTP/1.1" 200 1946
+INFO 2025-10-28 10:43:46,513 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+WARNING 2025-10-28 10:43:46,605 log 19944 20188 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:46,606 basehttp 19944 20188 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:46,641 log 19944 21084 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:46,651 basehttp 19944 21084 - Broken pipe from ('127.0.0.1', 51312)
+INFO 2025-10-28 10:43:46,720 basehttp 19944 15332 - Broken pipe from ('127.0.0.1', 53333)
+WARNING 2025-10-28 10:43:46,734 log 19944 20188 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:43:46,736 basehttp 19944 20188 - Broken pipe from ('127.0.0.1', 55002)
+WARNING 2025-10-28 10:43:46,779 log 19944 19448 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:43:46,784 basehttp 19944 19448 - Broken pipe from ('127.0.0.1', 51640)
+WARNING 2025-10-28 10:43:46,798 log 19944 15228 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:43:46,801 basehttp 19944 15228 - Broken pipe from ('127.0.0.1', 61032)
+WARNING 2025-10-28 10:43:46,822 log 19944 20008 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-28 10:43:46,824 basehttp 19944 20008 - Broken pipe from ('127.0.0.1', 59673)
+WARNING 2025-10-28 10:43:46,838 log 19944 10380 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:43:46,839 basehttp 19944 10380 - Broken pipe from ('127.0.0.1', 65479)
+INFO 2025-10-28 10:43:47,014 basehttp 19944 13656 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:47,082 basehttp 19944 3048 "GET /static/images/default.png HTTP/1.1" 404 1868
+WARNING 2025-10-28 10:43:47,100 log 19944 13656 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:47,101 basehttp 19944 13656 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:47,219 basehttp 19944 13656 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:47,309 log 19944 13656 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:47,334 basehttp 19944 13656 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:47,340 log 19944 7056 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:47,365 basehttp 19944 11976 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:43:47,387 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:47,503 basehttp 19944 7056 - Broken pipe from ('127.0.0.1', 55370)
+INFO 2025-10-28 10:43:48,892 basehttp 19944 11976 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:48,950 basehttp 19944 14544 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:48,951 basehttp 19944 11976 "GET /static/css/dist/styles.css?v=1761691428 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:48,965 log 19944 21600 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:48,966 basehttp 19944 21600 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:49,078 basehttp 19944 21600 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:49,172 log 19944 21600 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:49,173 basehttp 19944 21600 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:49,197 log 19944 11976 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:49,199 basehttp 19944 11976 - Broken pipe from ('127.0.0.1', 61533)
+INFO 2025-10-28 10:43:49,221 basehttp 19944 10504 - Broken pipe from ('127.0.0.1', 53627)
+INFO 2025-10-28 10:43:49,233 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:49,661 basehttp 19944 22412 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+INFO 2025-10-28 10:43:49,759 basehttp 19944 22412 "GET /static/css/dist/styles.css?v=1761691429 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:49,761 basehttp 19944 13356 "GET /static/images/default.png HTTP/1.1" 404 1868
+WARNING 2025-10-28 10:43:49,779 log 19944 22196 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:49,781 basehttp 19944 22196 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:50,046 basehttp 19944 22196 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:50,132 log 19944 22196 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:50,133 basehttp 19944 22196 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:50,172 log 19944 22412 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:50,173 basehttp 19944 22412 - Broken pipe from ('127.0.0.1', 63288)
+INFO 2025-10-28 10:43:50,185 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:50,197 basehttp 19944 12124 - Broken pipe from ('127.0.0.1', 61196)
+INFO 2025-10-28 10:43:50,751 basehttp 19944 16388 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:50,814 basehttp 19944 12980 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:50,816 basehttp 19944 16388 "GET /static/css/dist/styles.css?v=1761691430 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:50,829 log 19944 19444 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:50,830 basehttp 19944 19444 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:50,915 basehttp 19944 19444 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:50,999 log 19944 19444 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:51,001 basehttp 19944 19444 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:51,045 log 19944 16388 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:51,047 basehttp 19944 16388 - Broken pipe from ('127.0.0.1', 64938)
+INFO 2025-10-28 10:43:51,061 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:51,062 basehttp 19944 8132 - Broken pipe from ('127.0.0.1', 63675)
+WARNING 2025-10-28 10:43:51,121 log 19944 19444 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:43:51,125 basehttp 19944 19444 - Broken pipe from ('127.0.0.1', 56849)
+INFO 2025-10-28 10:43:52,398 basehttp 19944 8936 "GET /staff/user-management?search=&user_type=&status= HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:52,476 basehttp 19944 11752 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:52,477 basehttp 19944 8936 "GET /static/css/dist/styles.css?v=1761691432 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:52,494 log 19944 20156 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:52,495 basehttp 19944 20156 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:52,573 basehttp 19944 20156 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:52,660 log 19944 20156 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:52,661 basehttp 19944 20156 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:43:52,680 basehttp 19944 10904 - Broken pipe from ('127.0.0.1', 52156)
+WARNING 2025-10-28 10:43:52,702 log 19944 8936 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:52,704 basehttp 19944 8936 - Broken pipe from ('127.0.0.1', 64749)
+INFO 2025-10-28 10:43:52,714 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:53,652 basehttp 19944 3556 "GET /staff/dashboard HTTP/1.1" 200 46873
+WARNING 2025-10-28 10:43:53,776 basehttp 19944 22020 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:53,777 basehttp 19944 3556 "GET /static/css/dist/styles.css?v=1761691433 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:53,791 log 19944 19012 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:53,791 basehttp 19944 19012 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:53,921 basehttp 19944 19012 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:54,026 log 19944 19012 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:54,030 basehttp 19944 19012 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:54,046 log 19944 3556 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:54,053 basehttp 19944 3556 - Broken pipe from ('127.0.0.1', 49935)
+INFO 2025-10-28 10:43:54,072 basehttp 19944 12632 - Broken pipe from ('127.0.0.1', 53722)
+INFO 2025-10-28 10:43:54,086 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:56,118 basehttp 19944 22468 "GET /staff/user-management HTTP/1.1" 200 77891
+WARNING 2025-10-28 10:43:56,207 basehttp 19944 16864 "GET /static/images/default.png HTTP/1.1" 404 1868
+INFO 2025-10-28 10:43:56,212 basehttp 19944 22468 "GET /static/css/dist/styles.css?v=1761691436 HTTP/1.1" 200 134235
+WARNING 2025-10-28 10:43:56,223 log 19944 10332 Not Found: /staff/image/assets/Baslink-logo.png
+WARNING 2025-10-28 10:43:56,224 basehttp 19944 10332 "GET /staff/image/assets/Baslink-logo.png HTTP/1.1" 404 19282
+INFO 2025-10-28 10:43:56,397 basehttp 19944 10332 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:56,496 log 19944 10332 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:56,497 basehttp 19944 10332 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:43:56,528 log 19944 22468 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:43:56,531 basehttp 19944 22468 - Broken pipe from ('127.0.0.1', 57767)
+INFO 2025-10-28 10:43:56,552 basehttp 19944 16944 - Broken pipe from ('127.0.0.1', 61609)
+INFO 2025-10-28 10:43:56,562 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:43:59,348 basehttp 19944 12480 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-10-28 10:43:59,365 basehttp 19944 12480 "GET / HTTP/1.1" 200 31206
+INFO 2025-10-28 10:43:59,421 basehttp 19944 12480 "GET /static/css/dist/styles.css?v=1761691439 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:43:59,502 basehttp 19944 12480 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:43:59,540 log 19944 12480 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:43:59,559 log 19944 18504 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:43:59,560 basehttp 19944 12480 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:43:59,560 basehttp 19944 9268 - Broken pipe from ('127.0.0.1', 64212)
+INFO 2025-10-28 10:43:59,560 basehttp 19944 18504 - Broken pipe from ('127.0.0.1', 61560)
+INFO 2025-10-28 10:43:59,561 basehttp 19944 12480 - Broken pipe from ('127.0.0.1', 64571)
+INFO 2025-10-28 10:43:59,646 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:06,635 basehttp 19944 12628 "GET /hotel_rooms/ HTTP/1.1" 200 41271
+INFO 2025-10-28 10:44:06,730 basehttp 19944 12628 "GET /static/css/dist/styles.css?v=1761691446 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:06,858 basehttp 19944 12628 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:06,899 log 19944 12628 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:44:06,920 basehttp 19944 12628 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:44:06,921 basehttp 19944 20108 - Broken pipe from ('127.0.0.1', 49607)
+WARNING 2025-10-28 10:44:06,926 log 19944 20252 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:44:06,930 basehttp 19944 20252 - Broken pipe from ('127.0.0.1', 55947)
+INFO 2025-10-28 10:44:07,175 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:15,491 basehttp 19944 5508 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 75627
+INFO 2025-10-28 10:44:15,554 basehttp 19944 5508 "GET /static/css/dist/styles.css?v=1761691455 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:15,686 basehttp 19944 5508 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:15,732 log 19944 5508 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:44:15,751 basehttp 19944 5508 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:44:15,774 log 19944 21736 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:44:15,778 basehttp 19944 20244 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-28 10:44:15,780 basehttp 19944 21736 - Broken pipe from ('127.0.0.1', 52148)
+INFO 2025-10-28 10:44:15,782 basehttp 19944 20244 - Broken pipe from ('127.0.0.1', 62114)
+WARNING 2025-10-28 10:44:15,792 log 19944 5508 Not Found: /images/icons/icon-152x152.png
+WARNING 2025-10-28 10:44:15,802 log 19944 22336 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:44:15,807 basehttp 19944 5508 - Broken pipe from ('127.0.0.1', 49547)
+WARNING 2025-10-28 10:44:15,814 log 19944 12072 Not Found: /images/icons/icon-128x128.png
+INFO 2025-10-28 10:44:15,815 basehttp 19944 22336 - Broken pipe from ('127.0.0.1', 59764)
+WARNING 2025-10-28 10:44:15,824 log 19944 14244 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-28 10:44:15,825 basehttp 19944 12072 - Broken pipe from ('127.0.0.1', 57371)
+WARNING 2025-10-28 10:44:15,833 log 19944 13204 Not Found: /images/icons/icon-192x192.png
+INFO 2025-10-28 10:44:15,833 basehttp 19944 14244 - Broken pipe from ('127.0.0.1', 59300)
+INFO 2025-10-28 10:44:15,834 basehttp 19944 13204 - Broken pipe from ('127.0.0.1', 57631)
+INFO 2025-10-28 10:44:16,015 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:18,624 basehttp 19944 21472 "GET /room_detail/7/ HTTP/1.1" 200 51755
+INFO 2025-10-28 10:44:18,688 basehttp 19944 21472 "GET /static/css/dist/styles.css?v=1761691458 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:18,785 basehttp 19944 21472 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:18,823 log 19944 15644 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:44:18,828 basehttp 19944 2920 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:44:18,833 log 19944 21472 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:44:18,835 basehttp 19944 15644 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:44:18,860 log 19944 2920 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:44:18,862 basehttp 19944 21472 - Broken pipe from ('127.0.0.1', 61909)
+INFO 2025-10-28 10:44:18,864 basehttp 19944 2920 - Broken pipe from ('127.0.0.1', 56151)
+INFO 2025-10-28 10:44:18,934 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:39,614 basehttp 19944 21376 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 75627
+INFO 2025-10-28 10:44:39,671 basehttp 19944 21376 "GET /static/css/dist/styles.css?v=1761691479 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:39,802 basehttp 19944 21376 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:39,882 log 19944 21376 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:44:39,896 basehttp 19944 21376 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-28 10:44:39,902 log 19944 10644 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-28 10:44:39,903 basehttp 19944 19116 - Broken pipe from ('127.0.0.1', 51478)
+INFO 2025-10-28 10:44:39,904 basehttp 19944 10644 - Broken pipe from ('127.0.0.1', 63372)
+WARNING 2025-10-28 10:44:39,913 log 19944 21376 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-28 10:44:39,914 basehttp 19944 21376 - Broken pipe from ('127.0.0.1', 59384)
+INFO 2025-10-28 10:44:40,141 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:46,445 basehttp 19944 12556 "GET /hotel_rooms/room-list/2/?status=Available&search=&loc-search= HTTP/1.1" 200 75741
+INFO 2025-10-28 10:44:46,495 basehttp 19944 12556 "GET /static/css/dist/styles.css?v=1761691486 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:46,611 basehttp 19944 12556 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:46,668 log 19944 12556 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:44:46,690 log 19944 4304 Not Found: /css/django-pwa-app.css
+INFO 2025-10-28 10:44:46,691 basehttp 19944 4372 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:44:46,691 basehttp 19944 12556 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-28 10:44:46,694 basehttp 19944 4304 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:44:46,964 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-28 10:44:53,869 basehttp 19944 12556 "GET /hotel_rooms/room-list/2/?status=Occupied&room_type=single&search=&loc-search= HTTP/1.1" 200 75741
+INFO 2025-10-28 10:44:53,951 basehttp 19944 12556 "GET /static/css/dist/styles.css?v=1761691493 HTTP/1.1" 200 134235
+INFO 2025-10-28 10:44:54,030 basehttp 19944 12556 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-28 10:44:54,080 log 19944 12556 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-28 10:44:54,096 log 19944 4372 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-28 10:44:54,097 basehttp 19944 12556 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-28 10:44:54,097 basehttp 19944 18500 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-28 10:44:54,098 basehttp 19944 4372 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-28 10:44:54,417 basehttp 19944 17676 "GET /manifest.json HTTP/1.1" 200 696

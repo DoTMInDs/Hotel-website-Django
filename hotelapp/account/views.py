@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test 
 from .models import ProfileModel
 from core.models import CustomUser,Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking,OurRoomsImage
-from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm,RoomGalleryForm,BulkRoomGalleryForm
+from .forms import CreateUserForm,UserUpdateForm,ProfileForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm,RoomGalleryForm,BulkRoomGalleryForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q, Count
 from django.http import HttpResponseRedirect, JsonResponse
@@ -105,8 +105,11 @@ def sign_up(request):
 
 @login_required
 def profile(request):    
+    # Get or create the profile model
+    profile, created = ProfileModel.objects.get_or_create(user=request.user)
+    
     if request.method == "POST":
-        p_form = UserUpdateForm(request.POST, request.FILES, instance=request.user.profilemodel)
+        p_form = ProfileForm(request.POST, request.FILES, instance=profile)
         if p_form.is_valid():
             p_form.save()
             messages.success(request, "Profile updated successfully!")
@@ -116,7 +119,7 @@ def profile(request):
                 for error in errors:
                     messages.error(request, f"{field}: {error}")
     else:
-        p_form = UserUpdateForm(instance=request.user.profilemodel)
+        p_form = ProfileForm(instance=profile)
    
     context = {
         'p_form': p_form,
@@ -192,15 +195,17 @@ def manage_account(request):
     
     profile, created = ProfileModel.objects.get_or_create(user=request.user)
     if request.method == "POST":
-        p_form = UserUpdateForm(request.POST, request.FILES, instance=request.user.profilemodel)
+        p_form = ProfileForm(request.POST, request.FILES, instance=profile)
         if p_form.is_valid():
             p_form.save()
             messages.success(request, "Profile updated successfully!")
             return redirect('manage-account')
         else:
-            messages.error(request, "Your data wasn't saved.. Please check your form!!")
+            for field, errors in p_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
-        p_form = UserUpdateForm(instance=request.user.profilemodel)
+        p_form = ProfileForm(instance=profile)
    
     context = {
         'p_form': p_form,
