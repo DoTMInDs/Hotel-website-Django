@@ -36,48 +36,79 @@
            {% endfor %}
        </div>
     {% endif %}
-    <section class="search_wrapper">
-        <div class="img_container">
-            <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden" style="width:100%;margin-top: 0px;">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80 z-10"></div>
+            <img src="{% static 'image/assets/dinner1.jpg' %}" 
+                 alt="Hotel Search Background" 
+                 class="w-full h-full object-cover">
         </div>
-        <form action="" class="search_form " method="get">
-            <h2 class="h2_form_search">Search for a suitable rooms
-                <i class="fa-solid fa-hotel"></i>
-                @ {{rooms.hotel.name}}
-            </h2>
-            <div class="form_search_container">
-                <div class="search_input">
-                    <i class="fa-regular fa-user p_user"></i>
-                    <input type="search" name="search" class="search bg-transparent border-none" placeholder="Search room type, bed type...." value="{{ name_query }}">
+        
+        <!-- Search Content -->
+        <div class="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Find Your Perfect
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Stay</span>
+                </h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    Discover exceptional hotels and luxurious rooms tailored to your preferences
+                </p>
+            </div>
+            
+            <!-- Search Form -->
+            <form method="get" class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <input type="search" 
+                               name="search" 
+                               value="{{ name_query }}"
+                               placeholder="Enter room type..."
+                               class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="search" 
+                               name="loc-search" 
+                               value="{{ location_query }}"
+                               placeholder="Location..."
+                               class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                    </div>
                 </div>
-                <div class="search_input">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="search" name="loc-search" class="search bg-transparent border-none" placeholder="Location" value="{{ location_query }}">
+                
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <button type="submit" 
+                            class="inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span>Search Hotels</span>
+                    </button>
+                    
+                    {% if name_query or location_query %}
+                    <a href="{% url 'room-list' hotel_id %}" 
+                       class="inline-flex items-center space-x-2 px-6 py-3 bg-white/20 border border-white/30 hover:bg-white/30 text-white font-medium rounded-lg transition-all duration-200 backdrop-blur-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                        <span>Clear Filters</span>
+                    </a>
+                    {% endif %}
                 </div>
-            </div>
-            <button type="submit" class="search_btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-            </button>
-            {% if name_query or location_query %}
-            <a href="{% url 'room' %}" class="text-sm text-slate-50  hover:text-red-500 mt-2 flex gap-[0.5rem] justify-center items-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.57001 3H21.43L14.5 12.817V21H9.50001V12.817L2.57001 3ZM6.43001 5L11.5 12.183V19H12.5V12.183L17.57 5H6.43001ZM17.88 13.465L20 15.586L22.122 13.465L23.536 14.879L21.415 17L23.536 19.122L22.122 20.536L20 18.414L17.88 20.536L16.465 19.121L18.586 17.001L16.465 14.879L17.88 13.465Z" fill="currentColor"/>
-                </svg>
-                Clear filters
-            </a>
-            {% endif %}
-        </form>
-        {% comment %} <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="relative border border-slate-200 rounded-md">
-                <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-in</label>
-                <input type="date" id="check_in_date" class="w-full p-2">
-            </div>
-            <div class="relative border border-slate-200 rounded-md">
-                <label class="absolute -top-2 left-2 bg-white px-1 text-xs">Check-out</label>
-                <input type="date" id="check_out_date" class="w-full p-2">
-            </div>
-        </div> {% endcomment %}
+            </form>
+        </div>
     </section>
     <section class="flex gap-[1rem] feature_secction relative">
         <aside id="dropdownLeftEnd" class="absolute right-0 top-[50px] z-[100] hidden">
@@ -177,55 +208,97 @@
 
                 <!-- Room Cards -->
                 <div class="hotel_card_container">
-                    <div class="hotel_card_grid">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                         {% for room in rooms %}
-                            <div class="card_wrapper">
-                                <div class="img_card">
-                                    <small class="absolute text-slate-50 top-0 right-0 {% if room.status == 'Available' %}bg-green-500 
-                                        {% elif room.status == 'Maintenance' %}bg-yellow-500 
-                                        {% elif room.status == 'Unavailable' %}bg-red-500{% endif %} p-[0.5rem]">
-                                        {{room.get_status_display}}
-                                    </small>
-                                    <img src="{{room.image.url}}" alt="" class="card_img1">
-                                    <p class="view_price bg-rose-500" data-pk="{{room.pk}}">View price</p>
+                            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ease-out overflow-hidden border border-gray-100">
+                                <!-- Image Container with Status Badge -->
+                                <div class="relative h-48 overflow-hidden rounded-t-2xl">
+                                    <!-- Status Badge -->
+                                    <div class="absolute top-3 right-3 z-10">
+                                        <div class="px-3 py-1 rounded-full text-xs font-semibold text-white shadow-lg backdrop-blur-sm
+                                            {% if room.status == 'Available' %}bg-emerald-500 
+                                            {% elif room.status == 'Maintenance' %}bg-amber-500 
+                                            {% elif room.status == 'Unavailable' %}bg-red-500{% endif %}">
+                                            {{room.get_status_display}}
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Room Image -->
+                                    <img src="{{room.image.url}}" alt="{{room.room_type}} Room" 
+                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                                    
+                                    <!-- Overlay Gradient -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
-                                <div class="p-[1rem]">
-                                    <div class="py-[0.5rem]">
-                                        <p class="text-slate-600 text-[14px] truncate flex justify-between items-center">{{room.hotel.name}}
-                                            <small class="text-orange-500">
-                                                {% for i in "12345" %}
-                                                    {% with i_num=i|add:"0" %}
-                                                    {% if i_num <= room.star_rating.star %}
-                                                        <i class="fas fa-star"></i>  <!-- Filled star -->
-                                                    {% else %}
-                                                        <i class="far fa-star"></i>  <!-- Empty star -->
-                                                    {% endif %}
-                                                    {% endwith %}
-                                                {% endfor %}
-                                            </small>
-                                        </p>
-                                        <h2 class="font-semibold text-[18px] capitalize">{{room.room_type}} Room#: {{room.room_number}}</h2>
-                                    </div>
-                                    <div class="hotel_card_content">
-                                        <div class="text-[14px] text-[#3b5362] w-full overflow-hidden flex gap-[0.5rem] items-center">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            <p class="font-medium truncate">{{room.hotel.location}} ( <small class="text-slate-500">{{room.hotel.get_region_display}}</small> ) </p>
+
+                                <!-- Card Content -->
+                                <div class="p-5">
+                                    <!-- Hotel Name & Rating -->
+                                    <div class="flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex justify-between items-center ">
+                                                <p class="text-sm text-gray-500 font-medium ">{{room.hotel.name}}</p>
+                                                <!-- Star Rating -->
+                                                <div class="flex items-center justify-end">
+                                                    <div class="flex items-center bg-amber-50 px-2 py-1 rounded-full">
+                                                        {% for i in "12345" %}
+                                                            {% with i_num=i|add:"0" %}
+                                                            {% if i_num <= room.star_rating.star %}
+                                                                <i class="fas fa-star text-amber-400 text-xs"></i>
+                                                            {% else %}
+                                                                <i class="far fa-star text-amber-300 text-xs"></i>
+                                                            {% endif %}
+                                                            {% endwith %}
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <h3 class="text-lg font-bold text-gray-800 capitalize leading-tight">
+                                                    {{room.room_type}} 
+                                                    <span class="text-sm font-normal text-gray-500">#{{room.room_number}}</span>
+                                                </h3>
+                                                <div class="text-right">
+                                                    <p class="text-lg font-bold text-rose-600">GHS{{room.price}}</p>
+                                                    <p class="text-xs text-gray-400">per night</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="text-[14px] text-[#3b5362] flex gap-[0.5rem] items-center">
-                                            <i class="fa-regular fa-clock"></i>
-                                            <p class="font-medium">{{ room.created_at|date:"H:i" }}</p>
+                                    </div>
+                                    
+
+                                    <!-- Location & Time Info -->
+                                    <div class="space-y-2 mb-4">
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <div class="w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-3">
+                                                <i class="fas fa-location-dot text-white text-xs"></i>
+                                            </div>
+                                            <span class="font-medium truncate">{{room.hotel.location}}</span>
+                                            <span class="text-gray-400 ml-1">({{room.hotel.get_region_display}})</span>
+                                        </div>
+                                        <div class="flex items-center text-sm text-gray-600">
+                                            <div class="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-3">
+                                                <i class="far fa-clock text-white text-xs"></i>
+                                            </div>
+                                            <span class="font-medium">Added {{ room.created_at|date:"M d, Y \a\t H:i" }}</span>
                                         </div>
                                     </div>
-                                    <p id="priceTag-{{room.pk}}" class="price_tag">GHS{{room.price}}</p>
-                                    <div class="hotel_btn gap-[0.5rem]">
-                                        <button onclick="BookRoomBtn('{{ room.id }}', '{{ room.hotel.name }}')" class="hotel_btnn">BOOK ROOM</button>
-                                        <button class="hotel_btnn">
-                                            <a href="{% url "room-detail" room.id %}">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </a>
+
+                                    <!-- Action Buttons -->
+                                    <div class="flex gap-3 pt-3 border-t border-gray-100">
+                                        <button onclick="BookRoomBtn('{{ room.id }}', '{{ room.hotel.name }}')" 
+                                                class="flex-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white py-3 px-4 rounded-xl font-semibold text-sm transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                                            <i class="fas fa-calendar-check mr-2"></i>BOOK NOW
                                         </button>
+                                        <a href="{% url "room-detail" room.id %}" 
+                                           class="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-xl transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </div>
                                 </div>
+
+                                <!-- Hover Effect Border -->
+                                <div class="absolute inset-0 rounded-2xl ring-2 ring-transparent group-hover:ring-amber-200 transition-all duration-300 pointer-events-none"></div>
                             </div>
                         {% endfor %}   
                     </div>

@@ -2,122 +2,309 @@
 {% load static %}
 {% block main-content %}
     {% include "partials/nav.html" %}
-    <section class="w-[100%] md:w-[80%] m-auto ">
-        <div class="rounded-[15px] p-4 mt-[1rem] shadow">
-            <div>
-                <h1 class="text-slate-600">My Bookings</h1>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full min-w-[600px]">
-                    <thead class="">
-                        <tr class="text-left text-slate-500 border-b border-slate-200 whitespace-nowrap">
-                            <th class="px-4 py-3 font-semibold text-sm">Hotel Name</th>
-                            <th class="px-4 py-3 font-semibold text-sm">Room Type</th>
-                            <th class="px-4 py-3 font-semibold text-sm">Check-In-Out</th>
-                            <th class="px-4 py-3 font-semibold text-sm">Contact</th>
-                            <th class="px-4 py-3 font-semibold text-sm text-right">Action</th>
-                            <th class=""></th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200">
-                        {% for booking in bookings %}
-                        <tr class="hover:bg-slate-100 rounded-[15px] transition-colors">
-                            <td class="px-4 py-3 text-slate-500 text-sm">
-                                <div class="flex items-center gap-2">
-                                    {% if booking.room.hotel.logo %}
-                                        <img src="{{booking.room.hotel.logo.url}}" alt="" class="w-8 h-8 rounded-full object-cover">
-                                        {% else %}
-                                        <img src="{% static "image/assets/default.png" %}" alt="" class="w-8 h-8 rounded-full object-cover">
-                                    {% endif %}
-                                    {{booking.room.hotel.name}}
-                                </div>
-                            </td>
-                            <td class="px-4 py-3 text-slate-500 text-sm capitalize"> Room #: ( {{booking.room.room_number}} ) - {{ booking.room.room_type }} Size Bed</td>
-                            <td class="px-4 py-3 text-slate-500 text-sm"> {{booking.check_in_date}} </td>
-                            <td class="px-4 py-3 text-slate-500 text-sm"> {{ booking.room.hotel.phone_number }} </td>
-                            <td class="px-4 py-3 text-right">
-                                <div class="flex gap-2 justify-end">    
-                                    <p  
-                                        onclick="deleteBtn({{ booking.id }})"
-                                        class="cursor-pointer px-3 py-1.5 text-xs bg-red-500 text-slate-50 border border-teal-400 border-opacity-20 rounded-full flex items-center gap-1 hover:bg-red-600 transition">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10 5H14C14 4.46957 13.7893 3.96086 13.4142 3.58579C13.0391 3.21071 12.5304 3 12 3C11.4696 3 10.9609 3.21071 10.5858 3.58579C10.2107 3.96086 10 4.46957 10 5ZM8.5 5C8.5 4.54037 8.59053 4.08525 8.76642 3.66061C8.94231 3.23597 9.20012 2.85013 9.52513 2.52513C9.85013 2.20012 10.236 1.94231 10.6606 1.76642C11.0852 1.59053 11.5404 1.5 12 1.5C12.4596 1.5 12.9148 1.59053 13.3394 1.76642C13.764 1.94231 14.1499 2.20012 14.4749 2.52513C14.7999 2.85013 15.0577 3.23597 15.2336 3.66061C15.4095 4.08525 15.5 4.54037 15.5 5H21.25C21.4489 5 21.6397 5.07902 21.7803 5.21967C21.921 5.36032 22 5.55109 22 5.75C22 5.94891 21.921 6.13968 21.7803 6.28033C21.6397 6.42098 21.4489 6.5 21.25 6.5H19.93L18.76 18.611C18.6703 19.539 18.238 20.4002 17.5477 21.0268C16.8573 21.6534 15.9583 22.0004 15.026 22H8.974C8.04186 22.0001 7.1431 21.653 6.45295 21.0265C5.7628 20.3999 5.33073 19.5388 5.241 18.611L4.07 6.5H2.75C2.55109 6.5 2.36032 6.42098 2.21967 6.28033C2.07902 6.13968 2 5.94891 2 5.75C2 5.55109 2.07902 5.36032 2.21967 5.21967C2.36032 5.07902 2.55109 5 2.75 5H8.5ZM10.5 9.75C10.5 9.55109 10.421 9.36032 10.2803 9.21967C10.1397 9.07902 9.94891 9 9.75 9C9.55109 9 9.36032 9.07902 9.21967 9.21967C9.07902 9.36032 9 9.55109 9 9.75V17.25C9 17.4489 9.07902 17.6397 9.21967 17.7803C9.36032 17.921 9.55109 18 9.75 18C9.94891 18 10.1397 17.921 10.2803 17.7803C10.421 17.6397 10.5 17.4489 10.5 17.25V9.75ZM14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V17.25C15 17.4489 14.921 17.6397 14.7803 17.7803C14.6397 17.921 14.4489 18 14.25 18C14.0511 18 13.8603 17.921 13.7197 17.7803C13.579 17.6397 13.5 17.4489 13.5 17.25V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9ZM6.734 18.467C6.78794 19.0236 7.04724 19.5403 7.46137 19.9161C7.87549 20.292 8.41475 20.5001 8.974 20.5H15.026C15.5853 20.5001 16.1245 20.292 16.5386 19.9161C16.9528 19.5403 17.2121 19.0236 17.266 18.467L18.424 6.5H5.576L6.734 18.467Z" fill="currentColor"/>
-                                        </svg>
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        {% empty %}
-                        <tr>
-                            <td colspan="6" class="px-4 py-6 text-center text-slate-400">
-                                You have no bookings yet.
-                            </td>
-                        </tr> 
-                        {% endfor %}
-                    </tbody>
-                </table>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-12" style="width:100%;margin-top: 0px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">My Bookings</h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Manage your hotel reservations and view booking details
+                </p>
             </div>
         </div>
-        <div class="flex justify-center items-center gap-8 my-[1rem]">
-            {% if bookings.has_previous %}
-                <a href="?page={{ bookings.previous_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                </svg>
-                </a>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12 bg-gray-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stats Overview -->
+            <div class="mb-8">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-900">Your Reservations</h2>
+                            <p class="text-gray-600 mt-1">
+                                {% if bookings %}
+                                    {{ bookings|length }} booking{{ bookings|length|pluralize }} found
+                                {% else %}
+                                    No bookings yet
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="hidden sm:flex items-center space-x-4 text-sm text-gray-500">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>Active</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <span>Pending</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <span>Expired</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bookings Grid -->
+            {% if bookings %}
+                <div class="grid gap-6 md:gap-8">
+                    {% for booking in bookings %}
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                                <!-- Hotel Info -->
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        {% if booking.room.hotel.logo %}
+                                            <img src="{{ booking.room.hotel.logo.url }}" 
+                                                 alt="{{ booking.room.hotel.name }}" 
+                                                 class="w-16 h-16 rounded-xl object-cover ring-2 ring-gray-100">
+                                        {% else %}
+                                            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl ring-2 ring-gray-100">
+                                                {{ booking.room.hotel.name|first|upper }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                            {{ booking.room.hotel.name }}
+                                        </h3>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center text-gray-600">
+                                                <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                                </svg>
+                                                <span class="text-sm">Room #{{ booking.room.room_number }} - {{ booking.room.room_type|title }} Bed</span>
+                                            </div>
+                                            <div class="flex items-center text-gray-600">
+                                                <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                                <span class="text-sm">{{ booking.room.hotel.location }}</span>
+                                            </div>
+                                            <div class="flex items-center text-gray-600">
+                                                <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                                </svg>
+                                                <span class="text-sm">{{ booking.room.hotel.phone_number }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Booking Details -->
+                                <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start sm:items-center lg:items-start xl:items-center gap-4 lg:text-right xl:text-right">
+                                    <!-- Check-in Date -->
+                                    <div class="flex items-center space-x-3 lg:justify-end xl:justify-end">
+                                        <div class="bg-blue-50 p-3 rounded-xl">
+                                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">Check-in</div>
+                                            <div class="text-sm text-gray-600">{{ booking.check_in_date|date:"M d, Y" }}</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Check-out Date -->
+                                    {% if booking.check_out_date %}
+                                    <div class="flex items-center space-x-3 lg:justify-end xl:justify-end">
+                                        <div class="bg-purple-50 p-3 rounded-xl">
+                                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">Check-out</div>
+                                            <div class="text-sm text-gray-600">{{ booking.check_out_date|date:"M d, Y" }}</div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    <!-- Status Badge -->
+                                    <div class="flex items-center lg:justify-end xl:justify-end">
+                                        {% now "Y-m-d" as today %}
+                                        {% if booking.check_in_date|date:"Y-m-d" > today %}
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                Upcoming
+                                            </span>
+                                        {% elif booking.check_in_date|date:"Y-m-d" == today %}
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                                Today
+                                            </span>
+                                        {% else %}
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                                <div class="w-2 h-2 bg-gray-500 rounded-full mr-2"></div>
+                                                Completed
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Actions -->
+                            <div class="flex items-center justify-between pt-6 mt-6 border-t border-gray-100">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span>Booked {{ booking.created_at|timesince }} ago</span>
+                                    </div>
+                                    {% if booking.total_cost %}
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                        </svg>
+                                        <span>${{ booking.total_cost }}</span>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="deleteBtn({{ booking.id }})"
+                                            class="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 text-sm font-medium rounded-lg transition-colors duration-200">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                        </svg>
+                                        <span>Cancel Booking</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             {% else %}
-                <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                    <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                </svg>
-                </button>
+                <!-- Empty State -->
+                <div class="text-center py-16">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-12 max-w-md mx-auto">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">No bookings yet</h3>
+                        <p class="text-gray-500 mb-8">
+                            You haven't made any hotel reservations yet. Start exploring our hotels and make your first booking!
+                        </p>
+                        <a href="{% url "hotel" %}" 
+                           class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-sm hover:shadow-md">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <span>Browse Hotels</span>
+                        </a>
+                    </div>
+                </div>
             {% endif %}
-        
-            <p class="text-slate-400">
-            Page <strong class="text-slate-400">{{ bookings.number }}</strong> of <strong class="text-slate-400">{{ bookings.paginator.num_pages }}</strong>
-            </p>
-            
-            {% if bookings.has_next %}
-                <a href="?page={{ bookings.next_page_number }}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                </svg>
-                </a>
-            {% else %}
-                <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-300 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                    <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                </svg>
-                </button>
+            <!-- Pagination -->
+            {% if bookings.has_other_pages %}
+            <div class="flex items-center justify-center mt-12">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4">
+                    <div class="flex items-center space-x-4">
+                        {% if bookings.has_previous %}
+                            <a href="?page={{ bookings.previous_page_number }}" 
+                               class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-colors duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </a>
+                        {% else %}
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-300 cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="flex items-center space-x-2 text-sm">
+                            <span class="text-gray-600">Page</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-lg font-medium">
+                                {{ bookings.number }}
+                            </span>
+                            <span class="text-gray-600">of</span>
+                            <span class="text-gray-900 font-medium">{{ bookings.paginator.num_pages }}</span>
+                        </div>
+                        
+                        {% if bookings.has_next %}
+                            <a href="?page={{ bookings.next_page_number }}" 
+                               class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-colors duration-200">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        {% else %}
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-300 cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
             {% endif %}
         </div>
         
     </section>
 
 
-    <div onclick="closeBtn()" id="deleteContainer" class="fixed bg-gray-500 bg-opacity-30 top-0 right-0 w-full h-screen transition-all duration-300 ease-out  opacity-0 invisible">
-        <div id="deleteModalContent" class="absolute top-[50%] left-[50%] md:w-[600px] rounded-[10px] m-auto p-[1rem] translate-x-[-50%] translate-y-[-50%] bg-white shadow border border-slate-100 transform transition-all duration-300 ease-out scale-95 opacity-0">
-            <div class="">
-                <p onclick="closeBtn()"  class="cursor-pointer flex justify-end">
-                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM10.7 11.5L8 8.8L5.3 11.5L4.5 10.7L7.2 8L4.5 5.3L5.3 4.5L8 7.2L10.7 4.5L11.5 5.3L8.8 8L11.5 10.7L10.7 11.5Z" fill="#3b5362"/>
+    <!-- Delete Confirmation Modal -->
+    <div onclick="closeBtn()" id="deleteContainer" class="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
+        <div id="deleteModalContent" class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 transform transition-all duration-300 scale-95 opacity-0" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <div class="flex justify-end mb-4">
+                <button onclick="closeBtn()" class="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
-                </p>
-                <div class="flex justify-center items-center flex-col w-full">
-                    <div class="mt-[1rem] flex justify-center items-center w-[80px] h-[80px] p-[0.5rem] rounded-full bg-amber-100">
-                        <svg width="50" height="50" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.38 15H2.62C2.06 15 1.55 14.72 1.26 14.24C0.969999 13.76 0.939999 13.18 1.19 12.68L6.57 1.89C6.84 1.34 7.39 1 8 1C8.61 1 9.16 1.34 9.43 1.89L14.81 12.69C15.06 13.19 15.03 13.77 14.74 14.25C14.45 14.73 13.94 15.01 13.38 15.01V15ZM8 2C7.77 2 7.57 2.12 7.46 2.33L2.08 13.13C1.98 13.32 1.99 13.53 2.11 13.72C2.22 13.9 2.41 14.01 2.62 14.01H13.38C13.59 14.01 13.78 13.91 13.89 13.72C14 13.54 14.01 13.33 13.92 13.13L8.54 2.33C8.49063 2.22939 8.41362 2.14491 8.31799 2.08647C8.22236 2.02803 8.11206 1.99804 8 2Z" fill="#FFCA39"/>
-                            <path d="M8 11.6199C8.34242 11.6199 8.62 11.3423 8.62 10.9999C8.62 10.6575 8.34242 10.3799 8 10.3799C7.65758 10.3799 7.38 10.6575 7.38 10.9999C7.38 11.3423 7.65758 11.6199 8 11.6199Z" fill="#FFCA39"/>
-                            <path d="M8 9.12012C7.72 9.12012 7.5 8.90012 7.5 8.62012V5.62012C7.5 5.34012 7.72 5.12012 8 5.12012C8.28 5.12012 8.5 5.34012 8.5 5.62012V8.62012C8.5 8.90012 8.28 9.12012 8 9.12012Z" fill="#FFCA39"/>
-                        </svg>
-                    </div>
-                    <h1 class="text-center text-amber-400 font-semibold text-[22px] mt-[0.5rem]">Warning</h1>
+                </button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="text-center">
+                <!-- Warning Icon -->
+                <div class="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.734-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                    </svg>
                 </div>
-                <form id="deleteForm" method="POST" action="">
+                
+                <!-- Title -->
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Cancel Booking</h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 mb-6">
+                    Are you sure you want to cancel this booking? This action cannot be undone and you may be subject to cancellation fees.
+                </p>
+                
+                <!-- Form -->
+                <form id="deleteForm" method="POST" action="" class="space-y-4">
                     {% csrf_token %}
-                    <div class="flex justify-center items-center flex-col w-full mt-[2rem]">
-                        <p class="text-[14px] text-slate-600 text-center">Are you sure you want to delete this booking?</p>
-                        <button class="py-[0.8rem] text-slate-50 text-[18px] mt-[1rem] font-medium  block w-full rounded-full bg-red-500 hover:bg-red-600">Yes, Delete</button>
+                    <div class="flex space-x-3">
+                        <button type="button" 
+                                onclick="closeBtn()"
+                                class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium">
+                            Keep Booking
+                        </button>
+                        <button type="submit"
+                                class="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 font-medium">
+                            Yes, Cancel
+                        </button>
                     </div>
                 </form>
             </div>
@@ -126,65 +313,88 @@
 
     <script>
         const deleteContainer = document.getElementById('deleteContainer');
-        const deleteModalContent =  document.getElementById('deleteModalContent');
+        const deleteModalContent = document.getElementById('deleteModalContent');
         const deleteForm = document.getElementById('deleteForm');
         
+        // Open delete modal
         function deleteBtn(bookingId) {
             deleteForm.action = `/booking/delete/${bookingId}/`;
-            deleteContainer.classList.toggle('opacity-0');
-            deleteContainer.classList.toggle('invisible');
-            deleteModalContent.classList.toggle('scale-95');
-            deleteModalContent.classList.toggle('opacity-0');
+            deleteContainer.classList.remove('opacity-0', 'invisible');
+            deleteModalContent.classList.remove('scale-95', 'opacity-0');
+            deleteContainer.classList.add('opacity-100', 'visible');
+            deleteModalContent.classList.add('scale-100', 'opacity-100');
         }
         
-        // Close when clicking outside
+        // Close modal
         function closeBtn() {
-            const deleteContainer = document.getElementById('deleteContainer');
-            const deleteModalContent =  document.getElementById('deleteModalContent');
             deleteContainer.classList.add('opacity-0', 'invisible');
+            deleteContainer.classList.remove('opacity-100', 'visible');
             deleteModalContent.classList.add('scale-95', 'opacity-0');
+            deleteModalContent.classList.remove('scale-100', 'opacity-100');
         }
         
-        document.getElementById('deleteModalContent').addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-        
-        // Handle delete form submission with toast notifications
+        // Handle form submission
         document.addEventListener('DOMContentLoaded', function() {
             if (deleteForm) {
                 deleteForm.addEventListener('submit', function(e) {
-                    // Show confirmation toast
-                    if (window.toastNotification) {
-                        window.toastNotification.info(
-                            'Deleting Booking', 
-                            'Please wait while we delete your booking...', 
-                            3000
-                        );
+                    // Add loading state to button
+                    const submitButton = deleteForm.querySelector('button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.innerHTML = `
+                            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Cancelling...
+                        `;
+                        submitButton.disabled = true;
                     }
                 });
             }
-        });
-        
-        // Check for URL parameters to show delete notifications
-        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Check for URL parameters and show notifications
             const urlParams = new URLSearchParams(window.location.search);
             const deleteStatus = urlParams.get('delete_status');
             const deleteMessage = urlParams.get('delete_message');
             
             if (deleteStatus && deleteMessage) {
-                if (deleteStatus === 'success') {
-                    if (window.toastNotification) {
-                        window.toastNotification.success('Booking Deleted', deleteMessage, 5000);
-                    }
-                } else if (deleteStatus === 'error') {
-                    if (window.toastNotification) {
-                        window.toastNotification.error('Delete Failed', deleteMessage, 5000);
-                    }
-                }
+                // Create a simple notification
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 ${
+                    deleteStatus === 'success' 
+                        ? 'bg-green-100 text-green-800 border border-green-200' 
+                        : 'bg-red-100 text-red-800 border border-red-200'
+                }`;
+                notification.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${
+                                deleteStatus === 'success' 
+                                    ? 'M5 13l4 4L19 7' 
+                                    : 'M6 18L18 6M6 6l12 12'
+                            }"></path>
+                        </svg>
+                        <span class="font-medium">${deleteMessage}</span>
+                    </div>
+                `;
                 
-                // Clean up URL parameters
+                document.body.appendChild(notification);
+                
+                // Auto remove notification
+                setTimeout(() => {
+                    notification.remove();
+                }, 5000);
+                
+                // Clean up URL
                 const newUrl = window.location.pathname;
                 window.history.replaceState({}, document.title, newUrl);
+            }
+        });
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !deleteContainer.classList.contains('invisible')) {
+                closeBtn();
             }
         });
     </script>

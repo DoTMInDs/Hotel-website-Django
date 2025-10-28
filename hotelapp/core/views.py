@@ -15,7 +15,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from datetime import datetime
 
-from .models import Room,Rating,Hotel,Reservation,Booking,Guest
+from .models import Room,Rating,Hotel,Reservation,Booking,Guest,OurRoomsImage
 from account.forms import LeadForm,ReservationForm,BookingForm
 from .payment_service import PaymentService
 from .validators import BookingValidator, ContactValidator, FormValidator
@@ -322,10 +322,132 @@ def hotel_services(request, pk):
 
 def room_detail(request, pk):
     room = get_object_or_404(Room, pk=pk)
+    # Get additional gallery images for this room
+    gallery_images = OurRoomsImage.objects.filter(room=room)
+    
+    if request.method == 'POST':
+        try:
+            # Validate required fields
+            required_fields = ['room_id', 'check_in_date', 'check_out_date', 'email', 'first_name', 'last_name']
+            FormValidator.validate_required_fields(request.POST, required_fields)
+            
+            room_id = request.POST.get('room_id')
+            check_in_date = request.POST.get('check_in_date')
+            check_out_date = request.POST.get('check_out_date')
+            email = request.POST.get('email')
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            phone_number = request.POST.get('phone_number', '')
+            address = request.POST.get('address', '')
+            message = request.POST.get('message', '')
+            
+            # Validate email
+            ContactValidator.validate_email(email)
+            
+            # Get room and validate
+            booking_room = get_object_or_404(Room, id=room_id)
+            
+            # Check if room is available
+            if booking_room.status != 'Available':
+                messages.error(request, "This room is not available for booking.")
+                return redirect('room-detail', pk=pk)
+            
+            # Parse and validate dates
+            try:
+                check_in = datetime.strptime(check_in_date, "%Y-%m-%d").date()
+                check_out = datetime.strptime(check_out_date, "%Y-%m-%d").date()
+            except ValueError:
+                messages.error(request, "Invalid date format. Please use the date picker.")
+                return redirect('room-detail', pk=pk)
+            
+            # Validate dates using validator
+            BookingValidator.validate_dates(check_in, check_out)
+            
+            # Calculate total price
+            nights = (check_out - check_in).days
+            total_price = booking_room.price * nights
+            
+            # Validate payment amount
+            BookingValidator.validate_payment_amount(total_price)
+            
+            # Get or create guest profile
+            if request.user.is_authenticated:
+                guest, created = Guest.objects.get_or_create(
+                    user=request.user,
+                    defaults={
+                        'first_name': first_name or request.user.first_name,
+                        'last_name': last_name or request.user.last_name,
+                        'email': email or request.user.email,
+                        'phone_number': phone_number,
+                        'address': address
+                    }
+                )
+                # Update guest info if provided
+                if first_name:
+                    guest.first_name = first_name
+                if last_name:
+                    guest.last_name = last_name
+                if email:
+                    guest.email = email
+                if phone_number:
+                    guest.phone_number = phone_number
+                if address:
+                    guest.address = address
+                guest.save()
+            else:
+                messages.error(request, "You must be logged in to make a booking.")
+                return redirect('login')
+            
+            # Create booking
+            booking = Booking.objects.create(
+                guest=guest,
+                room=booking_room,
+                check_in_date=check_in,
+                check_out_date=check_out,
+                message=message,
+                total_price=total_price,
+                is_paid=False
+            )
+            
+            # Generate unique reference for payment
+            reference = f"ROOM_{booking_room.id}_{booking.id}_{uuid.uuid4().hex[:8].upper()}"
+            booking.paystack_reference = reference
+            booking.save()
+            
+            # Initialize payment using PaymentService
+            callback_url = request.build_absolute_uri(reverse('verify_booking_payment'))
+            
+            try:
+                payment_response = PaymentService.initialize_payment(
+                    email=email,
+                    amount=float(total_price),
+                    reference=reference,
+                    callback_url=callback_url
+                )
+                
+                if payment_response.get("status"):
+                    # Redirect to Paystack payment page
+                    return redirect(payment_response["data"]["authorization_url"])
+                else:
+                    messages.error(request, "Payment could not be initialized. Please try again.")
+                    booking.delete()  # Clean up failed booking
+                    
+            except Exception as e:
+                logger.error(f"Payment initialization error: {str(e)}")
+                messages.error(request, "Payment service is currently unavailable. Please try again later.")
+                booking.delete()  # Clean up failed booking
+                
+        except ValidationError as e:
+            messages.error(request, str(e))
+        except Exception as e:
+            logger.error(f"Booking error in room detail: {str(e)}")
+            messages.error(request, "An error occurred while processing your booking. Please try again.")
+    
     context = {
-        'room': room
+        'room': room,
+        'gallery_images': gallery_images
     }
-    return render(request, 'detail/room_detail.html',context)
+    return render(request, 'detail/room_detail.html', context)
 
 @login_required
 def delete_booking(request, booking_id):

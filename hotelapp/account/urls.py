@@ -60,5 +60,10 @@ urlpatterns = [
     
     # API Endpoints
     path('api/user-stats/', views.get_user_stats, name='get_user_stats'),
+    
+    # Room Gallery Management URLs
+    path('room/<int:room_id>/gallery/', views.room_gallery_management, name='room-gallery-management'),
+    path('room/<int:room_id>/gallery/upload/', views.upload_room_image, name='upload-room-image'),
+    path('room/<int:room_id>/gallery/<int:image_id>/delete/', views.delete_room_image, name='delete-room-image'),
    
 ]

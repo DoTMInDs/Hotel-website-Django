@@ -3,8 +3,8 @@ from django.contrib import auth, messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test 
 from .models import ProfileModel
-from core.models import CustomUser,Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking
-from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm
+from core.models import CustomUser,Manager,Room,Staff,Guest,Reservation,Amenity,Hotel,Service,Booking,OurRoomsImage
+from .forms import CreateUserForm,UserUpdateForm,RoomForm,StaffForm,ReservationForm,HotelForm,AddAmenitiesForm,ServiceForm,RoomGalleryForm,BulkRoomGalleryForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q, Count
 from django.http import HttpResponseRedirect, JsonResponse
@@ -13,6 +13,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from .utils import send_welcome_email
+import cloudinary.uploader
 
 def get_manager_hotel(user):
     try:
@@ -1115,3 +1116,128 @@ def get_user_stats(request):
     }
     
     return JsonResponse(stats)
+
+# Room Gallery Management Views
+
+@login_required
+def room_gallery_management(request, room_id):
+    """
+    View to manage room gallery images
+    """
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    
+    room = get_object_or_404(Room, pk=room_id, hotel=hotel)
+    gallery_images = OurRoomsImage.objects.filter(room=room).order_by('-id')
+    
+    if request.method == "POST":
+        # Handle bulk image upload
+        bulk_form = BulkRoomGalleryForm(request.POST, request.FILES)
+        if bulk_form.is_valid():
+            images = request.FILES.getlist('images')
+            uploaded_count = 0
+            
+            for image in images:
+                if image.size > 10 * 1024 * 1024:  # 10MB limit
+                    messages.warning(request, f"Image '{image.name}' is too large (max 10MB)")
+                    continue
+                    
+                # Create gallery image instance
+                gallery_image = OurRoomsImage.objects.create(
+                    room=room,
+                    image=image
+                )
+                uploaded_count += 1
+            
+            if uploaded_count > 0:
+                messages.success(request, f"Successfully uploaded {uploaded_count} images!")
+            else:
+                messages.error(request, "No images were uploaded.")
+            
+            return redirect('room-gallery-management', room_id=room.id)
+    else:
+        bulk_form = BulkRoomGalleryForm()
+    
+    context = {
+        'room': room,
+        'hotel': hotel,
+        'gallery_images': gallery_images,
+        'bulk_form': bulk_form,
+    }
+    return render(request, 'dashboard/room-detail/room-gallery.html', context)
+
+@login_required
+def upload_room_image(request, room_id):
+    """
+    Upload single room image via AJAX
+    """
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        return JsonResponse({'error': 'Unauthorized'}, status=403)
+    
+    room = get_object_or_404(Room, pk=room_id, hotel=hotel)
+    
+    if request.method == "POST":
+        form = RoomGalleryForm(request.POST, request.FILES)
+        if form.is_valid():
+            gallery_image = form.save(commit=False)
+            gallery_image.room = room
+            gallery_image.save()
+            
+            return JsonResponse({
+                'success': True,
+                'image_id': gallery_image.id,
+                'image_url': gallery_image.image.url,
+                'alt_text': f"Room {room.room_number} image"
+            })
+        else:
+            return JsonResponse({'error': 'Invalid form data'}, status=400)
+    
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+@login_required
+def delete_room_image(request, room_id, image_id):
+    """
+    Delete a room gallery image
+    """
+    hotel = get_manager_hotel(request.user)
+    if not hotel:
+        messages.error(request, "You are not registered as a hotel manager")
+        return redirect('home')
+    
+    room = get_object_or_404(Room, pk=room_id, hotel=hotel)
+    image = get_object_or_404(OurRoomsImage, pk=image_id, room=room)
+    
+    if request.method == "POST":
+        try:
+            # For Cloudinary images, try to delete from cloud storage
+            if image.image:
+                try:
+                    if hasattr(image.image, 'public_id') and image.image.public_id:
+                        # Delete from Cloudinary using the public_id
+                        cloudinary.uploader.destroy(image.image.public_id)
+                    else:
+                        # If no public_id, try to extract it from the URL or just skip cloud deletion
+                        print(f"Warning: No public_id found for image {image.id}")
+                except Exception as cloud_error:
+                    print(f"Warning: Could not delete from cloud storage: {cloud_error}")
+                    # Continue with database deletion even if cloud deletion fails
+            
+            # Delete the database record
+            image.delete()
+            
+            messages.success(request, "Image deleted successfully!")
+            
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': True})
+                
+        except Exception as e:
+            messages.error(request, f"Error deleting image: {str(e)}")
+            
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'error': str(e)}, status=500)
+    
+    return redirect('room-gallery-management', room_id=room.id)
+

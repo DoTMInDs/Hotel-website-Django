@@ -7,14 +7,36 @@ mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('showing');
 });
 
+// Enhanced Price Toggle with Modern Animation
 const viewPrices = document.querySelectorAll('.view_price');
-const priceTag = document.getElementById('priceTag');
 
 for (const viewPrice of viewPrices) {
-    viewPrice.addEventListener('click', (e) =>{
-        let priceTag = document.getElementById('priceTag-' +e.target.dataset.pk);
-        priceTag.classList.toggle('active-price-tag')
-    })
+    viewPrice.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const button = e.currentTarget;
+        const pk = button.dataset.pk;
+        let priceTag = document.getElementById('priceTag-' + pk);
+        
+        if (priceTag) {
+            const isVisible = priceTag.classList.contains('active-price-tag');
+            
+            if (isVisible) {
+                // Hide price
+                priceTag.classList.remove('active-price-tag');
+                button.innerHTML = '<i class="fas fa-eye mr-1"></i>View Price';
+                button.classList.remove('bg-gradient-to-r', 'from-emerald-500', 'to-green-600');
+                button.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-pink-600');
+            } else {
+                // Show price with animation
+                priceTag.classList.add('active-price-tag');
+                button.innerHTML = '<i class="fas fa-eye-slash mr-1"></i>Hide Price';
+                button.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-pink-600');
+                button.classList.add('bg-gradient-to-r', 'from-emerald-500', 'to-green-600');
+            }
+        }
+    });
 }
 //------------- LOGIN-&-SIGN-UP-section----------------------//
 

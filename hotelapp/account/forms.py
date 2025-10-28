@@ -2,8 +2,25 @@ from django import forms
 from typing import Any
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django.forms import DateInput, TimeInput
+from django.forms.widgets import ClearableFileInput
 from .models import ProfileModel
-from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service,CustomUser
+from core.models import Lead,Room,Reservation,Staff,Booking,Hotel,Amenity,Service,CustomUser,OurRoomsImage
+
+class MultipleFileInput(ClearableFileInput):
+    allow_multiple_selected = True
+    
+class MultipleFileField(forms.FileField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("widget", MultipleFileInput())
+        super().__init__(*args, **kwargs)
+
+    def clean(self, data, initial=None):
+        single_file_clean = super().clean
+        if isinstance(data, (list, tuple)):
+            result = [single_file_clean(d, initial) for d in data]
+        else:
+            result = single_file_clean(data, initial)
+        return result
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -393,4 +410,24 @@ class ServiceForm(forms.ModelForm):
         fields = ['name', 'description', 'price', 'category', 'is_available']    
         widgets = {
             'description': forms.Textarea(attrs={'class': 'form-control'}),
-        }   
+        }
+
+class RoomGalleryForm(forms.ModelForm):
+    class Meta:
+        model = OurRoomsImage
+        fields = ['image']
+        widgets = {
+            'image': forms.FileInput(attrs={
+                'class': 'hidden',
+                'accept': 'image/*'
+            }),
+        }
+
+class BulkRoomGalleryForm(forms.Form):
+    images = MultipleFileField(
+        widget=MultipleFileInput(attrs={
+            'accept': 'image/*',
+            'class': 'hidden'
+        }),
+        help_text='Select multiple images to upload'
+    )   

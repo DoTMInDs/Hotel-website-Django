@@ -1,144 +1,320 @@
 {% extends "partials/layout.html" %}
 {% load static %}
-{% block title %}Hotels{% endblock title %}
+{% block title %}Hotels & Rooms{% endblock title %}
 {% block main-content %}
     {% include "partials/nav.html" %}
+    
+    <!-- Messages Toast -->
     {% if messages %}
-    <div class="w-[100%] md:w-[80%] m-auto md:px-0 px-[1rem]">
-        <div id="alert-3" class="flex items-center p-4 mb-4 text-white rounded-lg {% if message.tags == 'error' %} bg-red-500{% else %} bg-green-500{% endif %}" role="alert">
-            <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-            </svg>
-            <span class="sr-only">Info</span>
-            <div class="ms-3 text-sm font-medium">
-                <div class="my-2 text-center">
-                    {% for message in messages %}
-                        <p class="text-white text-center">{{ message }}</p>
-                    {% endfor %}
+        <div class="fixed top-20 right-4 z-50 space-y-2">
+            {% for message in messages %}
+                <div class="flex items-center p-4 rounded-lg shadow-lg max-w-sm animate-slide-in
+                    {% if message.tags == 'error' %}bg-red-50 text-red-800 border border-red-200
+                    {% else %}bg-green-50 text-green-800 border border-green-200{% endif %}">
+                    <div class="flex-shrink-0">
+                        {% if message.tags == 'error' %}
+                            <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        {% else %}
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        {% endif %}
+                    </div>
+                    <div class="ml-3 text-sm font-medium">{{ message }}</div>
+                    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8" onclick="this.parentElement.remove()">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
                 </div>
-            </div>
-            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
-                <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-            </button>
+            {% endfor %}
         </div>
-    </div>
     {% endif %}
-    <section class="search_wrapper">
-        <div class="img_container">
-            <img src="{% static "image/assets/dinner1.jpg" %}" alt="" class="img_image">
+    <!-- Hero Search Section -->
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden" style="width:100%;margin-top: 0px;">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80 z-10"></div>
+            <img src="{% static 'image/assets/dinner1.jpg' %}" 
+                 alt="Hotel Search Background" 
+                 class="w-full h-full object-cover">
         </div>
-        <form action="" class="search_form " method="get">
-            <h2 class="h2_form_search">Search for a suitable rooms
-                <i class="fa-solid fa-hotel"></i>
-            </h2>
-            <div class="form_search_container">
-                <div class="search_input">
-                    <i class="fa-regular fa-user p_user"></i>
-                    <input type="search" name="search" class="search bg-transparent border-none" placeholder="Hotel hotel name" value="{{ name_query }}">
+        
+        <!-- Search Content -->
+        <div class="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Find Your Perfect
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Stay</span>
+                </h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    Discover exceptional hotels and luxurious rooms tailored to your preferences
+                </p>
+            </div>
+            
+            <!-- Search Form -->
+            <form method="get" class="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <input type="search" 
+                               name="search" 
+                               value="{{ name_query }}"
+                               placeholder="Hotel name..."
+                               class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="search" 
+                               name="loc-search" 
+                               value="{{ location_query }}"
+                               placeholder="Location..."
+                               class="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm">
+                    </div>
                 </div>
-                <div class="search_input">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="search" name="loc-search" class="search bg-transparent border-none" placeholder="Location" value="{{ location_query }}">
+                
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <button type="submit" 
+                            class="inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span>Search Hotels</span>
+                    </button>
+                    
+                    {% if name_query or location_query %}
+                    <a href="{% url 'hotel-rooms' %}" 
+                       class="inline-flex items-center space-x-2 px-6 py-3 bg-white/20 border border-white/30 hover:bg-white/30 text-white font-medium rounded-lg transition-all duration-200 backdrop-blur-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                        <span>Clear Filters</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Hotels Listing Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Search Results Info -->
+            {% if name_query or location_query %}
+            <div class="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p class="text-blue-800 font-medium">
+                        Showing results for:
+                        {% if name_query %}<span class="font-semibold">"{{ name_query }}"</span>{% endif %}
+                        {% if location_query %}<span class="font-semibold"> in "{{ location_query }}"</span>{% endif %}
+                    </p>
                 </div>
             </div>
-            <button type="submit" class="search_btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-            </button>
-            {% if name_query or location_query %}
-            <a href="{% url 'hotel-rooms' %}" class="text-sm text-slate-50  hover:text-red-500 mt-2 flex gap-[0.5rem] justify-center items-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.57001 3H21.43L14.5 12.817V21H9.50001V12.817L2.57001 3ZM6.43001 5L11.5 12.183V19H12.5V12.183L17.57 5H6.43001ZM17.88 13.465L20 15.586L22.122 13.465L23.536 14.879L21.415 17L23.536 19.122L22.122 20.536L20 18.414L17.88 20.536L16.465 19.121L18.586 17.001L16.465 14.879L17.88 13.465Z" fill="currentColor"/>
-                </svg>
-                Clear filters
-            </a>
             {% endif %}
-        </form>
-    </section>
-    <section class="flex gap-[1rem] feature_secction relative">
-        <main class="main_card_wrapper">
-            {% if name_query or location_query %}
-            <p class="mb-4 text-sm text-gray-600">
-                Showing results for:
-                {% if name_query %}<span class="font-medium capitalize">"{{ name_query }}"</span>{% endif %}
-                {% if location_query %}<span class="font-medium capitalize"> in "{{ location_query }}"</span>{% endif %}
-            </p>
-          {% endif %}
-            <div class="mb-[1rem]">
-                <div class="w-full mb-[1rem]">
-                    <h2 class="text-2xl font-semibold text-slate-600">Featured Hotels
-                        <i class="fa-solid fa-hotel"></i>
-                    </h2>
-                    <p class="text-[14px] text-slate-500">List of hotels and their rooms</p>
-                </div>
-                <div class="w-[100%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-[0.5rem]">
-                    {% for hotel in hotels %}
-                        <a href="{% url "room-list" hotel.id %}" class="">
-                            <div class=" w-[100%] bg-white relative">
-                                <div class="w-full rounded-[10px] shadow after:content-[''] after:absolute after:top-0 after:left-0 after:w-[100%] after:h-[100%] after:bg-[#252746c5] after:rounded-[10px] relative">
-                                    <img src="{{hotel.logo.url}}" alt="hotel image" class="w-[100%] h-[250px] object-center object-cover rounded-[10px] shadow">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+                    Featured Properties
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Discover Amazing Hotels
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore our carefully curated collection of luxury hotels and find your perfect accommodation
+                </p>
+            </div>
+            
+            <!-- Hotels Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for hotel in hotels %}
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+                    <a href="{% url "room-list" hotel.id %}" class="block">
+                        <!-- Hotel Image -->
+                        <div class="relative overflow-hidden h-64">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                            <img src="{{ hotel.logo.url }}" 
+                                 alt="{{ hotel.name }}" 
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            
+                            <!-- Hotel Info Overlay -->
+                            <div class="absolute bottom-4 left-4 right-4 z-20">
+                                <h3 class="text-xl font-bold text-white mb-1">{{ hotel.name }}</h3>
+                                <div class="flex items-center text-gray-200">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span class="text-sm">{{ hotel.location }}</span>
                                 </div>
-                                <div class="w-full text-white absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center flex-col p-[1rem] items-center ">
-                                    <h2 class="text-white text-[1.5rem] font-bold">{{hotel.name}}</h2>
-                                    <p class="text-white text-[1rem] font-bold">{{hotel.location}}</p>
-                                    <svg width="40" height="40" class="mt-[1rem] bg-slate-600 p-[0.5rem] rounded-full cursor-pointer" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M18 14V18.833C18.0001 18.9863 17.97 19.1381 17.9114 19.2797C17.8528 19.4214 17.7669 19.5501 17.6585 19.6585C17.5501 19.7669 17.4214 19.8528 17.2797 19.9114C17.1381 19.97 16.9863 20.0001 16.833 20H5.167C5.01375 20 4.862 19.9698 4.72041 19.9112C4.57882 19.8525 4.45017 19.7666 4.34181 19.6582C4.23344 19.5498 4.14748 19.4212 4.08883 19.2796C4.03019 19.138 4 18.9863 4 18.833V7.167C3.99987 7.01371 4.02996 6.8619 4.08857 6.72025C4.14717 6.57861 4.23312 6.44991 4.34151 6.34151C4.44991 6.23312 4.57861 6.14717 4.72025 6.08856C4.8619 6.02996 5.01371 5.99987 5.167 6H9.785M14.232 4H20V9.768M12.111 11.889L19.889 4.111" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </div>
+                            
+                            <!-- View Rooms Button -->
+                            <div class="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 hover:bg-white/30 transition-colors duration-200">
+                                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </div>
                             </div>
-                        </a>
-                    {% endfor %}
+                        </div>
+                        
+                        <!-- Hotel Details -->
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <div class="flex space-x-1">
+                                        {% for i in "12345" %}
+                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                        </svg>
+                                        {% endfor %}
+                                    </div>
+                                    <span class="text-sm text-gray-500">(4.8)</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm text-gray-500">Starting from</span>
+                                    <div class="text-lg font-bold text-blue-600">GHS 100/night</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-2 flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                        </svg>
+                                        <span>Available Rooms</span>
+                                    </div>
+                                </div>
+                                <div class="text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-200">
+                                    View Details →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                {% empty %}
+                <div class="col-span-full text-center py-16">
+                    <div class="max-w-md mx-auto">
+                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-600 mb-2">No Hotels Found</h3>
+                        <p class="text-gray-500 mb-4">We couldn't find any hotels matching your search criteria.</p>
+                        <a href="{% url 'hotel-rooms' %}" class="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            <span>View All Hotels</span>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            <!--Pagination-->
-            <div class="flex justify-center items-center gap-8 mt-[1rem] mb-[2rem]">
-                {% if rooms.has_previous %}
-                    <a href="?page={{ rooms.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}
-                        {% if location_query %}&loc-search={{ location_query }}{% endif %}
-                        {% if status_query %}&status={{ status_query }}{% endif %}
-                        {% if rating_query %}&rating={{ rating_query }}{% endif %}
-                        {% if room_type_query %}&room_type={{ room_type_query }}{% endif %}"
-                        class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                            <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                {% else %}
-                    <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-400 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                            <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                {% endif %}
-            
-                <p class="text-slate-700">
-                    Page <strong class="text-slate-600">{{ rooms.number }}</strong> of <strong class="text-slate-600">{{ rooms.paginator.num_pages }}</strong>
-                </p>
-                
-                {% if rooms.has_next %}
-                    <a href="?page={{ rooms.next_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}" class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                            <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                {% else %}
-                    <button disabled class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm text-slate-400 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                            <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                {% endif %}
+            <!-- Pagination -->
+            {% if hotels.paginator.num_pages > 1 %}
+            <div class="mt-16 flex justify-center items-center">
+                <nav class="flex items-center space-x-2">
+                    {% if hotels.has_previous %}
+                        <a href="?page={{ hotels.previous_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}"
+                           class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Previous
+                        </a>
+                    {% else %}
+                        <span class="inline-flex items-center px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-400 bg-gray-50 cursor-not-allowed">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Previous
+                        </span>
+                    {% endif %}
+                    
+                    <div class="hidden sm:flex items-center space-x-2">
+                        {% for num in hotels.paginator.page_range %}
+                            {% if num == hotels.number %}
+                                <span class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium">{{ num }}</span>
+                            {% elif num > hotels.number|add:'-3' and num < hotels.number|add:'3' %}
+                                <a href="?page={{ num }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}"
+                                   class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="sm:hidden px-4 py-2 text-sm text-gray-700">
+                        Page {{ hotels.number }} of {{ hotels.paginator.num_pages }}
+                    </div>
+                    
+                    {% if hotels.has_next %}
+                        <a href="?page={{ hotels.next_page_number }}{% if name_query %}&search={{ name_query }}{% endif %}{% if location_query %}&loc-search={{ location_query }}{% endif %}"
+                           class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200">
+                            Next
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    {% else %}
+                        <span class="inline-flex items-center px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-400 bg-gray-50 cursor-not-allowed">
+                            Next
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    {% endif %}
+                </nav>
             </div>
-        </main>
+            {% endif %}
+        </div>
     </section>
 
-  
+    <!-- Custom Styles for Animations -->
+    <style>
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-slide-in {
+            animation: slide-in 0.3s ease-out;
+        }
+        
+        .group:hover .group-hover\:scale-110 {
+            transform: scale(1.1);
+        }
+    </style>
 
     <script>
- 
+        // Auto-dismiss messages after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const messages = document.querySelectorAll('[onclick="this.parentElement.remove()"]');
+                messages.forEach(btn => {
+                    if (btn.parentElement) {
+                        btn.parentElement.remove();
+                    }
+                });
+            }, 5000);
+        });
     </script>
 
 {% endblock %}
