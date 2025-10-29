@@ -48,6 +48,9 @@ class LeadForm(forms.ModelForm):
             'message'
         ]
         exclude = ['hotel']
+        widgets = {
+            'message': forms.Textarea(attrs={'rows': 2}),
+        }
 
 class UserUpdateForm(UserChangeForm):
     password = forms.CharField(
@@ -72,20 +75,6 @@ class UserUpdateForm(UserChangeForm):
             if field != 'password':
                 self.fields[field].widget.attrs.update({'class': 'form-control'})
 
-
-# class UserUpdateForm(forms.ModelForm):
-#     class Meta:
-#         model = ProfileModel
-#         fields = [
-#             'first_name',
-#             'last_name',
-#             'email',
-#             'phone',
-#             'profile',
-#             'gender',
-#             'nationality',
-#             'address',
-#         ]
 
 class ProfileForm(forms.ModelForm):
     class Meta:
