@@ -13979,3 +13979,14 @@ INFO 2025-10-31 11:09:04,241 basehttp 4024 18508 "GET /serviceworker.js HTTP/1.1
 INFO 2025-10-31 11:09:04,853 basehttp 4024 18508 "GET /hotel/ HTTP/1.1" 200 53874
 INFO 2025-10-31 11:09:05,025 basehttp 4024 18508 "GET /static/css/dist/styles.css?v=1761952144 HTTP/1.1" 200 134869
 INFO 2025-10-31 11:09:05,196 basehttp 4024 18508 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-10-31 11:24:58,409 autoreload 8104 21872 Watching for file changes with StatReloader
+INFO 2025-10-31 11:25:10,911 basehttp 8104 7928 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:25:11,052 basehttp 8104 7928 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-10-31 11:25:11,056 basehttp 8104 2228 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 11:25:11,061 basehttp 8104 7928 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 304 0
+INFO 2025-10-31 11:25:11,239 basehttp 8104 4916 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-10-31 11:25:38,928 autoreload 17032 17612 Watching for file changes with StatReloader
+INFO 2025-10-31 11:25:40,013 basehttp 17032 14280 "GET / HTTP/1.1" 200 35808
+INFO 2025-10-31 11:25:40,149 basehttp 17032 14280 "GET /static/css/dist/styles.css?v=1761953140 HTTP/1.1" 200 134412
+INFO 2025-10-31 11:25:41,031 basehttp 17032 1396 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:25:42,838 basehttp 17032 15740 "GET /serviceworker.js HTTP/1.1" 200 4249

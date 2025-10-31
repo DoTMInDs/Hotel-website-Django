@@ -271,7 +271,7 @@ LOGGING = {
 # PWA Configuration
 PWA_APP_NAME = 'BaseLink'
 PWA_APP_DESCRIPTION = "A Hotel Management Application"
-PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_THEME_COLOR = '#3B82F6'
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_SCOPE = '/'
@@ -279,60 +279,66 @@ PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
-    # Use generic icons for smaller sizes
+    # Use BaseLink logo for all sizes to ensure consistent branding
     {
-        'src': '/static/images/icons/icon-72x72.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '72x72',
         'type': 'image/png'
     },
     {
-        'src': '/static/images/icons/icon-96x96.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '96x96',
         'type': 'image/png'
     },
     {
-        'src': '/static/images/icons/icon-128x128.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '128x128',
         'type': 'image/png'
     },
     {
-        'src': '/static/images/icons/icon-144x144.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '144x144',
         'type': 'image/png'
     },
     {
-        'src': '/static/images/icons/icon-152x152.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '152x152',
         'type': 'image/png'
     },
-    # Use new BaseLink logo for larger sizes where detail matters
     {
-        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '192x192',
         'type': 'image/png',
         'purpose': 'any maskable'
     },
     {
-        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '384x384',
         'type': 'image/png',
         'purpose': 'any maskable'
     },
     {
-        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '512x512',
         'type': 'image/png',
         'purpose': 'any maskable'
+    },
+    # Add a specific icon for PWA install dialog
+    {
+        'src': '/static/image/assets/BASELINK-LOGO.png',
+        'sizes': '192x192',
+        'type': 'image/png',
+        'purpose': 'any'
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': '/static/image/assets/BASELINK-FAV-1.png',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '180x180',
         'type': 'image/png'
     },
     {
-        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
+        'src': '/static/image/assets/BASELINK-LOGO.png',
         'sizes': '192x192',
         'type': 'image/png'
     }

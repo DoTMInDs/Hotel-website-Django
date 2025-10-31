@@ -1,4 +1,4 @@
-var staticCacheName = "baselink-pwa-v" + new Date().getTime();
+var staticCacheName = "baselink-pwa-v" + new Date().getTime() + "-logo-update";
 var filesToCache = [
     '/offline/',
     '/static/css/style.css',
