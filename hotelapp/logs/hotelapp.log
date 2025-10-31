@@ -13892,3 +13892,83 @@ INFO 2025-10-31 10:31:39,913 basehttp 23380 21772 "GET /serviceworker.js HTTP/1.
 INFO 2025-10-31 10:34:14,654 basehttp 23380 20968 "GET /serviceworker.js HTTP/1.1" 200 4138
 INFO 2025-10-31 10:34:19,926 basehttp 23380 9604 "GET /serviceworker.js HTTP/1.1" 200 4138
 INFO 2025-10-31 10:36:07,716 basehttp 23380 23948 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:43:43,886 autoreload 3692 19400 Watching for file changes with StatReloader
+INFO 2025-10-31 10:43:53,091 basehttp 3692 10520 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:43:53,208 basehttp 3692 10520 "GET /offline/ HTTP/1.1" 200 5915
+INFO 2025-10-31 10:43:53,429 basehttp 3692 12556 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 1440545
+INFO 2025-10-31 10:43:55,010 basehttp 3692 12556 "GET / HTTP/1.1" 200 35597
+INFO 2025-10-31 10:43:55,100 basehttp 3692 12556 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 10:43:55,125 basehttp 3692 10520 "GET /static/css/dist/styles.css?v=1761950634 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:43:55,129 basehttp 3692 10628 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-10-31 10:43:56,360 basehttp 3692 10628 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 10:43:56,365 basehttp 3692 25444 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 10:43:56,380 basehttp 3692 25444 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 10:43:56,991 basehttp 3692 13516 "GET /manifest.json HTTP/1.1" 200 1693
+WARNING 2025-10-31 10:43:57,008 log 3692 10628 Not Found: /image/assets/BASELINK-FAV-1.png
+WARNING 2025-10-31 10:43:57,009 basehttp 3692 10628 "GET /image/assets/BASELINK-FAV-1.png HTTP/1.1" 404 19527
+INFO 2025-10-31 10:43:59,611 basehttp 3692 10628 "GET / HTTP/1.1" 200 35597
+INFO 2025-10-31 10:43:59,692 basehttp 3692 10628 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 10:43:59,694 basehttp 3692 10520 "GET /static/css/dist/styles.css?v=1761950639 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:43:59,727 basehttp 3692 12556 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-10-31 10:44:00,121 basehttp 3692 12556 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 10:44:00,138 basehttp 3692 10628 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 10:44:00,160 basehttp 3692 10628 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 10:44:00,605 basehttp 3692 13516 "GET /manifest.json HTTP/1.1" 200 1693
+WARNING 2025-10-31 10:44:00,633 log 3692 12556 Not Found: /image/assets/BASELINK-FAV-1.png
+WARNING 2025-10-31 10:44:00,636 basehttp 3692 12556 "GET /image/assets/BASELINK-FAV-1.png HTTP/1.1" 404 19527
+INFO 2025-10-31 10:44:03,450 basehttp 3692 12556 "GET / HTTP/1.1" 200 35597
+INFO 2025-10-31 10:44:03,543 basehttp 3692 12556 "GET /static/css/dist/styles.css?v=1761950643 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:44:03,938 basehttp 3692 13516 "GET /manifest.json HTTP/1.1" 200 1693
+INFO 2025-10-31 10:44:05,504 basehttp 3692 10520 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:46:28,839 basehttp 3692 10520 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:48:42,910 basehttp 3692 11652 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:49:07,929 basehttp 3692 21836 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:49:21,808 autoreload 3692 19400 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 10:49:23,692 autoreload 7616 18888 Watching for file changes with StatReloader
+INFO 2025-10-31 10:49:26,343 basehttp 7616 19816 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:49:31,687 autoreload 7616 18888 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 10:49:33,347 autoreload 12828 21512 Watching for file changes with StatReloader
+INFO 2025-10-31 10:49:35,910 basehttp 12828 23572 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:49:44,184 autoreload 12828 21512 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 10:49:45,598 autoreload 23524 11076 Watching for file changes with StatReloader
+INFO 2025-10-31 10:49:48,439 basehttp 23524 14852 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:50:33,213 basehttp 23524 9240 "GET /serviceworker.js HTTP/1.1" 200 4139
+INFO 2025-10-31 10:51:04,048 basehttp 23524 25288 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 10:51:04,162 basehttp 23524 25288 "GET /offline/ HTTP/1.1" 200 5916
+INFO 2025-10-31 10:51:04,172 basehttp 23524 25288 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 304 0
+INFO 2025-10-31 10:51:04,173 basehttp 23524 20096 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 10:51:04,250 basehttp 23524 20096 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-10-31 10:52:22,938 basehttp 23524 25468 "GET / HTTP/1.1" 200 35808
+INFO 2025-10-31 10:52:23,016 basehttp 23524 25468 "GET /static/css/dist/styles.css?v=1761951142 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:52:23,801 basehttp 23524 16984 "GET /manifest.json HTTP/1.1" 200 1843
+INFO 2025-10-31 10:52:24,384 autoreload 23524 11076 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 10:52:25,879 autoreload 23484 12512 Watching for file changes with StatReloader
+INFO 2025-10-31 10:52:27,209 basehttp 23484 3684 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 10:52:28,904 basehttp 23484 3684 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 10:53:06,204 basehttp 23484 20532 "GET /about/ HTTP/1.1" 200 27275
+INFO 2025-10-31 10:53:06,509 basehttp 23484 20532 "GET /static/css/dist/styles.css?v=1761951186 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:53:08,383 basehttp 23484 3612 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 10:54:09,546 basehttp 23484 4768 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 10:54:27,924 basehttp 23484 25424 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:00:39,236 basehttp 23484 24812 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:00:39,242 basehttp 23484 24812 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:00:39,249 basehttp 23484 24812 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:00:54,487 basehttp 23484 15996 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:02:40,919 basehttp 23484 23648 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:02:57,915 basehttp 23484 22232 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:03:06,887 basehttp 23484 4092 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:05:54,414 autoreload 23484 12512 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:05:55,994 autoreload 25548 21392 Watching for file changes with StatReloader
+INFO 2025-10-31 11:05:56,851 basehttp 25548 7528 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:06:01,354 autoreload 25548 21392 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:06:03,042 autoreload 13516 2532 Watching for file changes with StatReloader
+INFO 2025-10-31 11:06:05,909 basehttp 13516 20620 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:06:13,213 autoreload 13516 2532 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:06:14,343 autoreload 24492 21204 Watching for file changes with StatReloader
+INFO 2025-10-31 11:06:16,922 basehttp 24492 25000 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:06:20,034 autoreload 24492 21204 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:06:21,037 autoreload 25332 20872 Watching for file changes with StatReloader
+INFO 2025-10-31 11:06:23,586 basehttp 25332 16240 "GET /serviceworker.js HTTP/1.1" 200 4232
+INFO 2025-10-31 11:06:29,771 autoreload 25332 20872 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:06:30,774 autoreload 25000 10276 Watching for file changes with StatReloader
+INFO 2025-10-31 11:06:33,908 basehttp 25000 22036 "GET /serviceworker.js HTTP/1.1" 200 4232

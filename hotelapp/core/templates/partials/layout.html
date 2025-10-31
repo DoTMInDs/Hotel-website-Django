@@ -8,7 +8,12 @@
     <meta name="description" content="BaseLink Hotel Booking" />
     <title>BaseLink {% block title %}{% endblock  %}</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="shortcut icon" href="image/assets/BASELINK-FAV-1.png" type="image/x-icon">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'image/assets/BASELINK-FAV-1.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'image/assets/BASELINK-FAV-1.png' %}">
+    <link rel="shortcut icon" href="{% static 'image/assets/BASELINK-FAV-1.png' %}" type="image/x-icon">
+    
     <script src="https://kit.fontawesome.com/1566b08547.js" crossorigin="anonymous"></script>
     {% progressive_web_app_meta %}
     {% tailwind_css %}

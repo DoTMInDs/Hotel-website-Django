@@ -279,6 +279,7 @@ PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
+    # Use generic icons for smaller sizes
     {
         'src': '/static/images/icons/icon-72x72.png',
         'sizes': '72x72',
@@ -304,30 +305,34 @@ PWA_APP_ICONS = [
         'sizes': '152x152',
         'type': 'image/png'
     },
+    # Use new BaseLink logo for larger sizes where detail matters
     {
-        'src': '/static/images/icons/icon-192x192.png',
+        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
         'sizes': '192x192',
-        'type': 'image/png'
+        'type': 'image/png',
+        'purpose': 'any maskable'
     },
     {
-        'src': '/static/images/icons/icon-384x384.png',
+        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
         'sizes': '384x384',
-        'type': 'image/png'
+        'type': 'image/png',
+        'purpose': 'any maskable'
     },
     {
-        'src': '/static/images/icons/icon-512x512.png',
+        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
         'sizes': '512x512',
-        'type': 'image/png'
+        'type': 'image/png',
+        'purpose': 'any maskable'
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': '/static/images/icons/icon-152x152.png',
-        'sizes': '152x152',
+        'src': '/static/image/assets/BASELINK-FAV-1.png',
+        'sizes': '180x180',
         'type': 'image/png'
     },
     {
-        'src': '/static/images/icons/icon-192x192.png',
+        'src': '/static/image/assets/BASELINK-LOGO-1.jpg',
         'sizes': '192x192',
         'type': 'image/png'
     }
@@ -347,8 +352,9 @@ PWA_APP_SHORTCUTS = [
         'description': 'Browse and book hotel rooms',
         'icons': [
             {
-                'src': '/static/images/icons/icon-192x192.png',
-                'sizes': '192x192'
+                'src': '/static/image/assets/BASELINK-LOGO.png',
+                'sizes': '192x192',
+                'type': 'image/png'
             }
         ]
     },
@@ -358,8 +364,9 @@ PWA_APP_SHORTCUTS = [
         'description': 'View your hotel bookings',
         'icons': [
             {
-                'src': '/static/images/icons/icon-192x192.png',
-                'sizes': '192x192'
+                'src': '/static/image/assets/BASELINK-LOGO.png',
+                'sizes': '192x192',
+                'type': 'image/png'
             }
         ]
     },
@@ -369,8 +376,9 @@ PWA_APP_SHORTCUTS = [
         'description': 'Get in touch with us',
         'icons': [
             {
-                'src': '/static/images/icons/icon-192x192.png',
-                'sizes': '192x192'
+                'src': '/static/image/assets/BASELINK-LOGO.png',
+                'sizes': '192x192',
+                'type': 'image/png'
             }
         ]
     }

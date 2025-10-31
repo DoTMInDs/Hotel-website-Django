@@ -22,7 +22,9 @@ var filesToCache = [
     '/static/images/icons/splash-1668x2224.png',
     '/static/images/icons/splash-1668x2388.png',
     '/static/images/icons/splash-2048x2732.png',
-    '/static/image/assets/Baslink-logo.png'
+    '/static/image/assets/BASELINK-LOGO.png',
+    '/static/image/assets/BASELINK-LOGO.jpg',
+    '/static/image/assets/BASELINK-FAV-1.png'
 ];
 
 // Cache on install
