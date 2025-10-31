@@ -1,5 +1,4 @@
-{% load pwa %}
-{% load static tailwind_tags %}
+{% load static tailwind_tags pwa %}
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -8,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="BaseLink Hotel Booking" />
     <title>BaseLink{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="image/assets/BASELINK-FAV-1.png" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <script src="https://kit.fontawesome.com/1566b08547.js" crossorigin="anonymous"></script>
     {% progressive_web_app_meta %}
@@ -36,7 +36,7 @@
               <div class="flex-shrink-0">
                 <a href="{% url "home" %}" class="flex items-center space-x-3 group">
                   <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-                    <img src="{% static 'image/assets/Baslink-logo.png' %}" 
+                    <img src="{% static 'image/assets/BASELINK-LOGO.jpg' %}" 
                          class="w-6 h-6 brightness-0 invert" alt="BaseLink Logo">
                   </div>
                   <h1 class="text-xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
@@ -613,6 +613,94 @@
                     if (arrow) arrow.style.transform = 'rotate(0deg)';
                 }
             }
+        });
+
+        // PWA Installation Prompt
+        let deferredPrompt;
+        let installButton = null;
+
+        // Create install button
+        function createInstallButton() {
+            if (installButton) return;
+            
+            installButton = document.createElement('div');
+            installButton.id = 'pwa-install-banner';
+            installButton.innerHTML = `
+                <div class="fixed bottom-4 right-4 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg shadow-lg max-w-sm transform transition-all duration-300 translate-y-0 opacity-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-sm">Install BaseLink</h4>
+                            <p class="text-xs text-blue-100">Get the app for a better experience</p>
+                        </div>
+                        <button onclick="dismissInstallPrompt()" class="text-white/80 hover:text-white ml-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex space-x-2 mt-3">
+                        <button onclick="installPWA()" class="bg-white text-blue-600 px-3 py-1 rounded text-xs font-semibold hover:bg-blue-50 transition-colors">
+                            Install
+                        </button>
+                        <button onclick="dismissInstallPrompt()" class="text-white/80 hover:text-white px-3 py-1 rounded text-xs transition-colors">
+                            Later
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(installButton);
+        }
+
+        // Handle beforeinstallprompt event
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Don't show if user has dismissed it recently
+            const dismissed = localStorage.getItem('pwa-install-dismissed');
+            const dismissedTime = dismissed ? parseInt(dismissed) : 0;
+            const threeDaysAgo = Date.now() - (3 * 24 * 60 * 60 * 1000);
+            
+            if (dismissedTime < threeDaysAgo) {
+                // Show install button after a short delay
+                setTimeout(createInstallButton, 3000);
+            }
+        });
+
+        // Install PWA function
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                    dismissInstallPrompt();
+                });
+            }
+        }
+
+        // Dismiss install prompt
+        function dismissInstallPrompt() {
+            const banner = document.getElementById('pwa-install-banner');
+            if (banner) {
+                banner.style.transform = 'translateY(100%)';
+                banner.style.opacity = '0';
+                setTimeout(() => banner.remove(), 300);
+                localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+            }
+        }
+
+        // Handle app installed event
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('BaseLink PWA was installed');
+            dismissInstallPrompt();
         });
 
       </script>

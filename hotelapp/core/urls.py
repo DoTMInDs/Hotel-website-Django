@@ -19,4 +19,5 @@ urlpatterns = [
     path('booking-success/', views.booking_success, name='booking-payment-success'),
     path('booking-failure/', views.booking_failure, name='booking-payment-failure'),
     path('webhook/paystack/', paystack_webhook, name='paystack_webhook'),
+    path('offline/', views.offline, name='offline'),
 ]

@@ -13644,3 +13644,251 @@ INFO 2025-10-29 11:29:16,614 basehttp 6172 21780 - Broken pipe from ('127.0.0.1'
 INFO 2025-10-29 11:29:16,614 basehttp 6172 17876 - Broken pipe from ('127.0.0.1', 50349)
 INFO 2025-10-29 11:29:16,614 basehttp 6172 20720 - Broken pipe from ('127.0.0.1', 54093)
 INFO 2025-10-29 11:29:16,680 basehttp 6172 4772 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:51:26,948 autoreload 15796 12376 Watching for file changes with StatReloader
+WARNING 2025-10-31 09:51:44,520 basehttp 15796 10520 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 09:51:44,601 basehttp 15796 3224 "GET /static/css/dist/styles.css?v=1761945969 HTTP/1.1" 200 106010
+WARNING 2025-10-31 09:51:45,035 basehttp 15796 3224 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 09:51:45,788 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:51:45,803 basehttp 15796 23440 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 304 0
+INFO 2025-10-31 09:51:46,754 basehttp 15796 23440 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:51:46,821 log 15796 23440 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:51:46,822 log 15796 10200 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-31 09:51:46,823 basehttp 15796 10200 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-31 09:51:46,823 basehttp 15796 23440 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-31 09:51:46,823 basehttp 15796 4704 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-31 09:51:50,051 basehttp 15796 4704 "GET / HTTP/1.1" 200 31228
+INFO 2025-10-31 09:51:50,124 basehttp 15796 4704 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 09:51:50,143 basehttp 15796 23440 "GET /static/css/dist/styles.css?v=1761947509 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:51:50,147 basehttp 15796 10200 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 200 78467
+INFO 2025-10-31 09:51:50,210 basehttp 15796 10200 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 09:51:50,241 basehttp 15796 10200 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 09:51:50,282 basehttp 15796 4704 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 09:51:51,197 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:51:51,203 basehttp 15796 10200 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 200 78467
+INFO 2025-10-31 09:52:29,590 basehttp 15796 10200 "GET /hotel/ HTTP/1.1" 200 49278
+INFO 2025-10-31 09:52:29,672 basehttp 15796 10200 "GET /static/css/dist/styles.css?v=1761947549 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:52:30,272 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:52:30,697 basehttp 15796 23440 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:30,800 log 15796 23440 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:52:30,843 log 15796 11508 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-31 09:52:30,843 basehttp 15796 21528 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-31 09:52:30,845 basehttp 15796 23440 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-31 09:52:30,848 basehttp 15796 11508 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-31 09:52:30,888 log 15796 21528 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-31 09:52:30,889 basehttp 15796 21528 - Broken pipe from ('127.0.0.1', 63411)
+INFO 2025-10-31 09:52:31,870 basehttp 15796 11508 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:31,966 log 15796 11508 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:52:31,986 log 15796 23440 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-31 09:52:31,988 basehttp 15796 21680 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-31 09:52:31,989 basehttp 15796 11508 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-31 09:52:31,990 basehttp 15796 23440 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-31 09:52:32,010 log 15796 23440 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-31 09:52:32,010 basehttp 15796 23440 - Broken pipe from ('127.0.0.1', 61996)
+INFO 2025-10-31 09:52:34,311 basehttp 15796 11508 "GET /hotel/ HTTP/1.1" 200 49278
+INFO 2025-10-31 09:52:34,387 basehttp 15796 11508 "GET /static/css/dist/styles.css?v=1761947554 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:52:35,069 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:52:35,971 basehttp 15796 21680 "GET /my_booking/ HTTP/1.1" 302 0
+INFO 2025-10-31 09:52:36,012 basehttp 15796 21680 "GET /login/?next=/my_booking/ HTTP/1.1" 200 13700
+INFO 2025-10-31 09:52:36,106 basehttp 15796 21680 "GET /static/css/dist/styles.css?v=1761947556 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:52:36,324 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:52:36,820 basehttp 15796 4952 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:36,939 log 15796 4952 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:52:36,957 log 15796 6104 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-31 09:52:36,960 basehttp 15796 4952 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-31 09:52:36,961 basehttp 15796 6104 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-31 09:52:36,967 basehttp 15796 22908 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-31 09:52:37,906 basehttp 15796 22908 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:38,104 log 15796 6104 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-31 09:52:38,109 log 15796 22908 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:52:38,110 basehttp 15796 6104 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+WARNING 2025-10-31 09:52:38,110 basehttp 15796 22908 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+INFO 2025-10-31 09:52:38,111 basehttp 15796 4952 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-31 09:52:38,147 log 15796 22908 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-31 09:52:38,152 basehttp 15796 22908 - Broken pipe from ('127.0.0.1', 56701)
+WARNING 2025-10-31 09:52:38,169 log 15796 6104 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-31 09:52:38,180 log 15796 4952 Not Found: /images/icons/icon-144x144.png
+INFO 2025-10-31 09:52:38,182 basehttp 15796 6104 - Broken pipe from ('127.0.0.1', 49677)
+WARNING 2025-10-31 09:52:38,197 log 15796 22984 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-31 09:52:38,200 basehttp 15796 22984 - Broken pipe from ('127.0.0.1', 50292)
+INFO 2025-10-31 09:52:38,201 basehttp 15796 4952 - Broken pipe from ('127.0.0.1', 60703)
+INFO 2025-10-31 09:52:38,438 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:52:40,039 basehttp 15796 20308 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:40,095 log 15796 20308 Not Found: /css/django-pwa-app.css
+INFO 2025-10-31 09:52:40,100 basehttp 15796 956 "GET /offline/ HTTP/1.1" 200 456
+WARNING 2025-10-31 09:52:40,128 basehttp 15796 20308 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-31 09:52:40,134 log 15796 13412 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-31 09:52:40,135 basehttp 15796 20308 - Broken pipe from ('127.0.0.1', 61791)
+WARNING 2025-10-31 09:52:40,156 log 15796 956 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-31 09:52:40,158 basehttp 15796 13412 - Broken pipe from ('127.0.0.1', 62925)
+INFO 2025-10-31 09:52:40,158 basehttp 15796 956 - Broken pipe from ('127.0.0.1', 65060)
+INFO 2025-10-31 09:52:41,808 basehttp 15796 21744 "GET /static/css/dist/styles.css?v=1761945970 HTTP/1.1" 200 106010
+WARNING 2025-10-31 09:52:41,840 basehttp 15796 21744 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 09:52:42,035 basehttp 15796 3948 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 09:52:42,119 basehttp 15796 22280 "GET /manifest.json HTTP/1.1" 200 696
+INFO 2025-10-31 09:52:43,702 basehttp 15796 19788 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:52:43,733 log 15796 19788 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:52:43,741 log 15796 23988 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-31 09:52:43,744 basehttp 15796 19788 "GET /css/django-pwa-app.css HTTP/1.1" 404 19243
+WARNING 2025-10-31 09:52:43,745 basehttp 15796 23988 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19258
+INFO 2025-10-31 09:52:43,746 basehttp 15796 16360 "GET /offline/ HTTP/1.1" 200 456
+INFO 2025-10-31 09:52:49,633 autoreload 15796 12376 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-10-31 09:52:52,068 autoreload 10520 3224 Watching for file changes with StatReloader
+INFO 2025-10-31 09:52:57,509 autoreload 10520 3224 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\urls.py changed, reloading.
+INFO 2025-10-31 09:53:01,029 autoreload 19696 16672 Watching for file changes with StatReloader
+INFO 2025-10-31 09:53:02,076 basehttp 19696 6160 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:53:02,131 log 19696 4140 Not Found: /images/icons/icon-72x72.png
+WARNING 2025-10-31 09:53:02,132 log 19696 6160 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:53:02,133 basehttp 19696 4140 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19515
+WARNING 2025-10-31 09:53:02,133 basehttp 19696 6160 "GET /css/django-pwa-app.css HTTP/1.1" 404 19500
+INFO 2025-10-31 09:53:02,167 basehttp 19696 16144 - Broken pipe from ('127.0.0.1', 63682)
+INFO 2025-10-31 09:53:22,313 autoreload 19696 16672 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 09:53:23,476 autoreload 16208 12040 Watching for file changes with StatReloader
+INFO 2025-10-31 09:53:24,351 basehttp 16208 12412 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:53:24,457 basehttp 16208 12412 "GET /static/css/dist/styles.css?v=1761947604 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:53:24,827 basehttp 16208 4968 "GET /manifest.json HTTP/1.1" 200 1276
+INFO 2025-10-31 09:53:24,828 basehttp 16208 18452 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-10-31 09:53:24,848 basehttp 16208 18452 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-10-31 09:53:26,910 basehttp 16208 18452 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:53:26,937 log 16208 18452 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:53:26,939 basehttp 16208 18452 "GET /css/django-pwa-app.css HTTP/1.1" 404 19500
+WARNING 2025-10-31 09:53:26,950 log 16208 5876 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-31 09:53:26,955 basehttp 16208 16240 - Broken pipe from ('127.0.0.1', 52132)
+INFO 2025-10-31 09:53:26,955 basehttp 16208 5876 - Broken pipe from ('127.0.0.1', 65242)
+WARNING 2025-10-31 09:53:26,964 log 16208 18452 Not Found: /images/icons/icon-96x96.png
+INFO 2025-10-31 09:53:26,965 basehttp 16208 18452 - Broken pipe from ('127.0.0.1', 49165)
+INFO 2025-10-31 09:54:34,823 basehttp 16208 22176 "GET /serviceworker.js HTTP/1.1" 200 1946
+WARNING 2025-10-31 09:54:34,875 log 16208 22176 Not Found: /css/django-pwa-app.css
+WARNING 2025-10-31 09:54:34,895 log 16208 20884 Not Found: /images/icons/icon-72x72.png
+INFO 2025-10-31 09:54:34,896 basehttp 16208 4912 "GET /offline/ HTTP/1.1" 200 5915
+WARNING 2025-10-31 09:54:34,896 basehttp 16208 22176 "GET /css/django-pwa-app.css HTTP/1.1" 404 19500
+WARNING 2025-10-31 09:54:34,898 basehttp 16208 20884 "GET /images/icons/icon-72x72.png HTTP/1.1" 404 19515
+WARNING 2025-10-31 09:54:34,942 log 16208 4912 Not Found: /images/icons/icon-144x144.png
+WARNING 2025-10-31 09:54:34,961 log 16208 20884 Not Found: /images/icons/icon-96x96.png
+WARNING 2025-10-31 09:54:34,970 log 16208 22176 Not Found: /images/icons/icon-128x128.png
+WARNING 2025-10-31 09:54:34,986 log 16208 18744 Not Found: /images/icons/icon-152x152.png
+INFO 2025-10-31 09:54:34,987 basehttp 16208 4912 - Broken pipe from ('127.0.0.1', 55992)
+INFO 2025-10-31 09:54:34,987 basehttp 16208 20884 - Broken pipe from ('127.0.0.1', 57097)
+INFO 2025-10-31 09:54:34,989 basehttp 16208 22176 - Broken pipe from ('127.0.0.1', 64721)
+INFO 2025-10-31 09:54:34,990 basehttp 16208 18744 - Broken pipe from ('127.0.0.1', 53288)
+WARNING 2025-10-31 09:54:35,000 log 16208 23544 Not Found: /images/icons/icon-192x192.png
+WARNING 2025-10-31 09:54:35,014 log 16208 14228 Not Found: /images/icons/icon-384x384.png
+WARNING 2025-10-31 09:54:35,027 log 16208 11644 Not Found: /images/icons/icon-512x512.png
+INFO 2025-10-31 09:54:35,029 basehttp 16208 23544 - Broken pipe from ('127.0.0.1', 63907)
+INFO 2025-10-31 09:54:35,031 basehttp 16208 14228 - Broken pipe from ('127.0.0.1', 56744)
+INFO 2025-10-31 09:54:35,033 basehttp 16208 11644 - Broken pipe from ('127.0.0.1', 50531)
+INFO 2025-10-31 09:54:35,037 basehttp 16208 23820 - Broken pipe from ('127.0.0.1', 56526)
+INFO 2025-10-31 09:54:35,041 basehttp 16208 20012 - Broken pipe from ('127.0.0.1', 57877)
+INFO 2025-10-31 09:54:35,041 basehttp 16208 20940 - Broken pipe from ('127.0.0.1', 59686)
+INFO 2025-10-31 09:54:35,043 basehttp 16208 3316 - Broken pipe from ('127.0.0.1', 63656)
+INFO 2025-10-31 09:54:35,044 basehttp 16208 16224 - Broken pipe from ('127.0.0.1', 51965)
+INFO 2025-10-31 09:55:39,314 basehttp 16208 15536 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:55:39,626 basehttp 16208 15536 "GET /static/css/dist/styles.css?v=1761947739 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:55:41,132 basehttp 16208 20236 "GET /manifest.json HTTP/1.1" 200 1276
+INFO 2025-10-31 09:55:42,991 basehttp 16208 4456 "GET /serviceworker.js HTTP/1.1" 200 2111
+INFO 2025-10-31 09:55:43,033 basehttp 16208 4456 "GET /offline/ HTTP/1.1" 200 5915
+INFO 2025-10-31 09:55:43,059 basehttp 16208 4456 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-10-31 09:55:43,061 basehttp 16208 22732 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-10-31 09:55:43,079 basehttp 16208 22732 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-10-31 09:55:43,083 basehttp 16208 4456 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-10-31 09:55:43,098 basehttp 16208 4456 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-10-31 09:55:43,099 basehttp 16208 22732 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-10-31 09:55:43,101 basehttp 16208 16156 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-10-31 09:55:43,118 basehttp 16208 16156 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-10-31 09:55:43,120 basehttp 16208 4456 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-10-31 09:55:43,132 basehttp 16208 16156 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-10-31 09:55:43,138 basehttp 16208 4456 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-10-31 09:55:43,162 basehttp 16208 16156 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-10-31 09:55:43,163 basehttp 16208 22732 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-10-31 09:55:43,209 basehttp 16208 22732 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-10-31 09:55:43,215 basehttp 16208 16156 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-10-31 09:55:43,220 basehttp 16208 4456 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-10-31 09:55:43,304 basehttp 16208 4456 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-10-31 09:55:51,466 basehttp 16208 24356 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:55:51,514 basehttp 16208 24356 "GET /static/css/dist/styles.css?v=1761947751 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:55:52,158 basehttp 16208 13592 "GET /manifest.json HTTP/1.1" 200 1276
+INFO 2025-10-31 09:56:05,740 basehttp 16208 18076 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:56:05,799 basehttp 16208 18076 "GET /static/css/dist/styles.css?v=1761947765 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:56:06,521 basehttp 16208 20228 "GET /manifest.json HTTP/1.1" 200 1276
+INFO 2025-10-31 09:56:08,768 basehttp 16208 19012 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 09:56:08,786 basehttp 16208 19012 "GET /offline/ HTTP/1.1" 200 5915
+INFO 2025-10-31 09:56:40,051 basehttp 16208 23576 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:56:40,128 basehttp 16208 23576 "GET /static/css/dist/styles.css?v=1761947800 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:56:40,543 basehttp 16208 21112 "GET /manifest.json HTTP/1.1" 200 1276
+INFO 2025-10-31 09:56:58,348 autoreload 16208 12040 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 09:57:00,304 autoreload 18660 18560 Watching for file changes with StatReloader
+INFO 2025-10-31 09:57:01,458 basehttp 18660 23988 "GET /hotel/ HTTP/1.1" 200 49277
+INFO 2025-10-31 09:57:01,598 basehttp 18660 23988 "GET /static/css/dist/styles.css?v=1761947821 HTTP/1.1" 200 106010
+INFO 2025-10-31 09:57:03,534 basehttp 18660 7900 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 09:58:53,610 autoreload 18660 18560 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 09:58:54,808 autoreload 21768 3948 Watching for file changes with StatReloader
+INFO 2025-10-31 09:58:57,867 basehttp 21768 24300 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:04:18,286 autoreload 5876 4388 Watching for file changes with StatReloader
+WARNING 2025-10-31 10:04:29,652 basehttp 5876 23084 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 10:04:29,752 basehttp 5876 22152 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 10:04:31,759 basehttp 5876 21112 "GET /serviceworker.js HTTP/1.1" 200 4138
+WARNING 2025-10-31 10:04:53,693 basehttp 5876 21112 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 10:04:53,730 basehttp 5876 22240 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 10:04:55,598 basehttp 5876 22964 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:04:57,123 basehttp 5876 22964 "GET / HTTP/1.1" 200 35506
+INFO 2025-10-31 10:04:57,292 basehttp 5876 22964 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 10:04:57,301 basehttp 5876 23000 "GET /static/css/dist/styles.css?v=1761948297 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:04:57,307 basehttp 5876 23880 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 200 78467
+INFO 2025-10-31 10:04:58,302 basehttp 5876 23880 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 10:04:58,350 basehttp 5876 18648 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 10:04:58,372 basehttp 5876 18648 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-10-31 10:04:58,660 basehttp 5876 23880 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 10:04:58,715 basehttp 5876 23000 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 10:05:00,317 basehttp 5876 22964 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:05:01,607 basehttp 5876 22964 "GET / HTTP/1.1" 200 35506
+INFO 2025-10-31 10:05:01,697 basehttp 5876 22964 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 10:05:01,712 basehttp 5876 18968 "GET /static/css/dist/styles.css?v=1761948301 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:05:01,716 basehttp 5876 16100 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 200 78467
+INFO 2025-10-31 10:05:01,724 basehttp 5876 16100 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 10:05:01,995 basehttp 5876 22964 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 10:05:02,011 basehttp 5876 22964 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 10:05:02,623 basehttp 5876 16100 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-10-31 10:05:02,652 basehttp 5876 23100 "GET /manifest.json HTTP/1.1" 200 1693
+INFO 2025-10-31 10:07:06,334 autoreload 23380 13884 Watching for file changes with StatReloader
+INFO 2025-10-31 10:07:07,261 basehttp 23380 4480 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-10-31 10:07:09,991 basehttp 23380 4480 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 10:07:11,349 basehttp 23380 4480 "GET / HTTP/1.1" 200 35506
+INFO 2025-10-31 10:07:11,408 basehttp 23380 4480 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 10:07:11,421 basehttp 23380 24308 "GET /static/css/dist/styles.css?v=1761948431 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:07:11,434 basehttp 23380 20808 "GET /static/image/assets/Baslink-logo.png HTTP/1.1" 200 78467
+INFO 2025-10-31 10:07:11,453 basehttp 23380 20808 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 10:07:11,532 basehttp 23380 20808 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 10:07:12,000 basehttp 23380 20808 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:07:12,060 basehttp 23380 20808 "GET /offline/ HTTP/1.1" 200 5915
+INFO 2025-10-31 10:07:12,063 basehttp 23380 24308 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-10-31 10:07:12,077 basehttp 23380 24308 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-10-31 10:07:12,078 basehttp 23380 20808 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-10-31 10:07:12,084 basehttp 23380 4480 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-10-31 10:07:12,091 basehttp 23380 24308 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-10-31 10:07:12,092 basehttp 23380 20808 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-10-31 10:07:12,101 basehttp 23380 4480 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-10-31 10:07:12,119 basehttp 23380 20808 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-10-31 10:07:12,119 basehttp 23380 4480 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-10-31 10:07:12,120 basehttp 23380 24308 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-10-31 10:07:12,130 basehttp 23380 4480 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-10-31 10:07:12,138 basehttp 23380 20808 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-10-31 10:07:12,143 basehttp 23380 24308 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-10-31 10:07:12,158 basehttp 23380 4480 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-10-31 10:07:12,160 basehttp 23380 20808 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-10-31 10:07:12,163 basehttp 23380 24308 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-10-31 10:07:12,175 basehttp 23380 4480 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-10-31 10:07:12,176 basehttp 23380 20808 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-10-31 10:07:12,185 basehttp 23380 24308 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-10-31 10:07:12,209 basehttp 23380 24308 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-10-31 10:07:12,359 basehttp 23380 23704 "GET /manifest.json HTTP/1.1" 200 1693
+INFO 2025-10-31 10:07:15,365 basehttp 23380 4480 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-10-31 10:07:18,355 basehttp 23380 4480 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-10-31 10:07:21,446 basehttp 23380 4480 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-10-31 10:07:24,363 basehttp 23380 4480 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-10-31 10:31:21,694 basehttp 23380 25480 "GET / HTTP/1.1" 200 35506
+INFO 2025-10-31 10:31:21,812 basehttp 23380 25480 "GET /static/css/dist/styles.css?v=1761949881 HTTP/1.1" 200 134869
+INFO 2025-10-31 10:31:22,440 basehttp 23380 25140 "GET /manifest.json HTTP/1.1" 200 1693
+INFO 2025-10-31 10:31:24,586 basehttp 23380 25364 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:31:39,913 basehttp 23380 21772 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:34:14,654 basehttp 23380 20968 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:34:19,926 basehttp 23380 9604 "GET /serviceworker.js HTTP/1.1" 200 4138
+INFO 2025-10-31 10:36:07,716 basehttp 23380 23948 "GET /serviceworker.js HTTP/1.1" 200 4138

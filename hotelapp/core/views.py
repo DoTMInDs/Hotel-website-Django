@@ -24,6 +24,10 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
+def offline(request):
+    """Offline page for PWA"""
+    return render(request, 'core/offline.html')
+
 def send_hotel_booking_notification(booking, hotel=None):
     """
     Send email notification to hotel about new booking
