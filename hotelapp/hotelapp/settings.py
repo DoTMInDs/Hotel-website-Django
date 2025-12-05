@@ -208,8 +208,13 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
 }
 
-PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')  # Replace with your actual secret key
-PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')  # For frontend
+# PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')  # Replace with your actual secret key
+# PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')  # For frontend
+
+# HUBTEL Payment Gateway Configuration (Ghana-optimized with native split payment support)
+HUBTEL_API_KEY = os.getenv('HUBTEL_API_KEY')  # Your HUBTEL API key (Bearer token)
+HUBTEL_SECRET_KEY = os.getenv('HUBTEL_SECRET_KEY')  # Your HUBTEL secret key for webhook verification
+HUBTEL_CURRENCY = os.getenv('HUBTEL_CURRENCY', 'GHS')  # Currency code (GHS for Ghana)
 
 DEFAULT_HOTEL_EMAIL = 'esmondabban@gmail.com'
 

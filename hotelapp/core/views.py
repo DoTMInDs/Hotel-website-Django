@@ -415,7 +415,7 @@ def room_detail(request, pk):
             
             # Generate unique reference for payment
             reference = f"ROOM_{booking_room.id}_{booking.id}_{uuid.uuid4().hex[:8].upper()}"
-            booking.paystack_reference = reference
+            booking.hubtel_reference = reference
             booking.save()
             
             # Initialize payment using PaymentService
@@ -430,8 +430,8 @@ def room_detail(request, pk):
                 )
                 
                 if payment_response.get("status"):
-                    # Redirect to Paystack payment page
-                    return redirect(payment_response["data"]["authorization_url"])
+                    # Redirect to Flutterwave payment page
+                    return redirect(payment_response["data"]["link"])
                 else:
                     messages.error(request, "Payment could not be initialized. Please try again.")
                     booking.delete()  # Clean up failed booking
@@ -467,7 +467,7 @@ def delete_booking(request, booking_id):
 
 
 
-# payment for booking using paystack
+# payment for booking using hubtel with split payments
 def create_booking_and_pay(request):
     if request.method == 'POST':
         try:
@@ -517,7 +517,7 @@ def create_booking_and_pay(request):
             
             # Generate reference
             reference = str(uuid.uuid4())
-            booking.paystack_reference = reference
+            booking.hubtel_reference = reference
             booking.save()
             
             # Initialize payment using service
@@ -555,8 +555,14 @@ def verify_booking_payment(request):
         # Verify payment using service
         payment_data = PaymentService.verify_payment(reference)
         
-        if payment_data.get("status") and payment_data["data"]["status"] == "success":
-            booking = Booking.objects.filter(paystack_reference=reference).first()
+        if payment_data.get("status") and payment_data.get("data"):
+            payment_record = payment_data.get("data")
+            if isinstance(payment_record, list):
+                payment_record = payment_record[0] if payment_record else {}
+            
+            status = payment_record.get("status") or payment_record.get("transactionStatus")
+            if status == "completed" or status == "success":
+                booking = Booking.objects.filter(hubtel_reference=reference).first()
             
             if booking and not booking.is_paid:
                 booking.is_paid = True

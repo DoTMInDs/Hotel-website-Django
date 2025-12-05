@@ -13990,3 +13990,532 @@ INFO 2025-10-31 11:25:40,013 basehttp 17032 14280 "GET / HTTP/1.1" 200 35808
 INFO 2025-10-31 11:25:40,149 basehttp 17032 14280 "GET /static/css/dist/styles.css?v=1761953140 HTTP/1.1" 200 134412
 INFO 2025-10-31 11:25:41,031 basehttp 17032 1396 "GET /manifest.json HTTP/1.1" 200 1962
 INFO 2025-10-31 11:25:42,838 basehttp 17032 15740 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:38:30,080 autoreload 24784 24688 Watching for file changes with StatReloader
+INFO 2025-10-31 11:38:59,047 basehttp 24784 9728 "GET /serviceworker.js HTTP/1.1" 200 4296
+INFO 2025-10-31 11:38:59,205 basehttp 24784 9728 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-10-31 11:38:59,209 basehttp 24784 8996 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 304 0
+INFO 2025-10-31 11:38:59,209 basehttp 24784 1812 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 11:38:59,221 basehttp 24784 1812 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 304 0
+INFO 2025-10-31 11:38:59,329 basehttp 24784 8996 "GET /static/image/assets/BASELINK-LOGO-1.jpg HTTP/1.1" 200 368264
+INFO 2025-10-31 11:39:31,313 basehttp 24784 10724 "GET /static/css/dist/styles.css?v=1761945981 HTTP/1.1" 200 106193
+WARNING 2025-10-31 11:39:31,324 basehttp 24784 11524 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 11:39:32,256 basehttp 24784 10724 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 11:39:32,340 basehttp 24784 12200 "GET /manifest.json HTTP/1.1" 200 1781
+INFO 2025-10-31 11:39:32,352 basehttp 24784 18492 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-10-31 11:39:33,971 basehttp 24784 18492 "GET /serviceworker.js HTTP/1.1" 200 4296
+INFO 2025-10-31 11:39:34,024 basehttp 24784 18492 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-10-31 11:39:34,027 basehttp 24784 18128 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 11:39:34,029 basehttp 24784 21624 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-10-31 11:39:34,052 basehttp 24784 21624 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 11:39:34,053 basehttp 24784 18492 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-10-31 11:39:34,054 basehttp 24784 18128 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-10-31 11:39:34,083 basehttp 24784 18128 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-10-31 11:39:34,090 basehttp 24784 18492 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-10-31 11:39:34,114 basehttp 24784 18128 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-10-31 11:39:34,119 basehttp 24784 18492 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-10-31 11:39:34,125 basehttp 24784 21624 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-10-31 11:39:34,151 basehttp 24784 18492 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-10-31 11:39:34,154 basehttp 24784 21624 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-10-31 11:39:34,159 basehttp 24784 18128 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-10-31 11:39:34,180 basehttp 24784 21624 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-10-31 11:39:34,191 basehttp 24784 21624 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-10-31 11:39:34,210 basehttp 24784 18128 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-10-31 11:39:34,220 basehttp 24784 18492 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-10-31 11:39:34,230 basehttp 24784 21624 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-10-31 11:39:34,231 basehttp 24784 18128 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-10-31 11:39:34,238 basehttp 24784 21624 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-10-31 11:39:34,257 basehttp 24784 21624 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-10-31 11:39:34,262 basehttp 24784 18128 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-10-31 11:39:34,263 basehttp 24784 18492 "GET /static/image/assets/BASELINK-LOGO-1.jpg HTTP/1.1" 200 368264
+INFO 2025-10-31 11:39:34,318 basehttp 24784 18492 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-10-31 11:39:38,404 basehttp 24784 18492 "GET / HTTP/1.1" 200 35810
+INFO 2025-10-31 11:39:38,460 basehttp 24784 18492 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 11:39:38,462 basehttp 24784 18128 "GET /static/css/dist/styles.css?v=1761953978 HTTP/1.1" 200 106193
+INFO 2025-10-31 11:39:38,469 basehttp 24784 23392 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-10-31 11:39:38,532 basehttp 24784 21624 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 11:39:38,533 basehttp 24784 23392 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 11:39:38,680 basehttp 24784 23392 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 11:39:38,966 basehttp 24784 23392 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-10-31 11:39:39,295 basehttp 24784 25436 "GET /manifest.json HTTP/1.1" 200 1781
+INFO 2025-10-31 11:39:39,305 basehttp 24784 11068 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-10-31 11:39:42,345 basehttp 24784 11068 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-10-31 11:39:45,322 basehttp 24784 11068 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-10-31 11:39:48,281 basehttp 24784 11068 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-10-31 11:39:51,328 basehttp 24784 24156 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-10-31 11:39:54,371 basehttp 24784 24156 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-10-31 11:40:00,216 autoreload 24784 24688 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-10-31 11:40:01,386 autoreload 24172 25484 Watching for file changes with StatReloader
+INFO 2025-10-31 11:40:02,430 basehttp 24172 22928 "GET / HTTP/1.1" 200 35808
+WARNING 2025-10-31 11:40:02,504 basehttp 24172 7788 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 11:40:02,685 basehttp 24172 22928 "GET /static/css/dist/styles.css?v=1761954002 HTTP/1.1" 200 106193
+WARNING 2025-10-31 11:40:02,816 basehttp 24172 13776 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 11:40:02,951 basehttp 24172 12200 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:40:03,087 basehttp 24172 14240 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:40:04,680 basehttp 24172 19864 "GET /serviceworker.js HTTP/1.1" 200 4296
+INFO 2025-10-31 11:40:04,916 basehttp 24172 25404 "GET /serviceworker.js HTTP/1.1" 200 4296
+INFO 2025-10-31 11:40:16,056 basehttp 24172 20136 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:40:16,129 basehttp 24172 20136 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-10-31 11:40:32,921 basehttp 24172 11076 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:40:47,093 autoreload 13172 13884 Watching for file changes with StatReloader
+INFO 2025-10-31 11:40:49,931 basehttp 13172 4604 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:41:04,206 basehttp 13172 25404 "GET / HTTP/1.1" 200 35808
+INFO 2025-10-31 11:41:04,452 basehttp 13172 25404 "GET /static/css/dist/styles.css?v=1761954064 HTTP/1.1" 200 106193
+INFO 2025-10-31 11:41:04,755 basehttp 13172 7344 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:41:06,443 basehttp 13172 12904 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:41:12,507 basehttp 13172 23284 "GET / HTTP/1.1" 200 35808
+INFO 2025-10-31 11:41:12,575 basehttp 13172 23284 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 11:41:12,581 basehttp 13172 6160 "GET /static/css/dist/styles.css?v=1761954072 HTTP/1.1" 200 106193
+INFO 2025-10-31 11:41:12,589 basehttp 13172 21636 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-10-31 11:41:12,595 basehttp 13172 21636 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 11:41:12,614 basehttp 13172 14068 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 11:41:12,791 basehttp 13172 14068 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 11:41:13,930 basehttp 13172 20940 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:41:13,941 basehttp 13172 21636 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-10-31 11:56:01,207 autoreload 17904 4496 Watching for file changes with StatReloader
+WARNING 2025-10-31 11:56:16,980 basehttp 17904 20800 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-10-31 11:56:17,472 basehttp 17904 24792 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-10-31 11:56:19,433 basehttp 17904 20368 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:56:19,557 basehttp 17904 20368 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-10-31 11:56:19,592 basehttp 17904 20368 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 304 0
+INFO 2025-10-31 11:56:19,596 basehttp 17904 20368 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 11:56:19,600 basehttp 17904 20368 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 304 0
+INFO 2025-10-31 11:56:20,338 basehttp 17904 7900 "GET / HTTP/1.1" 200 35808
+INFO 2025-10-31 11:56:20,726 basehttp 17904 10532 "GET /static/css/dist/styles.css?v=1761954980 HTTP/1.1" 200 106193
+INFO 2025-10-31 11:56:20,775 basehttp 17904 7900 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-10-31 11:56:20,819 basehttp 17904 10532 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-10-31 11:56:20,822 basehttp 17904 22828 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-10-31 11:56:20,823 basehttp 17904 7900 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-10-31 11:56:20,864 basehttp 17904 8416 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-10-31 11:56:22,607 basehttp 17904 22828 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-10-31 11:56:22,939 basehttp 17904 23576 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-10-31 11:56:52,622 basehttp 17904 13204 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:57:28,781 basehttp 17904 12264 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-10-31 11:58:59,465 basehttp 17904 26212 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-04 21:43:45,774 autoreload 15124 8528 Watching for file changes with StatReloader
+INFO 2025-12-04 21:43:57,275 basehttp 15124 3256 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 21:43:57,329 basehttp 15124 14268 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-04 21:43:57,534 basehttp 15124 3256 "GET /static/css/dist/styles.css?v=1764927837 HTTP/1.1" 200 106193
+INFO 2025-12-04 21:43:57,595 basehttp 15124 8792 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 21:43:57,612 basehttp 15124 8792 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-12-04 21:43:57,616 basehttp 15124 14268 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 21:43:57,706 basehttp 15124 14268 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 21:43:58,339 basehttp 15124 14268 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-04 21:44:00,858 basehttp 15124 8792 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 21:44:00,890 basehttp 15124 2544 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 21:44:02,771 basehttp 15124 8792 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 21:44:02,836 basehttp 15124 3256 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-04 21:44:02,855 basehttp 15124 3256 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-04 21:44:02,858 basehttp 15124 12408 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-04 21:44:02,863 basehttp 15124 3256 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-04 21:44:02,867 basehttp 15124 12408 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 304 0
+INFO 2025-12-04 21:44:02,890 basehttp 15124 12408 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-04 21:44:02,898 basehttp 15124 3256 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-12-04 21:44:02,920 basehttp 15124 12408 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-04 21:44:02,921 basehttp 15124 3256 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-12-04 21:44:02,938 basehttp 15124 3256 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-04 21:44:02,939 basehttp 15124 12408 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-04 21:44:02,958 basehttp 15124 8792 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-04 21:44:02,960 basehttp 15124 12408 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-04 21:44:02,962 basehttp 15124 3256 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-04 21:44:02,983 basehttp 15124 3256 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-04 21:44:02,983 basehttp 15124 12408 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-04 21:44:02,992 basehttp 15124 8792 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-04 21:44:03,003 basehttp 15124 12408 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-04 21:44:03,004 basehttp 15124 3256 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-04 21:44:03,013 basehttp 15124 8792 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-04 21:44:03,036 basehttp 15124 3256 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-04 21:44:03,950 basehttp 15124 3256 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-04 21:44:06,855 basehttp 15124 3256 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-12-04 21:44:09,842 basehttp 15124 3256 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-04 21:44:12,843 basehttp 15124 3256 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-04 21:44:16,025 basehttp 15124 3256 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+WARNING 2025-12-04 21:46:13,361 basehttp 15124 3256 "GET /static/service-worker.js HTTP/1.1" 404 1865
+INFO 2025-12-04 21:47:17,114 autoreload 15124 8528 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-12-04 21:47:18,367 autoreload 6584 3800 Watching for file changes with StatReloader
+INFO 2025-12-04 21:48:57,387 autoreload 6584 3800 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-04 21:48:58,388 autoreload 6888 18788 Watching for file changes with StatReloader
+WARNING 2025-12-04 21:48:59,756 basehttp 6888 6812 "GET /static/icon-192.png HTTP/1.1" 404 1850
+WARNING 2025-12-04 21:48:59,765 basehttp 6888 2732 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 21:49:01,602 basehttp 6888 14796 "GET /serviceworker.js HTTP/1.1" 200 4249
+WARNING 2025-12-04 22:10:19,762 basehttp 6888 6940 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:10:21,621 basehttp 6888 14160 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:10:23,136 basehttp 6888 14160 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 22:10:23,314 basehttp 6888 14160 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:10:23,324 basehttp 6888 17556 "GET /static/css/dist/styles.css?v=1764929423 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:10:23,330 basehttp 6888 13252 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:10:23,338 basehttp 6888 13252 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:10:23,363 basehttp 6888 2012 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:10:23,629 basehttp 6888 2012 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:10:24,286 basehttp 6888 2168 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:10:24,296 basehttp 6888 13252 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:10:26,415 basehttp 6888 13252 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-04 22:10:26,482 basehttp 6888 13252 "GET /static/css/dist/styles.css?v=1764929426 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:10:26,704 basehttp 6888 13252 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:10:32,046 basehttp 6888 17556 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:10:51,188 basehttp 6888 17556 "GET /hotel_rooms/?search=yegola&loc-search= HTTP/1.1" 200 34058
+INFO 2025-12-04 22:10:51,265 basehttp 6888 17556 "GET /static/css/dist/styles.css?v=1764929451 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:10:55,896 basehttp 6888 14160 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:10:57,622 basehttp 6888 14160 "GET /hotel_rooms/?search=yegola&loc-search= HTTP/1.1" 200 34058
+INFO 2025-12-04 22:10:57,679 basehttp 6888 14160 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:10:57,691 basehttp 6888 8292 "GET /static/css/dist/styles.css?v=1764929457 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:10:57,720 basehttp 6888 8292 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:10:58,674 basehttp 6888 8292 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:10:58,765 basehttp 6888 14160 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:10:59,163 basehttp 6888 14160 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:10:59,284 basehttp 6888 2168 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:10:59,294 basehttp 6888 8292 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:11:08,220 basehttp 6888 8292 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-04 22:11:08,283 basehttp 6888 8292 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:11:08,296 basehttp 6888 1488 "GET /static/css/dist/styles.css?v=1764929468 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:11:08,314 basehttp 6888 8292 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:11:08,387 basehttp 6888 8292 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:11:08,393 basehttp 6888 8292 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:11:08,508 basehttp 6888 1488 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:11:08,785 basehttp 6888 1488 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:11:10,571 basehttp 6888 2168 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:11:10,592 basehttp 6888 8292 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:11:17,062 basehttp 6888 8292 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 81754
+INFO 2025-12-04 22:11:17,125 basehttp 6888 8292 "GET /static/css/dist/styles.css?v=1764929477 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:13:13,388 autoreload 8472 10404 Watching for file changes with StatReloader
+WARNING 2025-12-04 22:13:14,110 log 8472 17556 Not Found: /favicon.ico
+WARNING 2025-12-04 22:13:14,111 basehttp 8472 17556 "GET /favicon.ico HTTP/1.1" 404 19473
+INFO 2025-12-04 22:13:15,198 basehttp 8472 2012 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:13:16,102 basehttp 8472 2012 "GET /hotel_rooms/room-list/2/?search=&loc-search= HTTP/1.1" 200 81754
+INFO 2025-12-04 22:13:16,251 basehttp 8472 2012 "GET /static/css/dist/styles.css?v=1764929596 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:13:30,970 basehttp 8472 13252 "GET /serviceworker.js HTTP/1.1" 200 4249
+WARNING 2025-12-04 22:14:19,849 basehttp 8472 13252 "GET /static/icon-192.png HTTP/1.1" 404 1850
+WARNING 2025-12-04 22:14:19,877 basehttp 8472 6208 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:14:21,510 basehttp 8472 7860 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:14:22,388 basehttp 8472 7860 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 22:14:22,479 basehttp 8472 7860 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:14:22,483 basehttp 8472 7180 "GET /static/css/dist/styles.css?v=1764929662 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:14:22,517 basehttp 8472 7860 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:14:22,719 basehttp 8472 7860 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:14:22,796 basehttp 8472 7860 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:14:22,797 basehttp 8472 11124 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:14:24,202 basehttp 8472 20004 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:14:24,211 basehttp 8472 11124 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:14:28,825 basehttp 8472 7180 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-04 22:14:28,870 basehttp 8472 7180 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:14:28,883 basehttp 8472 7724 "GET /static/css/dist/styles.css?v=1764929668 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:14:28,908 basehttp 8472 7180 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:14:29,052 basehttp 8472 7180 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:14:29,055 basehttp 8472 7724 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:14:29,192 basehttp 8472 11204 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:14:29,594 basehttp 8472 7724 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:14:30,002 basehttp 8472 20004 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:14:30,012 basehttp 8472 7724 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:14:32,662 basehttp 8472 7724 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:14:32,730 basehttp 8472 7724 "GET /static/css/dist/styles.css?v=1764929672 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:14:35,378 basehttp 8472 7180 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:14:35,487 basehttp 8472 7180 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:14:35,505 basehttp 8472 1176 "GET /static/css/dist/styles.css?v=1764929675 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:14:35,522 basehttp 8472 7180 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:14:35,637 basehttp 8472 7180 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:14:35,648 basehttp 8472 7180 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:14:35,680 basehttp 8472 7180 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:14:35,856 basehttp 8472 1176 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:14:36,278 basehttp 8472 20004 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:14:36,284 basehttp 8472 7180 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:14:43,324 basehttp 8472 7180 "GET /sign_up/ HTTP/1.1" 200 22499
+INFO 2025-12-04 22:14:43,374 basehttp 8472 7180 "GET /static/css/dist/styles.css?v=1764929683 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:17:20,634 autoreload 18588 19284 Watching for file changes with StatReloader
+INFO 2025-12-04 22:17:35,997 basehttp 18588 3296 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 22:17:36,105 basehttp 18588 18720 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:36,138 basehttp 18588 2560 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:36,278 basehttp 18588 3296 "GET /static/css/dist/styles.css?v=1764929855 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:17:36,342 basehttp 18588 2576 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:17:36,384 basehttp 18588 18720 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:17:36,403 basehttp 18588 14200 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:17:36,476 basehttp 18588 18720 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:17:36,495 basehttp 18588 14648 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:17:36,501 basehttp 18588 14200 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-04 22:17:38,220 basehttp 18588 18720 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:17:38,271 basehttp 18588 18720 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-04 22:17:38,278 basehttp 18588 18720 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,278 basehttp 18588 3296 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,286 basehttp 18588 18720 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,286 basehttp 18588 3296 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,299 basehttp 18588 3296 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,317 basehttp 18588 18720 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,317 basehttp 18588 3296 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,326 basehttp 18588 18720 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 304 0
+INFO 2025-12-04 22:17:38,329 basehttp 18588 3296 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-04 22:17:38,337 basehttp 18588 2576 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-04 22:17:38,340 basehttp 18588 18720 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-04 22:17:38,341 basehttp 18588 3296 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-04 22:17:38,350 basehttp 18588 18720 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-04 22:17:38,351 basehttp 18588 2576 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-04 22:17:38,360 basehttp 18588 3296 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-04 22:17:38,366 basehttp 18588 18720 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-04 22:17:38,368 basehttp 18588 2576 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-04 22:17:38,374 basehttp 18588 3296 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-04 22:17:38,391 basehttp 18588 18720 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-04 22:17:38,399 basehttp 18588 3296 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-04 22:17:39,561 basehttp 18588 3296 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-04 22:17:42,510 basehttp 18588 3296 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-12-04 22:17:45,530 basehttp 18588 3296 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-04 22:17:45,732 basehttp 18588 3296 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-04 22:17:45,775 basehttp 18588 3296 "GET /static/css/dist/styles.css?v=1764929865 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:17:45,888 basehttp 18588 18720 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:17:51,435 basehttp 18588 18720 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:17:51,470 basehttp 18588 18720 "GET /static/css/dist/styles.css?v=1764929871 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:17:54,398 basehttp 18588 2576 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:17:56,717 basehttp 18588 2576 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:17:56,747 basehttp 18588 2576 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:17:56,750 basehttp 18588 2560 "GET /static/css/dist/styles.css?v=1764929876 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:17:56,755 basehttp 18588 10604 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:17:56,914 basehttp 18588 2560 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:17:56,956 basehttp 18588 10604 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:17:56,986 basehttp 18588 14960 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:18:00,155 basehttp 18588 16388 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:18:00,157 basehttp 18588 8224 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:18:04,792 basehttp 18588 8224 "GET /sign_up/ HTTP/1.1" 200 22499
+INFO 2025-12-04 22:18:04,820 basehttp 18588 8224 "GET /static/css/dist/styles.css?v=1764929884 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:06,472 basehttp 18588 15108 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:18:09,963 basehttp 18588 15108 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-04 22:18:09,997 basehttp 18588 15108 "GET /static/css/dist/styles.css?v=1764929889 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:11,654 basehttp 18588 14432 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:18:14,052 basehttp 18588 14432 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-04 22:18:14,252 basehttp 18588 14432 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-04 22:18:14,279 basehttp 18588 14432 "GET /static/css/dist/styles.css?v=1764929894 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:46,180 basehttp 18588 13864 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 22:18:46,212 basehttp 18588 13864 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:18:46,231 basehttp 18588 13864 "GET /static/css/dist/styles.css?v=1764929926 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:46,240 basehttp 18588 14080 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:18:46,251 basehttp 18588 14080 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:18:46,262 basehttp 18588 10452 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:18:46,457 basehttp 18588 10452 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:18:46,469 basehttp 18588 10452 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:18:46,489 basehttp 18588 10452 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-04 22:18:46,492 basehttp 18588 14080 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-04 22:18:46,499 basehttp 18588 13864 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-04 22:18:46,499 basehttp 18588 10452 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-04 22:18:46,504 basehttp 18588 10452 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-12-04 22:18:46,504 basehttp 18588 13864 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-04 22:18:46,513 basehttp 18588 13864 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-04 22:18:46,514 basehttp 18588 10452 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-12-04 22:18:46,519 basehttp 18588 10452 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-04 22:18:46,520 basehttp 18588 13864 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-12-04 22:18:46,527 basehttp 18588 10452 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-04 22:18:46,529 basehttp 18588 13864 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-04 22:18:46,533 basehttp 18588 10452 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-04 22:18:46,536 basehttp 18588 13864 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-04 22:18:46,538 basehttp 18588 10452 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-04 22:18:46,544 basehttp 18588 13864 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-04 22:18:46,545 basehttp 18588 10452 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-04 22:18:46,550 basehttp 18588 13864 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-04 22:18:46,550 basehttp 18588 10452 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-04 22:18:46,555 basehttp 18588 10452 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-04 22:18:46,565 basehttp 18588 10452 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-04 22:18:46,567 basehttp 18588 13864 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:18:47,141 basehttp 18588 14080 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-04 22:18:47,654 basehttp 18588 12736 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:18:48,866 basehttp 18588 13864 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-04 22:18:48,900 basehttp 18588 13864 "GET /static/css/dist/styles.css?v=1764929928 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:49,005 basehttp 18588 10452 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:18:49,760 basehttp 18588 12736 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:18:51,026 basehttp 18588 13864 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:18:53,195 basehttp 18588 13864 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:18:53,223 basehttp 18588 13864 "GET /static/css/dist/styles.css?v=1764929933 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:18:55,427 basehttp 18588 13372 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:18:58,858 basehttp 18588 13372 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-04 22:18:58,890 basehttp 18588 13372 "GET /static/css/dist/styles.css?v=1764929938 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:19:00,508 basehttp 18588 16880 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:19:20,627 basehttp 18588 16880 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-04 22:19:20,667 basehttp 18588 16880 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-04 22:19:20,708 basehttp 18588 16880 "GET /static/css/dist/styles.css?v=1764929960 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:19:22,362 basehttp 18588 14876 "GET / HTTP/1.1" 200 40416
+INFO 2025-12-04 22:19:22,391 basehttp 18588 14876 "GET /static/css/dist/styles.css?v=1764929962 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:19:22,455 basehttp 18588 14876 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-12-04 22:19:22,483 basehttp 18588 14876 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:20:44,235 basehttp 18588 1756 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 22:20:44,295 basehttp 18588 1756 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:20:44,306 basehttp 18588 13884 "GET /static/css/dist/styles.css?v=1764930044 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:20:44,323 basehttp 18588 13884 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:20:44,463 basehttp 18588 1756 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:20:44,981 basehttp 18588 1756 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:20:46,102 basehttp 18588 1756 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:20:46,468 basehttp 18588 9980 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:20:46,472 basehttp 18588 13884 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:20:58,267 basehttp 18588 9344 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:20:58,272 basehttp 18588 9344 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:20:59,902 basehttp 18588 15064 "GET /sign_up/ HTTP/1.1" 200 22499
+INFO 2025-12-04 22:20:59,943 basehttp 18588 15064 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:20:59,958 basehttp 18588 4276 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:20:59,961 basehttp 18588 6636 "GET /static/css/dist/styles.css?v=1764930059 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:21:00,163 basehttp 18588 6636 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:21:01,071 basehttp 18588 6068 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:21:01,077 basehttp 18588 4276 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:21:03,443 basehttp 18588 4276 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-04 22:21:03,490 basehttp 18588 4276 "GET /static/css/dist/styles.css?v=1764930063 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:21:07,863 basehttp 18588 15064 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:21:15,698 basehttp 18588 15064 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-04 22:21:15,737 basehttp 18588 15064 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-04 22:21:15,780 basehttp 18588 15064 "GET /static/css/dist/styles.css?v=1764930075 HTTP/1.1" 200 106193
+WARNING 2025-12-04 22:23:07,832 basehttp 18588 6168 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:23:07,833 basehttp 18588 14580 "GET / HTTP/1.1" 200 40416
+WARNING 2025-12-04 22:23:07,834 basehttp 18588 7596 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:23:07,843 basehttp 18588 4144 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:23:07,907 basehttp 18588 4144 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:23:07,909 basehttp 18588 14580 "GET /static/css/dist/styles.css?v=1764930187 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:23:07,922 basehttp 18588 4144 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:23:07,930 basehttp 18588 18976 "GET /manage-account/ HTTP/1.1" 200 48626
+INFO 2025-12-04 22:23:07,958 basehttp 18588 4144 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-12-04 22:23:07,963 basehttp 18588 4144 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:23:07,975 basehttp 18588 14580 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:23:08,026 basehttp 18588 10932 "GET /manage-hotel-account/ HTTP/1.1" 200 54881
+INFO 2025-12-04 22:23:08,125 basehttp 18588 10932 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:23:08,726 basehttp 18588 6068 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:23:08,734 basehttp 18588 14580 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+WARNING 2025-12-04 22:26:23,239 basehttp 18588 14580 "GET /static/service-worker.js HTTP/1.1" 404 1865
+WARNING 2025-12-04 22:28:10,189 basehttp 18588 4792 "GET /static/icon-192.png HTTP/1.1" 404 1850
+WARNING 2025-12-04 22:28:10,207 basehttp 18588 13636 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:28:11,910 basehttp 18588 7568 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:28:52,066 autoreload 12964 14212 Watching for file changes with StatReloader
+WARNING 2025-12-04 22:29:01,592 basehttp 12964 8940 "GET /static/icon-192.png HTTP/1.1" 404 1850
+WARNING 2025-12-04 22:29:01,599 basehttp 12964 12872 "GET /static/icon-192.png HTTP/1.1" 404 1850
+INFO 2025-12-04 22:29:03,131 basehttp 12964 2284 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:29:40,955 autoreload 6884 1352 Watching for file changes with StatReloader
+INFO 2025-12-04 22:29:58,711 basehttp 6884 7548 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-04 22:29:58,893 basehttp 6884 7548 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 22:29:58,898 basehttp 6884 15384 "GET /static/css/dist/styles.css?v=1764930598 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:29:58,911 basehttp 6884 14452 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 22:29:58,916 basehttp 6884 14452 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 22:29:58,932 basehttp 6884 15588 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-04 22:29:59,228 basehttp 6884 15588 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 22:29:59,250 basehttp 6884 15588 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:29:59,270 basehttp 6884 15588 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-04 22:29:59,272 basehttp 6884 14452 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-04 22:29:59,283 basehttp 6884 14452 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-04 22:29:59,284 basehttp 6884 15384 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-04 22:29:59,285 basehttp 6884 15588 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-04 22:29:59,294 basehttp 6884 15384 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-04 22:29:59,294 basehttp 6884 15588 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-12-04 22:29:59,295 basehttp 6884 14452 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-12-04 22:29:59,307 basehttp 6884 14452 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-04 22:29:59,308 basehttp 6884 15384 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-04 22:29:59,308 basehttp 6884 15588 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-12-04 22:29:59,323 basehttp 6884 15588 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-04 22:29:59,324 basehttp 6884 15384 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-04 22:29:59,324 basehttp 6884 14452 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-04 22:29:59,337 basehttp 6884 14452 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-04 22:29:59,337 basehttp 6884 15384 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-04 22:29:59,337 basehttp 6884 15588 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-04 22:29:59,349 basehttp 6884 15384 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-04 22:29:59,350 basehttp 6884 15588 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-04 22:29:59,351 basehttp 6884 14452 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-04 22:29:59,367 basehttp 6884 14452 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 22:29:59,368 basehttp 6884 15588 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-04 22:29:59,660 basehttp 6884 15588 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-04 22:30:00,109 basehttp 6884 1392 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:30:03,125 basehttp 6884 18692 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-04 22:30:03,408 basehttp 6884 18692 "GET /sign_up/ HTTP/1.1" 200 22499
+INFO 2025-12-04 22:30:03,475 basehttp 6884 18692 "GET /static/css/dist/styles.css?v=1764930603 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:30:04,069 basehttp 6884 13708 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 22:30:05,627 basehttp 6884 11400 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:30:06,013 basehttp 6884 11400 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-04 22:30:06,057 basehttp 6884 11400 "GET /static/css/dist/styles.css?v=1764930606 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:30:07,672 basehttp 6884 15012 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:30:16,736 basehttp 6884 15012 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-04 22:30:16,790 basehttp 6884 15012 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-04 22:30:16,832 basehttp 6884 15012 "GET /static/css/dist/styles.css?v=1764930616 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:30:18,463 basehttp 6884 14256 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:30:35,409 basehttp 6884 14256 "GET / HTTP/1.1" 200 40416
+INFO 2025-12-04 22:30:35,458 basehttp 6884 14256 "GET /static/css/dist/styles.css?v=1764930635 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:30:35,503 basehttp 6884 14256 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-12-04 22:30:37,149 basehttp 6884 11532 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:30:39,618 basehttp 6884 11532 "GET /hotel_rooms/ HTTP/1.1" 200 51491
+INFO 2025-12-04 22:30:39,666 basehttp 6884 11532 "GET /static/css/dist/styles.css?v=1764930639 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:30:39,809 basehttp 6884 11532 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 22:33:08,212 autoreload 6884 1352 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:33:09,635 autoreload 17768 1832 Watching for file changes with StatReloader
+INFO 2025-12-04 22:36:30,165 autoreload 17768 1832 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-12-04 22:36:31,139 autoreload 16364 19360 Watching for file changes with StatReloader
+WARNING 2025-12-04 22:36:32,453 log 16364 16908 Not Found: /favicon.ico
+WARNING 2025-12-04 22:36:32,454 basehttp 16364 16908 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-04 22:36:32,474 basehttp 16364 16908 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:36:32,984 basehttp 16364 16908 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:36:34,054 basehttp 16364 16908 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 85860
+INFO 2025-12-04 22:36:34,155 basehttp 16364 16908 "GET /static/css/dist/styles.css?v=1764930994 HTTP/1.1" 200 106193
+INFO 2025-12-04 22:36:36,473 basehttp 16364 16792 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:36:44,046 autoreload 16364 19360 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:36:44,784 autoreload 13268 9384 Watching for file changes with StatReloader
+INFO 2025-12-04 22:36:52,913 autoreload 13268 9384 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:36:53,665 autoreload 12044 7952 Watching for file changes with StatReloader
+INFO 2025-12-04 22:36:56,421 autoreload 12044 7952 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\urls.py changed, reloading.
+INFO 2025-12-04 22:36:57,121 autoreload 15496 1868 Watching for file changes with StatReloader
+INFO 2025-12-04 22:37:01,926 autoreload 15496 1868 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\urls.py changed, reloading.
+INFO 2025-12-04 22:37:02,625 autoreload 15660 1052 Watching for file changes with StatReloader
+INFO 2025-12-04 22:37:05,517 basehttp 15660 2272 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:37:09,733 autoreload 15660 1052 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-04 22:37:10,834 autoreload 2104 1416 Watching for file changes with StatReloader
+INFO 2025-12-04 22:37:13,538 basehttp 2104 2576 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:37:18,177 autoreload 2104 1416 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-04 22:37:18,925 autoreload 3708 5088 Watching for file changes with StatReloader
+INFO 2025-12-04 22:37:21,543 basehttp 3708 13232 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:37:48,800 autoreload 3708 5088 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:37:49,618 autoreload 16920 12960 Watching for file changes with StatReloader
+INFO 2025-12-04 22:37:52,998 basehttp 16920 13368 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:40:26,475 basehttp 16920 13368 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:56:31,694 autoreload 16920 12960 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:56:32,560 autoreload 6520 6432 Watching for file changes with StatReloader
+INFO 2025-12-04 22:56:44,640 autoreload 6520 6432 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-04 22:56:45,474 autoreload 1780 13396 Watching for file changes with StatReloader
+INFO 2025-12-04 22:56:50,446 autoreload 1780 13396 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-12-04 22:56:52,114 autoreload 9540 16904 Watching for file changes with StatReloader
+INFO 2025-12-04 22:58:09,194 autoreload 9540 16904 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-04 22:58:10,190 autoreload 14464 16996 Watching for file changes with StatReloader
+ERROR 2025-12-04 22:58:10,990 views 14464 9204 Payment initialization error: 'AnonymousUser' object has no attribute 'guest_profile'
+INFO 2025-12-04 22:58:11,013 basehttp 14464 9204 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-12-04 22:58:11,034 basehttp 14464 9204 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:58:12,982 basehttp 14464 14288 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:58:18,517 autoreload 14464 16996 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\migrations\0005_replace_paystack_with_flutterwave.py changed, reloading.
+INFO 2025-12-04 22:58:19,274 autoreload 19156 10172 Watching for file changes with StatReloader
+INFO 2025-12-04 22:58:21,993 basehttp 19156 4228 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 22:59:23,334 autoreload 19156 10172 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-04 22:59:24,154 autoreload 11148 928 Watching for file changes with StatReloader
+INFO 2025-12-04 22:59:26,991 basehttp 11148 17764 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:02:15,608 autoreload 16848 2576 Watching for file changes with StatReloader
+INFO 2025-12-04 23:02:20,432 basehttp 16848 10868 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:02:22,865 basehttp 16848 14628 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 84301
+INFO 2025-12-04 23:02:22,961 basehttp 16848 14628 "GET /static/css/dist/styles.css?v=1764932542 HTTP/1.1" 200 106193
+INFO 2025-12-04 23:02:22,981 basehttp 16848 3716 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:02:25,497 basehttp 16848 14628 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:02:29,521 basehttp 16848 14628 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-04 23:02:29,576 basehttp 16848 14628 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-04 23:02:29,581 basehttp 16848 3948 "GET /static/css/dist/styles.css?v=1764932549 HTTP/1.1" 200 106193
+INFO 2025-12-04 23:02:29,595 basehttp 16848 14628 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-04 23:02:29,691 basehttp 16848 3948 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-04 23:02:29,714 basehttp 16848 3948 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-04 23:02:29,719 basehttp 16848 14628 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-04 23:02:30,415 basehttp 16848 7300 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-04 23:02:30,419 basehttp 16848 3948 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-04 23:05:50,694 autoreload 16848 2576 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-04 23:05:51,562 autoreload 5960 15008 Watching for file changes with StatReloader
+ERROR 2025-12-04 23:05:52,355 views 5960 10528 Payment initialization error: 'AnonymousUser' object has no attribute 'guest_profile'
+WARNING 2025-12-04 23:05:52,406 log 5960 13000 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2025-12-04 23:05:52,447 basehttp 5960 10528 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-12-04 23:05:52,456 basehttp 5960 3836 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+WARNING 2025-12-04 23:05:52,466 basehttp 5960 13000 "POST /login/ HTTP/1.1" 403 2693
+INFO 2025-12-04 23:05:52,496 basehttp 5960 10528 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-04 23:05:52,524 basehttp 5960 10528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:05:52,574 basehttp 5960 3836 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-04 23:05:52,582 basehttp 5960 10528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:05:52,614 basehttp 5960 13000 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-12-04 23:05:52,622 basehttp 5960 10528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:05:52,680 basehttp 5960 13000 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:05:52,706 basehttp 5960 13000 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:05:54,988 basehttp 5960 13000 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:08:20,132 basehttp 5960 13000 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-12-04 23:08:21,902 basehttp 5960 3836 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:08:24,088 basehttp 5960 3836 "GET /logout_user/ HTTP/1.1" 302 0
+INFO 2025-12-04 23:19:02,233 basehttp 5960 4500 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-04 23:19:02,236 views 5960 1276 Payment initialization error: 'AnonymousUser' object has no attribute 'guest_profile'
+INFO 2025-12-04 23:19:02,237 basehttp 5960 1276 "POST /create-booking/ HTTP/1.1" 302 0
+INFO 2025-12-04 23:19:02,245 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:19:02,250 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:19:02,270 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:19:02,301 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:19:03,960 basehttp 5960 4500 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-04 23:23:59,858 basehttp 5960 4500 "GET /serviceworker.js HTTP/1.1" 200 4249

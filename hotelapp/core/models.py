@@ -187,7 +187,7 @@ class Booking(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     # Payment-related fields
-    paystack_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    hubtel_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
     is_paid = models.BooleanField(default=False)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
 
@@ -209,7 +209,7 @@ class Booking(models.Model):
         indexes = [
             models.Index(fields=['guest', 'created_at']),
             models.Index(fields=['is_paid', 'created_at']),
-            models.Index(fields=['paystack_reference']),
+            models.Index(fields=['hubtel_reference']),
         ]
     
     def __str__(self):
