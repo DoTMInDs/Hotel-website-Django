@@ -14519,3 +14519,955 @@ INFO 2025-12-04 23:19:02,270 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1"
 INFO 2025-12-04 23:19:02,301 basehttp 5960 1276 "GET /serviceworker.js HTTP/1.1" 200 4249
 INFO 2025-12-04 23:19:03,960 basehttp 5960 4500 "GET /serviceworker.js HTTP/1.1" 200 4249
 INFO 2025-12-04 23:23:59,858 basehttp 5960 4500 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:19:34,605 autoreload 30068 39728 Watching for file changes with StatReloader
+INFO 2025-12-10 22:20:05,856 basehttp 30068 16776 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-10 22:20:05,914 basehttp 30068 16776 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-12-10 22:20:05,990 basehttp 30068 37160 "GET /static/css/dist/styles.css?v=1765448405 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:20:06,029 basehttp 30068 16776 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-10 22:20:06,053 basehttp 30068 16776 "GET /static/js/app.js HTTP/1.1" 304 0
+INFO 2025-12-10 22:20:06,063 basehttp 30068 16776 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-10 22:20:06,090 basehttp 30068 37160 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-10 22:20:06,316 basehttp 30068 37160 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-10 22:20:06,811 basehttp 30068 37896 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-10 22:20:06,818 basehttp 30068 16776 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-10 22:20:07,783 basehttp 30068 16776 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:20:07,820 basehttp 30068 16776 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-10 22:20:07,832 basehttp 30068 16776 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-10 22:20:07,834 basehttp 30068 38576 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-10 22:20:07,845 basehttp 30068 38576 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 304 0
+INFO 2025-12-10 22:20:07,848 basehttp 30068 16776 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-10 22:20:07,855 basehttp 30068 38576 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 304 0
+INFO 2025-12-10 22:20:07,868 basehttp 30068 16776 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-10 22:20:07,879 basehttp 30068 38576 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-10 22:20:07,880 basehttp 30068 16776 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 304 0
+INFO 2025-12-10 22:20:07,893 basehttp 30068 38576 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-10 22:20:07,899 basehttp 30068 16776 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-10 22:20:07,909 basehttp 30068 24140 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-10 22:20:07,910 basehttp 30068 38576 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-10 22:20:07,917 basehttp 30068 16776 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-10 22:20:07,927 basehttp 30068 38576 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-10 22:20:07,930 basehttp 30068 24140 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-10 22:20:07,940 basehttp 30068 16776 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-10 22:20:07,940 basehttp 30068 38576 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-10 22:20:07,944 basehttp 30068 24140 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-10 22:20:07,952 basehttp 30068 38576 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-10 22:20:07,958 basehttp 30068 24140 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-10 22:20:09,894 basehttp 30068 24140 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-10 22:20:12,870 basehttp 30068 24140 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-12-10 22:20:15,871 basehttp 30068 24140 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-10 22:20:18,241 basehttp 30068 24140 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-10 22:20:18,281 basehttp 30068 24140 "GET /static/css/dist/styles.css?v=1765448418 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:20:18,430 basehttp 30068 38576 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-10 22:20:19,689 basehttp 30068 37896 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-10 22:20:20,137 basehttp 30068 24140 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:20:21,115 basehttp 30068 24140 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 81754
+INFO 2025-12-10 22:20:21,149 basehttp 30068 24140 "GET /static/css/dist/styles.css?v=1765448421 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:20:21,826 basehttp 30068 37896 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-10 22:20:23,230 basehttp 30068 16776 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:20:58,310 basehttp 30068 16776 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-10 22:20:58,351 basehttp 30068 16776 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-10 22:20:58,365 basehttp 30068 16776 "GET /static/css/dist/styles.css?v=1765448458 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:20:58,375 basehttp 30068 34552 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-10 22:20:58,385 basehttp 30068 34552 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-10 22:20:58,396 basehttp 30068 31496 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-10 22:20:58,445 basehttp 30068 31496 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-10 22:20:58,458 basehttp 30068 31496 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:20:58,477 basehttp 30068 31496 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-10 22:20:58,480 basehttp 30068 34552 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-10 22:20:58,493 basehttp 30068 31496 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-10 22:20:58,494 basehttp 30068 34552 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-10 22:20:58,495 basehttp 30068 16776 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-10 22:20:58,506 basehttp 30068 31496 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-12-10 22:20:58,512 basehttp 30068 16776 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-10 22:20:58,512 basehttp 30068 31496 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-12-10 22:20:58,515 basehttp 30068 34552 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-10 22:20:58,525 basehttp 30068 31496 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-10 22:20:58,526 basehttp 30068 34552 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-12-10 22:20:58,526 basehttp 30068 16776 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-10 22:20:58,539 basehttp 30068 16776 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-10 22:20:58,540 basehttp 30068 31496 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-10 22:20:58,541 basehttp 30068 34552 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-10 22:20:58,546 basehttp 30068 31496 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-10 22:20:58,554 basehttp 30068 16776 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-10 22:20:58,555 basehttp 30068 34552 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-10 22:20:58,557 basehttp 30068 31496 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-10 22:20:58,564 basehttp 30068 34552 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-10 22:20:58,574 basehttp 30068 31496 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-10 22:20:58,579 basehttp 30068 34552 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-10 22:20:59,326 basehttp 30068 34552 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-10 22:20:59,801 basehttp 30068 37896 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-10 22:21:01,718 basehttp 30068 31496 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-10 22:21:01,746 basehttp 30068 31496 "GET /static/css/dist/styles.css?v=1765448461 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:21:01,895 basehttp 30068 16776 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-10 22:21:02,555 basehttp 30068 37896 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-10 22:21:03,785 basehttp 30068 31496 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:21:04,053 basehttp 30068 31496 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 200 81754
+INFO 2025-12-10 22:21:04,083 basehttp 30068 31496 "GET /static/css/dist/styles.css?v=1765448464 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:21:06,318 basehttp 30068 36512 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:21:10,356 basehttp 30068 36512 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-10 22:21:10,382 basehttp 30068 36512 "GET /static/css/dist/styles.css?v=1765448470 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:21:12,000 basehttp 30068 4032 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:21:20,746 basehttp 30068 4032 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-10 22:21:20,945 basehttp 30068 4032 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-10 22:21:20,977 basehttp 30068 4032 "GET /static/css/dist/styles.css?v=1765448480 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:21:22,696 basehttp 30068 39520 "GET / HTTP/1.1" 200 40416
+INFO 2025-12-10 22:21:22,722 basehttp 30068 39520 "GET /static/css/dist/styles.css?v=1765448482 HTTP/1.1" 200 106193
+INFO 2025-12-10 22:21:22,784 basehttp 30068 39520 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-12-10 22:21:22,809 basehttp 30068 39520 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:35:19,925 basehttp 30068 32312 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:35:19,951 basehttp 30068 32312 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 22:47:48,445 autoreload 30068 39728 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-12-10 22:47:49,982 autoreload 33552 39072 Watching for file changes with StatReloader
+INFO 2025-12-10 22:48:58,809 autoreload 33552 39072 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\models.py changed, reloading.
+INFO 2025-12-10 22:48:59,647 autoreload 16776 32860 Watching for file changes with StatReloader
+INFO 2025-12-10 22:49:25,576 autoreload 16776 32860 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\payment_service.py changed, reloading.
+INFO 2025-12-10 22:49:26,405 autoreload 34192 38208 Watching for file changes with StatReloader
+INFO 2025-12-10 22:50:14,704 autoreload 34192 38208 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:50:15,573 autoreload 35480 10484 Watching for file changes with StatReloader
+INFO 2025-12-10 22:50:26,167 autoreload 35480 10484 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:50:27,005 autoreload 4748 30176 Watching for file changes with StatReloader
+INFO 2025-12-10 22:50:33,906 autoreload 4748 30176 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:50:34,667 autoreload 4208 29348 Watching for file changes with StatReloader
+INFO 2025-12-10 22:50:35,991 autoreload 4208 29348 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:50:36,754 autoreload 37480 34896 Watching for file changes with StatReloader
+INFO 2025-12-10 22:54:49,142 autoreload 37480 34896 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:54:50,028 autoreload 29432 34100 Watching for file changes with StatReloader
+INFO 2025-12-10 22:55:30,053 autoreload 29432 34100 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:55:30,890 autoreload 31272 37464 Watching for file changes with StatReloader
+INFO 2025-12-10 22:56:04,105 autoreload 31272 37464 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-10 22:56:04,950 autoreload 20024 35832 Watching for file changes with StatReloader
+INFO 2025-12-10 22:56:40,821 autoreload 20024 35832 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-10 22:56:41,602 autoreload 16668 9896 Watching for file changes with StatReloader
+INFO 2025-12-10 22:56:45,472 autoreload 16668 9896 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\hotelapp\settings.py changed, reloading.
+INFO 2025-12-10 22:56:46,358 autoreload 18324 34828 Watching for file changes with StatReloader
+INFO 2025-12-10 23:56:31,168 autoreload 36132 39664 Watching for file changes with StatReloader
+INFO 2025-12-10 23:56:44,253 basehttp 36132 24308 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 23:56:45,674 basehttp 36132 24308 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-10 23:56:48,747 basehttp 36132 12248 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 23:56:51,006 basehttp 36132 11424 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 23:56:54,792 basehttp 36132 34380 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 23:56:55,692 basehttp 36132 34380 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81676
+INFO 2025-12-10 23:56:55,723 basehttp 36132 34380 "GET /static/css/dist/styles.css?v=1765454215 HTTP/1.1" 200 106193
+INFO 2025-12-10 23:56:58,161 basehttp 36132 21092 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-10 23:57:02,862 basehttp 36132 21092 "GET /room_detail/1/ HTTP/1.1" 200 57284
+INFO 2025-12-10 23:57:02,900 basehttp 36132 21092 "GET /static/css/dist/styles.css?v=1765454222 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:02:41,829 autoreload 33100 32956 Watching for file changes with StatReloader
+INFO 2025-12-11 00:02:50,048 basehttp 33100 38680 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-11 00:02:50,151 basehttp 33100 38680 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-11 00:02:50,154 basehttp 33100 26804 "GET /static/css/dist/styles.css?v=1765454570 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:02:50,163 basehttp 33100 38680 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-11 00:02:50,201 basehttp 33100 26804 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-11 00:02:50,478 basehttp 33100 26804 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-11 00:02:50,609 basehttp 33100 26804 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:02:50,626 basehttp 33100 26804 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-11 00:02:51,500 basehttp 33100 39008 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:02:54,497 basehttp 33100 38680 "GET /sign_up/ HTTP/1.1" 200 22499
+INFO 2025-12-11 00:02:54,533 basehttp 33100 29120 "GET /static/css/dist/styles.css?v=1765454574 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:02:54,538 basehttp 33100 38680 - Broken pipe from ('127.0.0.1', 56342)
+INFO 2025-12-11 00:02:54,791 basehttp 33100 39008 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:02:56,343 basehttp 33100 38576 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:02:57,257 basehttp 33100 38576 "GET /login/ HTTP/1.1" 200 17938
+INFO 2025-12-11 00:02:57,276 basehttp 33100 38576 "GET /static/css/dist/styles.css?v=1765454577 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:02:58,880 basehttp 33100 28276 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:03:04,558 basehttp 33100 28276 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-12-11 00:03:04,616 basehttp 33100 28276 "GET /dashboard/ HTTP/1.1" 200 66111
+INFO 2025-12-11 00:03:04,639 basehttp 33100 28276 "GET /static/css/dist/styles.css?v=1765454584 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:03:06,311 basehttp 33100 34848 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:03:06,451 basehttp 33100 34848 "GET / HTTP/1.1" 200 40416
+INFO 2025-12-11 00:03:06,472 basehttp 33100 34848 "GET /static/css/dist/styles.css?v=1765454586 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:03:08,113 basehttp 33100 30952 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:03:24,694 basehttp 33100 30952 "GET /media/profile/ph_29158_105569.jpg HTTP/1.1" 200 177105
+INFO 2025-12-11 00:03:27,751 basehttp 33100 30952 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-11 00:03:30,733 basehttp 33100 30952 "GET /static/image/assets/backgorund3.jpg HTTP/1.1" 200 3059321
+INFO 2025-12-11 00:03:32,886 basehttp 33100 30952 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:03:35,127 basehttp 33100 30952 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:03:36,743 basehttp 33100 30952 "GET /my_booking/ HTTP/1.1" 200 57328
+INFO 2025-12-11 00:03:36,776 basehttp 33100 30952 "GET /static/css/dist/styles.css?v=1765454616 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:07:13,929 autoreload 33100 32956 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:14,860 autoreload 37332 14728 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:15,684 basehttp 37332 11300 "GET /logout_user/ HTTP/1.1" 302 0
+WARNING 2025-12-11 00:07:15,847 log 37332 32676 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /hotel_rooms/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 127, in save
+    obj.save(
+    ~~~~~~~~^
+        force_insert=must_create, force_update=not must_create, using=using
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 1134, in _save_table
+    raise DatabaseError("Forced update did not affect any rows.")
+django.db.utils.DatabaseError: Forced update did not affect any rows.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 136, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\middleware.py", line 61, in process_response
+    raise SessionInterrupted(
+    ...<3 lines>...
+    )
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2025-12-11 00:07:15,859 log 37332 24924 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /hotel/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 127, in save
+    obj.save(
+    ~~~~~~~~^
+        force_insert=must_create, force_update=not must_create, using=using
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\db\models\base.py", line 1134, in _save_table
+    raise DatabaseError("Forced update did not affect any rows.")
+django.db.utils.DatabaseError: Forced update did not affect any rows.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 136, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\contrib\sessions\middleware.py", line 61, in process_response
+    raise SessionInterrupted(
+    ...<3 lines>...
+    )
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2025-12-11 00:07:15,865 basehttp 37332 32676 "GET /hotel_rooms/ HTTP/1.1" 400 114895
+WARNING 2025-12-11 00:07:15,866 basehttp 37332 24924 "GET /hotel/ HTTP/1.1" 400 114834
+INFO 2025-12-11 00:07:18,099 autoreload 37332 14728 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:19,481 autoreload 19608 27836 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:20,753 autoreload 19608 27836 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:21,596 autoreload 1204 31272 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:23,860 autoreload 1204 31272 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:24,682 autoreload 30052 15384 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:25,938 autoreload 30052 15384 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:26,695 autoreload 36920 30344 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:27,545 basehttp 36920 28764 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-11 00:07:27,586 basehttp 36920 17528 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-11 00:07:27,594 basehttp 36920 39280 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-11 00:07:27,601 basehttp 36920 24016 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-11 00:07:27,630 basehttp 36920 17528 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-11 00:07:27,654 basehttp 36920 39280 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-11 00:07:27,669 basehttp 36920 9412 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-12-11 00:07:27,677 basehttp 36920 28764 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-12-11 00:07:27,709 basehttp 36920 24016 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-12-11 00:07:27,712 basehttp 36920 17528 "GET /static/image/assets/backgorund4.jpg HTTP/1.1" 200 2375845
+INFO 2025-12-11 00:07:27,715 basehttp 36920 28764 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:27,717 basehttp 36920 39280 "GET /static/image/assets/backgorund5.jpg HTTP/1.1" 200 2664367
+INFO 2025-12-11 00:07:27,747 basehttp 36920 17528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:27,768 basehttp 36920 9412 "GET /static/image/assets/room.jpg HTTP/1.1" 200 4812369
+INFO 2025-12-11 00:07:27,780 basehttp 36920 17528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:27,802 basehttp 36920 17528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:27,823 basehttp 36920 17528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:27,844 basehttp 36920 17528 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:43,231 autoreload 36920 30344 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:44,038 autoreload 39480 5268 Watching for file changes with StatReloader
+INFO 2025-12-11 00:07:46,834 basehttp 39480 33336 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:07:50,360 autoreload 39480 5268 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:07:51,228 autoreload 33548 27992 Watching for file changes with StatReloader
+INFO 2025-12-11 00:08:01,132 autoreload 33548 27992 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\admin.py changed, reloading.
+INFO 2025-12-11 00:08:02,049 autoreload 38764 36656 Watching for file changes with StatReloader
+INFO 2025-12-11 00:08:04,945 basehttp 38764 39144 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:11,674 basehttp 38764 5268 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-11 00:08:11,975 basehttp 38764 33300 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-11 00:08:12,006 basehttp 38764 5268 "GET /static/css/dist/styles.css?v=1765454891 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:08:12,056 basehttp 38764 30260 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-11 00:08:12,080 basehttp 38764 39348 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-11 00:08:12,103 basehttp 38764 38036 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-11 00:08:12,507 basehttp 38764 38036 "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-12-11 00:08:12,886 basehttp 38764 34960 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:08:14,305 basehttp 38764 39348 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:14,373 basehttp 38764 39348 "GET /offline/ HTTP/1.1" 200 5917
+INFO 2025-12-11 00:08:14,377 basehttp 38764 30260 "GET /static/css/django-pwa-app.css HTTP/1.1" 200 116158
+INFO 2025-12-11 00:08:14,396 basehttp 38764 30260 "GET /static/images/icons/icon-72x72.png HTTP/1.1" 200 3252
+INFO 2025-12-11 00:08:14,403 basehttp 38764 39348 "GET /static/images/icons/icon-96x96.png HTTP/1.1" 200 4693
+INFO 2025-12-11 00:08:14,404 basehttp 38764 5268 "GET /static/images/icons/icon-128x128.png HTTP/1.1" 200 6754
+INFO 2025-12-11 00:08:14,407 basehttp 38764 30260 "GET /static/images/icons/icon-144x144.png HTTP/1.1" 200 7672
+INFO 2025-12-11 00:08:14,423 basehttp 38764 30260 "GET /static/images/icons/icon-152x152.png HTTP/1.1" 200 8134
+INFO 2025-12-11 00:08:14,425 basehttp 38764 5268 "GET /static/images/icons/icon-192x192.png HTTP/1.1" 200 10580
+INFO 2025-12-11 00:08:14,428 basehttp 38764 39348 "GET /static/images/icons/icon-384x384.png HTTP/1.1" 200 24415
+INFO 2025-12-11 00:08:14,453 basehttp 38764 39348 "GET /static/images/icons/icon-512x512.png HTTP/1.1" 200 22508
+INFO 2025-12-11 00:08:14,453 basehttp 38764 5268 "GET /static/images/icons/splash-640x1136.png HTTP/1.1" 200 19254
+INFO 2025-12-11 00:08:14,454 basehttp 38764 30260 "GET /static/images/icons/splash-750x1334.png HTTP/1.1" 200 20970
+INFO 2025-12-11 00:08:14,464 basehttp 38764 39348 "GET /static/images/icons/splash-1242x2208.png HTTP/1.1" 200 30134
+INFO 2025-12-11 00:08:14,479 basehttp 38764 30260 "GET /static/images/icons/splash-828x1792.png HTTP/1.1" 200 24221
+INFO 2025-12-11 00:08:14,479 basehttp 38764 5268 "GET /static/images/icons/splash-1242x2688.png HTTP/1.1" 200 33765
+INFO 2025-12-11 00:08:14,480 basehttp 38764 39348 "GET /static/images/icons/splash-1125x2436.png HTTP/1.1" 200 36047
+INFO 2025-12-11 00:08:14,494 basehttp 38764 30260 "GET /static/images/icons/splash-1536x2048.png HTTP/1.1" 200 31551
+INFO 2025-12-11 00:08:14,494 basehttp 38764 5268 "GET /static/images/icons/splash-1668x2224.png HTTP/1.1" 200 34491
+INFO 2025-12-11 00:08:14,495 basehttp 38764 39348 "GET /static/images/icons/splash-1668x2388.png HTTP/1.1" 200 35903
+INFO 2025-12-11 00:08:14,522 basehttp 38764 5268 "GET /static/images/icons/splash-2048x2732.png HTTP/1.1" 200 43341
+INFO 2025-12-11 00:08:14,524 basehttp 38764 30260 "GET /static/image/assets/BASELINK-LOGO.jpg HTTP/1.1" 200 256122
+INFO 2025-12-11 00:08:14,530 basehttp 38764 39348 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-11 00:08:14,549 basehttp 38764 39348 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-11 00:08:15,912 basehttp 38764 39348 "GET /static/image/assets/backgorund2.jpg HTTP/1.1" 200 5584163
+INFO 2025-12-11 00:08:18,440 basehttp 38764 39348 "GET /admin HTTP/1.1" 301 0
+INFO 2025-12-11 00:08:18,481 basehttp 38764 5268 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-11 00:08:18,586 basehttp 38764 5268 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4350
+INFO 2025-12-11 00:08:18,665 basehttp 38764 5268 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-12-11 00:08:18,668 basehttp 38764 30260 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-12-11 00:08:18,669 basehttp 38764 33300 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-11 00:08:18,670 basehttp 38764 13648 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-11 00:08:18,675 basehttp 38764 18604 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-11 00:08:18,678 basehttp 38764 5268 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-12-11 00:08:18,691 basehttp 38764 5268 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-12-11 00:08:18,786 log 38764 5268 Not Found: /favicon.ico
+WARNING 2025-12-11 00:08:18,787 basehttp 38764 5268 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-11 00:08:21,260 basehttp 38764 18604 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4525
+INFO 2025-12-11 00:08:22,859 basehttp 38764 33300 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:29,647 basehttp 38764 33300 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-11 00:08:29,716 basehttp 38764 33300 "GET /admin/ HTTP/1.1" 200 17285
+INFO 2025-12-11 00:08:29,762 basehttp 38764 33300 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-12-11 00:08:29,764 basehttp 38764 13648 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-12-11 00:08:29,784 basehttp 38764 30260 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-12-11 00:08:29,785 basehttp 38764 34916 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-12-11 00:08:31,341 basehttp 38764 30260 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:43,433 basehttp 38764 30260 "GET /static/css/dist/styles.css?v=1761945981 HTTP/1.1" 200 106193
+WARNING 2025-12-11 00:08:43,441 basehttp 38764 13648 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+WARNING 2025-12-11 00:08:43,715 basehttp 38764 30260 "GET /static/images/fitblog-logo.png HTTP/1.1" 404 1883
+INFO 2025-12-11 00:08:45,798 basehttp 38764 33300 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:47,505 basehttp 38764 33300 "GET / HTTP/1.1" 200 38851
+INFO 2025-12-11 00:08:47,543 basehttp 38764 33300 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-11 00:08:47,545 basehttp 38764 25456 "GET /static/css/dist/styles.css?v=1765454927 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:08:47,556 basehttp 38764 33300 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-11 00:08:47,609 basehttp 38764 39844 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-11 00:08:47,610 basehttp 38764 33300 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-11 00:08:47,658 basehttp 38764 33300 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-11 00:08:48,303 basehttp 38764 34960 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:08:48,308 basehttp 38764 39844 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-11 00:08:53,571 basehttp 38764 39844 "GET /hotel_rooms/ HTTP/1.1" 200 50086
+INFO 2025-12-11 00:08:53,648 basehttp 38764 39844 "GET /static/css/dist/styles.css?v=1765454933 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:08:53,761 basehttp 38764 25456 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-11 00:08:55,522 basehttp 38764 39844 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:08:56,865 basehttp 38764 39844 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 84380
+INFO 2025-12-11 00:08:56,934 basehttp 38764 39844 "GET /static/css/dist/styles.css?v=1765454936 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:23:12,449 autoreload 38764 36656 C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py changed, reloading.
+INFO 2025-12-11 00:23:13,340 autoreload 33544 19428 Watching for file changes with StatReloader
+INFO 2025-12-11 00:41:18,727 autoreload 14728 3192 Watching for file changes with StatReloader
+INFO 2025-12-11 00:41:36,801 basehttp 14728 14876 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:41:42,854 basehttp 14728 14876 "GET / HTTP/1.1" 200 37570
+INFO 2025-12-11 00:41:42,962 basehttp 14728 14876 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-11 00:41:42,967 basehttp 14728 6576 "GET /static/css/dist/styles.css?v=1765456902 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:41:43,011 basehttp 14728 14876 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-11 00:41:43,018 basehttp 14728 14876 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-11 00:41:43,101 basehttp 14728 6576 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-11 00:41:43,188 basehttp 14728 6576 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-11 00:41:43,840 basehttp 14728 14876 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-11 00:41:43,927 basehttp 14728 16912 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:41:52,057 basehttp 14728 4068 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:41:54,496 basehttp 14728 4068 "GET /serviceworker.js HTTP/1.1" 200 4249
+WARNING 2025-12-11 00:42:06,257 log 14728 4068 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2025-12-11 00:42:06,273 basehttp 14728 4068 "POST /login/ HTTP/1.1" 403 2693
+WARNING 2025-12-11 00:42:06,378 log 14728 4068 Not Found: /favicon.ico
+WARNING 2025-12-11 00:42:06,378 basehttp 14728 4068 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-11 00:42:07,868 basehttp 14728 4068 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:42:10,153 basehttp 14728 13836 "GET /serviceworker.js HTTP/1.1" 200 4249
+WARNING 2025-12-11 00:42:16,136 log 14728 13836 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2025-12-11 00:42:16,156 basehttp 14728 13836 "POST /login/ HTTP/1.1" 403 2693
+INFO 2025-12-11 00:57:31,407 autoreload 7304 2136 Watching for file changes with StatReloader
+INFO 2025-12-11 00:57:41,388 basehttp 7304 14472 "GET / HTTP/1.1" 200 35808
+INFO 2025-12-11 00:57:41,653 basehttp 7304 6704 "GET /static/css/dist/styles.css?v=1765457861 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:57:41,655 basehttp 7304 14472 "GET /static/css/style.css HTTP/1.1" 200 28924
+INFO 2025-12-11 00:57:41,664 basehttp 7304 14880 "GET /static/image/assets/BASELINK-LOGO.png HTTP/1.1" 200 578389
+INFO 2025-12-11 00:57:41,672 basehttp 7304 14880 "GET /static/js/app.js HTTP/1.1" 200 5056
+INFO 2025-12-11 00:57:41,694 basehttp 7304 4856 "GET /static/image/assets/backgorund1.jpg HTTP/1.1" 200 2891716
+INFO 2025-12-11 00:57:41,873 basehttp 7304 4856 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-12-11 00:57:42,933 basehttp 7304 10036 "GET /manifest.json HTTP/1.1" 200 1962
+INFO 2025-12-11 00:57:42,936 basehttp 7304 14880 "GET /static/image/assets/BASELINK-FAV-1.png HTTP/1.1" 200 268203
+INFO 2025-12-11 00:57:45,805 basehttp 7304 14880 "GET /hotel_rooms/ HTTP/1.1" 200 47398
+INFO 2025-12-11 00:57:45,839 basehttp 7304 14880 "GET /static/css/dist/styles.css?v=1765457865 HTTP/1.1" 200 106193
+INFO 2025-12-11 00:57:45,959 basehttp 7304 14880 "GET /static/image/assets/dinner1.jpg HTTP/1.1" 200 8822182
+INFO 2025-12-11 00:57:47,723 basehttp 7304 14472 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 00:57:49,459 log 7304 14472 Internal Server Error: /hotel_rooms/room-list/2/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 00:57:49,471 basehttp 7304 14472 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 500 193971
+WARNING 2025-12-11 00:57:49,666 log 7304 14472 Not Found: /favicon.ico
+WARNING 2025-12-11 00:57:49,667 basehttp 7304 14472 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-11 00:57:51,213 basehttp 7304 14472 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:58:29,854 basehttp 7304 6704 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 00:58:29,919 log 7304 6704 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 00:58:29,925 basehttp 7304 6704 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 193984
+INFO 2025-12-11 00:58:31,954 basehttp 7304 6704 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 00:58:34,298 basehttp 7304 15448 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 00:58:39,132 log 7304 15448 Internal Server Error: /hotel_rooms/room-list/2/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 00:58:39,138 basehttp 7304 15448 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 500 193971
+INFO 2025-12-11 00:58:40,883 basehttp 7304 15448 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 01:01:48,622 log 7304 13384 Internal Server Error: /hotel_rooms/room-list/2/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:01:48,628 basehttp 7304 13384 "GET /hotel_rooms/room-list/2/ HTTP/1.1" 500 194120
+INFO 2025-12-11 01:01:51,668 basehttp 7304 11256 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 01:03:26,308 autoreload 6460 12976 Watching for file changes with StatReloader
+INFO 2025-12-11 01:03:27,161 basehttp 6460 8908 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 01:03:34,539 basehttp 6460 14136 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 01:05:20,882 autoreload 10384 17364 Watching for file changes with StatReloader
+INFO 2025-12-11 01:05:21,688 basehttp 10384 13272 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 01:05:30,872 log 10384 13272 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:05:30,882 basehttp 10384 13272 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 193984
+WARNING 2025-12-11 01:05:31,112 log 10384 13272 Not Found: /favicon.ico
+WARNING 2025-12-11 01:05:31,113 basehttp 10384 13272 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-11 01:05:32,639 basehttp 10384 13272 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 01:06:14,948 log 10384 13272 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:06:14,957 basehttp 10384 13272 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 193861
+INFO 2025-12-11 01:06:16,992 basehttp 10384 14104 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 01:06:21,906 log 10384 14104 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:06:21,911 basehttp 10384 14104 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 193861
+INFO 2025-12-11 01:06:23,747 basehttp 10384 14504 "GET /serviceworker.js HTTP/1.1" 200 4249
+ERROR 2025-12-11 01:06:24,710 log 10384 14504 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:06:24,715 basehttp 10384 14504 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 193861
+ERROR 2025-12-11 01:06:25,940 log 10384 7360 Internal Server Error: /hotel_rooms/room-list/1/
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\hotelapp\core\views.py", line 360, in room_list
+    return render(request, "core/room_list.html", context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Documents\essetech\hotelapp\Hotel-website-Django\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room-list' with arguments '('',)' not found. 1 pattern(s) tried: ['hotel_rooms/room\\-list/(?P<pk>[0-9]+)/\\Z']
+ERROR 2025-12-11 01:06:25,946 basehttp 10384 7360 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 500 194123
+INFO 2025-12-11 01:06:26,018 basehttp 10384 7360 "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+WARNING 2025-12-11 01:06:26,038 log 10384 7360 Not Found: /favicon.ico
+WARNING 2025-12-11 01:06:26,040 basehttp 10384 7360 "GET /favicon.ico HTTP/1.1" 404 19467
+INFO 2025-12-11 01:06:26,556 basehttp 10384 7360 "GET /serviceworker.js HTTP/1.1" 200 4249
+INFO 2025-12-11 01:06:41,765 basehttp 10384 7360 "GET /hotel_rooms/room-list/1/ HTTP/1.1" 200 81669
+INFO 2025-12-11 01:06:41,785 basehttp 10384 7360 "GET /static/css/dist/styles.css?v=1765458401 HTTP/1.1" 200 134412

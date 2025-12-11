@@ -97,6 +97,7 @@ class Hotel(models.Model):
     region=models.CharField(choices=RegionChoices, max_length=2, null=True)
     logo = CloudinaryField(folder='logos/', null=True, blank=True)
     hotel_image = CloudinaryField(folder='hotel_images/', null=True, blank=True,verbose_name=_("Hotel Image"))
+    has_payment_setup = models.BooleanField(default=False, verbose_name=_("Payment Setup Complete"))
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     
     class Meta:
@@ -107,10 +108,88 @@ class Hotel(models.Model):
             models.Index(fields=['name']),
             models.Index(fields=['region']),
             models.Index(fields=['-created_at']),
+            models.Index(fields=['has_payment_setup']),
             ]
     
     def __str__(self):
         return self.name
+    
+    def can_receive_split_payments(self):
+        """Check if hotel can receive split payments"""
+        try:
+            return self.paystack_subaccount.is_active
+        except HotelPaystackSubaccount.DoesNotExist:
+            return False
+    
+    def get_subaccount_code(self):
+        """Safely get subaccount code if exists"""
+        try:
+            return self.paystack_subaccount.subaccount_code
+        except HotelPaystackSubaccount.DoesNotExist:
+            return None
+        
+class HotelPaystackSubaccount(models.Model):
+    """
+    Dedicated model for hotel payment information.
+    This keeps sensitive payment data separate from general hotel info.
+    """
+    hotel = models.OneToOneField(Hotel, on_delete=models.CASCADE, related_name='paystack_subaccount',verbose_name=_("Hotel"))
+    subaccount_code = models.CharField(max_length=100, unique=True,verbose_name=_("Paystack Subaccount Code"),help_text=_("Unique code from Paystack dashboard (e.g., ACCT_xyz123)"))
+    business_name = models.CharField(max_length=200,verbose_name=_("Business Name on Paystack"),help_text=_("Business name as registered in Paystack"))
+    settlement_bank = models.CharField(max_length=100,verbose_name=_("Settlement Bank"),help_text=_("Bank name for receiving payments"))
+    account_number = models.CharField(max_length=20,verbose_name=_("Account Number"),help_text=_("Hotel's bank account number"))
+    percentage_charge = models.DecimalField(max_digits=5, decimal_places=2, default=15.00,verbose_name=_("Platform Commission %"),help_text=_("Percentage that goes to platform (e.g., 15.00 for 15%)"))
+    is_active = models.BooleanField(default=True,verbose_name=_("Active"),help_text=_("Enable/disable split payments for this hotel"))
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    last_settlement_date = models.DateField(blank=True, null=True,verbose_name=_("Last Settlement Date"))
+    total_payments_received = models.DecimalField(max_digits=15, decimal_places=2, default=0.00,verbose_name=_("Total Payments Received"))
+    
+    class Meta:
+        verbose_name = _("Hotel Paystack Subaccount")
+        verbose_name_plural = _("Hotel Paystack Subaccounts")
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['subaccount_code']),
+            models.Index(fields=['is_active']),
+        ]
+    
+    def __str__(self):
+        return f"{self.hotel.name} - {self.subaccount_code}"
+    
+    def save(self, *args, **kwargs):
+        # Update hotel's has_payment_setup flag
+        is_new = self._state.adding  # Check if this is a new record
+        super().save(*args, **kwargs)
+        
+        # Update hotel's payment status
+        self.hotel.has_payment_setup = self.is_active
+        self.hotel.save(update_fields=['has_payment_setup'])
+    
+    def delete(self, *args, **kwargs):
+        # Update hotel's payment status before deletion
+        self.hotel.has_payment_setup = False
+        self.hotel.save(update_fields=['has_payment_setup'])
+        super().delete(*args, **kwargs)
+    
+    @property
+    def hotel_commission_percentage(self):
+        """Calculate what percentage hotel keeps (100 - platform commission)"""
+        return 100 - float(self.percentage_charge)
+
+
+# Helper function to check payment capability
+def get_hotel_subaccount_code(hotel):
+    """
+    Safe way to get a hotel's subaccount code.
+    Returns None if hotel doesn't have payment setup.
+    """
+    try:
+        if hotel.paystack_subaccount.is_active:
+            return hotel.paystack_subaccount.subaccount_code
+    except HotelPaystackSubaccount.DoesNotExist:
+        pass
+    return None
     
 class Service(models.Model):
     hotel = models.ManyToManyField('Hotel', related_name='services_hotels', help_text=_("Hotels that offer this service")) # Assuming Hotel model is in 'core' app
@@ -187,7 +266,8 @@ class Booking(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     # Payment-related fields
-    hubtel_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    paystack_reference = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    paystack_access_code = models.CharField(max_length=100, blank=True, null=True)
     is_paid = models.BooleanField(default=False)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
 
@@ -209,7 +289,7 @@ class Booking(models.Model):
         indexes = [
             models.Index(fields=['guest', 'created_at']),
             models.Index(fields=['is_paid', 'created_at']),
-            models.Index(fields=['hubtel_reference']),
+            models.Index(fields=['paystack_reference']),
         ]
     
     def __str__(self):

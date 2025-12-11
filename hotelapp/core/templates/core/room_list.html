@@ -113,7 +113,7 @@
     <section class="flex gap-[1rem] feature_secction relative">
         <aside id="dropdownLeftEnd" class="absolute right-0 top-[50px] z-[100] hidden">
             <div class="bg-white w-[100%] md:w-[400px] rounded">
-                <form method="get" action="{% url "room-list" hotel_id %}" class="bg-transparent shadow ">
+                <form method="get" action="{% url "room-list" hotel.id %}" class="bg-transparent shadow ">
                     <h2 class="text-slate-600 text-[18px] border-b border-slate-200 py-[0.5rem]">
                         <i class="fa-solid fa-filter"></i>
                         Filter by
@@ -168,7 +168,7 @@
         
                     <div class="filter_buttons">
                         <button type="submit" class="bg-slate-500 px-[1rem] rounded text-white hover:bg-slate-600">Apply Filters</button>
-                        <a href="{% url "room-list" hotel_id %}" class="bg-slate-100 px-[0.7rem] hover:bg-slate-200 py-[0.5rem] rounded text-slate-600">Clear All</a>
+                        <a href="{% url "room-list" hotel.id %}" class="bg-slate-100 px-[0.7rem] hover:bg-slate-200 py-[0.5rem] rounded text-slate-600">Clear All</a>
                     </div>
                 </form>
             </div>
@@ -414,7 +414,7 @@
         </div>
     </div>
 
-    <script>
+<script>
     const Bwrapper = document.getElementById('bookRoomWrapper');
     const Bcontent = document.getElementById('bookRoomModalContent');
     
@@ -509,6 +509,5 @@
             }
         }
     });
-    </script>
-
+</script>
 {% endblock %}

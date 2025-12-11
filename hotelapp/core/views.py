@@ -197,94 +197,167 @@ def hotel_rooms(request):
 def room_list(request, pk):
     hotel = get_object_or_404(Hotel, pk=pk)
     rooms = Room.objects.filter(hotel=hotel)
-    name_query = request.GET.get('search', '')  # Hotel name search
-    location_query = request.GET.get('loc-search', '')
-    status_query = request.GET.get('status', '') 
-    rating_query = request.GET.get('rating', '') 
-    room_type_query = request.GET.get('room_type', '') 
-    b_form = BookingForm()
-    
-    if name_query or location_query:
-        filters = Q()
-        if name_query:
-            filters &= Q(hotel__name__icontains=name_query)
-        if location_query:
-            filters &= Q(hotel__location__icontains=location_query)
-        if status_query:
-            filters &= Q(status=status_query)
-        if rating_query:
-            filters &= Q(star_rating__star=rating_query)
-        if room_type_query:
-            filters &= Q(room_type=room_type_query)
-        rooms = rooms.filter(filters)
-    
-    if request.method == 'POST':
-        room_id = request.POST.get('room_id')
-        b_form = BookingForm(request.POST)
 
-        if room_id:
-            room = get_object_or_404(Room, id=room_id)
-            if b_form.is_valid():  # First validate the form
-                booking = b_form.save(commit=False)
-                booking.room = room
-                guest, created = Guest.objects.get_or_create(
-                    user=request.user,
-                    defaults={
-                        'first_name': request.user.first_name or 'Guest',
-                        'last_name': request.user.last_name or 'User',
-                        'email': request.user.email
-                    }
-                )
-                booking.guest = guest
-                try:
-                    booking.save()
-                    
-                    # Send hotel notification email immediately after successful booking
-                    email_sent = send_hotel_booking_notification(booking, hotel)  # Make sure hotel is passed
-                    
-                    if email_sent:
-                        messages.success(request, 'Booking request submitted successfully! Notification sent to the hotel.')
-                    else:
-                        messages.warning(request, 'Booking submitted, but we could not notify the hotel. Please contact them directly.')
-                    
-                    return redirect('room-list', pk=hotel.pk)
-                except ValidationError as e:
-                    for error in e.messages:
-                        messages.error(request, error)
+    # --- Filters ---
+    name_query = request.GET.get('search', '')
+    location_query = request.GET.get('loc-search', '')
+    status_query = request.GET.get('status', '')
+    rating_query = request.GET.get('rating', '')
+    room_type_query = request.GET.get('room_type', '')
+
+    filters = Q()
+
+    if name_query:
+        filters &= Q(hotel__name__icontains=name_query)
+
+    if location_query:
+        filters &= Q(hotel__location__icontains=location_query)
+
+    if status_query:
+        filters &= Q(status=status_query)
+
+    if rating_query:
+        filters &= Q(star_rating__star=rating_query)
+
+    if room_type_query:
+        filters &= Q(room_type=room_type_query)
+
+    rooms = rooms.filter(filters)
+
+    # --- Booking (POST) ---
+    if request.method == "POST":
+        room_id = request.POST.get("room_id")
+        check_in = request.POST.get("check_in_date")
+        check_out = request.POST.get("check_out_date")
+        message = request.POST.get("message", "")
+
+        if not request.user.is_authenticated:
+            messages.error(request, "You must be logged in to make a booking.")
+            return redirect("login")
+
+        if not all([room_id, check_in, check_out]):
+            messages.error(request, "Please fill all required fields.")
+            return redirect("room-list", pk=hotel.pk)
+
+        room = get_object_or_404(Room, id=room_id)
+
+        # Convert dates
+        try:
+            check_in_date = datetime.strptime(check_in, "%Y-%m-%d").date()
+            check_out_date = datetime.strptime(check_out, "%Y-%m-%d").date()
+        except:
+            messages.error(request, "Invalid date format.")
+            return redirect("room-list", pk=hotel.pk)
+
+        # Validate date range
+        if check_out_date <= check_in_date:
+            messages.error(request, "Check-out must be after check-in.")
+            return redirect("room-list", pk=hotel.pk)
+
+        # Create or retrieve Guest profile
+        guest, created = Guest.objects.get_or_create(
+            user=request.user,
+            defaults={
+                "first_name": request.user.first_name or "Guest",
+                "last_name": request.user.last_name or "User",
+                "email": request.user.email
+            }
+        )
+
+        # Create booking (unpaid initially)
+        booking = Booking.objects.create(
+            guest=guest,
+            room=room,
+            check_in_date=check_in_date,
+            check_out_date=check_out_date,
+            message=message
+        )
+
+        # Total price
+        nights = (check_out_date - check_in_date).days
+        total_price = nights * room.price
+        booking.total_price = total_price
+
+        # Generate Paystack reference
+        reference = f"BOOK_{booking.id}_{uuid.uuid4().hex[:8].upper()}"
+        booking.paystack_reference = reference
+        booking.save()
+
+        # --- Paystack Split Payments ---
+        hotel_subaccount = None
+        if hasattr(hotel, "paystack_subaccount") and hotel.paystack_subaccount.is_active:
+            hotel_subaccount = hotel.paystack_subaccount.subaccount_code
+
+        # Metadata for Paystack dashboard
+        metadata = {
+            "booking_id": booking.id,
+            "room_number": room.room_number,
+            "hotel_name": hotel.name,
+            "guest_name": f"{guest.first_name} {guest.last_name}",
+            "check_in": str(check_in_date),
+            "check_out": str(check_out_date),
+            "nights": nights,
+        }
+
+        # Payment callback URL
+        callback_url = request.build_absolute_uri(reverse("verify_booking_payment"))
+
+        # Initialize Paystack Payment
+        try:
+            payment_response = PaymentService.initialize_payment(
+                email=guest.email,
+                amount=float(total_price),
+                reference=reference,
+                callback_url=callback_url,
+                metadata=metadata,
+                hotel_subaccount=hotel_subaccount,
+            )
+
+            if payment_response.get("status"):
+                # Save access code
+                booking.paystack_access_code = payment_response["data"]["access_code"]
+                booking.save()
+
+                # Redirect user to Paystack
+                return redirect(payment_response["data"]["authorization_url"])
+
             else:
-                for field, errors in b_form.errors.items():
-                    for error in errors:
-                        messages.error(request, f"{field}: {error}")
-        else:
-            messages.error(request, "Room ID missing in request.")
-    else:
-        b_form = BookingForm() 
-        
-    paginator = Paginator(rooms, 10)  # Show 10 rooms per page
-    page_number = request.GET.get('page')
+                messages.error(request, "Payment could not be initialized.")
+                booking.delete()
+                return redirect("room-list", pk=hotel.pk)
+
+        except Exception as e:
+            messages.error(request, "Payment service unavailable.")
+            booking.delete()
+            return redirect("room-list", pk=hotel.pk)
+
+    # Paginate rooms
+    paginator = Paginator(rooms, 10)
+    page_number = request.GET.get("page")
+
     try:
         page_obj = paginator.page(page_number)
     except PageNotAnInteger:
         page_obj = paginator.page(1)
     except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
-        
+
+    # Render
     context = {
-        'hotel': hotel,
-        'rooms': rooms,
-        'hotel_id': pk,
-        'b_form': b_form,
-        'name_query': name_query,
-        'location_query': location_query,
-        'status_query': status_query,
-        'rating_query': rating_query,
-        'room_type_query': room_type_query,
-        'page_obj': page_obj,
-        'status_choices': Room.ROOM_STATUS_CHOICES,
-        'rating_choices': Rating.objects.all(), 
-        'room_type_choices': Room.BED_TYPE_CHOICES,
+        "hotel": hotel,
+        "rooms": page_obj,
+        "page_obj": page_obj,
+        "status_choices": Room.ROOM_STATUS_CHOICES,
+        "rating_choices": Rating.objects.all(),
+        "room_type_choices": Room.BED_TYPE_CHOICES,
+        "name_query": name_query,
+        "location_query": location_query,
+        "status_query": status_query,
+        "rating_query": rating_query,
+        "room_type_query": room_type_query,
     }
-    return render(request, 'core/room_list.html', context)
+
+    return render(request, "core/room_list.html", context)
 
 def hotel(request):
     hotels = Hotel.objects.all()
@@ -402,7 +475,7 @@ def room_detail(request, pk):
                 messages.error(request, "You must be logged in to make a booking.")
                 return redirect('login')
             
-            # Create booking
+            # Create booking with Paystack reference
             booking = Booking.objects.create(
                 guest=guest,
                 room=booking_room,
@@ -413,12 +486,27 @@ def room_detail(request, pk):
                 is_paid=False
             )
             
-            # Generate unique reference for payment
+            # Generate unique reference for Paystack payment
             reference = f"ROOM_{booking_room.id}_{booking.id}_{uuid.uuid4().hex[:8].upper()}"
-            booking.hubtel_reference = reference
+            booking.paystack_reference = reference
             booking.save()
             
-            # Initialize payment using PaymentService
+            # Get hotel subaccount if exists (for split payments)
+            hotel = booking_room.hotel
+            hotel_subaccount = getattr(hotel, 'paystack_subaccount_code', None) if hotel else None
+            
+            # Prepare metadata for Paystack
+            metadata = {
+                "booking_id": booking.id,
+                "room_number": booking_room.room_number,
+                "hotel_name": hotel.name if hotel else "Unknown Hotel",
+                "guest_name": f"{first_name} {last_name}",
+                "check_in": check_in.strftime("%Y-%m-%d"),
+                "check_out": check_out.strftime("%Y-%m-%d"),
+                "nights": nights
+            }
+            
+            # Initialize payment using PaymentService (Paystack)
             callback_url = request.build_absolute_uri(reverse('verify_booking_payment'))
             
             try:
@@ -426,14 +514,18 @@ def room_detail(request, pk):
                     email=email,
                     amount=float(total_price),
                     reference=reference,
-                    callback_url=callback_url
+                    callback_url=callback_url,
+                    metadata=metadata,
+                    hotel_subaccount=hotel_subaccount
                 )
                 
                 if payment_response.get("status"):
-                    # Redirect to Flutterwave payment page
-                    return redirect(payment_response["data"]["link"])
+                    # Save access code and redirect to Paystack payment page
+                    booking.paystack_access_code = payment_response["data"]["access_code"]
+                    booking.save()
+                    return redirect(payment_response["data"]["authorization_url"])
                 else:
-                    messages.error(request, "Payment could not be initialized. Please try again.")
+                    messages.error(request, f"Payment could not be initialized: {payment_response.get('message')}")
                     booking.delete()  # Clean up failed booking
                     
             except Exception as e:
@@ -449,7 +541,8 @@ def room_detail(request, pk):
     
     context = {
         'room': room,
-        'gallery_images': gallery_images
+        'gallery_images': gallery_images,
+        'PAYSTACK_PUBLIC_KEY': settings.PAYSTACK_PUBLIC_KEY
     }
     return render(request, 'detail/room_detail.html', context)
 
@@ -466,149 +559,259 @@ def delete_booking(request, booking_id):
     return redirect('my_booking')
 
 
-
 # payment for booking using hubtel with split payments
 def create_booking_and_pay(request):
     if request.method == 'POST':
         try:
-            # Validate required fields
-            required_fields = ['room_id', 'check_in_date', 'check_out_date', 'email']
-            FormValidator.validate_required_fields(request.POST, required_fields)
-            
+            # Get form data
             room_id = request.POST.get('room_id')
-            check_in_date = request.POST.get('check_in_date')
-            check_out_date = request.POST.get('check_out_date')
-            email = request.POST.get('email')
+            check_in_str = request.POST.get('check_in_date')
+            check_out_str = request.POST.get('check_out_date')
+            message = request.POST.get('message', '')
             
-            # Validate email
-            ContactValidator.validate_email(email)
+            # Validate required fields
+            if not all([room_id, check_in_str, check_out_str]):
+                messages.error(request, "Please fill all required fields.")
+                return redirect('hotel-rooms')
             
-            # Get room and validate
-            room = get_object_or_404(Room, id=room_id)
-            
-            # Parse and validate dates
+            # Parse dates
             try:
-                check_in = datetime.strptime(check_in_date, "%Y-%m-%d").date()
-                check_out = datetime.strptime(check_out_date, "%Y-%m-%d").date()
+                check_in_date = datetime.strptime(check_in_str, "%Y-%m-%d").date()
+                check_out_date = datetime.strptime(check_out_str, "%Y-%m-%d").date()
             except ValueError:
-                messages.error(request, "Invalid date format. Please use YYYY-MM-DD format.")
-                return redirect('room-list', pk=room.hotel.pk)
+                messages.error(request, "Invalid date format.")
+                return redirect('hotel-rooms')
             
-            # Validate dates using validator
-            BookingValidator.validate_dates(check_in, check_out)
+            # Get room
+            room = get_object_or_404(Room, id=room_id)
+            hotel = room.hotel
             
-            # Validate payment amount
-            total_price = room.price * (check_out - check_in).days
-            BookingValidator.validate_payment_amount(total_price)
+            # Get or create guest
+            guest, created = Guest.objects.get_or_create(
+                user=request.user,
+                defaults={
+                    'first_name': request.user.first_name or 'Guest',
+                    'last_name': request.user.last_name or 'User',
+                    'email': request.user.email
+                }
+            )
+            
+            # Update guest info if they provided it
+            if 'first_name' in request.POST and request.POST['first_name']:
+                guest.first_name = request.POST['first_name']
+            if 'last_name' in request.POST and request.POST['last_name']:
+                guest.last_name = request.POST['last_name']
+            if 'email' in request.POST and request.POST['email']:
+                guest.email = request.POST['email']
+            if 'phone_number' in request.POST:
+                guest.phone_number = request.POST['phone_number']
+            
+            guest.save()
             
             # Create booking
             booking = Booking.objects.create(
-                guest=request.user.guest_profile,
+                guest=guest,
                 room=room,
-                check_in_date=check_in,
-                check_out_date=check_out,
-                message=request.POST.get('message', ''),
-                total_price=0
+                check_in_date=check_in_date,
+                check_out_date=check_out_date,
+                message=message,
+                total_price=0,  # Will be calculated
+                is_paid=False
             )
             
             # Calculate total price
             booking.total_price = booking.calculate_total_price()
+            
+            # Generate Paystack reference
+            reference = f"BOOK_{booking.id}_{uuid.uuid4().hex[:8].upper()}"
+            booking.paystack_reference = reference
             booking.save()
             
-            # Generate reference
-            reference = str(uuid.uuid4())
-            booking.hubtel_reference = reference
-            booking.save()
+            # Get hotel subaccount for split payment (using your model structure)
+            hotel_subaccount = None
+            commission_percentage = 15.00  # Default platform commission
             
-            # Initialize payment using service
+            # Check if hotel has payment setup
+            if hasattr(hotel, 'paystack_subaccount') and hotel.paystack_subaccount.is_active:
+                hotel_subaccount = hotel.paystack_subaccount.subaccount_code
+                commission_percentage = float(hotel.paystack_subaccount.percentage_charge)
+            elif hasattr(hotel, 'is_payment_active') and hotel.is_payment_active and hotel.paystack_subaccount_code:
+                # If using integrated fields approach
+                hotel_subaccount = hotel.paystack_subaccount_code
+                commission_percentage = float(hotel.platform_commission)
+            
+            # Prepare metadata
+            metadata = {
+                "booking_id": booking.id,
+                "room_id": room.id,
+                "room_number": room.room_number,
+                "hotel_id": hotel.id,
+                "hotel_name": hotel.name,
+                "guest_id": guest.id,
+                "guest_name": f"{guest.first_name} {guest.last_name}",
+                "check_in": check_in_date.strftime("%Y-%m-%d"),
+                "check_out": check_out_date.strftime("%Y-%m-%d"),
+                "nights": (check_out_date - check_in_date).days,
+                "split_payment": bool(hotel_subaccount),
+                "commission_percentage": commission_percentage,
+                "platform_fee": float(booking.total_price) * (commission_percentage / 100),
+                "hotel_amount": float(booking.total_price) * ((100 - commission_percentage) / 100)
+            }
+            
+            # Build callback URL
             callback_url = request.build_absolute_uri(reverse('verify_booking_payment'))
+            
+            # Initialize payment
             payment_response = PaymentService.initialize_payment(
-                email=email,
+                email=guest.email,  # Use guest's email from your Guest model
                 amount=float(booking.total_price),
                 reference=reference,
-                callback_url=callback_url
+                callback_url=callback_url,
+                metadata=metadata,
+                hotel_subaccount=hotel_subaccount  # This enables split payment
             )
             
             if payment_response.get("status"):
+                # Save access code
+                booking.paystack_access_code = payment_response["data"]["access_code"]
+                booking.save()
+                
+                # Redirect to Paystack payment page
                 return redirect(payment_response["data"]["authorization_url"])
             else:
-                messages.error(request, "Payment could not be initialized. Please try again.")
-                booking.delete()  # Clean up failed booking
+                error_msg = payment_response.get("message", "Payment initialization failed")
+                messages.error(request, f"Payment Error: {error_msg}")
+                booking.delete()
+                return redirect('room-list', pk=hotel.pk)
                 
         except ValidationError as e:
             messages.error(request, str(e))
         except Exception as e:
-            logger.error(f"Payment initialization error: {str(e)}")
-            messages.error(request, "An error occurred while processing your payment. Please try again.")
-        
-        # Fallback redirect
-        return redirect('hotel-rooms')
+            logger.error(f"Booking error: {str(e)}")
+            messages.error(request, "An error occurred. Please try again.")
+    
+    return redirect('hotel-rooms')
     
 def verify_booking_payment(request):
     reference = request.GET.get('reference')
     
     if not reference:
-        messages.error(request, "Invalid payment reference.")
+        messages.error(request, "No payment reference provided.")
         return redirect('booking-payment-failure')
     
     try:
-        # Verify payment using service
+        # Verify payment with Paystack
         payment_data = PaymentService.verify_payment(reference)
         
-        if payment_data.get("status") and payment_data.get("data"):
-            payment_record = payment_data.get("data")
-            if isinstance(payment_record, list):
-                payment_record = payment_record[0] if payment_record else {}
+        if payment_data.get("status"):
+            payment_info = payment_data.get("data", {})
             
-            status = payment_record.get("status") or payment_record.get("transactionStatus")
-            if status == "completed" or status == "success":
-                booking = Booking.objects.filter(hubtel_reference=reference).first()
-            
-            if booking and not booking.is_paid:
-                booking.is_paid = True
-                booking.save()
-
-                # Send confirmation email to guest
-                try:
-                    subject = "Booking Confirmation - Payment Successful"
-                    message = render_to_string("emails/booking_confirmation.html", {
-                        'booking': booking,
-                        'guest': booking.guest,
-                    })
-                    send_mail(
-                        subject,
-                        '',
-                        settings.DEFAULT_FROM_EMAIL,
-                        [booking.guest.email],
-                        html_message=message,
-                        fail_silently=True
-                    )
-                except Exception as e:
-                    logger.error(f"Failed to send confirmation email to guest: {str(e)}")
+            if payment_info.get("status") == "success":
+                # Find booking
+                booking = Booking.objects.filter(paystack_reference=reference).first()
                 
-                # Send notification email to hotel - FIXED: Added hotel parameter
-                try:
-                    hotel = booking.room.hotel  # Get the hotel from the booking
-                    send_hotel_booking_notification(booking, hotel)  # Now passing both arguments
-                except Exception as e:
-                    logger.error(f"Failed to send hotel notification email: {str(e)}")
-                
-                # Redirect to success page with booking data
-                return redirect(f'{reverse("booking-payment-success")}?booking_id={booking.id}')
+                if booking and not booking.is_paid:
+                    # Mark as paid
+                    booking.is_paid = True
+                    booking.save()
+                    
+                    # Create reservation from booking
+                    try:
+                        reservation = Reservation.create_from_booking(booking)
+                        logger.info(f"Reservation {reservation.id} created from booking {booking.id}")
+                    except Exception as e:
+                        logger.error(f"Failed to create reservation: {str(e)}")
+                        messages.warning(request, "Booking confirmed but reservation creation failed.")
+                    
+                    # Send confirmation email to guest
+                    try:
+                        subject = f"Booking Confirmation - {booking.room.hotel.name}"
+                        html_message = render_to_string('emails/booking_confirmation.html', {
+                            'booking': booking,
+                            'guest': booking.guest,
+                            'hotel': booking.room.hotel,
+                            'room': booking.room,
+                            'check_in': booking.check_in_date,
+                            'check_out': booking.check_out_date,
+                        })
+                        
+                        send_mail(
+                            subject=subject,
+                            message='',  # Plain text version
+                            from_email=settings.DEFAULT_FROM_EMAIL,
+                            recipient_list=[booking.guest.email],
+                            html_message=html_message,
+                            fail_silently=False,
+                        )
+                    except Exception as e:
+                        logger.error(f"Email send failed: {str(e)}")
+                    
+                    # Send notification to hotel
+                    try:
+                        send_hotel_booking_notification(booking, booking.room.hotel)
+                    except Exception as e:
+                        logger.error(f"Hotel notification failed: {str(e)}")
+                    
+                    # Success page
+                    return redirect(f'{reverse("booking-payment-success")}?booking_id={booking.id}')
+                else:
+                    messages.warning(request, "Payment already processed.")
+                    return redirect('booking-payment-success')
             else:
-                messages.warning(request, "Payment already processed or booking not found.")
-                return redirect('booking-payment-success')
+                messages.error(request, f"Payment failed: {payment_info.get('gateway_response', 'Unknown error')}")
         else:
             messages.error(request, "Payment verification failed.")
-            return redirect('booking-payment-failure')
             
-    except ValidationError as e:
-        messages.error(request, str(e))
-        return redirect('booking-payment-failure')
     except Exception as e:
         logger.error(f"Payment verification error: {str(e)}")
-        messages.error(request, "An error occurred while verifying your payment.")
-        return redirect('booking-payment-failure')
+        messages.error(request, "Error verifying payment.")
+    
+    return redirect('booking-payment-failure')
+
+def send_hotel_booking_notification(booking, hotel):
+    """Send email notification to hotel about new booking"""
+    try:
+        subject = f"New Booking - {hotel.name}"
+        
+        # Calculate amounts for split payment
+        total_amount = booking.total_price
+        metadata = booking.paystack_reference.metadata if hasattr(booking.paystack_reference, 'metadata') else {}
+        
+        if metadata.get('split_payment'):
+            commission = metadata.get('commission_percentage', 15.00)
+            platform_fee = float(total_amount) * (commission / 100)
+            hotel_amount = float(total_amount) * ((100 - commission) / 100)
+        else:
+            platform_fee = float(total_amount)
+            hotel_amount = 0.00
+        
+        html_message = render_to_string('emails/hotel_booking_notification.html', {
+            'hotel': hotel,
+            'booking': booking,
+            'guest': booking.guest,
+            'room': booking.room,
+            'check_in': booking.check_in_date,
+            'check_out': booking.check_out_date,
+            'total_amount': total_amount,
+            'hotel_amount': hotel_amount,
+            'platform_fee': platform_fee,
+            'split_payment': metadata.get('split_payment', False),
+            'commission_percentage': metadata.get('commission_percentage', 15.00),
+        })
+        
+        send_mail(
+            subject=subject,
+            message='',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[hotel.email],
+            html_message=html_message,
+            fail_silently=True,
+        )
+        
+        return True
+    except Exception as e:
+        logger.error(f"Hotel notification error: {str(e)}")
+        return False
 
 def booking_success(request):
     booking_id = request.GET.get('booking_id')

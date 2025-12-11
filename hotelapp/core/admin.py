@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Rating,Room,Hotel,Lead,Manager,Staff,Amenity,OurRoomsImage,Reservation,Guest,Booking,Service
+from .models import Rating,Room,Hotel,Lead,Manager,Staff,Amenity,OurRoomsImage,Reservation,Guest,Booking,Service,HotelPaystackSubaccount
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
@@ -159,11 +159,18 @@ class ServiceAdmin(admin.ModelAdmin):
     search_fields = ('name', 'description')
     filter_horizontal = ('hotel',)
 
+class HotelPaystackSubaccountAdmin(admin.ModelAdmin):
+    list_display = ('hotel', 'subaccount_code', 'business_name', 'settlement_bank', 'account_number', 'percentage_charge', 'is_active', 'created_at')
+    list_filter = ('is_active',)
+    search_fields = ('hotel__name', 'subaccount_code', 'business_name', 'settlement_bank', 'account_number')
+    readonly_fields = ('created_at', 'updated_at', 'total_payments_received', 'last_settlement_date')
+
 # Register your models here.
 admin.site.register(Rating)
 admin.site.register(Room,RoomAdmin)
 admin.site.register(Hotel,HotelAdmin)
 admin.site.register(Service,ServiceAdmin)
+admin.site.register(HotelPaystackSubaccount,HotelPaystackSubaccountAdmin)
 admin.site.register(Lead,LeadAdmin)
 admin.site.register(Manager,ManagerAdmin)
 admin.site.register(Reservation,ReservationAdmin)
