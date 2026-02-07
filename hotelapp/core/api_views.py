@@ -28,7 +28,8 @@ from .serializers import (
     ManagerSerializer, LeadSerializer, UserSerializer,
     UserRegistrationSerializer, ProfileModelSerializer,
     RoomAvailabilitySerializer, PasswordResetRequestSerializer,
-    PasswordResetConfirmSerializer, ChangePasswordSerializer
+    PasswordResetConfirmSerializer, ChangePasswordSerializer,
+    OurRoomsImageSerializer
 )
 
 # Define User model
@@ -676,6 +677,23 @@ class LeadViewSet(viewsets.ModelViewSet):
         return [IsAuthenticated()]
 
 
+# OurRoomsImage ViewSet
+class OurRoomsImageViewSet(viewsets.ModelViewSet):
+    """ViewSet for Room Images (additional images)"""
+    queryset = OurRoomsImage.objects.all()
+    serializer_class = OurRoomsImageSerializer
+    permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ['room']
+    ordering_fields = ['id']
+    ordering = ['id']
+    
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
+
 # Search and Filter Views
 @api_view(['GET'])
 @permission_classes([AllowAny])
@@ -760,6 +778,7 @@ def api_root(request):
             },
             'hotels': '/api/hotels/',
             'rooms': '/api/rooms/',
+            'room-images': '/api/room-images/',
             'bookings': '/api/bookings/',
             'reservations': '/api/reservations/',
             'guests': '/api/guests/',

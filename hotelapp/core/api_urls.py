@@ -6,7 +6,7 @@ from .api_views import (
     HotelViewSet, RoomViewSet, BookingViewSet, GuestViewSet,
     ReservationViewSet, ServiceViewSet, AmenityViewSet,
     RatingViewSet, StaffViewSet, ReviewViewSet, ManagerViewSet,
-    LeadViewSet, RegisterView, LoginView, LogoutView,
+    LeadViewSet, OurRoomsImageViewSet, RegisterView, LoginView, LogoutView,
     UserProfileView, PasswordResetRequestView, PasswordResetConfirmView,
     ChangePasswordView, search_hotels, search_rooms, api_root
 )
@@ -15,6 +15,7 @@ from .api_views import (
 router = DefaultRouter()
 router.register(r'hotels', HotelViewSet, basename='hotel')
 router.register(r'rooms', RoomViewSet, basename='room')
+router.register(r'room-images', OurRoomsImageViewSet, basename='room-image')
 router.register(r'bookings', BookingViewSet, basename='booking')
 router.register(r'guests', GuestViewSet, basename='guest')
 router.register(r'reservations', ReservationViewSet, basename='reservation')
