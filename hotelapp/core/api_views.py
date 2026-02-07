@@ -31,6 +31,9 @@ from .serializers import (
     PasswordResetConfirmSerializer, ChangePasswordSerializer
 )
 
+# Define User model
+User = CustomUser
+
 
 # Authentication Views
 class RegisterView(APIView):
@@ -114,13 +117,69 @@ class UserProfileView(APIView):
         if hasattr(request.user, 'profilemodel'):
             from account.models import ProfileModel
             from .serializers import ProfileModelSerializer
-            profile_serializer = ProfileModelSerializer(request.user.profilemodel)
+            profile_serializer = ProfileModelSerializer(request.user.profilemodel, context={'request': request})
             profile_data = profile_serializer.data
         
         return Response({
             'user': serializer.data,
             'profile': profile_data
         }, status=status.HTTP_200_OK)
+    
+    def put(self, request):
+        """Update user profile (full update)"""
+        from account.models import ProfileModel
+        from .serializers import ProfileModelSerializer
+        
+        # Get or create profile
+        profile, created = ProfileModel.objects.get_or_create(user=request.user)
+        
+        # Update user fields if provided
+        user_fields = ['first_name', 'last_name', 'email']
+        for field in user_fields:
+            if field in request.data:
+                setattr(request.user, field, request.data[field])
+        request.user.save()
+        
+        # Update profile
+        serializer = ProfileModelSerializer(profile, data=request.data, partial=False, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            
+            return Response({
+                'user': UserSerializer(request.user).data,
+                'profile': serializer.data,
+                'message': 'Profile updated successfully'
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def patch(self, request):
+        """Update user profile (partial update)"""
+        from account.models import ProfileModel
+        from .serializers import ProfileModelSerializer
+        
+        # Get or create profile
+        profile, created = ProfileModel.objects.get_or_create(user=request.user)
+        
+        # Update user fields if provided
+        user_fields = ['first_name', 'last_name', 'email']
+        for field in user_fields:
+            if field in request.data:
+                setattr(request.user, field, request.data[field])
+        request.user.save()
+        
+        # Update profile
+        serializer = ProfileModelSerializer(profile, data=request.data, partial=True, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            
+            return Response({
+                'user': UserSerializer(request.user).data,
+                'profile': serializer.data,
+                'message': 'Profile updated successfully'
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PasswordResetRequestView(APIView):

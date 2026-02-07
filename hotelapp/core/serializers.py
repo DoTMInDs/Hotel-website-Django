@@ -96,11 +96,25 @@ class ChangePasswordSerializer(serializers.Serializer):
 class ProfileModelSerializer(serializers.ModelSerializer):
     """Serializer for user profile"""
     user = UserSerializer(read_only=True)
+    profile_url = serializers.SerializerMethodField()
     
     class Meta:
         model = ProfileModel
-        fields = ['id', 'user', 'first_name', 'last_name', 'profile', 
+        fields = ['id', 'user', 'first_name', 'last_name', 'profile', 'profile_url',
                   'phone', 'email', 'gender', 'nationality', 'address']
+        read_only_fields = ['id', 'user']
+    
+    def get_profile_url(self, obj):
+        """Get full URL for profile image"""
+        if obj.profile:
+            request = self.context.get('request')
+            if hasattr(obj.profile, 'url'):
+                # For CloudinaryField or similar
+                return obj.profile.url
+            elif request:
+                # For regular ImageField
+                return request.build_absolute_uri(obj.profile.url)
+        return None
         
 
 class RatingSerializer(serializers.ModelSerializer):
@@ -146,11 +160,13 @@ class HotelListSerializer(serializers.ModelSerializer):
     region_display = serializers.CharField(source='get_region_display', read_only=True)
     amenities_count = serializers.SerializerMethodField()
     rooms_count = serializers.SerializerMethodField()
+    logo_url = serializers.SerializerMethodField()
+    hotel_image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Hotel
         fields = ['id', 'name', 'phone_number', 'email', 'location', 
-                  'region', 'region_display', 'logo', 'hotel_image', 
+                  'region', 'region_display', 'logo', 'logo_url', 'hotel_image', 'hotel_image_url',
                   'amenities_count', 'rooms_count', 'has_payment_setup', 'created_at']
         read_only_fields = ['id', 'created_at']
     
@@ -159,6 +175,18 @@ class HotelListSerializer(serializers.ModelSerializer):
     
     def get_rooms_count(self, obj):
         return obj.rooms.count()
+    
+    def get_logo_url(self, obj):
+        """Get full URL for hotel logo"""
+        if obj.logo:
+            return obj.logo.url if hasattr(obj.logo, 'url') else str(obj.logo)
+        return None
+    
+    def get_hotel_image_url(self, obj):
+        """Get full URL for hotel image"""
+        if obj.hotel_image:
+            return obj.hotel_image.url if hasattr(obj.hotel_image, 'url') else str(obj.hotel_image)
+        return None
 
 
 class HotelDetailSerializer(serializers.ModelSerializer):
@@ -167,20 +195,42 @@ class HotelDetailSerializer(serializers.ModelSerializer):
     amenities = AmenitySerializer(many=True, read_only=True)
     services = ServiceSerializer(many=True, read_only=True)
     paystack_subaccount = HotelPaystackSubaccountSerializer(read_only=True)
+    logo_url = serializers.SerializerMethodField()
+    hotel_image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Hotel
         fields = ['id', 'name', 'phone_number', 'email', 'location', 'description',
-                  'region', 'region_display', 'logo', 'hotel_image', 'amenities', 
-                  'services', 'paystack_subaccount', 'has_payment_setup', 'created_at']
+                  'region', 'region_display', 'logo', 'logo_url', 'hotel_image', 'hotel_image_url',
+                  'amenities', 'services', 'paystack_subaccount', 'has_payment_setup', 'created_at']
         read_only_fields = ['id', 'created_at']
+    
+    def get_logo_url(self, obj):
+        """Get full URL for hotel logo"""
+        if obj.logo:
+            return obj.logo.url if hasattr(obj.logo, 'url') else str(obj.logo)
+        return None
+    
+    def get_hotel_image_url(self, obj):
+        """Get full URL for hotel image"""
+        if obj.hotel_image:
+            return obj.hotel_image.url if hasattr(obj.hotel_image, 'url') else str(obj.hotel_image)
+        return None
 
 
 class OurRoomsImageSerializer(serializers.ModelSerializer):
     """Serializer for room images"""
+    image_url = serializers.SerializerMethodField()
+    
     class Meta:
         model = OurRoomsImage
-        fields = ['id', 'room', 'image']
+        fields = ['id', 'room', 'image', 'image_url']
+    
+    def get_image_url(self, obj):
+        """Get full URL for room image"""
+        if obj.image:
+            return obj.image.url if hasattr(obj.image, 'url') else str(obj.image)
+        return None
 
 
 class RoomListSerializer(serializers.ModelSerializer):
@@ -190,14 +240,21 @@ class RoomListSerializer(serializers.ModelSerializer):
     status_display = serializers.CharField(source='get_status_display', read_only=True)
     hotel_name = serializers.CharField(source='hotel.name', read_only=True)
     star_rating = RatingSerializer(read_only=True)
+    image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Room
         fields = ['id', 'room_number', 'room_type', 'room_type_display', 
                   'bed_type', 'bed_type_display', 'price', 'status', 'status_display',
-                  'max_guests', 'hotel', 'hotel_name', 'star_rating', 'image', 
+                  'max_guests', 'hotel', 'hotel_name', 'star_rating', 'image', 'image_url',
                   'created_at']
         read_only_fields = ['id', 'created_at']
+    
+    def get_image_url(self, obj):
+        """Get full URL for room image"""
+        if obj.image:
+            return obj.image.url if hasattr(obj.image, 'url') else str(obj.image)
+        return None
 
 
 class RoomDetailSerializer(serializers.ModelSerializer):
@@ -209,14 +266,21 @@ class RoomDetailSerializer(serializers.ModelSerializer):
     amenities = AmenitySerializer(many=True, read_only=True)
     star_rating = RatingSerializer(read_only=True)
     additional_images = OurRoomsImageSerializer(source='ourroomsimage_set', many=True, read_only=True)
+    image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Room
         fields = ['id', 'room_number', 'room_type', 'room_type_display', 
                   'bed_type', 'bed_type_display', 'price', 'status', 'status_display',
-                  'max_guests', 'hotel', 'amenities', 'star_rating', 'image', 
+                  'max_guests', 'hotel', 'amenities', 'star_rating', 'image', 'image_url',
                   'additional_images', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def get_image_url(self, obj):
+        """Get full URL for room image"""
+        if obj.image:
+            return obj.image.url if hasattr(obj.image, 'url') else str(obj.image)
+        return None
 
 
 class GuestSerializer(serializers.ModelSerializer):
