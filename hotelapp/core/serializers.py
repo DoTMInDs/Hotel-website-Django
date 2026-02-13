@@ -17,11 +17,19 @@ User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for CustomUser model"""
+    guest_id = serializers.SerializerMethodField()
+    
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 
-                  'user_type', 'is_verified', 'created_at']
-        read_only_fields = ['id', 'created_at']
+                  'user_type', 'is_verified', 'guest_id', 'created_at']
+        read_only_fields = ['id', 'created_at', 'guest_id']
+    
+    def get_guest_id(self, obj):
+        """Get the associated guest ID if it exists"""
+        if hasattr(obj, 'guest_profile') and obj.guest_profile:
+            return obj.guest_profile.id
+        return None
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
